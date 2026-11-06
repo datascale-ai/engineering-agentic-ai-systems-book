@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">组织设计的四个观察面板</title><desc id="desc">主管与点对点描述拓扑；角色描述职责；市场描述分配机制。这些维度可以组合。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker>
+<marker id="back" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="context-stroke"/></marker>
+</defs><rect width="100%" height="100%" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif">
+<text x="44" y="42" font-size="28" fill="#203047" font-weight="700" text-anchor="start">组织设计：拓扑、职责与分配机制</text>
+<rect x="44" y="68" width="536" height="342" rx="12" fill="#f6f8fb" stroke="#d9e0e8" stroke-width="1.8"/>
+<rect x="620" y="68" width="536" height="342" rx="12" fill="#f6f8fb" stroke="#d9e0e8" stroke-width="1.8"/>
+<rect x="44" y="442" width="536" height="342" rx="12" fill="#f6f8fb" stroke="#d9e0e8" stroke-width="1.8"/>
+<rect x="620" y="442" width="536" height="342" rx="12" fill="#f6f8fb" stroke="#d9e0e8" stroke-width="1.8"/>
+<text x="68" y="109" font-size="23" fill="#203047" font-weight="700" text-anchor="start">A  主管式拓扑</text>
+<text x="68" y="138" font-size="17" fill="#203047" font-weight="400" text-anchor="start">控制路径：主管分解与收口</text>
+<polyline points="312,216 312,247 175,247 175,272" fill="none" stroke="#285b8e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<polyline points="312,247 449,247 449,272" fill="none" stroke="#285b8e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="227" y="164" width="170" height="52" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="1.8"/>
+<text x="312" y="198" font-size="19" fill="#203047" font-weight="700" text-anchor="middle">主管／最终负责</text>
+<rect x="103" y="272" width="144" height="54" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="175" y="307" font-size="20" fill="#203047" font-weight="400" text-anchor="middle">成员一</text>
+<rect x="377" y="272" width="144" height="54" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="449" y="307" font-size="20" fill="#203047" font-weight="400" text-anchor="middle">成员二</text>
+<text x="312" y="376" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">集中分配；成员向主管交付证据</text>
+<text x="644" y="109" font-size="23" fill="#203047" font-weight="700" text-anchor="start">B  点对点拓扑</text>
+<text x="644" y="138" font-size="17" fill="#203047" font-weight="400" text-anchor="start">同级互联：每项任务仍指定收口者</text>
+<polyline points="837,221 741,278" fill="none" stroke="#285b8e" stroke-width="2.5" marker-start="url(#back)" marker-end="url(#arrow)"/>
+<polyline points="939,221 1035,278" fill="none" stroke="#285b8e" stroke-width="2.5" marker-start="url(#back)" marker-end="url(#arrow)"/>
+<polyline points="815,304 961,304" fill="none" stroke="#285b8e" stroke-width="2.5" marker-start="url(#back)" marker-end="url(#arrow)"/>
+<rect x="803" y="169" width="170" height="52" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="1.8"/>
+<text x="888" y="202" font-size="21" fill="#203047" font-weight="700" text-anchor="middle">甲＊</text>
+<rect x="661" y="278" width="154" height="54" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="738" y="313" font-size="20" fill="#203047" font-weight="400" text-anchor="middle">乙</text>
+<rect x="961" y="278" width="154" height="54" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="1038" y="313" font-size="20" fill="#203047" font-weight="400" text-anchor="middle">丙</text>
+<text x="888" y="376" font-size="17" fill="#203047" font-weight="400" text-anchor="middle">＊本任务的最终负责角色，可逐任务变更</text>
+<text x="68" y="483" font-size="23" fill="#203047" font-weight="700" text-anchor="start">C  角色分工维度</text>
+<text x="68" y="512" font-size="17" fill="#203047" font-weight="400" text-anchor="start">明确输入、权限、产出、验收与退出</text>
+<polyline points="207,598 244,598" fill="none" stroke="#087e82" stroke-width="2.5" marker-end="url(#arrow)"/>
+<polyline points="380,598 417,598" fill="none" stroke="#087e82" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="71" y="570" width="136" height="56" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="1.8"/>
+<text x="139" y="606" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">研究</text>
+<rect x="244" y="570" width="136" height="56" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="1.8"/>
+<text x="312" y="606" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">准备</text>
+<rect x="417" y="570" width="136" height="56" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="1.8"/>
+<text x="485" y="606" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">核验</text>
+<text x="312" y="675" font-size="19" fill="#203047" font-weight="400" text-anchor="middle">角色定义职责；进程承载执行</text>
+<text x="312" y="712" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">同一智能体可依次承担多个角色</text>
+<text x="312" y="750" font-size="17" fill="#087e82" font-weight="400" text-anchor="middle">独立核验需另行设计证据和权限</text>
+<text x="644" y="483" font-size="23" fill="#203047" font-weight="700" text-anchor="start">D  市场分配机制</text>
+<text x="644" y="512" font-size="17" fill="#203047" font-weight="400" text-anchor="start">按报价规则选择承接者</text>
+<polyline points="888,579 888,608" fill="none" stroke="#285b8e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<polyline points="888,659 888,688" fill="none" stroke="#285b8e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="738" y="533" width="300" height="46" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="888" y="563" font-size="19" fill="#203047" font-weight="400" text-anchor="middle">任务公告：目标与限制</text>
+<rect x="738" y="608" width="300" height="51" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="888" y="640" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">候选报价：成本／能力／时限</text>
+<rect x="738" y="688" width="300" height="46" rx="12" fill="#ffffff" stroke="#c3ceda" stroke-width="1.8"/>
+<text x="888" y="718" font-size="19" fill="#203047" font-weight="400" text-anchor="middle">按规则分配并验收</text>
+<text x="888" y="772" font-size="17" fill="#203047" font-weight="400" text-anchor="middle">可叠加于主管式或点对点系统</text>
+<rect x="44" y="826" width="1112" height="50" rx="12" fill="#eaf0f6" stroke="#eaf0f6" stroke-width="1.8"/>
+<text x="600" y="858" font-size="20" fill="#203047" font-weight="700" text-anchor="middle">组合示例：主管式拓扑 ＋ 研究／准备／核验角色 ＋ 按能力报价分配</text>
+</g></svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1360" viewBox="0 0 1200 1360" role="img" aria-labelledby="title desc">
+  <title id="title">任务领取、执行与提交时序</title>
+  <desc id="desc">执行成员申请领取；权威状态先持久记录授权再返回租约。成员保存并提交候选，权威状态原子接受后返回提交回执，再安排独立核验。核验结论绑定当前候选，最终负责者条件关闭任务。纵向顺序表示依赖，不表示真实耗时。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+    <marker id="reply" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+  </defs>
+  <rect width="1200" height="1360" fill="#fff"/>
+  <g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+    <text x="40" y="44" font-size="28" font-weight="700">从执行授权到最终关闭：每种回执各有边界</text>
+    <g stroke="#c3ceda" stroke-width="2" stroke-dasharray="7 7">
+      <path d="M140 145V1290"/><path d="M480 145V1290"/><path d="M800 145V1290"/><path d="M1060 145V1290"/>
+    </g>
+    <g stroke-width="1.8">
+      <rect x="35" y="84" width="210" height="64" rx="10" fill="#e4edf7" stroke="#285b8e"/>
+      <rect x="360" y="84" width="240" height="64" rx="10" fill="#e4edf7" stroke="#285b8e"/>
+      <rect x="695" y="84" width="210" height="64" rx="10" fill="#e4f3f0" stroke="#087e82"/>
+      <rect x="955" y="84" width="210" height="64" rx="10" fill="#e4f3f0" stroke="#087e82"/>
+    </g>
+    <g font-size="23" font-weight="700" text-anchor="middle">
+      <text x="140" y="124">执行成员</text><text x="480" y="124">权威任务状态</text><text x="800" y="124">核验者</text><text x="1060" y="124">最终负责者</text>
+    </g>
+    <g fill="none" stroke="#285b8e" stroke-width="2.6" marker-end="url(#arrow)">
+      <path d="M140 198H480"/><path d="M140 550H480"/><path d="M480 800H800"/><path d="M1060 1108H480"/>
+    </g>
+    <g fill="none" stroke="#087e82" stroke-width="2.6" stroke-dasharray="8 5" marker-end="url(#reply)">
+      <path d="M480 350H140"/><path d="M480 730H140"/><path d="M800 950H480"/><path d="M480 1028H1060"/><path d="M480 1260H1060"/>
+    </g>
+    <g text-anchor="middle" font-size="21">
+      <text x="310" y="182">1　申请领取</text>
+      <text x="310" y="333">2　授权回执：租约已生效</text>
+      <text x="310" y="514">3　提交候选＋修订／代次</text>
+      <text x="310" y="539" font-size="17">result_id / digest / evidence</text>
+      <text x="310" y="713">4　提交回执：候选已接受</text>
+      <text x="640" y="782">5　通知核验当前候选</text>
+      <text x="640" y="931">6　登记绑定候选的核验结论</text>
+      <text x="770" y="1010">7　通知核验结论与当前候选</text>
+      <text x="770" y="1090">8　最终负责者请求条件关闭</text>
+      <text x="770" y="1242">9　完成通知：completed</text>
+    </g>
+    <g stroke="#c3ceda" stroke-width="1.6" fill="#f6f8fb">
+      <rect x="355" y="224" width="250" height="88" rx="9"/>
+      <rect x="35" y="394" width="210" height="86" rx="9"/>
+      <rect x="330" y="582" width="300" height="99" rx="9"/>
+      <rect x="695" y="839" width="210" height="65" rx="9"/>
+      <rect x="355" y="1140" width="250" height="72" rx="9"/>
+    </g>
+    <g text-anchor="middle" font-size="19">
+      <text x="480" y="251">原子登记持有者、代次</text>
+      <text x="480" y="278">租约与预算；先持久化</text>
+      <text x="480" y="302" font-size="17">租约从此时起计时</text>
+      <text x="140" y="426">在授权有效时执行</text>
+      <text x="140" y="455">先持久保存候选</text>
+      <text x="480" y="610">检查身份、修订、租约与去重</text>
+      <text x="480" y="638">原子接受候选 → submitted</text>
+      <text x="480" y="665" font-size="17">同时登记处理回执与待发事件</text>
+      <text x="800" y="864">核对具体候选</text>
+      <text x="800" y="890">与证据的业务条件</text>
+      <text x="480" y="1168">当前候选与核验仍匹配</text>
+      <text x="480" y="1195">持久记录 → completed</text>
+    </g>
+    <rect x="35" y="1304" width="1130" height="38" rx="6" fill="#e4f3f0"/>
+    <text x="52" y="1330" font-size="19">提交回执只表示候选已接受；核验通过后，仍由最终负责者关闭任务。</text>
+  </g>
+</svg>

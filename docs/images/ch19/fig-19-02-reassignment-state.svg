@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1030" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc">
+  <title id="title">冲突解决与重新分配状态机</title>
+  <desc id="desc">待分配 ready 经原子授权进入 leased，合法候选接受后进入 submitted，核验通过且最终负责者关闭后进入 completed。执行租约过期或受控放弃使 leased 返回 ready；候选退回使 submitted 返回 ready。任一活动状态都可经授权条件更新取消或升级。三个终态不被旧消息重新激活，候选接受后不再使用执行租约计时。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+    <marker id="recover" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a66b16"/></marker>
+  </defs>
+  <rect width="1200" height="1030" fill="#fff"/>
+  <g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+    <text x="40" y="44" font-size="28" font-weight="700">执行可接管，候选须核验，终态不被迟到消息复活</text>
+    <rect x="40" y="78" width="1120" height="62" rx="9" fill="#f6f8fb" stroke="#d9e0e8"/>
+    <text x="60" y="116" font-size="21">每次新授权产生更大 assignment_epoch；同一领取请求重发不会产生新授权。</text>
+    <g stroke-width="1.8">
+      <rect x="35" y="220" width="200" height="124" rx="12" fill="#e4edf7" stroke="#285b8e"/>
+      <rect x="325" y="220" width="220" height="124" rx="12" fill="#e4edf7" stroke="#285b8e"/>
+      <rect x="655" y="220" width="220" height="124" rx="12" fill="#e4f3f0" stroke="#087e82"/>
+      <rect x="965" y="220" width="200" height="124" rx="12" fill="#e4f3f0" stroke="#087e82"/>
+    </g>
+    <g text-anchor="middle">
+      <g font-size="25" font-weight="700">
+        <text x="135" y="257">ready</text><text x="435" y="257">leased</text><text x="765" y="257">submitted</text><text x="1065" y="257">completed</text>
+      </g>
+      <g font-size="20">
+        <text x="135" y="291">可分配</text><text x="135" y="321">无有效执行者</text>
+        <text x="435" y="291">当前持有者与租约</text><text x="435" y="321">执行截止生效</text>
+        <text x="765" y="291">候选已持久接受</text><text x="765" y="321">独立核验／关闭截止</text>
+        <text x="1065" y="291">最终结果已绑定</text><text x="1065" y="321">本轮终态</text>
+      </g>
+    </g>
+    <g fill="none" stroke="#285b8e" stroke-width="2.6" marker-end="url(#arrow)">
+      <path d="M235 277H325"/><path d="M545 277H655"/><path d="M875 277H965"/>
+    </g>
+    <g font-size="18" text-anchor="middle">
+      <text x="280" y="199">原子授权</text><text x="600" y="173">合法提交</text><text x="600" y="199">接受候选</text>
+      <text x="920" y="173">核验通过</text><text x="920" y="199">负责者关闭</text>
+    </g>
+    <g fill="none" stroke="#a66b16" stroke-width="2.6" marker-end="url(#recover)">
+      <path d="M435 344V422H135V344"/>
+      <path d="M765 344V503H75V344"/>
+    </g>
+    <g font-size="19" fill="#805015">
+      <text x="164" y="405">执行租约过期／受控放弃</text>
+      <text x="255" y="485">候选退回：撤销生效资格，再等待新分配</text>
+    </g>
+    <text x="40" y="550" font-size="20" font-weight="700">取消与升级适用于上方任一活动状态</text>
+    <rect x="40" y="599" width="460" height="110" rx="12" fill="#f6f8fb" stroke="#c3ceda" stroke-width="1.8"/>
+    <g text-anchor="middle">
+      <text x="270" y="638" font-size="23" font-weight="700">ready / leased / submitted</text>
+      <text x="270" y="674" font-size="20">同上三态；仍受根预算与截止约束</text>
+    </g>
+    <g fill="none" stroke="#285b8e" stroke-width="2.6">
+      <path d="M500 654H700"/>
+      <path d="M700 654V606H765" marker-end="url(#arrow)"/>
+      <path d="M700 654V744H765" marker-end="url(#arrow)"/>
+    </g>
+    <text x="591" y="633" text-anchor="middle" font-size="18">授权＋条件更新</text>
+    <rect x="765" y="562" width="400" height="88" rx="12" fill="#f6f8fb" stroke="#68788a" stroke-width="1.8"/>
+    <rect x="765" y="700" width="400" height="88" rx="12" fill="#fff5e5" stroke="#a66b16" stroke-width="1.8"/>
+    <g text-anchor="middle">
+      <text x="965" y="595" font-size="24" font-weight="700">cancelled</text>
+      <text x="965" y="626" font-size="20">取消已接受；本轮终态</text>
+      <text x="965" y="733" font-size="24" font-weight="700">escalated</text>
+      <text x="965" y="764" font-size="20">停止自动处理并升级；本轮终态</text>
+    </g>
+    <rect x="40" y="837" width="1125" height="155" rx="10" fill="#f6f8fb" stroke="#d9e0e8"/>
+    <g font-size="19">
+      <text x="60" y="872">候选已接受：原执行租约不再使任务回到 ready；核验超时另行处理。</text>
+      <text x="60" y="910">重复请求：返回历史处理结果并附当前状态，不产生第二次状态变更。</text>
+      <text x="60" y="948">失效授权／旧修订／不匹配候选：拒绝；completed、cancelled、escalated 不被复活。</text>
+      <text x="60" y="977" font-size="17">取消与升级同步撤销执行权或候选生效资格；已发生的外部业务效果另按行动协议处理。</text>
+    </g>
+  </g>
+</svg>
