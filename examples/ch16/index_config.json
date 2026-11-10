@@ -1,0 +1,16 @@
+{
+  "encoder": "BAAI/bge-small-zh-v1.5",
+  "runtime": "fastembed==0.7.3",
+  "export_source": "Qdrant/bge-small-zh-v1.5",
+  "observed_model_revision": [
+    "46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59"
+  ],
+  "document_input": "title + space + text",
+  "query_input": "query_embed(query), runtime default; no user-supplied instruction prefix",
+  "candidate_filter": "tenant fixture teaching;department B;validity 2026-11-09",
+  "similarity": "numpy dot product",
+  "fusion": "sum 1/(60+rank)",
+  "rerank": "explicit topic metadata before fused score",
+  "generation_model": null,
+  "weights_in_git": false
+}

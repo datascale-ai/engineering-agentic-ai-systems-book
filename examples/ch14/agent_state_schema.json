@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agentic-book:agent-state:draft-0.1",
+  "title": "Ch14 task state, draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_id", "tenant_id", "owner_id", "state_version", "task_revision", "facts_revision", "facts", "summary"],
+  "properties": {
+    "schema_version": {"const": "agent-state-draft-0.1"},
+    "task_id": {"type": "string", "minLength": 1},
+    "tenant_id": {"type": "string", "minLength": 1},
+    "owner_id": {"type": "string", "minLength": 1},
+    "state_version": {"type": "integer", "minimum": 0},
+    "task_revision": {"type": "integer", "minimum": 0},
+    "facts_revision": {"type": "integer", "minimum": 0},
+    "facts": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "goal": {"$ref": "#/$defs/text_fact"},
+        "preference": {"$ref": "#/$defs/text_fact"},
+        "budget_minor": {"$ref": "#/$defs/budget_fact"},
+        "approval": {"$ref": "#/$defs/approval_fact"}
+      }
+    },
+    "summary": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": false,
+          "required": ["text", "facts_revision", "based_on_state_version"],
+          "properties": {
+            "text": {"type": "string", "maxLength": 1000},
+            "facts_revision": {"type": "integer", "minimum": 0},
+            "based_on_state_version": {"type": "integer", "minimum": 0}
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "fact": {
+      "type": "object",
+      "required": ["value", "source_ref", "source_version", "valid_until", "writer", "status"],
+      "properties": {
+        "value": {}, "source_ref": {"type": "string", "minLength": 1},
+        "source_version": {"type": "integer", "minimum": 1},
+        "valid_until": {"type": "string", "format": "date-time"},
+        "writer": {"type": "string", "minLength": 1}, "status": {"const": "verified"}
+      },
+      "additionalProperties": false
+    },
+    "text_fact": {"allOf": [{"$ref": "#/$defs/fact"}, {"properties": {"value": {"type": "string", "minLength": 1}}}]},
+    "budget_fact": {"allOf": [{"$ref": "#/$defs/fact"}, {"properties": {"value": {"type": "integer", "minimum": 0}}}]},
+    "approval_fact": {"allOf": [{"$ref": "#/$defs/fact"}, {"properties": {"value": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "task_revision", "amount_limit_minor"],
+      "properties": {
+        "status": {"enum": ["pending", "approved", "revoked"]},
+        "task_revision": {"type": "integer", "minimum": 0},
+        "amount_limit_minor": {"type": "integer", "minimum": 0}
+      }
+    }}}]}
+  }
+}

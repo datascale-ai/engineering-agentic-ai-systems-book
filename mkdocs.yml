@@ -54,6 +54,8 @@ plugins:
           site_name: 智能体人工智能系统工程：从大语言模型到生产级智能体
           nav:
             - 全书导览: index.md
+            - 序言: preface.md
+            - 致谢: acknowledgements.md
             - 引言: reader_guide.md
             - 缩略语与符号表: abbreviations.md
             - 作者信息: authors.md
@@ -78,10 +80,10 @@ plugins:
                 - 第13章：行动轨迹、验证与恢复: part3/ch13_action_traces_recovery.md
             - 第四篇：记忆、知识与智能体学习:
                 - 本篇目录: part4/index.md
-                - 第14章：智能体状态、工作记忆与上下文管理: part4/ch14_state_working_memory_context.md
+                - 第14章：任务状态与工作记忆: part4/ch14_state_working_memory_context.md
                 - 第15章：长期记忆与个性化: part4/ch15_long_term_memory.md
                 - 第16章：检索增强与知识驱动智能体: part4/ch16_retrieval_knowledge_agents.md
-                - 第17章：反思、自我纠错与持续适应: part4/ch17_reflection_adaptation.md
+                - 第17章：反思、经验学习与持续适应: part4/ch17_reflection_adaptation.md
             - 第五篇：多智能体与环境交互系统:
                 - 本篇目录: part5/index.md
                 - 第18章：多智能体角色与组织结构: part5/ch18_multi_agent_roles.md
@@ -105,8 +107,8 @@ plugins:
                 - 本篇目录: part8/index.md
                 - 第31章：软件工程与知识工作中的智能体人工智能: part8/ch31_software_knowledge_work.md
                 - 第32章：教育、医疗与金融中的智能体人工智能: part8/ch32_education_healthcare_finance.md
-                - 第33章：企业智能体系统与实践采用: part8/ch33_enterprise_adoption.md
-                - 第34章：综合项目与参考架构: part8/ch34_capstone_reference_architectures.md
+                - 第33章：企业级智能体系统与组织融合: part8/ch33_enterprise_adoption.md
+                - 第34章：智能体系统参考架构与综合实践: part8/ch34_capstone_reference_architectures.md
                 - 第35章：开放问题与未来方向: part8/ch35_open_problems.md
             - 第九篇：工程实践、可运行代码与测试:
                 - 本篇目录: part9/index.md
@@ -123,6 +125,8 @@ plugins:
                 - 附录F：安全、隐私与治理清单: appendix_f_security.md
                 - 附录G：故障诊断与恢复手册: appendix_g_failures.md
                 - 附录H：参考文献与延伸阅读: appendix_h_reading.md
+            - 主题索引: topic_index.md
+            - 人名与机构索引: name_index.md
             - 后记与版本说明: afterword.md
         - locale: en
           name: English

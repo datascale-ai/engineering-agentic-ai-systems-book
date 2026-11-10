@@ -1,0 +1,22 @@
+{
+  "data_version": "original-policies-0.1",
+  "license": "MIT",
+  "origin": "Original fictional teaching policies authored for this book",
+  "personal_data": false,
+  "documents": 50,
+  "qa": 40,
+  "tasks": 60,
+  "current_date": "2026-11-09",
+  "slices": {
+    "direct": 10,
+    "paraphrase": 10,
+    "denied": 10,
+    "unanswerable": 10
+  },
+  "limitations": [
+    "short templates",
+    "structured amount answers",
+    "no real enterprise data",
+    "no PDF parsing benchmark"
+  ]
+}

@@ -1,0 +1,2805 @@
+{
+  "kind": "local_retrieval_with_deterministic_renderer",
+  "encoder": "BAAI/bge-small-zh-v1.5",
+  "generation_model": null,
+  "reranker": "topic_metadata_then_rrf",
+  "summary": {
+    "bm25": {
+      "questions": 40,
+      "answerable": 20,
+      "recall_at_3": 0.85,
+      "correct": 36,
+      "permission_leaks": 0
+    },
+    "dense": {
+      "questions": 40,
+      "answerable": 20,
+      "recall_at_3": 0.95,
+      "correct": 37,
+      "permission_leaks": 0
+    },
+    "hybrid_metadata_rerank": {
+      "questions": 40,
+      "answerable": 20,
+      "recall_at_3": 0.95,
+      "correct": 38,
+      "permission_leaks": 0
+    }
+  },
+  "rows": [
+    {
+      "question_id": "Q-direct-01",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "差旅住宿当前上限为500元。",
+        "limit_yuan": 500,
+        "evidence": "P01@2#1",
+        "quote": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 3.946,
+      "lexical_ms": 2.271,
+      "dense_and_fusion_ms": 1.662
+    },
+    {
+      "question_id": "Q-direct-01",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "差旅住宿当前上限为500元。",
+        "limit_yuan": 500,
+        "evidence": "P01@2#1",
+        "quote": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 3.946,
+      "lexical_ms": 2.271,
+      "dense_and_fusion_ms": 1.662
+    },
+    {
+      "question_id": "Q-direct-01",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P13@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "差旅住宿当前上限为500元。",
+        "limit_yuan": 500,
+        "evidence": "P01@2#1",
+        "quote": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 3.946,
+      "lexical_ms": 2.271,
+      "dense_and_fusion_ms": 1.662
+    },
+    {
+      "question_id": "Q-paraphrase-01",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P18@2#1",
+        "P01@2#1",
+        "P11@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": false,
+      "answer": {
+        "answer": "出差餐补当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P18@2#1",
+        "quote": "第18项：出差餐补管理办法。出差餐补每人每日上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.714,
+      "lexical_ms": 0.585,
+      "dense_and_fusion_ms": 1.122
+    },
+    {
+      "question_id": "Q-paraphrase-01",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "差旅住宿当前上限为500元。",
+        "limit_yuan": 500,
+        "evidence": "P01@2#1",
+        "quote": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.714,
+      "lexical_ms": 0.585,
+      "dense_and_fusion_ms": 1.122
+    },
+    {
+      "question_id": "Q-paraphrase-01",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P11@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "差旅住宿当前上限为500元。",
+        "limit_yuan": 500,
+        "evidence": "P01@2#1",
+        "quote": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.714,
+      "lexical_ms": 0.585,
+      "dense_and_fusion_ms": 1.122
+    },
+    {
+      "question_id": "Q-denied-01",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.727,
+      "lexical_ms": 0.587,
+      "dense_and_fusion_ms": 1.133
+    },
+    {
+      "question_id": "Q-denied-01",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.727,
+      "lexical_ms": 0.587,
+      "dense_and_fusion_ms": 1.133
+    },
+    {
+      "question_id": "Q-denied-01",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.727,
+      "lexical_ms": 0.587,
+      "dense_and_fusion_ms": 1.133
+    },
+    {
+      "question_id": "Q-unknown-01",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P01@2#1",
+        "P03@2#1",
+        "P18@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.756,
+      "lexical_ms": 0.563,
+      "dense_and_fusion_ms": 1.187
+    },
+    {
+      "question_id": "Q-unknown-01",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.756,
+      "lexical_ms": 0.563,
+      "dense_and_fusion_ms": 1.187
+    },
+    {
+      "question_id": "Q-unknown-01",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P01@2#1",
+        "P18@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.756,
+      "lexical_ms": 0.563,
+      "dense_and_fusion_ms": 1.187
+    },
+    {
+      "question_id": "Q-direct-02",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P02@2#1",
+        "P19@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "市内交通当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P02@2#1",
+        "quote": "第2项：市内交通管理办法。市内交通单次报销上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.677,
+      "lexical_ms": 0.552,
+      "dense_and_fusion_ms": 1.106
+    },
+    {
+      "question_id": "Q-direct-02",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P02@2#1",
+        "P19@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "市内交通当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P02@2#1",
+        "quote": "第2项：市内交通管理办法。市内交通单次报销上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.677,
+      "lexical_ms": 0.552,
+      "dense_and_fusion_ms": 1.106
+    },
+    {
+      "question_id": "Q-direct-02",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P02@2#1",
+        "P19@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "市内交通当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P02@2#1",
+        "quote": "第2项：市内交通管理办法。市内交通单次报销上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.677,
+      "lexical_ms": 0.552,
+      "dense_and_fusion_ms": 1.106
+    },
+    {
+      "question_id": "Q-paraphrase-02",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P18@2#1",
+        "P04@2#1",
+        "P01@2#1"
+      ],
+      "recall_at_3": 0.0,
+      "correct": false,
+      "answer": {
+        "answer": "出差餐补当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P18@2#1",
+        "quote": "第18项：出差餐补管理办法。出差餐补每人每日上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.534,
+      "dense_and_fusion_ms": 1.065
+    },
+    {
+      "question_id": "Q-paraphrase-02",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P02@2#1",
+        "P01@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "市内交通当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P02@2#1",
+        "quote": "第2项：市内交通管理办法。市内交通单次报销上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.534,
+      "dense_and_fusion_ms": 1.065
+    },
+    {
+      "question_id": "Q-paraphrase-02",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P02@2#1",
+        "P01@2#1",
+        "P18@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "市内交通当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P02@2#1",
+        "quote": "第2项：市内交通管理办法。市内交通单次报销上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.534,
+      "dense_and_fusion_ms": 1.065
+    },
+    {
+      "question_id": "Q-denied-02",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P02@2#1",
+        "P12@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.671,
+      "lexical_ms": 0.568,
+      "dense_and_fusion_ms": 1.098
+    },
+    {
+      "question_id": "Q-denied-02",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P02@2#1",
+        "P19@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.671,
+      "lexical_ms": 0.568,
+      "dense_and_fusion_ms": 1.098
+    },
+    {
+      "question_id": "Q-denied-02",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P02@2#1",
+        "P12@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.671,
+      "lexical_ms": 0.568,
+      "dense_and_fusion_ms": 1.098
+    },
+    {
+      "question_id": "Q-unknown-02",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P02@2#1",
+        "P03@2#1",
+        "P12@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.669,
+      "lexical_ms": 0.562,
+      "dense_and_fusion_ms": 1.102
+    },
+    {
+      "question_id": "Q-unknown-02",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P02@2#1",
+        "P12@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.669,
+      "lexical_ms": 0.562,
+      "dense_and_fusion_ms": 1.102
+    },
+    {
+      "question_id": "Q-unknown-02",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P02@2#1",
+        "P12@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.669,
+      "lexical_ms": 0.562,
+      "dense_and_fusion_ms": 1.102
+    },
+    {
+      "question_id": "Q-direct-03",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P03@2#1",
+        "P04@2#1",
+        "P09@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "业务招待当前上限为180元。",
+        "limit_yuan": 180,
+        "evidence": "P03@2#1",
+        "quote": "第3项：业务招待管理办法。业务招待每人每次费用上限为180元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.61,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.06
+    },
+    {
+      "question_id": "Q-direct-03",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P03@2#1",
+        "P13@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "业务招待当前上限为180元。",
+        "limit_yuan": 180,
+        "evidence": "P03@2#1",
+        "quote": "第3项：业务招待管理办法。业务招待每人每次费用上限为180元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.61,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.06
+    },
+    {
+      "question_id": "Q-direct-03",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P03@2#1",
+        "P13@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "业务招待当前上限为180元。",
+        "limit_yuan": 180,
+        "evidence": "P03@2#1",
+        "quote": "第3项：业务招待管理办法。业务招待每人每次费用上限为180元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.61,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.06
+    },
+    {
+      "question_id": "Q-paraphrase-03",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P11@2#1",
+        "P18@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": 0.0,
+      "correct": false,
+      "answer": {
+        "answer": "加班餐费当前上限为40元。",
+        "limit_yuan": 40,
+        "evidence": "P11@2#1",
+        "quote": "第11项：加班餐费管理办法。加班餐费每人每晚上限为40元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.58,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.056
+    },
+    {
+      "question_id": "Q-paraphrase-03",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P18@2#1",
+        "P02@2#1",
+        "P11@2#1"
+      ],
+      "recall_at_3": 0.0,
+      "correct": false,
+      "answer": {
+        "answer": "出差餐补当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P18@2#1",
+        "quote": "第18项：出差餐补管理办法。出差餐补每人每日上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.58,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.056
+    },
+    {
+      "question_id": "Q-paraphrase-03",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P18@2#1",
+        "P11@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": 0.0,
+      "correct": false,
+      "answer": {
+        "answer": "出差餐补当前上限为100元。",
+        "limit_yuan": 100,
+        "evidence": "P18@2#1",
+        "quote": "第18项：出差餐补管理办法。出差餐补每人每日上限为100元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.58,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.056
+    },
+    {
+      "question_id": "Q-denied-03",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P03@2#1",
+        "P15@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.647,
+      "lexical_ms": 0.557,
+      "dense_and_fusion_ms": 1.085
+    },
+    {
+      "question_id": "Q-denied-03",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P03@2#1",
+        "P08@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.647,
+      "lexical_ms": 0.557,
+      "dense_and_fusion_ms": 1.085
+    },
+    {
+      "question_id": "Q-denied-03",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P03@2#1",
+        "P08@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.647,
+      "lexical_ms": 0.557,
+      "dense_and_fusion_ms": 1.085
+    },
+    {
+      "question_id": "Q-unknown-03",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P03@2#1",
+        "P02@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.651,
+      "lexical_ms": 0.556,
+      "dense_and_fusion_ms": 1.09
+    },
+    {
+      "question_id": "Q-unknown-03",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P03@2#1",
+        "P02@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.651,
+      "lexical_ms": 0.556,
+      "dense_and_fusion_ms": 1.09
+    },
+    {
+      "question_id": "Q-unknown-03",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P03@2#1",
+        "P02@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.651,
+      "lexical_ms": 0.556,
+      "dense_and_fusion_ms": 1.09
+    },
+    {
+      "question_id": "Q-direct-04",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P09@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.62,
+      "lexical_ms": 0.544,
+      "dense_and_fusion_ms": 1.076
+    },
+    {
+      "question_id": "Q-direct-04",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.62,
+      "lexical_ms": 0.544,
+      "dense_and_fusion_ms": 1.076
+    },
+    {
+      "question_id": "Q-direct-04",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P09@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.62,
+      "lexical_ms": 0.544,
+      "dense_and_fusion_ms": 1.076
+    },
+    {
+      "question_id": "Q-paraphrase-04",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P04@2#1",
+        "P11@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.575,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.053
+    },
+    {
+      "question_id": "Q-paraphrase-04",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P09@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.575,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.053
+    },
+    {
+      "question_id": "Q-paraphrase-04",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P04@2#1",
+        "P11@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "培训报名当前上限为3000元。",
+        "limit_yuan": 3000,
+        "evidence": "P04@2#1",
+        "quote": "第4项：培训报名管理办法。培训报名单次费用上限为3000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.575,
+      "lexical_ms": 0.521,
+      "dense_and_fusion_ms": 1.053
+    },
+    {
+      "question_id": "Q-denied-04",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.072
+    },
+    {
+      "question_id": "Q-denied-04",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.072
+    },
+    {
+      "question_id": "Q-denied-04",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.072
+    },
+    {
+      "question_id": "Q-unknown-04",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.626,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.078
+    },
+    {
+      "question_id": "Q-unknown-04",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.626,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.078
+    },
+    {
+      "question_id": "Q-unknown-04",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P04@2#1",
+        "P17@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.626,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.078
+    },
+    {
+      "question_id": "Q-direct-05",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.599,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.063
+    },
+    {
+      "question_id": "Q-direct-05",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P05@2#1",
+        "P16@2#1",
+        "P06@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.599,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.063
+    },
+    {
+      "question_id": "Q-direct-05",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.599,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.063
+    },
+    {
+      "question_id": "Q-paraphrase-05",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P05@2#1",
+        "P02@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.554,
+      "lexical_ms": 0.51,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-paraphrase-05",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P05@2#1",
+        "P08@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.554,
+      "lexical_ms": 0.51,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-paraphrase-05",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P05@2#1",
+        "P08@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.554,
+      "lexical_ms": 0.51,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-denied-05",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.673,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.125
+    },
+    {
+      "question_id": "Q-denied-05",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P05@2#1",
+        "P08@2#1",
+        "P17@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.673,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.125
+    },
+    {
+      "question_id": "Q-denied-05",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P05@2#1",
+        "P08@2#1",
+        "P06@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.673,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.125
+    },
+    {
+      "question_id": "Q-unknown-05",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.661,
+      "lexical_ms": 0.548,
+      "dense_and_fusion_ms": 1.112
+    },
+    {
+      "question_id": "Q-unknown-05",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.661,
+      "lexical_ms": 0.548,
+      "dense_and_fusion_ms": 1.112
+    },
+    {
+      "question_id": "Q-unknown-05",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.661,
+      "lexical_ms": 0.548,
+      "dense_and_fusion_ms": 1.112
+    },
+    {
+      "question_id": "Q-direct-06",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.615,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.079
+    },
+    {
+      "question_id": "Q-direct-06",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.615,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.079
+    },
+    {
+      "question_id": "Q-direct-06",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.615,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.079
+    },
+    {
+      "question_id": "Q-paraphrase-06",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P06@2#1",
+        "P03@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.557,
+      "lexical_ms": 0.514,
+      "dense_and_fusion_ms": 1.042
+    },
+    {
+      "question_id": "Q-paraphrase-06",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P06@2#1",
+        "P07@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.557,
+      "lexical_ms": 0.514,
+      "dense_and_fusion_ms": 1.042
+    },
+    {
+      "question_id": "Q-paraphrase-06",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "图书采购当前上限为400元。",
+        "limit_yuan": 400,
+        "evidence": "P06@2#1",
+        "quote": "第6项：图书采购管理办法。图书采购每人每月上限为400元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.557,
+      "lexical_ms": 0.514,
+      "dense_and_fusion_ms": 1.042
+    },
+    {
+      "question_id": "Q-denied-06",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.637,
+      "lexical_ms": 0.554,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-denied-06",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.637,
+      "lexical_ms": 0.554,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-denied-06",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.637,
+      "lexical_ms": 0.554,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-unknown-06",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.635,
+      "lexical_ms": 0.541,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-unknown-06",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.635,
+      "lexical_ms": 0.541,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-unknown-06",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P06@2#1",
+        "P05@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.635,
+      "lexical_ms": 0.541,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-direct-07",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "软件订阅当前上限为300元。",
+        "limit_yuan": 300,
+        "evidence": "P07@2#1",
+        "quote": "第7项：软件订阅管理办法。软件订阅每人每月上限为300元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.54,
+      "dense_and_fusion_ms": 1.081
+    },
+    {
+      "question_id": "Q-direct-07",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P06@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "软件订阅当前上限为300元。",
+        "limit_yuan": 300,
+        "evidence": "P07@2#1",
+        "quote": "第7项：软件订阅管理办法。软件订阅每人每月上限为300元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.54,
+      "dense_and_fusion_ms": 1.081
+    },
+    {
+      "question_id": "Q-direct-07",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "软件订阅当前上限为300元。",
+        "limit_yuan": 300,
+        "evidence": "P07@2#1",
+        "quote": "第7项：软件订阅管理办法。软件订阅每人每月上限为300元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.621,
+      "lexical_ms": 0.54,
+      "dense_and_fusion_ms": 1.081
+    },
+    {
+      "question_id": "Q-paraphrase-07",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": 0.0,
+      "correct": false,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.582,
+      "lexical_ms": 0.513,
+      "dense_and_fusion_ms": 1.068
+    },
+    {
+      "question_id": "Q-paraphrase-07",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P05@2#1",
+        "P07@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": false,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.582,
+      "lexical_ms": 0.513,
+      "dense_and_fusion_ms": 1.068
+    },
+    {
+      "question_id": "Q-paraphrase-07",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P05@2#1",
+        "P06@2#1",
+        "P07@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": false,
+      "answer": {
+        "answer": "设备采购当前上限为8000元。",
+        "limit_yuan": 8000,
+        "evidence": "P05@2#1",
+        "quote": "第5项：设备采购管理办法。设备采购单件预算上限为8000元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.582,
+      "lexical_ms": 0.513,
+      "dense_and_fusion_ms": 1.068
+    },
+    {
+      "question_id": "Q-denied-07",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.641,
+      "lexical_ms": 0.559,
+      "dense_and_fusion_ms": 1.082
+    },
+    {
+      "question_id": "Q-denied-07",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P07@2#1",
+        "P08@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.641,
+      "lexical_ms": 0.559,
+      "dense_and_fusion_ms": 1.082
+    },
+    {
+      "question_id": "Q-denied-07",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P07@2#1",
+        "P08@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.641,
+      "lexical_ms": 0.559,
+      "dense_and_fusion_ms": 1.082
+    },
+    {
+      "question_id": "Q-unknown-07",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P07@2#1",
+        "P03@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.631,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-unknown-07",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P06@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.631,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-unknown-07",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P07@2#1",
+        "P16@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.631,
+      "lexical_ms": 0.547,
+      "dense_and_fusion_ms": 1.083
+    },
+    {
+      "question_id": "Q-direct-08",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P08@2#1",
+        "P19@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "远程办公当前上限为800元。",
+        "limit_yuan": 800,
+        "evidence": "P08@2#1",
+        "quote": "第8项：远程办公管理办法。远程办公配件年度上限为800元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.587,
+      "lexical_ms": 0.535,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-direct-08",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P08@2#1",
+        "P13@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "远程办公当前上限为800元。",
+        "limit_yuan": 800,
+        "evidence": "P08@2#1",
+        "quote": "第8项：远程办公管理办法。远程办公配件年度上限为800元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.587,
+      "lexical_ms": 0.535,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-direct-08",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P08@2#1",
+        "P19@2#1",
+        "P13@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "远程办公当前上限为800元。",
+        "limit_yuan": 800,
+        "evidence": "P08@2#1",
+        "quote": "第8项：远程办公管理办法。远程办公配件年度上限为800元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.587,
+      "lexical_ms": 0.535,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-paraphrase-08",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P08@2#1",
+        "P07@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "远程办公当前上限为800元。",
+        "limit_yuan": 800,
+        "evidence": "P08@2#1",
+        "quote": "第8项：远程办公管理办法。远程办公配件年度上限为800元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.59,
+      "lexical_ms": 0.52,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-paraphrase-08",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P16@2#1",
+        "P05@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": false,
+      "answer": {
+        "answer": "打印装订当前上限为150元。",
+        "limit_yuan": 150,
+        "evidence": "P16@2#1",
+        "quote": "第16项：打印装订管理办法。打印装订每次费用上限为150元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.59,
+      "lexical_ms": 0.52,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-paraphrase-08",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P08@2#1",
+        "P05@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "远程办公当前上限为800元。",
+        "limit_yuan": 800,
+        "evidence": "P08@2#1",
+        "quote": "第8项：远程办公管理办法。远程办公配件年度上限为800元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.59,
+      "lexical_ms": 0.52,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-denied-08",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P08@2#1",
+        "P19@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.625,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.075
+    },
+    {
+      "question_id": "Q-denied-08",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P08@2#1",
+        "P19@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.625,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.075
+    },
+    {
+      "question_id": "Q-denied-08",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P08@2#1",
+        "P19@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.625,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.075
+    },
+    {
+      "question_id": "Q-unknown-08",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P08@2#1",
+        "P03@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.646,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.096
+    },
+    {
+      "question_id": "Q-unknown-08",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P08@2#1",
+        "P02@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.646,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.096
+    },
+    {
+      "question_id": "Q-unknown-08",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P08@2#1",
+        "P02@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.646,
+      "lexical_ms": 0.549,
+      "dense_and_fusion_ms": 1.096
+    },
+    {
+      "question_id": "Q-direct-09",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.537,
+      "dense_and_fusion_ms": 1.066
+    },
+    {
+      "question_id": "Q-direct-09",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.537,
+      "dense_and_fusion_ms": 1.066
+    },
+    {
+      "question_id": "Q-direct-09",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.603,
+      "lexical_ms": 0.537,
+      "dense_and_fusion_ms": 1.066
+    },
+    {
+      "question_id": "Q-paraphrase-09",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P11@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.569,
+      "lexical_ms": 0.517,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-paraphrase-09",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P09@2#1",
+        "P04@2#1",
+        "P17@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.569,
+      "lexical_ms": 0.517,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-paraphrase-09",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P09@2#1",
+        "P04@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "会议注册当前上限为2500元。",
+        "limit_yuan": 2500,
+        "evidence": "P09@2#1",
+        "quote": "第9项：会议注册管理办法。会议注册每次费用上限为2500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.569,
+      "lexical_ms": 0.517,
+      "dense_and_fusion_ms": 1.052
+    },
+    {
+      "question_id": "Q-denied-09",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.598,
+      "lexical_ms": 0.553,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-denied-09",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.598,
+      "lexical_ms": 0.553,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-denied-09",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P09@2#1",
+        "P15@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.598,
+      "lexical_ms": 0.553,
+      "dense_and_fusion_ms": 1.044
+    },
+    {
+      "question_id": "Q-unknown-09",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P09@2#1",
+        "P03@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.644,
+      "lexical_ms": 0.551,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-unknown-09",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P09@2#1",
+        "P08@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.644,
+      "lexical_ms": 0.551,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-unknown-09",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P09@2#1",
+        "P03@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.644,
+      "lexical_ms": 0.551,
+      "dense_and_fusion_ms": 1.093
+    },
+    {
+      "question_id": "Q-direct-10",
+      "slice": "direct",
+      "strategy": "bm25",
+      "top3": [
+        "P10@2#1",
+        "P04@2#1",
+        "P09@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.595,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.048
+    },
+    {
+      "question_id": "Q-direct-10",
+      "slice": "direct",
+      "strategy": "dense",
+      "top3": [
+        "P10@2#1",
+        "P02@2#1",
+        "P16@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.595,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.048
+    },
+    {
+      "question_id": "Q-direct-10",
+      "slice": "direct",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P10@2#1",
+        "P16@2#1",
+        "P19@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.595,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.048
+    },
+    {
+      "question_id": "Q-paraphrase-10",
+      "slice": "paraphrase",
+      "strategy": "bm25",
+      "top3": [
+        "P10@2#1",
+        "P20@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.584,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.047
+    },
+    {
+      "question_id": "Q-paraphrase-10",
+      "slice": "paraphrase",
+      "strategy": "dense",
+      "top3": [
+        "P10@2#1",
+        "P05@2#1",
+        "P04@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.584,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.047
+    },
+    {
+      "question_id": "Q-paraphrase-10",
+      "slice": "paraphrase",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P10@2#1",
+        "P02@2#1",
+        "P05@2#1"
+      ],
+      "recall_at_3": 1.0,
+      "correct": true,
+      "answer": {
+        "answer": "快递寄送当前上限为80元。",
+        "limit_yuan": 80,
+        "evidence": "P10@2#1",
+        "quote": "第10项：快递寄送管理办法。快递寄送每单费用上限为80元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+        "status": "supported"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.584,
+      "lexical_ms": 0.536,
+      "dense_and_fusion_ms": 1.047
+    },
+    {
+      "question_id": "Q-denied-10",
+      "slice": "denied",
+      "strategy": "bm25",
+      "top3": [
+        "P10@2#1",
+        "P15@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.619,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-denied-10",
+      "slice": "denied",
+      "strategy": "dense",
+      "top3": [
+        "P10@2#1",
+        "P08@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.619,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-denied-10",
+      "slice": "denied",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P10@2#1",
+        "P08@2#1",
+        "P15@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.619,
+      "lexical_ms": 0.55,
+      "dense_and_fusion_ms": 1.069
+    },
+    {
+      "question_id": "Q-unknown-10",
+      "slice": "unanswerable",
+      "strategy": "bm25",
+      "top3": [
+        "P10@2#1",
+        "P03@2#1",
+        "P02@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.623,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.077
+    },
+    {
+      "question_id": "Q-unknown-10",
+      "slice": "unanswerable",
+      "strategy": "dense",
+      "top3": [
+        "P10@2#1",
+        "P02@2#1",
+        "P08@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.623,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.077
+    },
+    {
+      "question_id": "Q-unknown-10",
+      "slice": "unanswerable",
+      "strategy": "hybrid_metadata_rerank",
+      "top3": [
+        "P10@2#1",
+        "P02@2#1",
+        "P03@2#1"
+      ],
+      "recall_at_3": null,
+      "correct": true,
+      "answer": {
+        "answer": null,
+        "limit_yuan": null,
+        "evidence": null,
+        "status": "insufficient_evidence"
+      },
+      "permission_leaks": 0,
+      "pipeline_ms": 1.623,
+      "lexical_ms": 0.546,
+      "dense_and_fusion_ms": 1.077
+    }
+  ],
+  "adaptive_pilot": [
+    {
+      "question_id": "Q-direct-01",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-paraphrase-01",
+      "retrieval_calls": 2,
+      "fixed_correct": false,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-denied-01",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-unknown-01",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-direct-02",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-paraphrase-02",
+      "retrieval_calls": 2,
+      "fixed_correct": false,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-denied-02",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-unknown-02",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-direct-03",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-paraphrase-03",
+      "retrieval_calls": 2,
+      "fixed_correct": false,
+      "adaptive_correct": false
+    },
+    {
+      "question_id": "Q-denied-03",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    },
+    {
+      "question_id": "Q-unknown-03",
+      "retrieval_calls": 1,
+      "fixed_correct": true,
+      "adaptive_correct": true
+    }
+  ]
+}

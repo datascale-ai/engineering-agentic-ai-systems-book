@@ -1,0 +1,16 @@
+{
+  "id": "EXP-D-17-01",
+  "date": "2026-11-09",
+  "kind": "scripted program patch acceptance",
+  "materials": "30 failure tasks;2 candidates max",
+  "license": "MIT original teaching materials",
+  "comparison": "no update / self rating / independent tests",
+  "metrics": "repair;holdout failure;candidate checks",
+  "entry": "examples/ch17/run_adaptation.py",
+  "repetitions": 1,
+  "randomness": "deterministic; runtime timing varies",
+  "budget": "see chapter and source; no generation model calls",
+  "success_criterion": "Business invariants and gold labels in report; failures retained",
+  "evidence_status": "executed locally",
+  "limitations": "Not LLM self-reflection evaluation"
+}

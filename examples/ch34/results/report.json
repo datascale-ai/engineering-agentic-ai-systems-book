@@ -1,0 +1,2420 @@
+{
+  "evidence_kind": "local_deterministic_sqlite_reference",
+  "summary": {
+    "PRJ-1": {
+      "tasks": 60,
+      "correct": 60,
+      "tickets": 20,
+      "events": 120,
+      "p50_ms": 0.817,
+      "p95_ms": 1.42,
+      "llm_calls": 0,
+      "external_service_calls": 0,
+      "rows": [
+        {
+          "task_id": "T01-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.379,
+          "events": 2
+        },
+        {
+          "task_id": "T01-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.022,
+          "events": 2
+        },
+        {
+          "task_id": "T01-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.89,
+          "events": 2
+        },
+        {
+          "task_id": "T02-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.92,
+          "events": 2
+        },
+        {
+          "task_id": "T02-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.821,
+          "events": 2
+        },
+        {
+          "task_id": "T02-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.812,
+          "events": 2
+        },
+        {
+          "task_id": "T03-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.367,
+          "events": 2
+        },
+        {
+          "task_id": "T03-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.043,
+          "events": 2
+        },
+        {
+          "task_id": "T03-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.786,
+          "events": 2
+        },
+        {
+          "task_id": "T04-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.725,
+          "events": 2
+        },
+        {
+          "task_id": "T04-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.93,
+          "events": 2
+        },
+        {
+          "task_id": "T04-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.78,
+          "events": 2
+        },
+        {
+          "task_id": "T05-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.801,
+          "events": 2
+        },
+        {
+          "task_id": "T05-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.799,
+          "events": 2
+        },
+        {
+          "task_id": "T05-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.429,
+          "events": 2
+        },
+        {
+          "task_id": "T06-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.771,
+          "events": 2
+        },
+        {
+          "task_id": "T06-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.056,
+          "events": 2
+        },
+        {
+          "task_id": "T06-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.762,
+          "events": 2
+        },
+        {
+          "task_id": "T07-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.78,
+          "events": 2
+        },
+        {
+          "task_id": "T07-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.741,
+          "events": 2
+        },
+        {
+          "task_id": "T07-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.801,
+          "events": 2
+        },
+        {
+          "task_id": "T08-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.753,
+          "events": 2
+        },
+        {
+          "task_id": "T08-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.371,
+          "events": 2
+        },
+        {
+          "task_id": "T08-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.832,
+          "events": 2
+        },
+        {
+          "task_id": "T09-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.211,
+          "events": 2
+        },
+        {
+          "task_id": "T09-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.0,
+          "events": 2
+        },
+        {
+          "task_id": "T09-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.836,
+          "events": 2
+        },
+        {
+          "task_id": "T10-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.784,
+          "events": 2
+        },
+        {
+          "task_id": "T10-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.766,
+          "events": 2
+        },
+        {
+          "task_id": "T10-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.86,
+          "events": 2
+        },
+        {
+          "task_id": "T11-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.42,
+          "events": 2
+        },
+        {
+          "task_id": "T11-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.769,
+          "events": 2
+        },
+        {
+          "task_id": "T11-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.066,
+          "events": 2
+        },
+        {
+          "task_id": "T12-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.749,
+          "events": 2
+        },
+        {
+          "task_id": "T12-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.761,
+          "events": 2
+        },
+        {
+          "task_id": "T12-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.765,
+          "events": 2
+        },
+        {
+          "task_id": "T13-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.793,
+          "events": 2
+        },
+        {
+          "task_id": "T13-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.796,
+          "events": 2
+        },
+        {
+          "task_id": "T13-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.867,
+          "events": 2
+        },
+        {
+          "task_id": "T14-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.15,
+          "events": 2
+        },
+        {
+          "task_id": "T14-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.51,
+          "events": 2
+        },
+        {
+          "task_id": "T14-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.916,
+          "events": 2
+        },
+        {
+          "task_id": "T15-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.871,
+          "events": 2
+        },
+        {
+          "task_id": "T15-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.223,
+          "events": 2
+        },
+        {
+          "task_id": "T15-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.791,
+          "events": 2
+        },
+        {
+          "task_id": "T16-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.803,
+          "events": 2
+        },
+        {
+          "task_id": "T16-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.054,
+          "events": 2
+        },
+        {
+          "task_id": "T16-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.4,
+          "events": 2
+        },
+        {
+          "task_id": "T17-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.782,
+          "events": 2
+        },
+        {
+          "task_id": "T17-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.1,
+          "events": 2
+        },
+        {
+          "task_id": "T17-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.759,
+          "events": 2
+        },
+        {
+          "task_id": "T18-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.774,
+          "events": 2
+        },
+        {
+          "task_id": "T18-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.767,
+          "events": 2
+        },
+        {
+          "task_id": "T18-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.806,
+          "events": 2
+        },
+        {
+          "task_id": "T19-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.822,
+          "events": 2
+        },
+        {
+          "task_id": "T19-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.732,
+          "events": 2
+        },
+        {
+          "task_id": "T19-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.823,
+          "events": 2
+        },
+        {
+          "task_id": "T20-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.747,
+          "events": 2
+        },
+        {
+          "task_id": "T20-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 0.79,
+          "events": 2
+        },
+        {
+          "task_id": "T20-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 0.781,
+          "events": 2
+        }
+      ]
+    },
+    "PRJ-2": {
+      "tasks": 60,
+      "correct": 60,
+      "tickets": 20,
+      "events": 240,
+      "p50_ms": 1.55,
+      "p95_ms": 2.406,
+      "llm_calls": 0,
+      "external_service_calls": 0,
+      "rows": [
+        {
+          "task_id": "T01-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.415,
+          "events": 4
+        },
+        {
+          "task_id": "T01-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.634,
+          "events": 4
+        },
+        {
+          "task_id": "T01-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.362,
+          "events": 4
+        },
+        {
+          "task_id": "T02-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.466,
+          "events": 4
+        },
+        {
+          "task_id": "T02-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.327,
+          "events": 4
+        },
+        {
+          "task_id": "T02-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.03,
+          "events": 4
+        },
+        {
+          "task_id": "T03-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.382,
+          "events": 4
+        },
+        {
+          "task_id": "T03-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.313,
+          "events": 4
+        },
+        {
+          "task_id": "T03-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.356,
+          "events": 4
+        },
+        {
+          "task_id": "T04-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.362,
+          "events": 4
+        },
+        {
+          "task_id": "T04-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.772,
+          "events": 4
+        },
+        {
+          "task_id": "T04-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.449,
+          "events": 4
+        },
+        {
+          "task_id": "T05-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.345,
+          "events": 4
+        },
+        {
+          "task_id": "T05-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.653,
+          "events": 4
+        },
+        {
+          "task_id": "T05-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.817,
+          "events": 4
+        },
+        {
+          "task_id": "T06-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.398,
+          "events": 4
+        },
+        {
+          "task_id": "T06-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.317,
+          "events": 4
+        },
+        {
+          "task_id": "T06-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.376,
+          "events": 4
+        },
+        {
+          "task_id": "T07-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.406,
+          "events": 4
+        },
+        {
+          "task_id": "T07-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.332,
+          "events": 4
+        },
+        {
+          "task_id": "T07-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.376,
+          "events": 4
+        },
+        {
+          "task_id": "T08-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.683,
+          "events": 4
+        },
+        {
+          "task_id": "T08-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.408,
+          "events": 4
+        },
+        {
+          "task_id": "T08-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.794,
+          "events": 4
+        },
+        {
+          "task_id": "T09-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.426,
+          "events": 4
+        },
+        {
+          "task_id": "T09-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.367,
+          "events": 4
+        },
+        {
+          "task_id": "T09-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.38,
+          "events": 4
+        },
+        {
+          "task_id": "T10-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.729,
+          "events": 4
+        },
+        {
+          "task_id": "T10-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.487,
+          "events": 4
+        },
+        {
+          "task_id": "T10-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.632,
+          "events": 4
+        },
+        {
+          "task_id": "T11-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.285,
+          "events": 4
+        },
+        {
+          "task_id": "T11-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.483,
+          "events": 4
+        },
+        {
+          "task_id": "T11-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.883,
+          "events": 4
+        },
+        {
+          "task_id": "T12-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.512,
+          "events": 4
+        },
+        {
+          "task_id": "T12-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.52,
+          "events": 4
+        },
+        {
+          "task_id": "T12-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.552,
+          "events": 4
+        },
+        {
+          "task_id": "T13-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.828,
+          "events": 4
+        },
+        {
+          "task_id": "T13-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 2.197,
+          "events": 4
+        },
+        {
+          "task_id": "T13-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.512,
+          "events": 4
+        },
+        {
+          "task_id": "T14-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.799,
+          "events": 4
+        },
+        {
+          "task_id": "T14-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.541,
+          "events": 4
+        },
+        {
+          "task_id": "T14-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.878,
+          "events": 4
+        },
+        {
+          "task_id": "T15-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.573,
+          "events": 4
+        },
+        {
+          "task_id": "T15-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 2.69,
+          "events": 4
+        },
+        {
+          "task_id": "T15-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.69,
+          "events": 4
+        },
+        {
+          "task_id": "T16-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.55,
+          "events": 4
+        },
+        {
+          "task_id": "T16-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.852,
+          "events": 4
+        },
+        {
+          "task_id": "T16-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.647,
+          "events": 4
+        },
+        {
+          "task_id": "T17-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.532,
+          "events": 4
+        },
+        {
+          "task_id": "T17-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 2.829,
+          "events": 4
+        },
+        {
+          "task_id": "T17-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.849,
+          "events": 4
+        },
+        {
+          "task_id": "T18-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.652,
+          "events": 4
+        },
+        {
+          "task_id": "T18-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.534,
+          "events": 4
+        },
+        {
+          "task_id": "T18-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.551,
+          "events": 4
+        },
+        {
+          "task_id": "T19-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.936,
+          "events": 4
+        },
+        {
+          "task_id": "T19-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 2.209,
+          "events": 4
+        },
+        {
+          "task_id": "T19-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.518,
+          "events": 4
+        },
+        {
+          "task_id": "T20-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.482,
+          "events": 4
+        },
+        {
+          "task_id": "T20-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.529,
+          "events": 4
+        },
+        {
+          "task_id": "T20-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.541,
+          "events": 4
+        }
+      ]
+    },
+    "PRJ-3": {
+      "tasks": 60,
+      "correct": 60,
+      "tickets": 20,
+      "events": 180,
+      "p50_ms": 1.153,
+      "p95_ms": 1.692,
+      "llm_calls": 0,
+      "external_service_calls": 0,
+      "rows": [
+        {
+          "task_id": "T01-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.148,
+          "events": 3
+        },
+        {
+          "task_id": "T01-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.124,
+          "events": 3
+        },
+        {
+          "task_id": "T01-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.459,
+          "events": 3
+        },
+        {
+          "task_id": "T02-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.582,
+          "events": 3
+        },
+        {
+          "task_id": "T02-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.358,
+          "events": 3
+        },
+        {
+          "task_id": "T02-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.094,
+          "events": 3
+        },
+        {
+          "task_id": "T03-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.117,
+          "events": 3
+        },
+        {
+          "task_id": "T03-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.692,
+          "events": 3
+        },
+        {
+          "task_id": "T03-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.326,
+          "events": 3
+        },
+        {
+          "task_id": "T04-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.574,
+          "events": 3
+        },
+        {
+          "task_id": "T04-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.986,
+          "events": 3
+        },
+        {
+          "task_id": "T04-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.242,
+          "events": 3
+        },
+        {
+          "task_id": "T05-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.212,
+          "events": 3
+        },
+        {
+          "task_id": "T05-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.207,
+          "events": 3
+        },
+        {
+          "task_id": "T05-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.456,
+          "events": 3
+        },
+        {
+          "task_id": "T06-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.222,
+          "events": 3
+        },
+        {
+          "task_id": "T06-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.399,
+          "events": 3
+        },
+        {
+          "task_id": "T06-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.24,
+          "events": 3
+        },
+        {
+          "task_id": "T07-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.093,
+          "events": 3
+        },
+        {
+          "task_id": "T07-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.136,
+          "events": 3
+        },
+        {
+          "task_id": "T07-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.088,
+          "events": 3
+        },
+        {
+          "task_id": "T08-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.677,
+          "events": 3
+        },
+        {
+          "task_id": "T08-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.298,
+          "events": 3
+        },
+        {
+          "task_id": "T08-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.697,
+          "events": 3
+        },
+        {
+          "task_id": "T09-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.126,
+          "events": 3
+        },
+        {
+          "task_id": "T09-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.094,
+          "events": 3
+        },
+        {
+          "task_id": "T09-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.111,
+          "events": 3
+        },
+        {
+          "task_id": "T10-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.126,
+          "events": 3
+        },
+        {
+          "task_id": "T10-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.053,
+          "events": 3
+        },
+        {
+          "task_id": "T10-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.111,
+          "events": 3
+        },
+        {
+          "task_id": "T11-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.117,
+          "events": 3
+        },
+        {
+          "task_id": "T11-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.109,
+          "events": 3
+        },
+        {
+          "task_id": "T11-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.088,
+          "events": 3
+        },
+        {
+          "task_id": "T12-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.131,
+          "events": 3
+        },
+        {
+          "task_id": "T12-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.34,
+          "events": 3
+        },
+        {
+          "task_id": "T12-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.097,
+          "events": 3
+        },
+        {
+          "task_id": "T13-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 2.123,
+          "events": 3
+        },
+        {
+          "task_id": "T13-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.368,
+          "events": 3
+        },
+        {
+          "task_id": "T13-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.475,
+          "events": 3
+        },
+        {
+          "task_id": "T14-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.218,
+          "events": 3
+        },
+        {
+          "task_id": "T14-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.083,
+          "events": 3
+        },
+        {
+          "task_id": "T14-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.393,
+          "events": 3
+        },
+        {
+          "task_id": "T15-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.11,
+          "events": 3
+        },
+        {
+          "task_id": "T15-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.383,
+          "events": 3
+        },
+        {
+          "task_id": "T15-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.131,
+          "events": 3
+        },
+        {
+          "task_id": "T16-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.13,
+          "events": 3
+        },
+        {
+          "task_id": "T16-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.087,
+          "events": 3
+        },
+        {
+          "task_id": "T16-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.138,
+          "events": 3
+        },
+        {
+          "task_id": "T17-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.136,
+          "events": 3
+        },
+        {
+          "task_id": "T17-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.689,
+          "events": 3
+        },
+        {
+          "task_id": "T17-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.411,
+          "events": 3
+        },
+        {
+          "task_id": "T18-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.175,
+          "events": 3
+        },
+        {
+          "task_id": "T18-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.062,
+          "events": 3
+        },
+        {
+          "task_id": "T18-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.209,
+          "events": 3
+        },
+        {
+          "task_id": "T19-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.241,
+          "events": 3
+        },
+        {
+          "task_id": "T19-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.106,
+          "events": 3
+        },
+        {
+          "task_id": "T19-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.101,
+          "events": 3
+        },
+        {
+          "task_id": "T20-0",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.11,
+          "events": 3
+        },
+        {
+          "task_id": "T20-1",
+          "correct": true,
+          "decision": "create",
+          "ticket_count": 1,
+          "latency_ms": 1.091,
+          "events": 3
+        },
+        {
+          "task_id": "T20-2",
+          "correct": true,
+          "decision": "hold",
+          "ticket_count": 0,
+          "latency_ms": 1.159,
+          "events": 3
+        }
+      ]
+    }
+  },
+  "faults": [
+    {
+      "project": "PRJ-1",
+      "fault": "missing_evidence",
+      "error": "missing_or_wrong_evidence",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "duplicate",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "worker_lost",
+      "error": "worker_lost_before_commit",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "late_output",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "wrong_release",
+      "error": "release_mismatch",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "restart",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "stream_cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-1",
+      "fault": "release_rollback",
+      "error": "release_mismatch",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "missing_evidence",
+      "error": "missing_or_wrong_evidence",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "duplicate",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "verify",
+            "to": "execute",
+            "decision": "create",
+            "remaining_steps": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "worker_lost",
+      "error": "worker_lost_before_commit",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "verify",
+            "to": "execute",
+            "decision": "create",
+            "remaining_steps": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "late_output",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "wrong_release",
+      "error": "release_mismatch",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "restart",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "stream_cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-2",
+      "fault": "release_rollback",
+      "error": "release_mismatch",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "verify",
+            "to": "execute",
+            "decision": "create",
+            "remaining_steps": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "missing_evidence",
+      "error": "missing_or_wrong_evidence",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "duplicate",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "worker_lost",
+      "error": "worker_lost_before_commit",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "late_output",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "wrong_release",
+      "error": "release_mismatch",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "restart",
+      "error": null,
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "stream_cancel",
+      "error": "late_generation",
+      "tickets": 0,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "checkpoint",
+          "payload": {
+            "evidence": "P01@2#1"
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 2,
+          "kind": "cancelled",
+          "payload": {}
+        }
+      ]
+    },
+    {
+      "project": "PRJ-3",
+      "fault": "release_rollback",
+      "error": "release_mismatch",
+      "tickets": 1,
+      "passed": true,
+      "events": [
+        {
+          "sequence": 1,
+          "generation": 1,
+          "kind": "task_opened",
+          "payload": {
+            "release": "teaching-0.1"
+          }
+        },
+        {
+          "sequence": 2,
+          "generation": 1,
+          "kind": "handoff",
+          "payload": {
+            "from": "research",
+            "to": "verify",
+            "evidence": "P01@2#1",
+            "remaining_steps": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "generation": 1,
+          "kind": "accepted",
+          "payload": {
+            "decision": "create",
+            "evidence": "P01@2#1",
+            "limit_yuan": 500
+          }
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "project": "PRJ-1",
+      "input": {
+        "task_id": "T01-1",
+        "topic": "差旅住宿",
+        "tenant_id": "teaching",
+        "department": "B",
+        "owner_id": "user-1",
+        "query": "出差酒店房费每晚能报销多少",
+        "document_id": "P01",
+        "expected_evidence": "P01@2#1",
+        "amount_yuan": 499,
+        "approved": true,
+        "expected_action": "create"
+      },
+      "output": {
+        "decision": "create",
+        "evidence": "P01@2#1",
+        "limit_yuan": 500
+      }
+    },
+    {
+      "project": "PRJ-2",
+      "input": {
+        "task_id": "T01-1",
+        "topic": "差旅住宿",
+        "tenant_id": "teaching",
+        "department": "B",
+        "owner_id": "user-1",
+        "query": "出差酒店房费每晚能报销多少",
+        "document_id": "P01",
+        "expected_evidence": "P01@2#1",
+        "amount_yuan": 499,
+        "approved": true,
+        "expected_action": "create"
+      },
+      "output": {
+        "decision": "create",
+        "evidence": "P01@2#1",
+        "limit_yuan": 500
+      }
+    },
+    {
+      "project": "PRJ-3",
+      "input": {
+        "task_id": "T01-1",
+        "topic": "差旅住宿",
+        "tenant_id": "teaching",
+        "department": "B",
+        "owner_id": "user-1",
+        "query": "出差酒店房费每晚能报销多少",
+        "document_id": "P01",
+        "expected_evidence": "P01@2#1",
+        "amount_yuan": 499,
+        "approved": true,
+        "expected_action": "create"
+      },
+      "output": {
+        "decision": "create",
+        "evidence": "P01@2#1",
+        "limit_yuan": 500
+      }
+    }
+  ]
+}

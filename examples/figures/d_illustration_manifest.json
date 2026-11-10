@@ -1,0 +1,184 @@
+[
+  {
+    "figure_id": "Fig-14-03",
+    "title": "工作桌上的摘要与当前任务",
+    "path": "docs/images/ch14/fig-14-03-task-desk-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "助手面对散落摘要便笺、待审批任务夹板和行李，强调当前任务事实不能由便笺替代。",
+    "labels": [
+      "当前任务",
+      "金额",
+      "499 元",
+      "批准",
+      "待审批",
+      "暂不提交",
+      "摘要",
+      "已批准？",
+      "省略条件",
+      "出差申请"
+    ],
+    "groups": [
+      "assistant-0",
+      "current-task-clipboard",
+      "paper-2",
+      "paper-3",
+      "paper-4",
+      "suitcase-5"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-15-03",
+    "title": "临时车票与长期偏好",
+    "path": "docs/images/ch15/fig-15-03-memory-library-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "档案柜保留本人默认，墙上日历与车票只描述本次出行；人物和助手在同一阅读场景中检查范围。",
+    "labels": [
+      "个人记忆",
+      "情景 · 发生过什么",
+      "语义 · 默认上午",
+      "程序 · 如何处理",
+      "本次出差",
+      "中午",
+      "仅此会话",
+      "车票",
+      "临时要求只属于本次旅程"
+    ],
+    "groups": [
+      "personal-memory-cabinet",
+      "person-1",
+      "assistant-2",
+      "suitcase-3",
+      "current-trip-ticket",
+      "plant-5"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-16-03",
+    "title": "把答案放回原始材料",
+    "path": "docs/images/ch16/fig-16-03-evidence-reading-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "旧版政策退到后景，当前条款在放大镜下可读；上锁附件表现部门边界，而不是额外的答案。",
+    "labels": [
+      "部门 A",
+      "附件",
+      "住宿政策",
+      "旧版 · v1",
+      "已被替代",
+      "当前 · v2",
+      "500 元／晚"
+    ],
+    "groups": [
+      "book-0",
+      "lock-1",
+      "book-2",
+      "assistant-3",
+      "open-current-policy"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-17-03",
+    "title": "修好一处，也要检查其他地方",
+    "path": "docs/images/ch17/fig-17-03-repair-workbench-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "助手把候选齿轮送到双项检测台，研究者观察原任务与保留任务；拒绝的零件留在托盘中。",
+    "labels": [
+      "原任务",
+      "保留任务",
+      "候选修复",
+      "未通过的候选保留记录"
+    ],
+    "groups": [
+      "assistant-0",
+      "person-1"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-33-03",
+    "title": "跨部门服务中的人机分工",
+    "path": "docs/images/ch33/fig-33-03-enterprise-office-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "两部门拥有各自档案与访问边界；共享服务桌上，助手准备材料，人类负责人签核具体申请。",
+    "labels": [
+      "部门 A",
+      "部门 B",
+      "A",
+      "B",
+      "申请",
+      "批准与责任由人承担",
+      "共享服务，保留数据边界"
+    ],
+    "groups": [
+      "lock-0",
+      "person-1",
+      "person-2",
+      "paper-3",
+      "assistant-4"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-34-05",
+    "title": "从桌面助手到协作工作室与运行平台",
+    "path": "docs/images/ch34/fig-34-05-project-workshop-scene.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "同一间工程工作室里，单人助手、角色协作和持久运行机柜表现三项目的工程尺度，未使用流程箭头。",
+    "labels": [
+      "PRJ-1",
+      "PRJ-2",
+      "PRJ-3",
+      "证据",
+      "证据与工具",
+      "角色与验收",
+      "持久运行与控制"
+    ],
+    "groups": [
+      "assistant-0",
+      "assistant-1",
+      "person-2",
+      "paper-3",
+      "assistant-4"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  },
+  {
+    "figure_id": "Fig-35-03",
+    "title": "走向长程自主的研究旅程",
+    "path": "docs/images/ch35/fig-35-03-long-horizon-expedition.svg",
+    "kind": "original editorial scene illustration",
+    "format": "editable pure SVG",
+    "license": "MIT",
+    "description": "研究者和助手站在曲折山路起点，远方观测站、沿途检查点与未搭完的桥表现仍需验证的长程能力。",
+    "labels": [
+      "长期 · 迁移 · 责任",
+      "每一段路都需要新的证据"
+    ],
+    "groups": [
+      "person-0",
+      "assistant-1"
+    ],
+    "source": "Original artwork based on the fictional case in this chapter; no third-party assets",
+    "contains_results": false
+  }
+]

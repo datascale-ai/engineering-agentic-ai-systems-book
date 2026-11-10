@@ -1,0 +1,20 @@
+{
+  "document_id": "P01",
+  "version": 2,
+  "chunk_id": "P01@2#1",
+  "topic": "差旅住宿",
+  "title": "差旅住宿管理办法",
+  "text": "第1项：差旅住宿管理办法。差旅住宿费每晚报销上限为500元。申请人应在费用发生前提交项目归属、用途和金额，由所属部门负责人审批。报销时需要真实票据和对应批准记录。超过上限的申请须进入例外审批，普通工单不得自行放宽额度。该条款适用于部门A和部门B的在岗人员，不授权助手直接付款。",
+  "limit_yuan": 500,
+  "valid_from": "2026-10-01",
+  "valid_to": "2027-01-01",
+  "tenant_id": "teaching",
+  "departments": [
+    "A",
+    "B"
+  ],
+  "classification": "internal",
+  "source_ref": "examples/d_shared/data/policies/P01@2.md",
+  "parser_version": "original-plaintext-1",
+  "data_version": "original-policies-0.1"
+}

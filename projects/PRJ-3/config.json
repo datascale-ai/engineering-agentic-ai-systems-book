@@ -1,0 +1,14 @@
+{
+  "project": "PRJ-3",
+  "schema_version": "1.0",
+  "release": "teaching-0.1",
+  "data_version": "original-policies-0.1",
+  "as_of": "2026-11-09",
+  "max_candidate_steps": 3,
+  "tools": [
+    "query_ticket",
+    "create_ticket"
+  ],
+  "endpoint": "local_sqlite",
+  "generation_model": null
+}

@@ -1,0 +1,3 @@
+fig_id,title,type,source,license,source_file,first_reference
+Fig-14-01,任务状态、工作记忆与模型上下文,editable_svg,本书原创,MIT,docs/images/ch14/fig-14-01-state-memory-context.svg,Ch14 14.2.3
+Fig-14-02,状态更新与摘要生成时序,editable_svg,本书原创,MIT,docs/images/ch14/fig-14-02-state-summary-sequence.svg,Ch14 14.3.5

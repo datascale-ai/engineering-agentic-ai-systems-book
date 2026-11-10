@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "memory-record-1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "memory_id",
+    "tenant_id",
+    "owner_id",
+    "key",
+    "value",
+    "valid_from",
+    "valid_until",
+    "revision",
+    "source_ref",
+    "kind",
+    "scope",
+    "session_id"
+  ],
+  "properties": {
+    "memory_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "valid_from": {
+      "type": "integer"
+    },
+    "valid_until": {
+      "type": "integer"
+    },
+    "revision": {
+      "type": "integer"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "episodic",
+        "semantic",
+        "procedural"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "user",
+        "session"
+      ]
+    },
+    "session_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "session"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

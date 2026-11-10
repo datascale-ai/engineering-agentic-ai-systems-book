@@ -1,0 +1,16 @@
+{
+  "id": "EXP-D-34-01",
+  "date": "2026-11-09",
+  "kind": "local SQLite integrated reference",
+  "materials": "50 policies;60 tasks;27 fault cases",
+  "license": "MIT original teaching materials",
+  "comparison": "PRJ-1/2/3 same deterministic core",
+  "metrics": "decision;tickets;events;fault invariants;local latency",
+  "entry": "examples/ch34/run_projects.py",
+  "repetitions": 1,
+  "randomness": "deterministic; runtime timing varies",
+  "budget": "see chapter and source; no generation model calls",
+  "success_criterion": "Business invariants and gold labels in report; failures retained",
+  "evidence_status": "executed locally",
+  "limitations": "No production endpoint or independent student signoff"
+}

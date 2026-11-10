@@ -1,0 +1,16 @@
+{
+  "id": "EXP-D-16-01",
+  "date": "2026-11-09",
+  "kind": "actual lexical and dense retrieval",
+  "materials": "50 original policies;40 QA",
+  "license": "MIT original teaching materials",
+  "comparison": "BM25 / BGE / RRF+metadata;12Q adaptive pilot",
+  "metrics": "Recall@3;final correctness;leaks;stage latency;calls",
+  "entry": "examples/ch16/run_retrieval.py",
+  "repetitions": 1,
+  "randomness": "deterministic; runtime timing varies",
+  "budget": "see chapter and source; no generation model calls",
+  "success_criterion": "Business invariants and gold labels in report; failures retained",
+  "evidence_status": "executed locally",
+  "limitations": "Rule renderer, no free generation; no parsing benchmark"
+}

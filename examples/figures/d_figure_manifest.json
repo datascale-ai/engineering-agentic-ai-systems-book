@@ -1,0 +1,1813 @@
+[
+  {
+    "figure_id": "fig-15-01-memory-lifecycle",
+    "path": "docs/images/ch15/fig-15-01-memory-lifecycle.svg",
+    "nodes": [
+      {
+        "id": "candidate",
+        "label": "候选记忆|原句与来源"
+      },
+      {
+        "id": "validation",
+        "label": "归属与范围确认|允许用途"
+      },
+      {
+        "id": "primary",
+        "label": "有效主记录|修订与期限"
+      },
+      {
+        "id": "recall",
+        "label": "过滤后排序|返回来源"
+      },
+      {
+        "id": "change",
+        "label": "纠正／删除|记录撤销"
+      },
+      {
+        "id": "derived",
+        "label": "索引与缓存|失效或重建"
+      },
+      {
+        "id": "backup",
+        "label": "备份保留|恢复过滤"
+      }
+    ],
+    "edges": [
+      {
+        "id": "propose",
+        "points": [
+          [
+            225,
+            215
+          ],
+          [
+            295,
+            215
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "accept",
+        "points": [
+          [
+            500,
+            215
+          ],
+          [
+            575,
+            215
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "retrieve",
+        "points": [
+          [
+            775,
+            215
+          ],
+          [
+            875,
+            215
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "invalidate",
+        "points": [
+          [
+            775,
+            410
+          ],
+          [
+            875,
+            410
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "change-record",
+        "points": [
+          [
+            675,
+            365
+          ],
+          [
+            675,
+            260
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "clear-recall",
+        "points": [
+          [
+            975,
+            365
+          ],
+          [
+            975,
+            260
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "restore-policy",
+        "points": [
+          [
+            575,
+            410
+          ],
+          [
+            500,
+            410
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-15-02-scope-boundaries",
+    "path": "docs/images/ch15/fig-15-02-scope-boundaries.svg",
+    "nodes": [
+      {
+        "id": "u1-default",
+        "label": "个人默认：上午出发"
+      },
+      {
+        "id": "u1-session",
+        "label": "会话 s3|临时中午"
+      },
+      {
+        "id": "u1-other",
+        "label": "会话 s4|回退默认"
+      },
+      {
+        "id": "u2-default",
+        "label": "个人默认：下午出发"
+      },
+      {
+        "id": "u2-session",
+        "label": "会话 s3|使用 u2 默认"
+      }
+    ],
+    "edges": [
+      {
+        "id": "override",
+        "points": [
+          [
+            187,
+            300
+          ],
+          [
+            187,
+            260
+          ],
+          [
+            300,
+            260
+          ],
+          [
+            300,
+            235
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "fallback",
+        "points": [
+          [
+            417,
+            300
+          ],
+          [
+            417,
+            235
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "own-default",
+        "points": [
+          [
+            812,
+            300
+          ],
+          [
+            812,
+            235
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-16-01-permission-pipeline",
+    "path": "docs/images/ch16/fig-16-01-permission-pipeline.svg",
+    "nodes": [
+      {
+        "id": "identity",
+        "label": "主体＋目标时间"
+      },
+      {
+        "id": "documents",
+        "label": "版本化文档|正文／附件"
+      },
+      {
+        "id": "allowed",
+        "label": "允许且有效集合|租户／部门／时间"
+      },
+      {
+        "id": "rank",
+        "label": "检索与重排|候选片段"
+      },
+      {
+        "id": "evidence",
+        "label": "证据包|原文与版本"
+      },
+      {
+        "id": "verify",
+        "label": "主张逐条核验|支持与适用"
+      },
+      {
+        "id": "answer",
+        "label": "有依据回答|或材料不足"
+      }
+    ],
+    "edges": [
+      {
+        "id": "scope",
+        "points": [
+          [
+            265,
+            85
+          ],
+          [
+            455,
+            85
+          ],
+          [
+            455,
+            210
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "filter",
+        "points": [
+          [
+            265,
+            277
+          ],
+          [
+            345,
+            277
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "rank-allowed",
+        "points": [
+          [
+            570,
+            270
+          ],
+          [
+            650,
+            270
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "package",
+        "points": [
+          [
+            840,
+            270
+          ],
+          [
+            900,
+            270
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "claim-evidence",
+        "points": [
+          [
+            992,
+            330
+          ],
+          [
+            992,
+            495
+          ],
+          [
+            840,
+            495
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "return",
+        "points": [
+          [
+            650,
+            495
+          ],
+          [
+            570,
+            495
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "recheck",
+        "points": [
+          [
+            455,
+            330
+          ],
+          [
+            455,
+            390
+          ],
+          [
+            745,
+            390
+          ],
+          [
+            745,
+            445
+          ]
+        ],
+        "label": "范围与版本复验"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-16-02-retrieval-loop",
+    "path": "docs/images/ch16/fig-16-02-retrieval-loop.svg",
+    "nodes": [
+      {
+        "id": "fixed-q",
+        "label": "问题"
+      },
+      {
+        "id": "fixed-r",
+        "label": "一次检索"
+      },
+      {
+        "id": "fixed-a",
+        "label": "证据核验 → 回答／不足"
+      },
+      {
+        "id": "adaptive-q",
+        "label": "问题与缺口"
+      },
+      {
+        "id": "adaptive-r",
+        "label": "检索"
+      },
+      {
+        "id": "enough",
+        "label": "支持充分？"
+      },
+      {
+        "id": "adaptive-a",
+        "label": "回答／不足"
+      }
+    ],
+    "edges": [
+      {
+        "id": "fixed1",
+        "points": [
+          [
+            240,
+            135
+          ],
+          [
+            330,
+            135
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "fixed2",
+        "points": [
+          [
+            510,
+            135
+          ],
+          [
+            600,
+            135
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "adaptive1",
+        "points": [
+          [
+            240,
+            380
+          ],
+          [
+            330,
+            380
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "adaptive2",
+        "points": [
+          [
+            510,
+            380
+          ],
+          [
+            600,
+            380
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "sufficient",
+        "points": [
+          [
+            780,
+            380
+          ],
+          [
+            870,
+            380
+          ]
+        ],
+        "label": "是／预算耗尽"
+      },
+      {
+        "id": "retry",
+        "points": [
+          [
+            690,
+            420
+          ],
+          [
+            690,
+            490
+          ],
+          [
+            150,
+            490
+          ],
+          [
+            150,
+            420
+          ]
+        ],
+        "label": "不足且仍有预算：改写或补充材料"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-17-01-update-loop",
+    "path": "docs/images/ch17/fig-17-01-update-loop.svg",
+    "nodes": [
+      {
+        "id": "failure",
+        "label": "失败轨迹|目标与差异"
+      },
+      {
+        "id": "diagnosis",
+        "label": "错误诊断|新增证据"
+      },
+      {
+        "id": "candidate",
+        "label": "候选变更|范围与版本"
+      },
+      {
+        "id": "repair",
+        "label": "修复集|原失败与近邻"
+      },
+      {
+        "id": "holdout",
+        "label": "保留集|旧能力与反例"
+      },
+      {
+        "id": "acceptance",
+        "label": "接受决定|成本与退化"
+      },
+      {
+        "id": "publish",
+        "label": "分范围发布|保留回滚"
+      }
+    ],
+    "edges": [
+      {
+        "id": "diagnose",
+        "points": [
+          [
+            245,
+            115
+          ],
+          [
+            320,
+            115
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "propose",
+        "points": [
+          [
+            530,
+            115
+          ],
+          [
+            610,
+            115
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "repair-test",
+        "points": [
+          [
+            715,
+            160
+          ],
+          [
+            715,
+            215
+          ],
+          [
+            580,
+            215
+          ],
+          [
+            580,
+            265
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "holdout-test",
+        "points": [
+          [
+            715,
+            215
+          ],
+          [
+            912,
+            215
+          ],
+          [
+            912,
+            265
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "repair-result",
+        "points": [
+          [
+            580,
+            350
+          ],
+          [
+            580,
+            395
+          ],
+          [
+            680,
+            395
+          ],
+          [
+            680,
+            440
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "holdout-result",
+        "points": [
+          [
+            912,
+            350
+          ],
+          [
+            912,
+            395
+          ],
+          [
+            750,
+            395
+          ],
+          [
+            750,
+            440
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "publish-update",
+        "points": [
+          [
+            610,
+            485
+          ],
+          [
+            530,
+            485
+          ]
+        ],
+        "label": "通过"
+      },
+      {
+        "id": "reject",
+        "points": [
+          [
+            715,
+            530
+          ],
+          [
+            715,
+            575
+          ],
+          [
+            140,
+            575
+          ],
+          [
+            140,
+            160
+          ]
+        ],
+        "label": "不通过：拒绝／预算内再提议／交接"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-17-02-adaptation-boundaries",
+    "path": "docs/images/ch17/fig-17-02-adaptation-boundaries.svg",
+    "nodes": [
+      {
+        "id": "plan-input",
+        "label": "观察与任务反馈"
+      },
+      {
+        "id": "plan-change",
+        "label": "修订计划"
+      },
+      {
+        "id": "plan-check",
+        "label": "动作前置条件检查"
+      },
+      {
+        "id": "experience",
+        "label": "经验候选"
+      },
+      {
+        "id": "experience-check",
+        "label": "独立验证与批准"
+      },
+      {
+        "id": "memory-release",
+        "label": "策略／记忆版本发布"
+      },
+      {
+        "id": "training-data",
+        "label": "数据治理与训练"
+      },
+      {
+        "id": "model-eval",
+        "label": "模型评估与回归"
+      },
+      {
+        "id": "model-release",
+        "label": "参数版本部署／回退"
+      }
+    ],
+    "edges": [
+      {
+        "id": "plan1",
+        "points": [
+          [
+            290,
+            122
+          ],
+          [
+            420,
+            122
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "plan2",
+        "points": [
+          [
+            660,
+            122
+          ],
+          [
+            790,
+            122
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "experience1",
+        "points": [
+          [
+            290,
+            297
+          ],
+          [
+            420,
+            297
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "experience2",
+        "points": [
+          [
+            660,
+            297
+          ],
+          [
+            790,
+            297
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "train1",
+        "points": [
+          [
+            290,
+            472
+          ],
+          [
+            420,
+            472
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "train2",
+        "points": [
+          [
+            660,
+            472
+          ],
+          [
+            790,
+            472
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-33-01-enterprise-integration",
+    "path": "docs/images/ch33/fig-33-01-enterprise-integration.svg",
+    "nodes": [
+      {
+        "id": "user",
+        "label": "员工请求|稳定主体"
+      },
+      {
+        "id": "identity",
+        "label": "身份与授权|角色／撤销版本"
+      },
+      {
+        "id": "assistant",
+        "label": "助手控制器|证据与任务"
+      },
+      {
+        "id": "knowledge",
+        "label": "企业知识库|版本与数据域"
+      },
+      {
+        "id": "approval",
+        "label": "批准流程|主管与申请对象"
+      },
+      {
+        "id": "business",
+        "label": "业务工具|查询／提交"
+      },
+      {
+        "id": "audit",
+        "label": "关联审计|主体与结果"
+      }
+    ],
+    "edges": [
+      {
+        "id": "authenticate",
+        "points": [
+          [
+            240,
+            110
+          ],
+          [
+            325,
+            110
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "context",
+        "points": [
+          [
+            435,
+            155
+          ],
+          [
+            435,
+            265
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "knowledge-query",
+        "points": [
+          [
+            545,
+            290
+          ],
+          [
+            585,
+            290
+          ],
+          [
+            585,
+            110
+          ],
+          [
+            650,
+            110
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "approve",
+        "points": [
+          [
+            545,
+            315
+          ],
+          [
+            650,
+            315
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "execute",
+        "points": [
+          [
+            435,
+            365
+          ],
+          [
+            435,
+            510
+          ],
+          [
+            650,
+            510
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "approval-gate",
+        "points": [
+          [
+            762,
+            365
+          ],
+          [
+            762,
+            465
+          ]
+        ],
+        "label": "批准有效"
+      },
+      {
+        "id": "audit-flow",
+        "points": [
+          [
+            325,
+            330
+          ],
+          [
+            285,
+            330
+          ],
+          [
+            285,
+            510
+          ],
+          [
+            240,
+            510
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-33-02-adoption-stages",
+    "path": "docs/images/ch33/fig-33-02-adoption-stages.svg",
+    "nodes": [
+      {
+        "id": "discover",
+        "label": "发现|基线与责任"
+      },
+      {
+        "id": "offline",
+        "label": "离线|证据与权限"
+      },
+      {
+        "id": "shadow",
+        "label": "影子|不执行动作"
+      },
+      {
+        "id": "pilot",
+        "label": "受控试点|批准后行动"
+      },
+      {
+        "id": "scale",
+        "label": "扩大|分部门验证"
+      },
+      {
+        "id": "decision",
+        "label": "质量＋总成本|继续／暂停／退出"
+      }
+    ],
+    "edges": [
+      {
+        "id": "next1",
+        "points": [
+          [
+            215,
+            170
+          ],
+          [
+            245,
+            170
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "next2",
+        "points": [
+          [
+            435,
+            170
+          ],
+          [
+            465,
+            170
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "next3",
+        "points": [
+          [
+            655,
+            170
+          ],
+          [
+            685,
+            170
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "next4",
+        "points": [
+          [
+            875,
+            170
+          ],
+          [
+            905,
+            170
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "gate",
+        "points": [
+          [
+            780,
+            225
+          ],
+          [
+            780,
+            365
+          ],
+          [
+            670,
+            365
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "repair",
+        "points": [
+          [
+            450,
+            365
+          ],
+          [
+            120,
+            365
+          ],
+          [
+            120,
+            225
+          ]
+        ],
+        "label": "修复条件后重新验证"
+      },
+      {
+        "id": "expand",
+        "points": [
+          [
+            670,
+            390
+          ],
+          [
+            1000,
+            390
+          ],
+          [
+            1000,
+            225
+          ]
+        ],
+        "label": "满足约定门槛"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-34-01-project-progression",
+    "path": "docs/images/ch34/fig-34-01-project-progression.svg",
+    "nodes": [
+      {
+        "id": "knowledge",
+        "label": "知识证据"
+      },
+      {
+        "id": "controller",
+        "label": "单一控制器"
+      },
+      {
+        "id": "tools",
+        "label": "核验＋工单工具"
+      },
+      {
+        "id": "research",
+        "label": "研究"
+      },
+      {
+        "id": "verify",
+        "label": "核验"
+      },
+      {
+        "id": "execute",
+        "label": "执行"
+      },
+      {
+        "id": "state",
+        "label": "状态与检查点"
+      },
+      {
+        "id": "events",
+        "label": "事件流与取消"
+      },
+      {
+        "id": "release",
+        "label": "权限／评测／版本"
+      }
+    ],
+    "edges": [
+      {
+        "id": "p1a",
+        "points": [
+          [
+            290,
+            117
+          ],
+          [
+            420,
+            117
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "p1b",
+        "points": [
+          [
+            670,
+            117
+          ],
+          [
+            800,
+            117
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "p2a",
+        "points": [
+          [
+            300,
+            292
+          ],
+          [
+            420,
+            292
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "p2b",
+        "points": [
+          [
+            650,
+            292
+          ],
+          [
+            800,
+            292
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "p3a",
+        "points": [
+          [
+            300,
+            485
+          ],
+          [
+            420,
+            485
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "p3b",
+        "points": [
+          [
+            650,
+            485
+          ],
+          [
+            800,
+            485
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-34-02-single-agent-chain",
+    "path": "docs/images/ch34/fig-34-02-single-agent-chain.svg",
+    "nodes": [
+      {
+        "id": "request",
+        "label": "申请|类别与批准"
+      },
+      {
+        "id": "evidence",
+        "label": "当前可读政策|原文与额度"
+      },
+      {
+        "id": "verify",
+        "label": "独立验收|条件满足？"
+      },
+      {
+        "id": "query",
+        "label": "查询已有工单"
+      },
+      {
+        "id": "hold",
+        "label": "保留申请|说明缺失条件"
+      },
+      {
+        "id": "commit",
+        "label": "幂等创建|事务内复验"
+      }
+    ],
+    "edges": [
+      {
+        "id": "read",
+        "points": [
+          [
+            210,
+            145
+          ],
+          [
+            290,
+            145
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "check",
+        "points": [
+          [
+            505,
+            145
+          ],
+          [
+            585,
+            145
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "lookup",
+        "points": [
+          [
+            800,
+            145
+          ],
+          [
+            880,
+            145
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "not-ready",
+        "points": [
+          [
+            692,
+            190
+          ],
+          [
+            692,
+            350
+          ]
+        ],
+        "label": "缺条件"
+      },
+      {
+        "id": "create",
+        "points": [
+          [
+            985,
+            190
+          ],
+          [
+            985,
+            350
+          ]
+        ],
+        "label": "未存在且满足"
+      },
+      {
+        "id": "result",
+        "points": [
+          [
+            985,
+            440
+          ],
+          [
+            985,
+            480
+          ],
+          [
+            397,
+            480
+          ],
+          [
+            397,
+            190
+          ]
+        ],
+        "label": "返回证据与业务结果"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-34-03-role-handoff",
+    "path": "docs/images/ch34/fig-34-03-role-handoff.svg",
+    "nodes": [],
+    "edges": [
+      {
+        "id": "assign",
+        "points": [
+          [
+            110,
+            120
+          ],
+          [
+            400,
+            120
+          ]
+        ],
+        "label": "任务＋世代＋预算"
+      },
+      {
+        "id": "submit-evidence",
+        "points": [
+          [
+            400,
+            225
+          ],
+          [
+            690,
+            225
+          ]
+        ],
+        "label": "证据卡＋消息信封"
+      },
+      {
+        "id": "accept",
+        "points": [
+          [
+            690,
+            330
+          ],
+          [
+            1000,
+            330
+          ]
+        ],
+        "label": "核验结果＋当前版本"
+      },
+      {
+        "id": "business-result",
+        "points": [
+          [
+            1000,
+            445
+          ],
+          [
+            110,
+            445
+          ]
+        ],
+        "label": "幂等提交后：工单结果与验收事件"
+      },
+      {
+        "id": "late",
+        "points": [
+          [
+            400,
+            530
+          ],
+          [
+            690,
+            530
+          ]
+        ],
+        "label": "旧世代结果 → 拒绝，不提交"
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-34-04-platform-control",
+    "path": "docs/images/ch34/fig-34-04-platform-control.svg",
+    "nodes": [
+      {
+        "id": "config",
+        "label": "配置与发布版本"
+      },
+      {
+        "id": "auth",
+        "label": "主体与权限"
+      },
+      {
+        "id": "evaluation",
+        "label": "评测／观测／回滚"
+      },
+      {
+        "id": "runtime",
+        "label": "任务运行时|世代与预算"
+      },
+      {
+        "id": "state",
+        "label": "持久状态|检查点与事件"
+      },
+      {
+        "id": "tool",
+        "label": "证据核验与工具|提交点复验"
+      }
+    ],
+    "edges": [
+      {
+        "id": "persist",
+        "points": [
+          [
+            315,
+            382
+          ],
+          [
+            420,
+            382
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "commit",
+        "points": [
+          [
+            670,
+            382
+          ],
+          [
+            775,
+            382
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "config-binding",
+        "points": [
+          [
+            205,
+            165
+          ],
+          [
+            205,
+            335
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "auth-binding",
+        "points": [
+          [
+            560,
+            165
+          ],
+          [
+            560,
+            220
+          ],
+          [
+            915,
+            220
+          ],
+          [
+            915,
+            335
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "observe",
+        "points": [
+          [
+            915,
+            430
+          ],
+          [
+            915,
+            505
+          ],
+          [
+            560,
+            505
+          ],
+          [
+            560,
+            430
+          ]
+        ],
+        "label": "恢复／流式事件／取消持久化"
+      },
+      {
+        "id": "telemetry",
+        "points": [
+          [
+            1055,
+            382
+          ],
+          [
+            1070,
+            382
+          ],
+          [
+            1070,
+            128
+          ],
+          [
+            1055,
+            128
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-35-01-evidence-map",
+    "path": "docs/images/ch35/fig-35-01-evidence-map.svg",
+    "nodes": [
+      {
+        "id": "hypothesis",
+        "label": "E0：拟议研究问题"
+      },
+      {
+        "id": "local",
+        "label": "E1：限定环境结果"
+      },
+      {
+        "id": "reproduce",
+        "label": "E2：可重复运行"
+      },
+      {
+        "id": "field",
+        "label": "E3：跨环境持续验证"
+      }
+    ],
+    "edges": [
+      {
+        "id": "x-axis",
+        "points": [
+          [
+            130,
+            500
+          ],
+          [
+            1050,
+            500
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "y-axis",
+        "points": [
+          [
+            130,
+            500
+          ],
+          [
+            130,
+            60
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  },
+  {
+    "figure_id": "fig-35-02-long-horizon-relations",
+    "path": "docs/images/ch35/fig-35-02-long-horizon-relations.svg",
+    "nodes": [
+      {
+        "id": "goals",
+        "label": "目标与未决义务"
+      },
+      {
+        "id": "state",
+        "label": "当前状态与来源"
+      },
+      {
+        "id": "action",
+        "label": "行动与结果核验"
+      },
+      {
+        "id": "experience",
+        "label": "经验候选|验证与版本"
+      },
+      {
+        "id": "identity",
+        "label": "身份与授权变化"
+      },
+      {
+        "id": "responsibility",
+        "label": "责任与人工接管"
+      }
+    ],
+    "edges": [
+      {
+        "id": "goals-state",
+        "points": [
+          [
+            280,
+            115
+          ],
+          [
+            430,
+            115
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "state-action",
+        "points": [
+          [
+            680,
+            115
+          ],
+          [
+            830,
+            115
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "feedback",
+        "points": [
+          [
+            955,
+            160
+          ],
+          [
+            955,
+            340
+          ],
+          [
+            680,
+            340
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "learned",
+        "points": [
+          [
+            555,
+            290
+          ],
+          [
+            555,
+            160
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "scope",
+        "points": [
+          [
+            185,
+            480
+          ],
+          [
+            185,
+            220
+          ],
+          [
+            430,
+            220
+          ],
+          [
+            430,
+            160
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "handoff",
+        "points": [
+          [
+            955,
+            340
+          ],
+          [
+            955,
+            480
+          ]
+        ],
+        "label": null
+      },
+      {
+        "id": "responsible-action",
+        "points": [
+          [
+            1080,
+            520
+          ],
+          [
+            1100,
+            520
+          ],
+          [
+            1100,
+            115
+          ],
+          [
+            1080,
+            115
+          ]
+        ],
+        "label": null
+      }
+    ],
+    "format": "pure editable SVG",
+    "license": "MIT",
+    "source": "original chapter mechanism; no external artwork"
+  }
+]
