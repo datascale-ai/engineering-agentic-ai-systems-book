@@ -1,0 +1,9 @@
+[project]
+name = "agent-book-reference"
+version = "0.1.0"
+description = "Deterministic local teaching baseline for Chapters 36 and 37"
+requires-python = ">=3.11,<3.15"
+dependencies = []
+
+[tool.uv]
+package = false

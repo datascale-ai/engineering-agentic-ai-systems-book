@@ -1,0 +1,8 @@
+{
+  "client": "fixed",
+  "presentation_only_passed": true,
+  "ticket_count": 1,
+  "created_event_count": 1,
+  "independent_oracle_passed": true,
+  "scope": "controlled local defect, not a historical production incident"
+}

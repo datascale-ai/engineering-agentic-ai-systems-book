@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "ticket_count": 1,
+  "created_event_count": 1,
+  "payload": {
+    "task_id": "T-DEMO-01",
+    "revision": 1,
+    "amount": 250,
+    "domestic": true,
+    "receipt_valid": true,
+    "policy_version": "P20-A@2.0"
+  }
+}

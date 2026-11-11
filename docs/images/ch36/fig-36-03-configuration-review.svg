@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="990" viewBox="0 0 1200 990" role="img" aria-labelledby="title desc">
+<title id="title">配置变化先显式审查，再形成新基线</title><desc id="desc">本示例无隐式环境覆盖。清单白名单与命令行项目/输出选择经过校验，实际配置进入运行记录。内容漂移阻止运行；维护者定位差异、改测试预期并复核后显式更新基线。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="990" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" text-anchor="start" font-size="28" fill="#203047" font-weight="700">配置变化先显式审查，再形成新基线</text>
+<rect x="90" y="115" width="660" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="149" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">输入模板：run_manifest.toml</text>
+<text x="420.0" y="181" text-anchor="middle" font-size="20" fill="#203047">固定环境、输入和预算；不读取任意环境变量覆盖</text>
+<path d="M420 225V270" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="90" y="270" width="660" height="120" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="304" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">白名单解析＋内容摘要核验</text>
+<text x="420.0" y="336" text-anchor="middle" font-size="20" fill="#203047">CLI 只选项目、输出目录、resume 与教学故障点</text>
+<text x="420.0" y="364" text-anchor="middle" font-size="20" fill="#203047">未知字段／输入越界／内容漂移 → 拒绝</text>
+<path d="M420 390V445" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<rect x="90" y="445" width="660" height="115" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="420.0" y="479" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">保存本次实际配置</text>
+<text x="420.0" y="511" text-anchor="middle" font-size="20" fill="#203047">恢复须与原 identity 一致，不静默覆盖旧会话</text>
+<path d="M420 560V615" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<rect x="90" y="615" width="660" height="115" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="420.0" y="649" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">执行并生成独立验收</text>
+<text x="420.0" y="681" text-anchor="middle" font-size="20" fill="#203047">新输出目录；失败保留原始证据</text>
+<path d="M750 330H825" fill="none" stroke="#a96a16" stroke-width="2.8" marker-end="url(#amber)"/>
+<rect x="825" y="270" width="310" height="290" rx="12" fill="#fff2dc" stroke="#a96a16" stroke-width="2"/>
+<text x="980.0" y="304" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">维护者审查差异</text>
+<text x="980.0" y="336" text-anchor="middle" font-size="20" fill="#203047">定位代码／配置／数据</text>
+<text x="980.0" y="364" text-anchor="middle" font-size="20" fill="#203047">解释语义和兼容影响</text>
+<text x="980.0" y="392" text-anchor="middle" font-size="20" fill="#203047">更新独立预期并测试</text>
+<text x="980.0" y="420" text-anchor="middle" font-size="20" fill="#203047">审查后显式 seal</text>
+<text x="980.0" y="448" text-anchor="middle" font-size="20" fill="#203047">分发新基线再复现</text>
+<path d="M980 270V175H750" fill="none" stroke="#a96a16" stroke-width="2.8" marker-end="url(#amber)" stroke-dasharray="8 6"/>
+<rect x="90" y="815" width="1045" height="105" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="612.5" y="849" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">摘要文件与输入同时被篡改时，本地散列核验不足以建立信任</text>
+<text x="612.5" y="881" text-anchor="middle" font-size="20" fill="#203047">生产发布的来源签名、认证与分发治理由后续工程接入</text>
+</g></svg>

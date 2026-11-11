@@ -1,0 +1,5 @@
+{"scenario_id":"E2E-PRJ1","fixture_id":"EE-01","boundary":"Engine.run to persistent local service","cli_check":"test_three_project_slices_in_separate_processes","oracle":"one matching ticket, one created event, approved scope and completed state"}
+{"scenario_id":"E2E-PRJ2","fixture_id":"EE-02","boundary":"Engine.run to persistent local service","cli_check":"test_three_project_slices_in_separate_processes","oracle":"base assertions plus research_verified; sequential role slice only"}
+{"scenario_id":"E2E-PRJ3","fixture_id":"EE-03","boundary":"Engine.run reopen; additional CLI check uses two child processes","cli_check":"test_three_project_slices_in_separate_processes","oracle":"stable operation ID, one committed effect after 42-to-0 recovery"}
+{"scenario_id":"E2E-DEADLINE","fixture_id":"EE-04","boundary":"Engine.run to persistent local service","oracle":"deadline rejection at controlled time, no ticket or created event"}
+{"scenario_id":"E2E-UNKNOWN","fixture_id":"EE-05","boundary":"Engine.run to persistent local service","oracle":"one effect exists, failed verification leaves pending and no completed event"}

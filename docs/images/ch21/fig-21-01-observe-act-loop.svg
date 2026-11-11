@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1230" viewBox="0 0 1200 1230" role="img" aria-labelledby="title desc">
+<title id="title">观测有时效，行动有前提，结果需验收</title><desc id="desc">观测携带时间、范围和可用版本，经状态估计与权限前置检查后执行。反馈区分拒绝、受理、已执行和未知，未知结果先查询。重新观察并验证业务后置条件，未完成则在预算内继续。旧依据重观测，风险超界或无法确认的写入停止并交接。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="1230" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" font-size="29" text-anchor="start" fill="#203047" font-weight="700">观测有时效，行动有前提，结果需验收</text>
+<rect x="90" y="110" width="660" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="144" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">1  观测当前环境</text>
+<text x="420.0" y="175" font-size="20" text-anchor="middle" fill="#203047">采集时间、范围、版本能力与缺失项</text>
+<path d="M420 215V257" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="90" y="257" width="660" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="291" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">2  更新状态估计</text>
+<text x="420.0" y="322" font-size="20" text-anchor="middle" fill="#203047">确认事实与未知项分开；拒绝旧 episode</text>
+<path d="M420 362V405" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="90" y="405" width="660" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="439" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">3  检查目标、权限、时效与前置条件</text>
+<text x="420.0" y="470" font-size="20" text-anchor="middle" fill="#203047">能力不足时不承诺原子性；不能自行补造批准</text>
+<path d="M420 515V558" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="90" y="558" width="660" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="420.0" y="592" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">4  提交并跟踪动作</text>
+<text x="420.0" y="623" font-size="20" text-anchor="middle" fill="#203047">绑定依据和请求标识，保留在途动作</text>
+<path d="M420 663V706" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="90" y="706" width="660" height="110" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="420.0" y="740" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">5  区分受理、执行与未知结果</text>
+<text x="420.0" y="771" font-size="20" text-anchor="middle" fill="#203047">未知先查询；重试取决于真实幂等契约</text>
+<path d="M420 816V860" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<rect x="90" y="860" width="660" height="110" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="420.0" y="894" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">6  重观测并核对后置条件</text>
+<text x="420.0" y="925" font-size="20" text-anchor="middle" fill="#203047">达成目标且约束满足，才能交付成功</text>
+<path d="M90 910H48V162H90" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)" stroke-dasharray="8 6"/>
+<text x="40" y="1085" font-size="21" text-anchor="start" fill="#203047">未完成：只在预算、截止及安全条件允许时继续</text>
+<path d="M750 458H810V160H750" fill="none" stroke="#a96a16" stroke-width="2.8" marker-end="url(#amber)" stroke-dasharray="8 6"/>
+<text x="935" y="205" font-size="20" text-anchor="middle" fill="#a96a16">依据失效 → 重观测</text>
+<rect x="830" y="405" width="310" height="175" rx="12" fill="#fff2dc" stroke="#a96a16" stroke-width="2"/>
+<text x="985.0" y="439" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">停止与交接</text>
+<text x="985.0" y="470" font-size="20" text-anchor="middle" fill="#203047">风险／权限超界</text>
+<text x="985.0" y="498" font-size="20" text-anchor="middle" fill="#203047">无法确认写入结果</text>
+<text x="985.0" y="526" font-size="20" text-anchor="middle" fill="#203047">预算或截止到达</text>
+<text x="985.0" y="554" font-size="20" text-anchor="middle" fill="#203047">记录在途动作与接管者</text>
+<path d="M750 490H830" fill="none" stroke="#a96a16" stroke-width="2.8" marker-end="url(#amber)"/>
+<path d="M750 760H985V580" fill="none" stroke="#a96a16" stroke-width="2.8" marker-end="url(#amber)"/>
+<rect x="90" y="1125" width="1050" height="72" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="615.0" y="1159" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">停止发新动作 ≠ 在途动作已取消 ≠ 业务已完成</text>
+</g></svg>

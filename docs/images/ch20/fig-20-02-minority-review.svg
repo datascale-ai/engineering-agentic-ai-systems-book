@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930" role="img" aria-labelledby="title desc">
+<title id="title">少数意见必须被核对，不能被票数覆盖</title><desc id="desc">少数意见登记到主张和证据，核对真实性、版本和适用性。有效反证修订多数结论，不适用反证解释性驳回，未能核实的关键问题保留或交接。统一报告保留出处、回应和责任，不因少数身份自动接受或删除意见。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="930" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" font-size="29" text-anchor="start" fill="#203047" font-weight="700">少数意见必须被核对，不能被票数覆盖</text>
+<rect x="300" y="105" width="600" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="139" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">登记少数主张及其证据</text>
+<text x="600.0" y="170" font-size="20" text-anchor="middle" fill="#203047">保留初始判断、来源、版本与可改变的结论</text>
+<path d="M600 210V255" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="300" y="255" width="600" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="289" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">核对真实性、适用性与决定性</text>
+<text x="600.0" y="320" font-size="20" text-anchor="middle" fill="#203047">意见数量不决定证据效力</text>
+<path d="M600 360V400H210V450" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M600 360V400H600V450" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M600 360V400H990V450" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="50" y="450" width="320" height="145" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="210.0" y="484" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">有效反证</text>
+<text x="210.0" y="515" font-size="20" text-anchor="middle" fill="#203047">修订多数结论</text>
+<text x="210.0" y="543" font-size="20" text-anchor="middle" fill="#203047">保留撤回与修订原因</text>
+<text x="210.0" y="571" font-size="20" text-anchor="middle" fill="#203047">再次核验当前答案</text>
+<rect x="440" y="450" width="320" height="145" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="484" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">不适用或无支持</text>
+<text x="600.0" y="515" font-size="20" text-anchor="middle" fill="#203047">解释性驳回</text>
+<text x="600.0" y="543" font-size="20" text-anchor="middle" fill="#203047">引用具体条件和出处</text>
+<text x="600.0" y="571" font-size="20" text-anchor="middle" fill="#203047">不删除原意见记录</text>
+<rect x="830" y="450" width="320" height="145" rx="12" fill="#fff2dc" stroke="#a96a16" stroke-width="2"/>
+<text x="990.0" y="484" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">暂时无法核实</text>
+<text x="990.0" y="515" font-size="20" text-anchor="middle" fill="#203047">保留关键未知项</text>
+<text x="990.0" y="543" font-size="20" text-anchor="middle" fill="#203047">预算允许时补证</text>
+<text x="990.0" y="571" font-size="20" text-anchor="middle" fill="#203047">否则弃权／人工接管</text>
+<path d="M210 595V644H600V695" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M600 595V695" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M990 595V644H600" fill="none" stroke="#a96a16" stroke-width="2.8"/>
+<rect x="250" y="695" width="700" height="115" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="600.0" y="729" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">最终报告保留证据处理状态与责任</text>
+<text x="600.0" y="760" font-size="20" text-anchor="middle" fill="#203047">已修订／解释性驳回／未决：三种状态分别记录</text>
+<text x="600.0" y="788" font-size="20" text-anchor="middle" fill="#203047">停止讨论不代表外部业务已经完成</text>
+<text x="600" y="866" font-size="20" text-anchor="middle" fill="#203047">相同理由重复出现不自动触发新一轮；新的决定性证据才需要重开核对</text>
+</g></svg>

@@ -1,0 +1,42 @@
+{
+  "scope": "same-machine local teaching slices; PRJ-3 uses two child processes",
+  "passed": true,
+  "environment": {
+    "git_head": "b9ec320036497f710ac16c4d0ed4dac1ccf271ff",
+    "source_identity": "asset_inventory.json (includes uncommitted assets)",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "recorded_at_utc": "2026-11-11T03:45:04.230422+00:00"
+  },
+  "commands": [
+    {
+      "project": "PRJ-1",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "{\"project\": \"PRJ-1\", \"status\": \"completed\", \"ticket_count\": 1, \"oracle_passed\": true, \"simulated_crash\": false}",
+      "stderr": ""
+    },
+    {
+      "project": "PRJ-2",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "{\"project\": \"PRJ-2\", \"status\": \"completed\", \"ticket_count\": 1, \"oracle_passed\": true, \"simulated_crash\": false}",
+      "stderr": ""
+    },
+    {
+      "project": "PRJ-3",
+      "phase": "commit_then_exit",
+      "exit_code": 42,
+      "stdout": "{\"project\": \"PRJ-3\", \"status\": \"pending\", \"ticket_count\": 1, \"oracle_passed\": false, \"simulated_crash\": true}",
+      "stderr": ""
+    },
+    {
+      "project": "PRJ-3",
+      "phase": "resume",
+      "exit_code": 0,
+      "stdout": "{\"project\": \"PRJ-3\", \"status\": \"completed\", \"ticket_count\": 1, \"oracle_passed\": true, \"simulated_crash\": false}",
+      "stderr": ""
+    }
+  ]
+}

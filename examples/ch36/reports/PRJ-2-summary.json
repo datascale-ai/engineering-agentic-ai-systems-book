@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "ticket_count": 1,
+  "created_event_count": 1,
+  "operation_id": "T-DEMO-01:1:create",
+  "attempts": 1,
+  "checks": {
+    "status": true,
+    "ticket_count": true,
+    "created_event_count": true,
+    "payload": true,
+    "approved_scope": true
+  },
+  "oracle_passed": true,
+  "event_kinds": [
+    "session_created",
+    "proposal_accepted",
+    "research_verified",
+    "intent_saved",
+    "action_requested",
+    "postcondition_verified",
+    "completed"
+  ]
+}

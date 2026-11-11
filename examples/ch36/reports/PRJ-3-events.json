@@ -1,0 +1,59 @@
+[
+  {
+    "sequence": 1,
+    "kind": "session_created",
+    "details": {}
+  },
+  {
+    "sequence": 2,
+    "kind": "proposal_accepted",
+    "details": {
+      "reason": null
+    }
+  },
+  {
+    "sequence": 3,
+    "kind": "research_verified",
+    "details": {
+      "reason": null
+    }
+  },
+  {
+    "sequence": 4,
+    "kind": "intent_saved",
+    "details": {
+      "operation_id": "T-DEMO-01:1:create",
+      "payload_json": "{\"amount\":250,\"domestic\":true,\"policy_version\":\"P20-A@2.0\",\"receipt_valid\":true,\"revision\":1,\"task_id\":\"T-DEMO-01\"}"
+    }
+  },
+  {
+    "sequence": 5,
+    "kind": "action_requested",
+    "details": {
+      "attempts": 1
+    }
+  },
+  {
+    "sequence": 6,
+    "kind": "outcome_resolved",
+    "details": {
+      "ticket_id": 1
+    }
+  },
+  {
+    "sequence": 7,
+    "kind": "postcondition_verified",
+    "details": {
+      "reason": null,
+      "ticket_id": 1
+    }
+  },
+  {
+    "sequence": 8,
+    "kind": "completed",
+    "details": {
+      "reason": null,
+      "ticket_id": 1
+    }
+  }
+]

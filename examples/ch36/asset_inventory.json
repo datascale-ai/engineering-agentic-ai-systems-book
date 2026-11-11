@@ -1,0 +1,23 @@
+{
+  "schema_version": "inventory-1",
+  "reason": "reviewed-contract-and-line-ending-baseline",
+  "assets": {
+    ".gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "run.py": "2f80e00cb1e64691740b63bddb545cd7905dba489dc7f7877bf7e38668ac30cf",
+    "pyproject.toml": "0b042790d168aff98f00aac817e114f9369031cf070137c4eaff83aba850dcd6",
+    "uv.lock": "a9d005f1f4715f13dbdc4a0af2bbe2d3d40b4cd3fdbcab28c8de836ac24cc075",
+    "run_manifest.toml": "a4d96673a24ed4acd74dcfc73c5462a4b2d01753e65e7d6d9da39973bde374ea",
+    "src/book_reference/__init__.py": "ec24443107accb695c3cc9d5775574fddc551b365fc16877b8195888e070c6b2",
+    "src/book_reference/adapters.py": "0ce8621f48212d73e4e0e4dbf56351dced87903b331de4f6b2bf8cc18f63f7be",
+    "src/book_reference/cli.py": "45a6ae6c3e40b3bd95b0ca3c346a4f84162d2f2e25a91dcfa01e53fdf8347cfa",
+    "src/book_reference/contracts.py": "32dd72568148995a512359df71d71bb3eea005e00202e57afa201fecf550f0a9",
+    "src/book_reference/engine.py": "255dd4be1d23ccdb046fba017d1b5094040fb2b8ffa235f905a0bc00e7c0725f",
+    "src/book_reference/storage.py": "4024a4b673354f3571a3772baf58f548a8efacea82e6ded84eaf594bcaca6398",
+    "fixtures/data_card.md": "fac6b5c8a0e9dc9bd131ce52931fe29ed9a36b4cb787ae47ca9479c11d744b44",
+    "fixtures/expected.json": "029506ad03d865af3d2efceb53f21c59f27b0fc4aa1eb5a78e403c134a7a772b",
+    "fixtures/model_response.json": "b2f81d051b912b001239fce9a844d115a7003916da96eed7f364586648fe6e1b",
+    "fixtures/policy.json": "08fa721e8aaf0f901377521216ae28a85aa523c51c23269a7d7191f1c11da3ae",
+    "fixtures/prompt.txt": "0e60742dbf9d7abb7847b3d51fc26356aff65c5208261d59b98f537ac69eef72",
+    "fixtures/task.json": "6aa17c453bb78a588840ae7abebae6159bcf90bea2d668582f5c2639370eb88b"
+  }
+}

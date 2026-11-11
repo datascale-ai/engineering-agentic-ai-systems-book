@@ -22,7 +22,7 @@ test = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "examples/ch37/tests"]
 addopts = "-q"
 
 [tool.uv]

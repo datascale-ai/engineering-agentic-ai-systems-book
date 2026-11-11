@@ -1,0 +1,21 @@
+schema_version = "reference-demo-1"
+baseline_id = "ch36-local-0.1"
+projects = ["PRJ-1", "PRJ-2", "PRJ-3"]
+
+[environment]
+python_minor = "3.12"
+lockfile = "uv.lock"
+runtime = "stdlib-sqlite"
+
+[inputs]
+task = "fixtures/task.json"
+policy = "fixtures/policy.json"
+model_response = "fixtures/model_response.json"
+prompt = "fixtures/prompt.txt"
+expected = "fixtures/expected.json"
+
+[budget]
+max_attempts = 2
+deadline_ms = 5000
+clock_start_ms = 1000
+approval_expires_at_ms = 4000

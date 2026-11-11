@@ -1,0 +1,11 @@
+{
+  "schema_version": "demo-1",
+  "task_id": "T-DEMO-01",
+  "tenant": "course",
+  "revision": 1,
+  "assignment_epoch": 1,
+  "amount": 250,
+  "domestic": true,
+  "receipt_valid": true,
+  "policy_version": "P20-A@2.0"
+}

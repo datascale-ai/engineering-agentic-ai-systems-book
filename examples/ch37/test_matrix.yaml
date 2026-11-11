@@ -1,0 +1,41 @@
+schema_version: test-matrix-1
+baseline: ch36-local-0.1
+case_source: fixtures/cases.jsonl
+implementation: ../ch36/src/book_reference
+groups:
+  SC:
+    count: 5
+    layer: unit
+    responsibility: exact task fields, types and schema version
+  PA:
+    count: 5
+    layer: integration
+    responsibility: policy rejection and trusted local grant scope
+  TO:
+    count: 5
+    layer: integration
+    responsibility: idempotency, tenant scope and committed response loss
+  SE:
+    count: 5
+    layer: integration
+    responsibility: reopen durable sessions, replay and cancellation
+  CO:
+    count: 5
+    layer: unit-and-integration
+    responsibility: revision, epoch, local duplicate gate and unsupported proposals
+  EE:
+    count: 5
+    layer: application-to-local-persistence
+    responsibility: project slices, deadline and unknown postcondition
+additional:
+  cli: test_reproduction.py::test_three_project_slices_in_separate_processes
+  regression: test_behaviour.py::test_regression_new_key_on_retry_is_detected
+  bounded_sequences: 27
+  fixture_registry: test_behaviour.py::test_fixture_ids_are_unique_and_classified
+oracle:
+  method: independent SQLite connections and explicit expected business fields
+  assertions: [ticket_count, created_event_count, payload, approved_scope, state, event_order]
+limitations:
+  - no real model, authentication server or remote network
+  - no concurrent worker or power-loss validation
+  - no Hypothesis run or coverage measurement

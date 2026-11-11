@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-11",
+  "scope": "same-machine clean copy of current delivery files; not a released Git tree or independent reproduction",
+  "excluded": [
+    "old virtual environments",
+    "old outputs",
+    "old reports",
+    "caches",
+    "credentials"
+  ],
+  "asset_inventory_sha256": "6b510e55982e263d11ede41226f0be2a77ab20ab8ad1dab8657dca7d717ff9e7",
+  "baseline_asset_count": 17,
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "sync",
+        "--project",
+        "examples/ch36",
+        "--python",
+        "3.12",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: `VIRTUAL_ENV=E:\\AgentShu\\engineering-agentic-ai-systems-book\\.venv` does not match the project environment path `examples\\ch36\\.venv` and will be ignored; use `--active` to target the active environment instead\nUsing CPython 3.12.14\nCreating virtual environment at: examples\\ch36\\.venv\nResolved 1 package in 1ms\nChecked in 0.01ms\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--project",
+        "examples/ch36",
+        "--python",
+        "3.12",
+        "--locked",
+        "--offline",
+        "python",
+        "examples/ch36/run.py",
+        "reproduce",
+        "--output",
+        "outputs/reproduction"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"passed\": true, \"project_slices\": 3}\n",
+      "stderr": "warning: `VIRTUAL_ENV=E:\\AgentShu\\engineering-agentic-ai-systems-book\\.venv` does not match the project environment path `examples\\ch36\\.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "sync",
+        "--python",
+        "3.12",
+        "--extra",
+        "test",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: `VIRTUAL_ENV=E:\\AgentShu\\engineering-agentic-ai-systems-book\\.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nUsing CPython 3.12.14\nCreating virtual environment at: .venv\nResolved 35 packages in 1ms\nwarning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.\n         If the cache and target directories are on different filesystems, hardlinking may not be supported.\n         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.\nInstalled 34 packages in 33.37s\n + babel==2.18.0\n + certifi==2026.7.22\n + charset-normalizer==3.5.1\n + click==8.5.0\n + colorama==0.4.6\n + ghp-import==2.1.0\n + idna==3.19\n + iniconfig==2.3.0\n + jinja2==3.1.6\n + markdown==3.10.3\n + markupsafe==3.0.3\n + mergedeep==1.3.4\n + mkdocs==1.6.1\n + mkdocs-get-deps==0.2.2\n + mkdocs-glightbox==0.4.0\n + mkdocs-material==9.5.39\n + mkdocs-material-extensions==1.3.1\n + mkdocs-static-i18n==1.2.3\n + packaging==26.3\n + paginate==0.5.7\n + pathspec==1.1.1\n + platformdirs==4.11.8\n + pluggy==1.6.0\n + pygments==2.19.2\n + pymdown-extensions==10.11.2\n + pytest==8.3.5\n + python-dateutil==2.9.0.post0\n + pyyaml==6.0.2\n + pyyaml-env-tag==1.1\n + regex==2026.9.3\n + requests==2.34.2\n + six==1.17.0\n + urllib3==2.7.0\n + watchdog==6.0.0\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--offline",
+        "pytest",
+        "examples/ch37/tests",
+        "--junit-xml=outputs/ch37-clean-junit.xml"
+      ],
+      "exit_code": 0,
+      "stdout": ".....................................................................    [100%]\n- generated xml file: E:\\AgentShu\\engineering-agentic-ai-systems-book\\tmp\\ch36_37_clean_20261111\\outputs\\ch37-clean-junit.xml -\n69 passed in 7.04s\n",
+      "stderr": "warning: `VIRTUAL_ENV=E:\\AgentShu\\engineering-agentic-ai-systems-book\\.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    }
+  ],
+  "passed": true
+}
