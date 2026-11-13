@@ -1,3 +1,11 @@
+---
+title: "第3章 智能体架构基础"
+chapter: 3
+part: 1
+owner: "A"
+status: draft
+---
+
 # 第3章 智能体架构基础
 
 ## 摘要
