@@ -1,0 +1,32 @@
+{
+  "kind": "deterministic_selection",
+  "summary": {
+    "none": {
+      "cases": 30,
+      "correct": 0,
+      "cross_user": 0,
+      "stale": 0
+    },
+    "unfiltered_latest": {
+      "cases": 30,
+      "correct": 20,
+      "cross_user": 16,
+      "stale": 6
+    },
+    "scoped": {
+      "cases": 30,
+      "correct": 30,
+      "cross_user": 0,
+      "stale": 0
+    }
+  },
+  "deletion": {
+    "memory_id": "u1:base",
+    "primary": "absent",
+    "index": "absent",
+    "cache": "invalidated",
+    "backup": "retained_until_expiry",
+    "restore_filter": "tombstone_required",
+    "recall_after_restore": true
+  }
+}

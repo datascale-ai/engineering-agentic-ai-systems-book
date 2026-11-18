@@ -1,0 +1,2831 @@
+{
+  "kind": "declared_cost_scenarios_and_local_authorization",
+  "checks": {
+    "A_read_A": true,
+    "B_denied_A": true,
+    "revocation_after_cached_read": true
+  },
+  "flow_simulation": [
+    {
+      "mode": "manual",
+      "review_minutes": 4,
+      "tasks": 60,
+      "mean_elapsed_minutes": 12.0,
+      "mean_wait_minutes": 0.0,
+      "human_review_minutes": 240,
+      "peak_waiting": 0,
+      "rows": [
+        {
+          "task_id": "S01",
+          "arrival": 0,
+          "review_ready": 8,
+          "review_start": 8,
+          "finish": 12,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S02",
+          "arrival": 5,
+          "review_ready": 13,
+          "review_start": 13,
+          "finish": 17,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S03",
+          "arrival": 10,
+          "review_ready": 18,
+          "review_start": 18,
+          "finish": 22,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S04",
+          "arrival": 15,
+          "review_ready": 23,
+          "review_start": 23,
+          "finish": 27,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S05",
+          "arrival": 20,
+          "review_ready": 28,
+          "review_start": 28,
+          "finish": 32,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S06",
+          "arrival": 25,
+          "review_ready": 33,
+          "review_start": 33,
+          "finish": 37,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S07",
+          "arrival": 30,
+          "review_ready": 38,
+          "review_start": 38,
+          "finish": 42,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S08",
+          "arrival": 35,
+          "review_ready": 43,
+          "review_start": 43,
+          "finish": 47,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S09",
+          "arrival": 40,
+          "review_ready": 48,
+          "review_start": 48,
+          "finish": 52,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S10",
+          "arrival": 45,
+          "review_ready": 53,
+          "review_start": 53,
+          "finish": 57,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S11",
+          "arrival": 50,
+          "review_ready": 58,
+          "review_start": 58,
+          "finish": 62,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S12",
+          "arrival": 55,
+          "review_ready": 63,
+          "review_start": 63,
+          "finish": 67,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S13",
+          "arrival": 60,
+          "review_ready": 68,
+          "review_start": 68,
+          "finish": 72,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S14",
+          "arrival": 65,
+          "review_ready": 73,
+          "review_start": 73,
+          "finish": 77,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S15",
+          "arrival": 70,
+          "review_ready": 78,
+          "review_start": 78,
+          "finish": 82,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S16",
+          "arrival": 75,
+          "review_ready": 83,
+          "review_start": 83,
+          "finish": 87,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S17",
+          "arrival": 80,
+          "review_ready": 88,
+          "review_start": 88,
+          "finish": 92,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S18",
+          "arrival": 85,
+          "review_ready": 93,
+          "review_start": 93,
+          "finish": 97,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S19",
+          "arrival": 90,
+          "review_ready": 98,
+          "review_start": 98,
+          "finish": 102,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S20",
+          "arrival": 95,
+          "review_ready": 103,
+          "review_start": 103,
+          "finish": 107,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S21",
+          "arrival": 100,
+          "review_ready": 108,
+          "review_start": 108,
+          "finish": 112,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S22",
+          "arrival": 105,
+          "review_ready": 113,
+          "review_start": 113,
+          "finish": 117,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S23",
+          "arrival": 110,
+          "review_ready": 118,
+          "review_start": 118,
+          "finish": 122,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S24",
+          "arrival": 115,
+          "review_ready": 123,
+          "review_start": 123,
+          "finish": 127,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S25",
+          "arrival": 120,
+          "review_ready": 128,
+          "review_start": 128,
+          "finish": 132,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S26",
+          "arrival": 125,
+          "review_ready": 133,
+          "review_start": 133,
+          "finish": 137,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S27",
+          "arrival": 130,
+          "review_ready": 138,
+          "review_start": 138,
+          "finish": 142,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S28",
+          "arrival": 135,
+          "review_ready": 143,
+          "review_start": 143,
+          "finish": 147,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S29",
+          "arrival": 140,
+          "review_ready": 148,
+          "review_start": 148,
+          "finish": 152,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S30",
+          "arrival": 145,
+          "review_ready": 153,
+          "review_start": 153,
+          "finish": 157,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S31",
+          "arrival": 150,
+          "review_ready": 158,
+          "review_start": 158,
+          "finish": 162,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S32",
+          "arrival": 155,
+          "review_ready": 163,
+          "review_start": 163,
+          "finish": 167,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S33",
+          "arrival": 160,
+          "review_ready": 168,
+          "review_start": 168,
+          "finish": 172,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S34",
+          "arrival": 165,
+          "review_ready": 173,
+          "review_start": 173,
+          "finish": 177,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S35",
+          "arrival": 170,
+          "review_ready": 178,
+          "review_start": 178,
+          "finish": 182,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S36",
+          "arrival": 175,
+          "review_ready": 183,
+          "review_start": 183,
+          "finish": 187,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S37",
+          "arrival": 180,
+          "review_ready": 188,
+          "review_start": 188,
+          "finish": 192,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S38",
+          "arrival": 185,
+          "review_ready": 193,
+          "review_start": 193,
+          "finish": 197,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S39",
+          "arrival": 190,
+          "review_ready": 198,
+          "review_start": 198,
+          "finish": 202,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S40",
+          "arrival": 195,
+          "review_ready": 203,
+          "review_start": 203,
+          "finish": 207,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S41",
+          "arrival": 200,
+          "review_ready": 208,
+          "review_start": 208,
+          "finish": 212,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S42",
+          "arrival": 205,
+          "review_ready": 213,
+          "review_start": 213,
+          "finish": 217,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S43",
+          "arrival": 210,
+          "review_ready": 218,
+          "review_start": 218,
+          "finish": 222,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S44",
+          "arrival": 215,
+          "review_ready": 223,
+          "review_start": 223,
+          "finish": 227,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S45",
+          "arrival": 220,
+          "review_ready": 228,
+          "review_start": 228,
+          "finish": 232,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S46",
+          "arrival": 225,
+          "review_ready": 233,
+          "review_start": 233,
+          "finish": 237,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S47",
+          "arrival": 230,
+          "review_ready": 238,
+          "review_start": 238,
+          "finish": 242,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S48",
+          "arrival": 235,
+          "review_ready": 243,
+          "review_start": 243,
+          "finish": 247,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S49",
+          "arrival": 240,
+          "review_ready": 248,
+          "review_start": 248,
+          "finish": 252,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S50",
+          "arrival": 245,
+          "review_ready": 253,
+          "review_start": 253,
+          "finish": 257,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S51",
+          "arrival": 250,
+          "review_ready": 258,
+          "review_start": 258,
+          "finish": 262,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S52",
+          "arrival": 255,
+          "review_ready": 263,
+          "review_start": 263,
+          "finish": 267,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S53",
+          "arrival": 260,
+          "review_ready": 268,
+          "review_start": 268,
+          "finish": 272,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S54",
+          "arrival": 265,
+          "review_ready": 273,
+          "review_start": 273,
+          "finish": 277,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S55",
+          "arrival": 270,
+          "review_ready": 278,
+          "review_start": 278,
+          "finish": 282,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S56",
+          "arrival": 275,
+          "review_ready": 283,
+          "review_start": 283,
+          "finish": 287,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S57",
+          "arrival": 280,
+          "review_ready": 288,
+          "review_start": 288,
+          "finish": 292,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S58",
+          "arrival": 285,
+          "review_ready": 293,
+          "review_start": 293,
+          "finish": 297,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S59",
+          "arrival": 290,
+          "review_ready": 298,
+          "review_start": 298,
+          "finish": 302,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S60",
+          "arrival": 295,
+          "review_ready": 303,
+          "review_start": 303,
+          "finish": 307,
+          "wait_minutes": 0,
+          "elapsed_minutes": 12
+        }
+      ]
+    },
+    {
+      "mode": "assist",
+      "review_minutes": 2,
+      "tasks": 60,
+      "mean_elapsed_minutes": 6.0,
+      "mean_wait_minutes": 0.0,
+      "human_review_minutes": 120,
+      "peak_waiting": 0,
+      "rows": [
+        {
+          "task_id": "S01",
+          "arrival": 0,
+          "review_ready": 4,
+          "review_start": 4,
+          "finish": 6,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S02",
+          "arrival": 5,
+          "review_ready": 9,
+          "review_start": 9,
+          "finish": 11,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S03",
+          "arrival": 10,
+          "review_ready": 14,
+          "review_start": 14,
+          "finish": 16,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S04",
+          "arrival": 15,
+          "review_ready": 19,
+          "review_start": 19,
+          "finish": 21,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S05",
+          "arrival": 20,
+          "review_ready": 24,
+          "review_start": 24,
+          "finish": 26,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S06",
+          "arrival": 25,
+          "review_ready": 29,
+          "review_start": 29,
+          "finish": 31,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S07",
+          "arrival": 30,
+          "review_ready": 34,
+          "review_start": 34,
+          "finish": 36,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S08",
+          "arrival": 35,
+          "review_ready": 39,
+          "review_start": 39,
+          "finish": 41,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S09",
+          "arrival": 40,
+          "review_ready": 44,
+          "review_start": 44,
+          "finish": 46,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S10",
+          "arrival": 45,
+          "review_ready": 49,
+          "review_start": 49,
+          "finish": 51,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S11",
+          "arrival": 50,
+          "review_ready": 54,
+          "review_start": 54,
+          "finish": 56,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S12",
+          "arrival": 55,
+          "review_ready": 59,
+          "review_start": 59,
+          "finish": 61,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S13",
+          "arrival": 60,
+          "review_ready": 64,
+          "review_start": 64,
+          "finish": 66,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S14",
+          "arrival": 65,
+          "review_ready": 69,
+          "review_start": 69,
+          "finish": 71,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S15",
+          "arrival": 70,
+          "review_ready": 74,
+          "review_start": 74,
+          "finish": 76,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S16",
+          "arrival": 75,
+          "review_ready": 79,
+          "review_start": 79,
+          "finish": 81,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S17",
+          "arrival": 80,
+          "review_ready": 84,
+          "review_start": 84,
+          "finish": 86,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S18",
+          "arrival": 85,
+          "review_ready": 89,
+          "review_start": 89,
+          "finish": 91,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S19",
+          "arrival": 90,
+          "review_ready": 94,
+          "review_start": 94,
+          "finish": 96,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S20",
+          "arrival": 95,
+          "review_ready": 99,
+          "review_start": 99,
+          "finish": 101,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S21",
+          "arrival": 100,
+          "review_ready": 104,
+          "review_start": 104,
+          "finish": 106,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S22",
+          "arrival": 105,
+          "review_ready": 109,
+          "review_start": 109,
+          "finish": 111,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S23",
+          "arrival": 110,
+          "review_ready": 114,
+          "review_start": 114,
+          "finish": 116,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S24",
+          "arrival": 115,
+          "review_ready": 119,
+          "review_start": 119,
+          "finish": 121,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S25",
+          "arrival": 120,
+          "review_ready": 124,
+          "review_start": 124,
+          "finish": 126,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S26",
+          "arrival": 125,
+          "review_ready": 129,
+          "review_start": 129,
+          "finish": 131,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S27",
+          "arrival": 130,
+          "review_ready": 134,
+          "review_start": 134,
+          "finish": 136,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S28",
+          "arrival": 135,
+          "review_ready": 139,
+          "review_start": 139,
+          "finish": 141,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S29",
+          "arrival": 140,
+          "review_ready": 144,
+          "review_start": 144,
+          "finish": 146,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S30",
+          "arrival": 145,
+          "review_ready": 149,
+          "review_start": 149,
+          "finish": 151,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S31",
+          "arrival": 150,
+          "review_ready": 154,
+          "review_start": 154,
+          "finish": 156,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S32",
+          "arrival": 155,
+          "review_ready": 159,
+          "review_start": 159,
+          "finish": 161,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S33",
+          "arrival": 160,
+          "review_ready": 164,
+          "review_start": 164,
+          "finish": 166,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S34",
+          "arrival": 165,
+          "review_ready": 169,
+          "review_start": 169,
+          "finish": 171,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S35",
+          "arrival": 170,
+          "review_ready": 174,
+          "review_start": 174,
+          "finish": 176,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S36",
+          "arrival": 175,
+          "review_ready": 179,
+          "review_start": 179,
+          "finish": 181,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S37",
+          "arrival": 180,
+          "review_ready": 184,
+          "review_start": 184,
+          "finish": 186,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S38",
+          "arrival": 185,
+          "review_ready": 189,
+          "review_start": 189,
+          "finish": 191,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S39",
+          "arrival": 190,
+          "review_ready": 194,
+          "review_start": 194,
+          "finish": 196,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S40",
+          "arrival": 195,
+          "review_ready": 199,
+          "review_start": 199,
+          "finish": 201,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S41",
+          "arrival": 200,
+          "review_ready": 204,
+          "review_start": 204,
+          "finish": 206,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S42",
+          "arrival": 205,
+          "review_ready": 209,
+          "review_start": 209,
+          "finish": 211,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S43",
+          "arrival": 210,
+          "review_ready": 214,
+          "review_start": 214,
+          "finish": 216,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S44",
+          "arrival": 215,
+          "review_ready": 219,
+          "review_start": 219,
+          "finish": 221,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S45",
+          "arrival": 220,
+          "review_ready": 224,
+          "review_start": 224,
+          "finish": 226,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S46",
+          "arrival": 225,
+          "review_ready": 229,
+          "review_start": 229,
+          "finish": 231,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S47",
+          "arrival": 230,
+          "review_ready": 234,
+          "review_start": 234,
+          "finish": 236,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S48",
+          "arrival": 235,
+          "review_ready": 239,
+          "review_start": 239,
+          "finish": 241,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S49",
+          "arrival": 240,
+          "review_ready": 244,
+          "review_start": 244,
+          "finish": 246,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S50",
+          "arrival": 245,
+          "review_ready": 249,
+          "review_start": 249,
+          "finish": 251,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S51",
+          "arrival": 250,
+          "review_ready": 254,
+          "review_start": 254,
+          "finish": 256,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S52",
+          "arrival": 255,
+          "review_ready": 259,
+          "review_start": 259,
+          "finish": 261,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S53",
+          "arrival": 260,
+          "review_ready": 264,
+          "review_start": 264,
+          "finish": 266,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S54",
+          "arrival": 265,
+          "review_ready": 269,
+          "review_start": 269,
+          "finish": 271,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S55",
+          "arrival": 270,
+          "review_ready": 274,
+          "review_start": 274,
+          "finish": 276,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S56",
+          "arrival": 275,
+          "review_ready": 279,
+          "review_start": 279,
+          "finish": 281,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S57",
+          "arrival": 280,
+          "review_ready": 284,
+          "review_start": 284,
+          "finish": 286,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S58",
+          "arrival": 285,
+          "review_ready": 289,
+          "review_start": 289,
+          "finish": 291,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S59",
+          "arrival": 290,
+          "review_ready": 294,
+          "review_start": 294,
+          "finish": 296,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        },
+        {
+          "task_id": "S60",
+          "arrival": 295,
+          "review_ready": 299,
+          "review_start": 299,
+          "finish": 301,
+          "wait_minutes": 0,
+          "elapsed_minutes": 6
+        }
+      ]
+    },
+    {
+      "mode": "approved_action",
+      "review_minutes": 2,
+      "tasks": 60,
+      "mean_elapsed_minutes": 4.0,
+      "mean_wait_minutes": 0.0,
+      "human_review_minutes": 120,
+      "peak_waiting": 0,
+      "rows": [
+        {
+          "task_id": "S01",
+          "arrival": 0,
+          "review_ready": 2,
+          "review_start": 2,
+          "finish": 4,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S02",
+          "arrival": 5,
+          "review_ready": 7,
+          "review_start": 7,
+          "finish": 9,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S03",
+          "arrival": 10,
+          "review_ready": 12,
+          "review_start": 12,
+          "finish": 14,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S04",
+          "arrival": 15,
+          "review_ready": 17,
+          "review_start": 17,
+          "finish": 19,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S05",
+          "arrival": 20,
+          "review_ready": 22,
+          "review_start": 22,
+          "finish": 24,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S06",
+          "arrival": 25,
+          "review_ready": 27,
+          "review_start": 27,
+          "finish": 29,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S07",
+          "arrival": 30,
+          "review_ready": 32,
+          "review_start": 32,
+          "finish": 34,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S08",
+          "arrival": 35,
+          "review_ready": 37,
+          "review_start": 37,
+          "finish": 39,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S09",
+          "arrival": 40,
+          "review_ready": 42,
+          "review_start": 42,
+          "finish": 44,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S10",
+          "arrival": 45,
+          "review_ready": 47,
+          "review_start": 47,
+          "finish": 49,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S11",
+          "arrival": 50,
+          "review_ready": 52,
+          "review_start": 52,
+          "finish": 54,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S12",
+          "arrival": 55,
+          "review_ready": 57,
+          "review_start": 57,
+          "finish": 59,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S13",
+          "arrival": 60,
+          "review_ready": 62,
+          "review_start": 62,
+          "finish": 64,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S14",
+          "arrival": 65,
+          "review_ready": 67,
+          "review_start": 67,
+          "finish": 69,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S15",
+          "arrival": 70,
+          "review_ready": 72,
+          "review_start": 72,
+          "finish": 74,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S16",
+          "arrival": 75,
+          "review_ready": 77,
+          "review_start": 77,
+          "finish": 79,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S17",
+          "arrival": 80,
+          "review_ready": 82,
+          "review_start": 82,
+          "finish": 84,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S18",
+          "arrival": 85,
+          "review_ready": 87,
+          "review_start": 87,
+          "finish": 89,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S19",
+          "arrival": 90,
+          "review_ready": 92,
+          "review_start": 92,
+          "finish": 94,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S20",
+          "arrival": 95,
+          "review_ready": 97,
+          "review_start": 97,
+          "finish": 99,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S21",
+          "arrival": 100,
+          "review_ready": 102,
+          "review_start": 102,
+          "finish": 104,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S22",
+          "arrival": 105,
+          "review_ready": 107,
+          "review_start": 107,
+          "finish": 109,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S23",
+          "arrival": 110,
+          "review_ready": 112,
+          "review_start": 112,
+          "finish": 114,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S24",
+          "arrival": 115,
+          "review_ready": 117,
+          "review_start": 117,
+          "finish": 119,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S25",
+          "arrival": 120,
+          "review_ready": 122,
+          "review_start": 122,
+          "finish": 124,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S26",
+          "arrival": 125,
+          "review_ready": 127,
+          "review_start": 127,
+          "finish": 129,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S27",
+          "arrival": 130,
+          "review_ready": 132,
+          "review_start": 132,
+          "finish": 134,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S28",
+          "arrival": 135,
+          "review_ready": 137,
+          "review_start": 137,
+          "finish": 139,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S29",
+          "arrival": 140,
+          "review_ready": 142,
+          "review_start": 142,
+          "finish": 144,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S30",
+          "arrival": 145,
+          "review_ready": 147,
+          "review_start": 147,
+          "finish": 149,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S31",
+          "arrival": 150,
+          "review_ready": 152,
+          "review_start": 152,
+          "finish": 154,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S32",
+          "arrival": 155,
+          "review_ready": 157,
+          "review_start": 157,
+          "finish": 159,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S33",
+          "arrival": 160,
+          "review_ready": 162,
+          "review_start": 162,
+          "finish": 164,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S34",
+          "arrival": 165,
+          "review_ready": 167,
+          "review_start": 167,
+          "finish": 169,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S35",
+          "arrival": 170,
+          "review_ready": 172,
+          "review_start": 172,
+          "finish": 174,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S36",
+          "arrival": 175,
+          "review_ready": 177,
+          "review_start": 177,
+          "finish": 179,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S37",
+          "arrival": 180,
+          "review_ready": 182,
+          "review_start": 182,
+          "finish": 184,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S38",
+          "arrival": 185,
+          "review_ready": 187,
+          "review_start": 187,
+          "finish": 189,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S39",
+          "arrival": 190,
+          "review_ready": 192,
+          "review_start": 192,
+          "finish": 194,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S40",
+          "arrival": 195,
+          "review_ready": 197,
+          "review_start": 197,
+          "finish": 199,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S41",
+          "arrival": 200,
+          "review_ready": 202,
+          "review_start": 202,
+          "finish": 204,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S42",
+          "arrival": 205,
+          "review_ready": 207,
+          "review_start": 207,
+          "finish": 209,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S43",
+          "arrival": 210,
+          "review_ready": 212,
+          "review_start": 212,
+          "finish": 214,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S44",
+          "arrival": 215,
+          "review_ready": 217,
+          "review_start": 217,
+          "finish": 219,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S45",
+          "arrival": 220,
+          "review_ready": 222,
+          "review_start": 222,
+          "finish": 224,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S46",
+          "arrival": 225,
+          "review_ready": 227,
+          "review_start": 227,
+          "finish": 229,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S47",
+          "arrival": 230,
+          "review_ready": 232,
+          "review_start": 232,
+          "finish": 234,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S48",
+          "arrival": 235,
+          "review_ready": 237,
+          "review_start": 237,
+          "finish": 239,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S49",
+          "arrival": 240,
+          "review_ready": 242,
+          "review_start": 242,
+          "finish": 244,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S50",
+          "arrival": 245,
+          "review_ready": 247,
+          "review_start": 247,
+          "finish": 249,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S51",
+          "arrival": 250,
+          "review_ready": 252,
+          "review_start": 252,
+          "finish": 254,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S52",
+          "arrival": 255,
+          "review_ready": 257,
+          "review_start": 257,
+          "finish": 259,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S53",
+          "arrival": 260,
+          "review_ready": 262,
+          "review_start": 262,
+          "finish": 264,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S54",
+          "arrival": 265,
+          "review_ready": 267,
+          "review_start": 267,
+          "finish": 269,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S55",
+          "arrival": 270,
+          "review_ready": 272,
+          "review_start": 272,
+          "finish": 274,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S56",
+          "arrival": 275,
+          "review_ready": 277,
+          "review_start": 277,
+          "finish": 279,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S57",
+          "arrival": 280,
+          "review_ready": 282,
+          "review_start": 282,
+          "finish": 284,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S58",
+          "arrival": 285,
+          "review_ready": 287,
+          "review_start": 287,
+          "finish": 289,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S59",
+          "arrival": 290,
+          "review_ready": 292,
+          "review_start": 292,
+          "finish": 294,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        },
+        {
+          "task_id": "S60",
+          "arrival": 295,
+          "review_ready": 297,
+          "review_start": 297,
+          "finish": 299,
+          "wait_minutes": 0,
+          "elapsed_minutes": 4
+        }
+      ]
+    },
+    {
+      "mode": "assist",
+      "review_minutes": 6,
+      "tasks": 60,
+      "mean_elapsed_minutes": 39.5,
+      "mean_wait_minutes": 29.5,
+      "human_review_minutes": 360,
+      "peak_waiting": 10,
+      "rows": [
+        {
+          "task_id": "S01",
+          "arrival": 0,
+          "review_ready": 4,
+          "review_start": 4,
+          "finish": 10,
+          "wait_minutes": 0,
+          "elapsed_minutes": 10
+        },
+        {
+          "task_id": "S02",
+          "arrival": 5,
+          "review_ready": 9,
+          "review_start": 10,
+          "finish": 16,
+          "wait_minutes": 1,
+          "elapsed_minutes": 11
+        },
+        {
+          "task_id": "S03",
+          "arrival": 10,
+          "review_ready": 14,
+          "review_start": 16,
+          "finish": 22,
+          "wait_minutes": 2,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S04",
+          "arrival": 15,
+          "review_ready": 19,
+          "review_start": 22,
+          "finish": 28,
+          "wait_minutes": 3,
+          "elapsed_minutes": 13
+        },
+        {
+          "task_id": "S05",
+          "arrival": 20,
+          "review_ready": 24,
+          "review_start": 28,
+          "finish": 34,
+          "wait_minutes": 4,
+          "elapsed_minutes": 14
+        },
+        {
+          "task_id": "S06",
+          "arrival": 25,
+          "review_ready": 29,
+          "review_start": 34,
+          "finish": 40,
+          "wait_minutes": 5,
+          "elapsed_minutes": 15
+        },
+        {
+          "task_id": "S07",
+          "arrival": 30,
+          "review_ready": 34,
+          "review_start": 40,
+          "finish": 46,
+          "wait_minutes": 6,
+          "elapsed_minutes": 16
+        },
+        {
+          "task_id": "S08",
+          "arrival": 35,
+          "review_ready": 39,
+          "review_start": 46,
+          "finish": 52,
+          "wait_minutes": 7,
+          "elapsed_minutes": 17
+        },
+        {
+          "task_id": "S09",
+          "arrival": 40,
+          "review_ready": 44,
+          "review_start": 52,
+          "finish": 58,
+          "wait_minutes": 8,
+          "elapsed_minutes": 18
+        },
+        {
+          "task_id": "S10",
+          "arrival": 45,
+          "review_ready": 49,
+          "review_start": 58,
+          "finish": 64,
+          "wait_minutes": 9,
+          "elapsed_minutes": 19
+        },
+        {
+          "task_id": "S11",
+          "arrival": 50,
+          "review_ready": 54,
+          "review_start": 64,
+          "finish": 70,
+          "wait_minutes": 10,
+          "elapsed_minutes": 20
+        },
+        {
+          "task_id": "S12",
+          "arrival": 55,
+          "review_ready": 59,
+          "review_start": 70,
+          "finish": 76,
+          "wait_minutes": 11,
+          "elapsed_minutes": 21
+        },
+        {
+          "task_id": "S13",
+          "arrival": 60,
+          "review_ready": 64,
+          "review_start": 76,
+          "finish": 82,
+          "wait_minutes": 12,
+          "elapsed_minutes": 22
+        },
+        {
+          "task_id": "S14",
+          "arrival": 65,
+          "review_ready": 69,
+          "review_start": 82,
+          "finish": 88,
+          "wait_minutes": 13,
+          "elapsed_minutes": 23
+        },
+        {
+          "task_id": "S15",
+          "arrival": 70,
+          "review_ready": 74,
+          "review_start": 88,
+          "finish": 94,
+          "wait_minutes": 14,
+          "elapsed_minutes": 24
+        },
+        {
+          "task_id": "S16",
+          "arrival": 75,
+          "review_ready": 79,
+          "review_start": 94,
+          "finish": 100,
+          "wait_minutes": 15,
+          "elapsed_minutes": 25
+        },
+        {
+          "task_id": "S17",
+          "arrival": 80,
+          "review_ready": 84,
+          "review_start": 100,
+          "finish": 106,
+          "wait_minutes": 16,
+          "elapsed_minutes": 26
+        },
+        {
+          "task_id": "S18",
+          "arrival": 85,
+          "review_ready": 89,
+          "review_start": 106,
+          "finish": 112,
+          "wait_minutes": 17,
+          "elapsed_minutes": 27
+        },
+        {
+          "task_id": "S19",
+          "arrival": 90,
+          "review_ready": 94,
+          "review_start": 112,
+          "finish": 118,
+          "wait_minutes": 18,
+          "elapsed_minutes": 28
+        },
+        {
+          "task_id": "S20",
+          "arrival": 95,
+          "review_ready": 99,
+          "review_start": 118,
+          "finish": 124,
+          "wait_minutes": 19,
+          "elapsed_minutes": 29
+        },
+        {
+          "task_id": "S21",
+          "arrival": 100,
+          "review_ready": 104,
+          "review_start": 124,
+          "finish": 130,
+          "wait_minutes": 20,
+          "elapsed_minutes": 30
+        },
+        {
+          "task_id": "S22",
+          "arrival": 105,
+          "review_ready": 109,
+          "review_start": 130,
+          "finish": 136,
+          "wait_minutes": 21,
+          "elapsed_minutes": 31
+        },
+        {
+          "task_id": "S23",
+          "arrival": 110,
+          "review_ready": 114,
+          "review_start": 136,
+          "finish": 142,
+          "wait_minutes": 22,
+          "elapsed_minutes": 32
+        },
+        {
+          "task_id": "S24",
+          "arrival": 115,
+          "review_ready": 119,
+          "review_start": 142,
+          "finish": 148,
+          "wait_minutes": 23,
+          "elapsed_minutes": 33
+        },
+        {
+          "task_id": "S25",
+          "arrival": 120,
+          "review_ready": 124,
+          "review_start": 148,
+          "finish": 154,
+          "wait_minutes": 24,
+          "elapsed_minutes": 34
+        },
+        {
+          "task_id": "S26",
+          "arrival": 125,
+          "review_ready": 129,
+          "review_start": 154,
+          "finish": 160,
+          "wait_minutes": 25,
+          "elapsed_minutes": 35
+        },
+        {
+          "task_id": "S27",
+          "arrival": 130,
+          "review_ready": 134,
+          "review_start": 160,
+          "finish": 166,
+          "wait_minutes": 26,
+          "elapsed_minutes": 36
+        },
+        {
+          "task_id": "S28",
+          "arrival": 135,
+          "review_ready": 139,
+          "review_start": 166,
+          "finish": 172,
+          "wait_minutes": 27,
+          "elapsed_minutes": 37
+        },
+        {
+          "task_id": "S29",
+          "arrival": 140,
+          "review_ready": 144,
+          "review_start": 172,
+          "finish": 178,
+          "wait_minutes": 28,
+          "elapsed_minutes": 38
+        },
+        {
+          "task_id": "S30",
+          "arrival": 145,
+          "review_ready": 149,
+          "review_start": 178,
+          "finish": 184,
+          "wait_minutes": 29,
+          "elapsed_minutes": 39
+        },
+        {
+          "task_id": "S31",
+          "arrival": 150,
+          "review_ready": 154,
+          "review_start": 184,
+          "finish": 190,
+          "wait_minutes": 30,
+          "elapsed_minutes": 40
+        },
+        {
+          "task_id": "S32",
+          "arrival": 155,
+          "review_ready": 159,
+          "review_start": 190,
+          "finish": 196,
+          "wait_minutes": 31,
+          "elapsed_minutes": 41
+        },
+        {
+          "task_id": "S33",
+          "arrival": 160,
+          "review_ready": 164,
+          "review_start": 196,
+          "finish": 202,
+          "wait_minutes": 32,
+          "elapsed_minutes": 42
+        },
+        {
+          "task_id": "S34",
+          "arrival": 165,
+          "review_ready": 169,
+          "review_start": 202,
+          "finish": 208,
+          "wait_minutes": 33,
+          "elapsed_minutes": 43
+        },
+        {
+          "task_id": "S35",
+          "arrival": 170,
+          "review_ready": 174,
+          "review_start": 208,
+          "finish": 214,
+          "wait_minutes": 34,
+          "elapsed_minutes": 44
+        },
+        {
+          "task_id": "S36",
+          "arrival": 175,
+          "review_ready": 179,
+          "review_start": 214,
+          "finish": 220,
+          "wait_minutes": 35,
+          "elapsed_minutes": 45
+        },
+        {
+          "task_id": "S37",
+          "arrival": 180,
+          "review_ready": 184,
+          "review_start": 220,
+          "finish": 226,
+          "wait_minutes": 36,
+          "elapsed_minutes": 46
+        },
+        {
+          "task_id": "S38",
+          "arrival": 185,
+          "review_ready": 189,
+          "review_start": 226,
+          "finish": 232,
+          "wait_minutes": 37,
+          "elapsed_minutes": 47
+        },
+        {
+          "task_id": "S39",
+          "arrival": 190,
+          "review_ready": 194,
+          "review_start": 232,
+          "finish": 238,
+          "wait_minutes": 38,
+          "elapsed_minutes": 48
+        },
+        {
+          "task_id": "S40",
+          "arrival": 195,
+          "review_ready": 199,
+          "review_start": 238,
+          "finish": 244,
+          "wait_minutes": 39,
+          "elapsed_minutes": 49
+        },
+        {
+          "task_id": "S41",
+          "arrival": 200,
+          "review_ready": 204,
+          "review_start": 244,
+          "finish": 250,
+          "wait_minutes": 40,
+          "elapsed_minutes": 50
+        },
+        {
+          "task_id": "S42",
+          "arrival": 205,
+          "review_ready": 209,
+          "review_start": 250,
+          "finish": 256,
+          "wait_minutes": 41,
+          "elapsed_minutes": 51
+        },
+        {
+          "task_id": "S43",
+          "arrival": 210,
+          "review_ready": 214,
+          "review_start": 256,
+          "finish": 262,
+          "wait_minutes": 42,
+          "elapsed_minutes": 52
+        },
+        {
+          "task_id": "S44",
+          "arrival": 215,
+          "review_ready": 219,
+          "review_start": 262,
+          "finish": 268,
+          "wait_minutes": 43,
+          "elapsed_minutes": 53
+        },
+        {
+          "task_id": "S45",
+          "arrival": 220,
+          "review_ready": 224,
+          "review_start": 268,
+          "finish": 274,
+          "wait_minutes": 44,
+          "elapsed_minutes": 54
+        },
+        {
+          "task_id": "S46",
+          "arrival": 225,
+          "review_ready": 229,
+          "review_start": 274,
+          "finish": 280,
+          "wait_minutes": 45,
+          "elapsed_minutes": 55
+        },
+        {
+          "task_id": "S47",
+          "arrival": 230,
+          "review_ready": 234,
+          "review_start": 280,
+          "finish": 286,
+          "wait_minutes": 46,
+          "elapsed_minutes": 56
+        },
+        {
+          "task_id": "S48",
+          "arrival": 235,
+          "review_ready": 239,
+          "review_start": 286,
+          "finish": 292,
+          "wait_minutes": 47,
+          "elapsed_minutes": 57
+        },
+        {
+          "task_id": "S49",
+          "arrival": 240,
+          "review_ready": 244,
+          "review_start": 292,
+          "finish": 298,
+          "wait_minutes": 48,
+          "elapsed_minutes": 58
+        },
+        {
+          "task_id": "S50",
+          "arrival": 245,
+          "review_ready": 249,
+          "review_start": 298,
+          "finish": 304,
+          "wait_minutes": 49,
+          "elapsed_minutes": 59
+        },
+        {
+          "task_id": "S51",
+          "arrival": 250,
+          "review_ready": 254,
+          "review_start": 304,
+          "finish": 310,
+          "wait_minutes": 50,
+          "elapsed_minutes": 60
+        },
+        {
+          "task_id": "S52",
+          "arrival": 255,
+          "review_ready": 259,
+          "review_start": 310,
+          "finish": 316,
+          "wait_minutes": 51,
+          "elapsed_minutes": 61
+        },
+        {
+          "task_id": "S53",
+          "arrival": 260,
+          "review_ready": 264,
+          "review_start": 316,
+          "finish": 322,
+          "wait_minutes": 52,
+          "elapsed_minutes": 62
+        },
+        {
+          "task_id": "S54",
+          "arrival": 265,
+          "review_ready": 269,
+          "review_start": 322,
+          "finish": 328,
+          "wait_minutes": 53,
+          "elapsed_minutes": 63
+        },
+        {
+          "task_id": "S55",
+          "arrival": 270,
+          "review_ready": 274,
+          "review_start": 328,
+          "finish": 334,
+          "wait_minutes": 54,
+          "elapsed_minutes": 64
+        },
+        {
+          "task_id": "S56",
+          "arrival": 275,
+          "review_ready": 279,
+          "review_start": 334,
+          "finish": 340,
+          "wait_minutes": 55,
+          "elapsed_minutes": 65
+        },
+        {
+          "task_id": "S57",
+          "arrival": 280,
+          "review_ready": 284,
+          "review_start": 340,
+          "finish": 346,
+          "wait_minutes": 56,
+          "elapsed_minutes": 66
+        },
+        {
+          "task_id": "S58",
+          "arrival": 285,
+          "review_ready": 289,
+          "review_start": 346,
+          "finish": 352,
+          "wait_minutes": 57,
+          "elapsed_minutes": 67
+        },
+        {
+          "task_id": "S59",
+          "arrival": 290,
+          "review_ready": 294,
+          "review_start": 352,
+          "finish": 358,
+          "wait_minutes": 58,
+          "elapsed_minutes": 68
+        },
+        {
+          "task_id": "S60",
+          "arrival": 295,
+          "review_ready": 299,
+          "review_start": 358,
+          "finish": 364,
+          "wait_minutes": 59,
+          "elapsed_minutes": 69
+        }
+      ]
+    },
+    {
+      "mode": "approved_action",
+      "review_minutes": 6,
+      "tasks": 60,
+      "mean_elapsed_minutes": 37.5,
+      "mean_wait_minutes": 29.5,
+      "human_review_minutes": 360,
+      "peak_waiting": 10,
+      "rows": [
+        {
+          "task_id": "S01",
+          "arrival": 0,
+          "review_ready": 2,
+          "review_start": 2,
+          "finish": 8,
+          "wait_minutes": 0,
+          "elapsed_minutes": 8
+        },
+        {
+          "task_id": "S02",
+          "arrival": 5,
+          "review_ready": 7,
+          "review_start": 8,
+          "finish": 14,
+          "wait_minutes": 1,
+          "elapsed_minutes": 9
+        },
+        {
+          "task_id": "S03",
+          "arrival": 10,
+          "review_ready": 12,
+          "review_start": 14,
+          "finish": 20,
+          "wait_minutes": 2,
+          "elapsed_minutes": 10
+        },
+        {
+          "task_id": "S04",
+          "arrival": 15,
+          "review_ready": 17,
+          "review_start": 20,
+          "finish": 26,
+          "wait_minutes": 3,
+          "elapsed_minutes": 11
+        },
+        {
+          "task_id": "S05",
+          "arrival": 20,
+          "review_ready": 22,
+          "review_start": 26,
+          "finish": 32,
+          "wait_minutes": 4,
+          "elapsed_minutes": 12
+        },
+        {
+          "task_id": "S06",
+          "arrival": 25,
+          "review_ready": 27,
+          "review_start": 32,
+          "finish": 38,
+          "wait_minutes": 5,
+          "elapsed_minutes": 13
+        },
+        {
+          "task_id": "S07",
+          "arrival": 30,
+          "review_ready": 32,
+          "review_start": 38,
+          "finish": 44,
+          "wait_minutes": 6,
+          "elapsed_minutes": 14
+        },
+        {
+          "task_id": "S08",
+          "arrival": 35,
+          "review_ready": 37,
+          "review_start": 44,
+          "finish": 50,
+          "wait_minutes": 7,
+          "elapsed_minutes": 15
+        },
+        {
+          "task_id": "S09",
+          "arrival": 40,
+          "review_ready": 42,
+          "review_start": 50,
+          "finish": 56,
+          "wait_minutes": 8,
+          "elapsed_minutes": 16
+        },
+        {
+          "task_id": "S10",
+          "arrival": 45,
+          "review_ready": 47,
+          "review_start": 56,
+          "finish": 62,
+          "wait_minutes": 9,
+          "elapsed_minutes": 17
+        },
+        {
+          "task_id": "S11",
+          "arrival": 50,
+          "review_ready": 52,
+          "review_start": 62,
+          "finish": 68,
+          "wait_minutes": 10,
+          "elapsed_minutes": 18
+        },
+        {
+          "task_id": "S12",
+          "arrival": 55,
+          "review_ready": 57,
+          "review_start": 68,
+          "finish": 74,
+          "wait_minutes": 11,
+          "elapsed_minutes": 19
+        },
+        {
+          "task_id": "S13",
+          "arrival": 60,
+          "review_ready": 62,
+          "review_start": 74,
+          "finish": 80,
+          "wait_minutes": 12,
+          "elapsed_minutes": 20
+        },
+        {
+          "task_id": "S14",
+          "arrival": 65,
+          "review_ready": 67,
+          "review_start": 80,
+          "finish": 86,
+          "wait_minutes": 13,
+          "elapsed_minutes": 21
+        },
+        {
+          "task_id": "S15",
+          "arrival": 70,
+          "review_ready": 72,
+          "review_start": 86,
+          "finish": 92,
+          "wait_minutes": 14,
+          "elapsed_minutes": 22
+        },
+        {
+          "task_id": "S16",
+          "arrival": 75,
+          "review_ready": 77,
+          "review_start": 92,
+          "finish": 98,
+          "wait_minutes": 15,
+          "elapsed_minutes": 23
+        },
+        {
+          "task_id": "S17",
+          "arrival": 80,
+          "review_ready": 82,
+          "review_start": 98,
+          "finish": 104,
+          "wait_minutes": 16,
+          "elapsed_minutes": 24
+        },
+        {
+          "task_id": "S18",
+          "arrival": 85,
+          "review_ready": 87,
+          "review_start": 104,
+          "finish": 110,
+          "wait_minutes": 17,
+          "elapsed_minutes": 25
+        },
+        {
+          "task_id": "S19",
+          "arrival": 90,
+          "review_ready": 92,
+          "review_start": 110,
+          "finish": 116,
+          "wait_minutes": 18,
+          "elapsed_minutes": 26
+        },
+        {
+          "task_id": "S20",
+          "arrival": 95,
+          "review_ready": 97,
+          "review_start": 116,
+          "finish": 122,
+          "wait_minutes": 19,
+          "elapsed_minutes": 27
+        },
+        {
+          "task_id": "S21",
+          "arrival": 100,
+          "review_ready": 102,
+          "review_start": 122,
+          "finish": 128,
+          "wait_minutes": 20,
+          "elapsed_minutes": 28
+        },
+        {
+          "task_id": "S22",
+          "arrival": 105,
+          "review_ready": 107,
+          "review_start": 128,
+          "finish": 134,
+          "wait_minutes": 21,
+          "elapsed_minutes": 29
+        },
+        {
+          "task_id": "S23",
+          "arrival": 110,
+          "review_ready": 112,
+          "review_start": 134,
+          "finish": 140,
+          "wait_minutes": 22,
+          "elapsed_minutes": 30
+        },
+        {
+          "task_id": "S24",
+          "arrival": 115,
+          "review_ready": 117,
+          "review_start": 140,
+          "finish": 146,
+          "wait_minutes": 23,
+          "elapsed_minutes": 31
+        },
+        {
+          "task_id": "S25",
+          "arrival": 120,
+          "review_ready": 122,
+          "review_start": 146,
+          "finish": 152,
+          "wait_minutes": 24,
+          "elapsed_minutes": 32
+        },
+        {
+          "task_id": "S26",
+          "arrival": 125,
+          "review_ready": 127,
+          "review_start": 152,
+          "finish": 158,
+          "wait_minutes": 25,
+          "elapsed_minutes": 33
+        },
+        {
+          "task_id": "S27",
+          "arrival": 130,
+          "review_ready": 132,
+          "review_start": 158,
+          "finish": 164,
+          "wait_minutes": 26,
+          "elapsed_minutes": 34
+        },
+        {
+          "task_id": "S28",
+          "arrival": 135,
+          "review_ready": 137,
+          "review_start": 164,
+          "finish": 170,
+          "wait_minutes": 27,
+          "elapsed_minutes": 35
+        },
+        {
+          "task_id": "S29",
+          "arrival": 140,
+          "review_ready": 142,
+          "review_start": 170,
+          "finish": 176,
+          "wait_minutes": 28,
+          "elapsed_minutes": 36
+        },
+        {
+          "task_id": "S30",
+          "arrival": 145,
+          "review_ready": 147,
+          "review_start": 176,
+          "finish": 182,
+          "wait_minutes": 29,
+          "elapsed_minutes": 37
+        },
+        {
+          "task_id": "S31",
+          "arrival": 150,
+          "review_ready": 152,
+          "review_start": 182,
+          "finish": 188,
+          "wait_minutes": 30,
+          "elapsed_minutes": 38
+        },
+        {
+          "task_id": "S32",
+          "arrival": 155,
+          "review_ready": 157,
+          "review_start": 188,
+          "finish": 194,
+          "wait_minutes": 31,
+          "elapsed_minutes": 39
+        },
+        {
+          "task_id": "S33",
+          "arrival": 160,
+          "review_ready": 162,
+          "review_start": 194,
+          "finish": 200,
+          "wait_minutes": 32,
+          "elapsed_minutes": 40
+        },
+        {
+          "task_id": "S34",
+          "arrival": 165,
+          "review_ready": 167,
+          "review_start": 200,
+          "finish": 206,
+          "wait_minutes": 33,
+          "elapsed_minutes": 41
+        },
+        {
+          "task_id": "S35",
+          "arrival": 170,
+          "review_ready": 172,
+          "review_start": 206,
+          "finish": 212,
+          "wait_minutes": 34,
+          "elapsed_minutes": 42
+        },
+        {
+          "task_id": "S36",
+          "arrival": 175,
+          "review_ready": 177,
+          "review_start": 212,
+          "finish": 218,
+          "wait_minutes": 35,
+          "elapsed_minutes": 43
+        },
+        {
+          "task_id": "S37",
+          "arrival": 180,
+          "review_ready": 182,
+          "review_start": 218,
+          "finish": 224,
+          "wait_minutes": 36,
+          "elapsed_minutes": 44
+        },
+        {
+          "task_id": "S38",
+          "arrival": 185,
+          "review_ready": 187,
+          "review_start": 224,
+          "finish": 230,
+          "wait_minutes": 37,
+          "elapsed_minutes": 45
+        },
+        {
+          "task_id": "S39",
+          "arrival": 190,
+          "review_ready": 192,
+          "review_start": 230,
+          "finish": 236,
+          "wait_minutes": 38,
+          "elapsed_minutes": 46
+        },
+        {
+          "task_id": "S40",
+          "arrival": 195,
+          "review_ready": 197,
+          "review_start": 236,
+          "finish": 242,
+          "wait_minutes": 39,
+          "elapsed_minutes": 47
+        },
+        {
+          "task_id": "S41",
+          "arrival": 200,
+          "review_ready": 202,
+          "review_start": 242,
+          "finish": 248,
+          "wait_minutes": 40,
+          "elapsed_minutes": 48
+        },
+        {
+          "task_id": "S42",
+          "arrival": 205,
+          "review_ready": 207,
+          "review_start": 248,
+          "finish": 254,
+          "wait_minutes": 41,
+          "elapsed_minutes": 49
+        },
+        {
+          "task_id": "S43",
+          "arrival": 210,
+          "review_ready": 212,
+          "review_start": 254,
+          "finish": 260,
+          "wait_minutes": 42,
+          "elapsed_minutes": 50
+        },
+        {
+          "task_id": "S44",
+          "arrival": 215,
+          "review_ready": 217,
+          "review_start": 260,
+          "finish": 266,
+          "wait_minutes": 43,
+          "elapsed_minutes": 51
+        },
+        {
+          "task_id": "S45",
+          "arrival": 220,
+          "review_ready": 222,
+          "review_start": 266,
+          "finish": 272,
+          "wait_minutes": 44,
+          "elapsed_minutes": 52
+        },
+        {
+          "task_id": "S46",
+          "arrival": 225,
+          "review_ready": 227,
+          "review_start": 272,
+          "finish": 278,
+          "wait_minutes": 45,
+          "elapsed_minutes": 53
+        },
+        {
+          "task_id": "S47",
+          "arrival": 230,
+          "review_ready": 232,
+          "review_start": 278,
+          "finish": 284,
+          "wait_minutes": 46,
+          "elapsed_minutes": 54
+        },
+        {
+          "task_id": "S48",
+          "arrival": 235,
+          "review_ready": 237,
+          "review_start": 284,
+          "finish": 290,
+          "wait_minutes": 47,
+          "elapsed_minutes": 55
+        },
+        {
+          "task_id": "S49",
+          "arrival": 240,
+          "review_ready": 242,
+          "review_start": 290,
+          "finish": 296,
+          "wait_minutes": 48,
+          "elapsed_minutes": 56
+        },
+        {
+          "task_id": "S50",
+          "arrival": 245,
+          "review_ready": 247,
+          "review_start": 296,
+          "finish": 302,
+          "wait_minutes": 49,
+          "elapsed_minutes": 57
+        },
+        {
+          "task_id": "S51",
+          "arrival": 250,
+          "review_ready": 252,
+          "review_start": 302,
+          "finish": 308,
+          "wait_minutes": 50,
+          "elapsed_minutes": 58
+        },
+        {
+          "task_id": "S52",
+          "arrival": 255,
+          "review_ready": 257,
+          "review_start": 308,
+          "finish": 314,
+          "wait_minutes": 51,
+          "elapsed_minutes": 59
+        },
+        {
+          "task_id": "S53",
+          "arrival": 260,
+          "review_ready": 262,
+          "review_start": 314,
+          "finish": 320,
+          "wait_minutes": 52,
+          "elapsed_minutes": 60
+        },
+        {
+          "task_id": "S54",
+          "arrival": 265,
+          "review_ready": 267,
+          "review_start": 320,
+          "finish": 326,
+          "wait_minutes": 53,
+          "elapsed_minutes": 61
+        },
+        {
+          "task_id": "S55",
+          "arrival": 270,
+          "review_ready": 272,
+          "review_start": 326,
+          "finish": 332,
+          "wait_minutes": 54,
+          "elapsed_minutes": 62
+        },
+        {
+          "task_id": "S56",
+          "arrival": 275,
+          "review_ready": 277,
+          "review_start": 332,
+          "finish": 338,
+          "wait_minutes": 55,
+          "elapsed_minutes": 63
+        },
+        {
+          "task_id": "S57",
+          "arrival": 280,
+          "review_ready": 282,
+          "review_start": 338,
+          "finish": 344,
+          "wait_minutes": 56,
+          "elapsed_minutes": 64
+        },
+        {
+          "task_id": "S58",
+          "arrival": 285,
+          "review_ready": 287,
+          "review_start": 344,
+          "finish": 350,
+          "wait_minutes": 57,
+          "elapsed_minutes": 65
+        },
+        {
+          "task_id": "S59",
+          "arrival": 290,
+          "review_ready": 292,
+          "review_start": 350,
+          "finish": 356,
+          "wait_minutes": 58,
+          "elapsed_minutes": 66
+        },
+        {
+          "task_id": "S60",
+          "arrival": 295,
+          "review_ready": 297,
+          "review_start": 356,
+          "finish": 362,
+          "wait_minutes": 59,
+          "elapsed_minutes": 67
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "volume": 200,
+      "review_minutes": 2,
+      "baseline_yuan": 4800.0,
+      "assist_cost_yuan": 6640.0,
+      "action_cost_yuan": 7560.0,
+      "assist_net_yuan": -1840.0,
+      "action_net_yuan": -2760.0
+    },
+    {
+      "volume": 200,
+      "review_minutes": 6,
+      "baseline_yuan": 4800.0,
+      "assist_cost_yuan": 8240.0,
+      "action_cost_yuan": 9160.0,
+      "assist_net_yuan": -3440.0,
+      "action_net_yuan": -4360.0
+    },
+    {
+      "volume": 200,
+      "review_minutes": 10,
+      "baseline_yuan": 4800.0,
+      "assist_cost_yuan": 9840.0,
+      "action_cost_yuan": 10760.0,
+      "assist_net_yuan": -5040.0,
+      "action_net_yuan": -5960.0
+    },
+    {
+      "volume": 1000,
+      "review_minutes": 2,
+      "baseline_yuan": 24000.0,
+      "assist_cost_yuan": 17200.0,
+      "action_cost_yuan": 14600.0,
+      "assist_net_yuan": 6800.0,
+      "action_net_yuan": 9400.0
+    },
+    {
+      "volume": 1000,
+      "review_minutes": 6,
+      "baseline_yuan": 24000.0,
+      "assist_cost_yuan": 25200.0,
+      "action_cost_yuan": 22600.0,
+      "assist_net_yuan": -1200.0,
+      "action_net_yuan": 1400.0
+    },
+    {
+      "volume": 1000,
+      "review_minutes": 10,
+      "baseline_yuan": 24000.0,
+      "assist_cost_yuan": 33200.0,
+      "action_cost_yuan": 30600.0,
+      "assist_net_yuan": -9200.0,
+      "action_net_yuan": -6600.0
+    }
+  ],
+  "assumptions": {
+    "hourly_yuan": 120,
+    "baseline_minutes": 12,
+    "assist_draft_minutes": 4,
+    "action_operator_minutes": 2,
+    "assist_rework_probability": 0.1,
+    "assist_rework_minutes": 6,
+    "action_rework_probability": 0.05,
+    "action_rework_minutes": 8
+  }
+}

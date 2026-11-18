@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "project-handoff-1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "message_id",
+    "task_id",
+    "generation",
+    "sender",
+    "receiver",
+    "remaining_steps",
+    "release",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parent_task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sender": {
+      "enum": [
+        "research",
+        "verify",
+        "execute"
+      ]
+    },
+    "receiver": {
+      "enum": [
+        "verify",
+        "execute",
+        "controller"
+      ]
+    },
+    "remaining_steps": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "release": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object"
+    }
+  }
+}

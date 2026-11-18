@@ -1,0 +1,24 @@
+{
+  "kind": "scripted_program_patch_protocol",
+  "candidate_budget": 2,
+  "summary": {
+    "no_update": {
+      "tasks": 30,
+      "repairs": 0,
+      "holdout_failures": 30,
+      "candidate_checks": 0
+    },
+    "self_rating": {
+      "tasks": 30,
+      "repairs": 10,
+      "holdout_failures": 25,
+      "candidate_checks": 30
+    },
+    "external_validation": {
+      "tasks": 30,
+      "repairs": 30,
+      "holdout_failures": 0,
+      "candidate_checks": 55
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "EXP-D-15-01",
+  "date": "2026-11-09",
+  "kind": "deterministic memory selection",
+  "materials": "3 users × 10 sessions",
+  "license": "MIT original teaching materials",
+  "comparison": "none / unfiltered latest / scoped",
+  "metrics": "value correctness; owner errors; stale use; deletion layers",
+  "entry": "examples/ch15/run_experiment.py",
+  "repetitions": 1,
+  "randomness": "deterministic; runtime timing varies",
+  "budget": "see chapter and source; no generation model calls",
+  "success_criterion": "Business invariants and gold labels in report; failures retained",
+  "evidence_status": "executed locally",
+  "limitations": "No natural-language extraction or physical backup erasure"
+}

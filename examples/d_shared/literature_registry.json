@@ -1,0 +1,1992 @@
+[
+  {
+    "id": "2309.02427",
+    "url": "https://arxiv.org/abs/2309.02427",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Cognitive Architectures for Language Agents"
+    ],
+    "citation_author": [
+      "Sumers, Theodore R.",
+      "Yao, Shunyu",
+      "Narasimhan, Karthik",
+      "Griffiths, Thomas L."
+    ],
+    "citation_date": [
+      "2023/09/05"
+    ],
+    "citation_online_date": [
+      "2024/03/15"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2309.02427"
+    ],
+    "citation_arxiv_id": [
+      "2309.02427"
+    ],
+    "citation_abstract": [
+      "Recent efforts have augmented large language models (LLMs) with external resources (e.g., the Internet) or internal control flows (e.g., prompt chaining) for tasks requiring grounding or reasoning, leading to a new class of language agents. While these agents have achieved substantial empirical success, we lack a systematic framework to organize existing agents and plan future developments. In this paper, we draw on the rich history of cognitive science and symbolic artificial intelligence to propose Cognitive Architectures for Language Agents (CoALA). CoALA describes a language agent with modular memory components, a structured action space to interact with internal memory and external environments, and a generalized decision-making process to choose actions. We use CoALA to retrospectively survey and organize a large body of recent work, and prospectively identify actionable directions towards more capable agents. Taken together, CoALA contextualizes today's language agents within the broader history of AI and outlines a path towards language-based general intelligence."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2309.02427v3",
+    "official_author_order": [
+      "Theodore R. Sumers",
+      "Shunyu Yao",
+      "Karthik Narasimhan",
+      "Thomas L. Griffiths"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2024/03/15"
+  },
+  {
+    "id": "2304.03442",
+    "url": "https://arxiv.org/abs/2304.03442",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Generative Agents: Interactive Simulacra of Human Behavior"
+    ],
+    "citation_author": [
+      "Park, Joon Sung",
+      "O'Brien, Joseph C.",
+      "Cai, Carrie J.",
+      "Morris, Meredith Ringel",
+      "Liang, Percy",
+      "Bernstein, Michael S."
+    ],
+    "citation_date": [
+      "2023/04/07"
+    ],
+    "citation_online_date": [
+      "2023/08/06"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2304.03442"
+    ],
+    "citation_arxiv_id": [
+      "2304.03442"
+    ],
+    "citation_abstract": [
+      "Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents--computational software agents that simulate believable human behavior. Generative agents wake up, cook breakfast, and head to work; artists paint, while authors write; they form opinions, notice each other, and initiate conversations; they remember and reflect on days past as they plan the next day. To enable generative agents, we describe an architecture that extends a large language model to store a complete record of the agent's experiences using natural language, synthesize those memories over time into higher-level reflections, and retrieve them dynamically to plan behavior. We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims, where end users can interact with a small town of twenty five agents using natural language. In an evaluation, these generative agents produce believable individual and emergent social behaviors: for example, starting with only a single user-specified notion that one agent wants to throw a Valentine's Day party, the agents autonomously spread invitations to the party over the next two days, make new acquaintances, ask each other out on dates to the party, and coordinate to show up for the party together at the right time. We demonstrate through ablation that the components of our agent architecture--observation, planning, and reflection--each contribute critically to the believability of agent behavior. By fusing large language models with computational, interactive agents, this work introduces architectural and interaction patterns for enabling believable simulations of human behavior."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2304.03442v2",
+    "official_author_order": [
+      "Joon Sung Park",
+      "Joseph C. O'Brien",
+      "Carrie J. Cai",
+      "Meredith Ringel Morris",
+      "Percy Liang",
+      "Michael S. Bernstein"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/08/06"
+  },
+  {
+    "id": "2310.08560",
+    "url": "https://arxiv.org/abs/2310.08560",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "MemGPT: Towards LLMs as Operating Systems"
+    ],
+    "citation_author": [
+      "Packer, Charles",
+      "Wooders, Sarah",
+      "Lin, Kevin",
+      "Fang, Vivian",
+      "Patil, Shishir G.",
+      "Stoica, Ion",
+      "Gonzalez, Joseph E."
+    ],
+    "citation_date": [
+      "2023/10/12"
+    ],
+    "citation_online_date": [
+      "2024/02/12"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2310.08560"
+    ],
+    "citation_arxiv_id": [
+      "2310.08560"
+    ],
+    "citation_abstract": [
+      "Large language models (LLMs) have revolutionized AI, but are constrained by limited context windows, hindering their utility in tasks like extended conversations and document analysis. To enable using context beyond limited context windows, we propose virtual context management, a technique drawing inspiration from hierarchical memory systems in traditional operating systems that provide the appearance of large memory resources through data movement between fast and slow memory. Using this technique, we introduce MemGPT (Memory-GPT), a system that intelligently manages different memory tiers in order to effectively provide extended context within the LLM's limited context window, and utilizes interrupts to manage control flow between itself and the user. We evaluate our OS-inspired design in two domains where the limited context windows of modern LLMs severely handicaps their performance: document analysis, where MemGPT is able to analyze large documents that far exceed the underlying LLM's context window, and multi-session chat, where MemGPT can create conversational agents that remember, reflect, and evolve dynamically through long-term interactions with their users. We release MemGPT code and data for our experiments at https://memgpt.ai."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2310.08560v2",
+    "official_author_order": [
+      "Charles Packer",
+      "Sarah Wooders",
+      "Kevin Lin",
+      "Vivian Fang",
+      "Shishir G. Patil",
+      "Ion Stoica",
+      "Joseph E. Gonzalez"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2024/02/12"
+  },
+  {
+    "id": "2307.03172",
+    "url": "https://arxiv.org/abs/2307.03172",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Lost in the Middle: How Language Models Use Long Contexts"
+    ],
+    "citation_author": [
+      "Liu, Nelson F.",
+      "Lin, Kevin",
+      "Hewitt, John",
+      "Paranjape, Ashwin",
+      "Bevilacqua, Michele",
+      "Petroni, Fabio",
+      "Liang, Percy"
+    ],
+    "citation_date": [
+      "2023/07/06"
+    ],
+    "citation_online_date": [
+      "2023/11/20"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2307.03172"
+    ],
+    "citation_arxiv_id": [
+      "2307.03172"
+    ],
+    "citation_abstract": [
+      "While recent language models have the ability to take long contexts as input, relatively little is known about how well they use longer context. We analyze the performance of language models on two tasks that require identifying relevant information in their input contexts: multi-document question answering and key-value retrieval. We find that performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts. In particular, we observe that performance is often highest when relevant information occurs at the beginning or end of the input context, and significantly degrades when models must access relevant information in the middle of long contexts, even for explicitly long-context models. Our analysis provides a better understanding of how language models use their input context and provides new evaluation protocols for future long-context language models."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2307.03172v3",
+    "official_author_order": [
+      "Nelson F. Liu",
+      "Kevin Lin",
+      "John Hewitt",
+      "Ashwin Paranjape",
+      "Michele Bevilacqua",
+      "Fabio Petroni",
+      "Percy Liang"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/11/20"
+  },
+  {
+    "id": "2402.17753",
+    "url": "https://arxiv.org/abs/2402.17753",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Evaluating Very Long-Term Conversational Memory of LLM Agents"
+    ],
+    "citation_author": [
+      "Maharana, Adyasha",
+      "Lee, Dong-Ho",
+      "Tulyakov, Sergey",
+      "Bansal, Mohit",
+      "Barbieri, Francesco",
+      "Fang, Yuwei"
+    ],
+    "citation_date": [
+      "2024/02/27"
+    ],
+    "citation_online_date": [
+      "2024/02/27"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2402.17753"
+    ],
+    "citation_arxiv_id": [
+      "2402.17753"
+    ],
+    "citation_abstract": [
+      "Existing works on long-term open-domain dialogues focus on evaluating model responses within contexts spanning no more than five chat sessions. Despite advancements in long-context large language models (LLMs) and retrieval augmented generation (RAG) techniques, their efficacy in very long-term dialogues remains unexplored. To address this research gap, we introduce a machine-human pipeline to generate high-quality, very long-term dialogues by leveraging LLM-based agent architectures and grounding their dialogues on personas and temporal event graphs. Moreover, we equip each agent with the capability of sharing and reacting to images. The generated conversations are verified and edited by human annotators for long-range consistency and grounding to the event graphs. Using this pipeline, we collect LoCoMo, a dataset of very long-term conversations, each encompassing 300 turns and 9K tokens on avg., over up to 35 sessions. Based on LoCoMo, we present a comprehensive evaluation benchmark to measure long-term memory in models, encompassing question answering, event summarization, and multi-modal dialogue generation tasks. Our experimental results indicate that LLMs exhibit challenges in understanding lengthy conversations and comprehending long-range temporal and causal dynamics within dialogues. Employing strategies like long-context LLMs or RAG can offer improvements but these models still substantially lag behind human performance."
+    ],
+    "verified_version": "v1",
+    "verified_url": "https://arxiv.org/abs/2402.17753v1",
+    "official_author_order": [
+      "Adyasha Maharana",
+      "Dong-Ho Lee",
+      "Sergey Tulyakov",
+      "Mohit Bansal",
+      "Francesco Barbieri",
+      "Yuwei Fang"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2024,
+    "version_date": "2024/02/27"
+  },
+  {
+    "id": "2410.10813",
+    "url": "https://arxiv.org/abs/2410.10813",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory"
+    ],
+    "citation_author": [
+      "Wu, Di",
+      "Wang, Hongwei",
+      "Yu, Wenhao",
+      "Zhang, Yuwei",
+      "Chang, Kai-Wei",
+      "Yu, Dong"
+    ],
+    "citation_date": [
+      "2024/10/14"
+    ],
+    "citation_online_date": [
+      "2025/03/04"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2410.10813"
+    ],
+    "citation_arxiv_id": [
+      "2410.10813"
+    ],
+    "citation_abstract": [
+      "Recent large language model (LLM)-driven chat assistant systems have integrated memory components to track user-assistant chat histories, enabling more accurate and personalized responses. However, their long-term memory capabilities in sustained interactions remain underexplored. We introduce LongMemEval, a comprehensive benchmark designed to evaluate five core long-term memory abilities of chat assistants: information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention. With 500 meticulously curated questions embedded within freely scalable user-assistant chat histories, LongMemEval presents a significant challenge to existing long-term memory systems, with commercial chat assistants and long-context LLMs showing a 30% accuracy drop on memorizing information across sustained interactions. We then present a unified framework that breaks down the long-term memory design into three stages: indexing, retrieval, and reading. Built upon key experimental insights, we propose several memory design optimizations including session decomposition for value granularity, fact-augmented key expansion for indexing, and time-aware query expansion for refining the search scope. Extensive experiments show that these optimizations greatly improve both memory recall and downstream question answering on LongMemEval. Overall, our study provides valuable resources and guidance for advancing the long-term memory capabilities of LLM-based chat assistants, paving the way toward more personalized and reliable conversational AI. Our benchmark and code are publicly available at https://github.com/xiaowu0162/LongMemEval."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2410.10813v2",
+    "official_author_order": [
+      "Di Wu",
+      "Hongwei Wang",
+      "Wenhao Yu",
+      "Yuwei Zhang",
+      "Kai-Wei Chang",
+      "Dong Yu"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2024,
+    "version_date": "2025/03/04"
+  },
+  {
+    "id": "2305.10250",
+    "url": "https://arxiv.org/abs/2305.10250",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "MemoryBank: Enhancing Large Language Models with Long-Term Memory"
+    ],
+    "citation_author": [
+      "Zhong, Wanjun",
+      "Guo, Lianghong",
+      "Gao, Qiqi",
+      "Ye, He",
+      "Wang, Yanlin"
+    ],
+    "citation_date": [
+      "2023/05/17"
+    ],
+    "citation_online_date": [
+      "2023/05/21"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2305.10250"
+    ],
+    "citation_arxiv_id": [
+      "2305.10250"
+    ],
+    "citation_abstract": [
+      "Revolutionary advancements in Large Language Models have drastically reshaped our interactions with artificial intelligence systems. Despite this, a notable hindrance remains-the deficiency of a long-term memory mechanism within these models. This shortfall becomes increasingly evident in situations demanding sustained interaction, such as personal companion systems and psychological counseling. Therefore, we propose MemoryBank, a novel memory mechanism tailored for LLMs. MemoryBank enables the models to summon relevant memories, continually evolve through continuous memory updates, comprehend, and adapt to a user personality by synthesizing information from past interactions. To mimic anthropomorphic behaviors and selectively preserve memory, MemoryBank incorporates a memory updating mechanism, inspired by the Ebbinghaus Forgetting Curve theory, which permits the AI to forget and reinforce memory based on time elapsed and the relative significance of the memory, thereby offering a human-like memory mechanism. MemoryBank is versatile in accommodating both closed-source models like ChatGPT and open-source models like ChatGLM. We exemplify application of MemoryBank through the creation of an LLM-based chatbot named SiliconFriend in a long-term AI Companion scenario. Further tuned with psychological dialogs, SiliconFriend displays heightened empathy in its interactions. Experiment involves both qualitative analysis with real-world user dialogs and quantitative analysis with simulated dialogs. In the latter, ChatGPT acts as users with diverse characteristics and generates long-term dialog contexts covering a wide array of topics. The results of our analysis reveal that SiliconFriend, equipped with MemoryBank, exhibits a strong capability for long-term companionship as it can provide emphatic response, recall relevant memories and understand user personality."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2305.10250v3",
+    "official_author_order": [
+      "Wanjun Zhong",
+      "Lianghong Guo",
+      "Qiqi Gao",
+      "He Ye",
+      "Yanlin Wang"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/05/21"
+  },
+  {
+    "id": "2005.11401",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+    ],
+    "citation_author": [
+      "Lewis, Patrick",
+      "Perez, Ethan",
+      "Piktus, Aleksandra",
+      "Petroni, Fabio",
+      "Karpukhin, Vladimir",
+      "Goyal, Naman",
+      "Küttler, Heinrich",
+      "Lewis, Mike",
+      "Yih, Wen-tau",
+      "Rocktäschel, Tim",
+      "Riedel, Sebastian",
+      "Kiela, Douwe"
+    ],
+    "citation_date": [
+      "2020/05/22"
+    ],
+    "citation_online_date": [
+      "2021/04/12"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2005.11401"
+    ],
+    "citation_arxiv_id": [
+      "2005.11401"
+    ],
+    "citation_abstract": [
+      "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, but have so far been only investigated for extractive downstream tasks. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, the other can use different passages per token. We fine-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state-of-the-art on three open domain QA tasks, outperforming parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline."
+    ],
+    "verified_version": "v4",
+    "verified_url": "https://arxiv.org/abs/2005.11401v4",
+    "official_author_order": [
+      "Patrick Lewis",
+      "Ethan Perez",
+      "Aleksandra Piktus",
+      "Fabio Petroni",
+      "Vladimir Karpukhin",
+      "Naman Goyal",
+      "Heinrich Küttler",
+      "Mike Lewis",
+      "Wen-tau Yih",
+      "Tim Rocktäschel",
+      "Sebastian Riedel",
+      "Douwe Kiela"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2020,
+    "version_date": "2021/04/12"
+  },
+  {
+    "id": "2004.04906",
+    "url": "https://arxiv.org/abs/2004.04906",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Dense Passage Retrieval for Open-Domain Question Answering"
+    ],
+    "citation_author": [
+      "Karpukhin, Vladimir",
+      "Oğuz, Barlas",
+      "Min, Sewon",
+      "Lewis, Patrick",
+      "Wu, Ledell",
+      "Edunov, Sergey",
+      "Chen, Danqi",
+      "Yih, Wen-tau"
+    ],
+    "citation_date": [
+      "2020/04/10"
+    ],
+    "citation_online_date": [
+      "2020/09/30"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2004.04906"
+    ],
+    "citation_arxiv_id": [
+      "2004.04906"
+    ],
+    "citation_abstract": [
+      "Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method. In this work, we show that retrieval can be practically implemented using dense representations alone, where embeddings are learned from a small number of questions and passages by a simple dual-encoder framework. When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy, and helps our end-to-end QA system establish new state-of-the-art on multiple open-domain QA benchmarks."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2004.04906v3",
+    "official_author_order": [
+      "Vladimir Karpukhin",
+      "Barlas Oğuz",
+      "Sewon Min",
+      "Patrick Lewis",
+      "Ledell Wu",
+      "Sergey Edunov",
+      "Danqi Chen",
+      "Wen-tau Yih"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2020,
+    "version_date": "2020/09/30"
+  },
+  {
+    "id": "2004.12832",
+    "url": "https://arxiv.org/abs/2004.12832",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT"
+    ],
+    "citation_author": [
+      "Khattab, Omar",
+      "Zaharia, Matei"
+    ],
+    "citation_date": [
+      "2020/04/27"
+    ],
+    "citation_online_date": [
+      "2020/06/04"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2004.12832"
+    ],
+    "citation_arxiv_id": [
+      "2004.12832"
+    ],
+    "citation_abstract": [
+      "Recent progress in Natural Language Understanding (NLU) is driving fast-paced advances in Information Retrieval (IR), largely owed to fine-tuning deep language models (LMs) for document ranking. While remarkably effective, the ranking models based on these LMs increase computational cost by orders of magnitude over prior approaches, particularly as they must feed each query-document pair through a massive neural network to compute a single relevance score. To tackle this, we present ColBERT, a novel ranking model that adapts deep LMs (in particular, BERT) for efficient retrieval. ColBERT introduces a late interaction architecture that independently encodes the query and the document using BERT and then employs a cheap yet powerful interaction step that models their fine-grained similarity. By delaying and yet retaining this fine-granular interaction, ColBERT can leverage the expressiveness of deep LMs while simultaneously gaining the ability to pre-compute document representations offline, considerably speeding up query processing. Beyond reducing the cost of re-ranking the documents retrieved by a traditional model, ColBERT's pruning-friendly interaction mechanism enables leveraging vector-similarity indexes for end-to-end retrieval directly from a large document collection. We extensively evaluate ColBERT using two recent passage search datasets. Results show that ColBERT's effectiveness is competitive with existing BERT-based models (and outperforms every non-BERT baseline), while executing two orders-of-magnitude faster and requiring four orders-of-magnitude fewer FLOPs per query."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2004.12832v2",
+    "official_author_order": [
+      "Omar Khattab",
+      "Matei Zaharia"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2020,
+    "version_date": "2020/06/04"
+  },
+  {
+    "id": "2310.11511",
+    "url": "https://arxiv.org/abs/2310.11511",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
+    ],
+    "citation_author": [
+      "Asai, Akari",
+      "Wu, Zeqiu",
+      "Wang, Yizhong",
+      "Sil, Avirup",
+      "Hajishirzi, Hannaneh"
+    ],
+    "citation_date": [
+      "2023/10/17"
+    ],
+    "citation_online_date": [
+      "2023/10/17"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2310.11511"
+    ],
+    "citation_arxiv_id": [
+      "2310.11511"
+    ],
+    "citation_abstract": [
+      "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues. However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation. We introduce a new framework called Self-Reflective Retrieval-Augmented Generation (Self-RAG) that enhances an LM's quality and factuality through retrieval and self-reflection. Our framework trains a single arbitrary LM that adaptively retrieves passages on-demand, and generates and reflects on retrieved passages and its own generations using special tokens, called reflection tokens. Generating reflection tokens makes the LM controllable during the inference phase, enabling it to tailor its behavior to diverse task requirements. Experiments show that Self-RAG (7B and 13B parameters) significantly outperforms state-of-the-art LLMs and retrieval-augmented models on a diverse set of tasks. Specifically, Self-RAG outperforms ChatGPT and retrieval-augmented Llama2-chat on Open-domain QA, reasoning and fact verification tasks, and it shows significant gains in improving factuality and citation accuracy for long-form generations relative to these models."
+    ],
+    "verified_version": "v1",
+    "verified_url": "https://arxiv.org/abs/2310.11511v1",
+    "official_author_order": [
+      "Akari Asai",
+      "Zeqiu Wu",
+      "Yizhong Wang",
+      "Avirup Sil",
+      "Hannaneh Hajishirzi"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/10/17"
+  },
+  {
+    "id": "2401.15884",
+    "url": "https://arxiv.org/abs/2401.15884",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Corrective Retrieval Augmented Generation"
+    ],
+    "citation_author": [
+      "Yan, Shi-Qi",
+      "Gu, Jia-Chen",
+      "Zhu, Yun",
+      "Ling, Zhen-Hua"
+    ],
+    "citation_date": [
+      "2024/01/29"
+    ],
+    "citation_online_date": [
+      "2024/10/07"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2401.15884"
+    ],
+    "citation_arxiv_id": [
+      "2401.15884"
+    ],
+    "citation_abstract": [
+      "Large language models (LLMs) inevitably exhibit hallucinations since the accuracy of generated texts cannot be secured solely by the parametric knowledge they encapsulate. Although retrieval-augmented generation (RAG) is a practicable complement to LLMs, it relies heavily on the relevance of retrieved documents, raising concerns about how the model behaves if retrieval goes wrong. To this end, we propose the Corrective Retrieval Augmented Generation (CRAG) to improve the robustness of generation. Specifically, a lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query, returning a confidence degree based on which different knowledge retrieval actions can be triggered. Since retrieval from static and limited corpora can only return sub-optimal documents, large-scale web searches are utilized as an extension for augmenting the retrieval results. Besides, a decompose-then-recompose algorithm is designed for retrieved documents to selectively focus on key information and filter out irrelevant information in them. CRAG is plug-and-play and can be seamlessly coupled with various RAG-based approaches. Experiments on four datasets covering short- and long-form generation tasks show that CRAG can significantly improve the performance of RAG-based approaches."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2401.15884v3",
+    "official_author_order": [
+      "Shi-Qi Yan",
+      "Jia-Chen Gu",
+      "Yun Zhu",
+      "Zhen-Hua Ling"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2024,
+    "version_date": "2024/10/07"
+  },
+  {
+    "id": "2404.16130",
+    "url": "https://arxiv.org/abs/2404.16130",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
+    ],
+    "citation_author": [
+      "Edge, Darren",
+      "Trinh, Ha",
+      "Cheng, Newman",
+      "Bradley, Joshua",
+      "Chao, Alex",
+      "Mody, Apurva",
+      "Truitt, Steven",
+      "Metropolitansky, Dasha",
+      "Ness, Robert Osazuwa",
+      "Larson, Jonathan"
+    ],
+    "citation_date": [
+      "2024/04/24"
+    ],
+    "citation_online_date": [
+      "2025/02/19"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2404.16130"
+    ],
+    "citation_arxiv_id": [
+      "2404.16130"
+    ],
+    "citation_abstract": [
+      "The use of retrieval-augmented generation (RAG) to retrieve relevant information from an external knowledge source enables large language models (LLMs) to answer questions over private and/or previously unseen document collections. However, RAG fails on global questions directed at an entire text corpus, such as \"What are the main themes in the dataset?\", since this is inherently a query-focused summarization (QFS) task, rather than an explicit retrieval task. Prior QFS methods, meanwhile, do not scale to the quantities of text indexed by typical RAG systems. To combine the strengths of these contrasting methods, we propose GraphRAG, a graph-based approach to question answering over private text corpora that scales with both the generality of user questions and the quantity of source text. Our approach uses an LLM to build a graph index in two stages: first, to derive an entity knowledge graph from the source documents, then to pregenerate community summaries for all groups of closely related entities. Given a question, each community summary is used to generate a partial response, before all partial responses are again summarized in a final response to the user. For a class of global sensemaking questions over datasets in the 1 million token range, we show that GraphRAG leads to substantial improvements over a conventional RAG baseline for both the comprehensiveness and diversity of generated answers."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2404.16130v2",
+    "official_author_order": [
+      "Darren Edge",
+      "Ha Trinh",
+      "Newman Cheng",
+      "Joshua Bradley",
+      "Alex Chao",
+      "Apurva Mody",
+      "Steven Truitt",
+      "Dasha Metropolitansky",
+      "Robert Osazuwa Ness",
+      "Jonathan Larson"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2024,
+    "version_date": "2025/02/19"
+  },
+  {
+    "id": "2303.17651",
+    "url": "https://arxiv.org/abs/2303.17651",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Self-Refine: Iterative Refinement with Self-Feedback"
+    ],
+    "citation_author": [
+      "Madaan, Aman",
+      "Tandon, Niket",
+      "Gupta, Prakhar",
+      "Hallinan, Skyler",
+      "Gao, Luyu",
+      "Wiegreffe, Sarah",
+      "Alon, Uri",
+      "Dziri, Nouha",
+      "Prabhumoye, Shrimai",
+      "Yang, Yiming",
+      "Gupta, Shashank",
+      "Majumder, Bodhisattwa Prasad",
+      "Hermann, Katherine",
+      "Welleck, Sean",
+      "Yazdanbakhsh, Amir",
+      "Clark, Peter"
+    ],
+    "citation_date": [
+      "2023/03/30"
+    ],
+    "citation_online_date": [
+      "2023/05/25"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2303.17651"
+    ],
+    "citation_arxiv_id": [
+      "2303.17651"
+    ],
+    "citation_abstract": [
+      "Like humans, large language models (LLMs) do not always generate the best output on their first try. Motivated by how humans refine their written text, we introduce Self-Refine, an approach for improving initial outputs from LLMs through iterative feedback and refinement. The main idea is to generate an initial output using an LLMs; then, the same LLMs provides feedback for its output and uses it to refine itself, iteratively. Self-Refine does not require any supervised training data, additional training, or reinforcement learning, and instead uses a single LLM as the generator, refiner, and feedback provider. We evaluate Self-Refine across 7 diverse tasks, ranging from dialog response generation to mathematical reasoning, using state-of-the-art (GPT-3.5, ChatGPT, and GPT-4) LLMs. Across all evaluated tasks, outputs generated with Self-Refine are preferred by humans and automatic metrics over those generated with the same LLM using conventional one-step generation, improving by ~20% absolute on average in task performance. Our work demonstrates that even state-of-the-art LLMs like GPT-4 can be further improved at test time using our simple, standalone approach."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2303.17651v2",
+    "official_author_order": [
+      "Aman Madaan",
+      "Niket Tandon",
+      "Prakhar Gupta",
+      "Skyler Hallinan",
+      "Luyu Gao",
+      "Sarah Wiegreffe",
+      "Uri Alon",
+      "Nouha Dziri",
+      "Shrimai Prabhumoye",
+      "Yiming Yang",
+      "Shashank Gupta",
+      "Bodhisattwa Prasad Majumder",
+      "Katherine Hermann",
+      "Sean Welleck",
+      "Amir Yazdanbakhsh",
+      "Peter Clark"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/05/25"
+  },
+  {
+    "id": "2303.11366",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Reflexion: Language Agents with Verbal Reinforcement Learning"
+    ],
+    "citation_author": [
+      "Shinn, Noah",
+      "Cassano, Federico",
+      "Berman, Edward",
+      "Gopinath, Ashwin",
+      "Narasimhan, Karthik",
+      "Yao, Shunyu"
+    ],
+    "citation_date": [
+      "2023/03/20"
+    ],
+    "citation_online_date": [
+      "2023/10/10"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2303.11366"
+    ],
+    "citation_arxiv_id": [
+      "2303.11366"
+    ],
+    "citation_abstract": [
+      "Large language models (LLMs) have been increasingly used to interact with external environments (e.g., games, compilers, APIs) as goal-driven agents. However, it remains challenging for these language agents to quickly and efficiently learn from trial-and-error as traditional reinforcement learning methods require extensive training samples and expensive model fine-tuning. We propose Reflexion, a novel framework to reinforce language agents not by updating weights, but instead through linguistic feedback. Concretely, Reflexion agents verbally reflect on task feedback signals, then maintain their own reflective text in an episodic memory buffer to induce better decision-making in subsequent trials. Reflexion is flexible enough to incorporate various types (scalar values or free-form language) and sources (external or internally simulated) of feedback signals, and obtains significant improvements over a baseline agent across diverse tasks (sequential decision-making, coding, language reasoning). For example, Reflexion achieves a 91% pass@1 accuracy on the HumanEval coding benchmark, surpassing the previous state-of-the-art GPT-4 that achieves 80%. We also conduct ablation and analysis studies using different feedback signals, feedback incorporation methods, and agent types, and provide insights into how they affect performance."
+    ],
+    "verified_version": "v4",
+    "verified_url": "https://arxiv.org/abs/2303.11366v4",
+    "official_author_order": [
+      "Noah Shinn",
+      "Federico Cassano",
+      "Edward Berman",
+      "Ashwin Gopinath",
+      "Karthik Narasimhan",
+      "Shunyu Yao"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/10/10"
+  },
+  {
+    "id": "2310.01798",
+    "url": "https://arxiv.org/abs/2310.01798",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Large Language Models Cannot Self-Correct Reasoning Yet"
+    ],
+    "citation_author": [
+      "Huang, Jie",
+      "Chen, Xinyun",
+      "Mishra, Swaroop",
+      "Zheng, Huaixiu Steven",
+      "Yu, Adams Wei",
+      "Song, Xinying",
+      "Zhou, Denny"
+    ],
+    "citation_date": [
+      "2023/10/03"
+    ],
+    "citation_online_date": [
+      "2024/03/14"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2310.01798"
+    ],
+    "citation_arxiv_id": [
+      "2310.01798"
+    ],
+    "citation_abstract": [
+      "Large Language Models (LLMs) have emerged as a groundbreaking technology with their unparalleled text generation capabilities across various applications. Nevertheless, concerns persist regarding the accuracy and appropriateness of their generated content. A contemporary methodology, self-correction, has been proposed as a remedy to these issues. Building upon this premise, this paper critically examines the role and efficacy of self-correction within LLMs, shedding light on its true potential and limitations. Central to our investigation is the notion of intrinsic self-correction, whereby an LLM attempts to correct its initial responses based solely on its inherent capabilities, without the crutch of external feedback. In the context of reasoning, our research indicates that LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction. Drawing from these insights, we offer suggestions for future research and practical applications in this field."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2310.01798v2",
+    "official_author_order": [
+      "Jie Huang",
+      "Xinyun Chen",
+      "Swaroop Mishra",
+      "Huaixiu Steven Zheng",
+      "Adams Wei Yu",
+      "Xinying Song",
+      "Denny Zhou"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2024/03/14"
+  },
+  {
+    "id": "1612.00796",
+    "url": "https://arxiv.org/abs/1612.00796",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Overcoming catastrophic forgetting in neural networks"
+    ],
+    "citation_author": [
+      "Kirkpatrick, James",
+      "Pascanu, Razvan",
+      "Rabinowitz, Neil",
+      "Veness, Joel",
+      "Desjardins, Guillaume",
+      "Rusu, Andrei A.",
+      "Milan, Kieran",
+      "Quan, John",
+      "Ramalho, Tiago",
+      "Grabska-Barwinska, Agnieszka",
+      "Hassabis, Demis",
+      "Clopath, Claudia",
+      "Kumaran, Dharshan",
+      "Hadsell, Raia"
+    ],
+    "citation_doi": [
+      "10.1073/pnas.1611835114"
+    ],
+    "citation_date": [
+      "2016/12/02"
+    ],
+    "citation_online_date": [
+      "2017/01/25"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/1612.00796"
+    ],
+    "citation_arxiv_id": [
+      "1612.00796"
+    ],
+    "citation_abstract": [
+      "The ability to learn tasks in a sequential fashion is crucial to the development of artificial intelligence. Neural networks are not, in general, capable of this and it has been widely thought that catastrophic forgetting is an inevitable feature of connectionist models. We show that it is possible to overcome this limitation and train networks that can maintain expertise on tasks which they have not experienced for a long time. Our approach remembers old tasks by selectively slowing down learning on the weights important for those tasks. We demonstrate our approach is scalable and effective by solving a set of classification tasks based on the MNIST hand written digit dataset and by learning several Atari 2600 games sequentially."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/1612.00796v2",
+    "official_author_order": [
+      "James Kirkpatrick",
+      "Razvan Pascanu",
+      "Neil Rabinowitz",
+      "Joel Veness",
+      "Guillaume Desjardins",
+      "Andrei A. Rusu",
+      "Kieran Milan",
+      "John Quan",
+      "Tiago Ramalho",
+      "Agnieszka Grabska-Barwinska",
+      "Demis Hassabis",
+      "Claudia Clopath",
+      "Dharshan Kumaran",
+      "Raia Hadsell"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2016,
+    "version_date": "2017/01/25",
+    "publication_year": 2017,
+    "publication_doi": "10.1073/pnas.1611835114"
+  },
+  {
+    "id": "2308.03688",
+    "url": "https://arxiv.org/abs/2308.03688",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "AgentBench: Evaluating LLMs as Agents"
+    ],
+    "citation_author": [
+      "Liu, Xiao",
+      "Yu, Hao",
+      "Zhang, Hanchen",
+      "Xu, Yifan",
+      "Lei, Xuanyu",
+      "Lai, Hanyu",
+      "Gu, Yu",
+      "Ding, Hangliang",
+      "Men, Kaiwen",
+      "Yang, Kejuan",
+      "Zhang, Shudan",
+      "Deng, Xiang",
+      "Zeng, Aohan",
+      "Du, Zhengxiao",
+      "Zhang, Chenhui",
+      "Shen, Sheng",
+      "Zhang, Tianjun",
+      "Su, Yu",
+      "Sun, Huan",
+      "Huang, Minlie",
+      "Dong, Yuxiao",
+      "Tang, Jie"
+    ],
+    "citation_date": [
+      "2023/08/07"
+    ],
+    "citation_online_date": [
+      "2025/10/04"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2308.03688"
+    ],
+    "citation_arxiv_id": [
+      "2308.03688"
+    ],
+    "citation_abstract": [
+      "The potential of Large Language Model (LLM) as agents has been widely acknowledged recently. Thus, there is an urgent need to quantitatively \\textit{evaluate LLMs as agents} on challenging tasks in interactive environments. We present AgentBench, a multi-dimensional benchmark that consists of 8 distinct environments to assess LLM-as-Agent's reasoning and decision-making abilities. Our extensive test over \\num API-based and open-sourced (OSS) LLMs shows that, while top commercial LLMs present a strong ability of acting as agents in complex environments, there is a significant disparity in performance between them and many OSS competitors that are no larger than 70B. We identify the typical reasons of failures in environments and LLMs, showing that poor long-term reasoning, decision-making, and instruction following abilities are the main obstacles for developing usable LLM agents. Improving instruction following and training on high quality multi-round alignment data could improve agent performance. And different from existing assumptions, training on code present ambivalent impacts on different agent tasks. Datasets, environments, and an integrated evaluation package for AgentBench are released at https://github.com/THUDM/AgentBench."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2308.03688v3",
+    "official_author_order": [
+      "Xiao Liu",
+      "Hao Yu",
+      "Hanchen Zhang",
+      "Yifan Xu",
+      "Xuanyu Lei",
+      "Hanyu Lai",
+      "Yu Gu",
+      "Hangliang Ding",
+      "Kaiwen Men",
+      "Kejuan Yang",
+      "Shudan Zhang",
+      "Xiang Deng",
+      "Aohan Zeng",
+      "Zhengxiao Du",
+      "Chenhui Zhang",
+      "Sheng Shen",
+      "Tianjun Zhang",
+      "Yu Su",
+      "Huan Sun",
+      "Minlie Huang",
+      "Yuxiao Dong",
+      "Jie Tang"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2025/10/04"
+  },
+  {
+    "id": "2307.13854",
+    "url": "https://arxiv.org/abs/2307.13854",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+    ],
+    "citation_author": [
+      "Zhou, Shuyan",
+      "Xu, Frank F.",
+      "Zhu, Hao",
+      "Zhou, Xuhui",
+      "Lo, Robert",
+      "Sridhar, Abishek",
+      "Cheng, Xianyi",
+      "Ou, Tianyue",
+      "Bisk, Yonatan",
+      "Fried, Daniel",
+      "Alon, Uri",
+      "Neubig, Graham"
+    ],
+    "citation_date": [
+      "2023/07/25"
+    ],
+    "citation_online_date": [
+      "2024/04/16"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2307.13854"
+    ],
+    "citation_arxiv_id": [
+      "2307.13854"
+    ],
+    "citation_abstract": [
+      "With advances in generative AI, there is now potential for autonomous agents to manage daily tasks via natural language commands. However, current agents are primarily created and tested in simplified synthetic environments, leading to a disconnect with real-world scenarios. In this paper, we build an environment for language-guided agents that is highly realistic and reproducible. Specifically, we focus on agents that perform tasks on the web, and create an environment with fully functional websites from four common domains: e-commerce, social forum discussions, collaborative software development, and content management. Our environment is enriched with tools (e.g., a map) and external knowledge bases (e.g., user manuals) to encourage human-like task-solving. Building upon our environment, we release a set of benchmark tasks focusing on evaluating the functional correctness of task completions. The tasks in our benchmark are diverse, long-horizon, and designed to emulate tasks that humans routinely perform on the internet. We experiment with several baseline agents, integrating recent techniques such as reasoning before acting. The results demonstrate that solving complex tasks is challenging: our best GPT-4-based agent only achieves an end-to-end task success rate of 14.41%, significantly lower than the human performance of 78.24%. These results highlight the need for further development of robust agents, that current state-of-the-art large language models are far from perfect performance in these real-life tasks, and that WebArena can be used to measure such progress."
+    ],
+    "verified_version": "v4",
+    "verified_url": "https://arxiv.org/abs/2307.13854v4",
+    "official_author_order": [
+      "Shuyan Zhou",
+      "Frank F. Xu",
+      "Hao Zhu",
+      "Xuhui Zhou",
+      "Robert Lo",
+      "Abishek Sridhar",
+      "Xianyi Cheng",
+      "Tianyue Ou",
+      "Yonatan Bisk",
+      "Daniel Fried",
+      "Uri Alon",
+      "Graham Neubig"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2024/04/16"
+  },
+  {
+    "id": "2310.06770",
+    "url": "https://arxiv.org/abs/2310.06770",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"
+    ],
+    "citation_author": [
+      "Jimenez, Carlos E.",
+      "Yang, John",
+      "Wettig, Alexander",
+      "Yao, Shunyu",
+      "Pei, Kexin",
+      "Press, Ofir",
+      "Narasimhan, Karthik"
+    ],
+    "citation_date": [
+      "2023/10/10"
+    ],
+    "citation_online_date": [
+      "2024/11/11"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2310.06770"
+    ],
+    "citation_arxiv_id": [
+      "2310.06770"
+    ],
+    "citation_abstract": [
+      "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous."
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2310.06770v3",
+    "official_author_order": [
+      "Carlos E. Jimenez",
+      "John Yang",
+      "Alexander Wettig",
+      "Shunyu Yao",
+      "Kexin Pei",
+      "Ofir Press",
+      "Karthik Narasimhan"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2024/11/11"
+  },
+  {
+    "id": "2404.07972",
+    "url": "https://arxiv.org/abs/2404.07972",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"
+    ],
+    "citation_author": [
+      "Xie, Tianbao",
+      "Zhang, Danyang",
+      "Chen, Jixuan",
+      "Li, Xiaochuan",
+      "Zhao, Siheng",
+      "Cao, Ruisheng",
+      "Hua, Toh Jing",
+      "Cheng, Zhoujun",
+      "Shin, Dongchan",
+      "Lei, Fangyu",
+      "Liu, Yitao",
+      "Xu, Yiheng",
+      "Zhou, Shuyan",
+      "Savarese, Silvio",
+      "Xiong, Caiming",
+      "Zhong, Victor",
+      "Yu, Tao"
+    ],
+    "citation_date": [
+      "2024/04/11"
+    ],
+    "citation_online_date": [
+      "2024/05/30"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2404.07972"
+    ],
+    "citation_arxiv_id": [
+      "2404.07972"
+    ],
+    "citation_abstract": [
+      "Autonomous agents that accomplish complex computer tasks with minimal human interventions have the potential to transform human-computer interaction, significantly enhancing accessibility and productivity. However, existing benchmarks either lack an interactive environment or are limited to environments specific to certain applications or domains, failing to reflect the diverse and complex nature of real-world computer use, thereby limiting the scope of tasks and agent scalability. To address this issue, we introduce OSWorld, the first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across various operating systems such as Ubuntu, Windows, and macOS. OSWorld can serve as a unified, integrated computer environment for assessing open-ended computer tasks that involve arbitrary applications. Building upon OSWorld, we create a benchmark of 369 computer tasks involving real web and desktop apps in open domains, OS file I/O, and workflows spanning multiple applications. Each task example is derived from real-world computer use cases and includes a detailed initial state setup configuration and a custom execution-based evaluation script for reliable, reproducible evaluation. Extensive evaluation of state-of-the-art LLM/VLM-based agents on OSWorld reveals significant deficiencies in their ability to serve as computer assistants. While humans can accomplish over 72.36% of the tasks, the best model achieves only 12.24% success, primarily struggling with GUI grounding and operational knowledge. Comprehensive analysis using OSWorld provides valuable insights for developing multimodal generalist agents that were not possible with previous benchmarks. Our code, environment, baseline models, and data are publicly available at https://os-world.github.io."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2404.07972v2",
+    "official_author_order": [
+      "Tianbao Xie",
+      "Danyang Zhang",
+      "Jixuan Chen",
+      "Xiaochuan Li",
+      "Siheng Zhao",
+      "Ruisheng Cao",
+      "Toh Jing Hua",
+      "Zhoujun Cheng",
+      "Dongchan Shin",
+      "Fangyu Lei",
+      "Yitao Liu",
+      "Yiheng Xu",
+      "Shuyan Zhou",
+      "Silvio Savarese",
+      "Caiming Xiong",
+      "Victor Zhong",
+      "Tao Yu"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2024,
+    "version_date": "2024/05/30"
+  },
+  {
+    "id": "2305.16291",
+    "url": "https://arxiv.org/abs/2305.16291",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Voyager: An Open-Ended Embodied Agent with Large Language Models"
+    ],
+    "citation_author": [
+      "Wang, Guanzhi",
+      "Xie, Yuqi",
+      "Jiang, Yunfan",
+      "Mandlekar, Ajay",
+      "Xiao, Chaowei",
+      "Zhu, Yuke",
+      "Fan, Linxi",
+      "Anandkumar, Anima"
+    ],
+    "citation_date": [
+      "2023/05/25"
+    ],
+    "citation_online_date": [
+      "2023/10/19"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2305.16291"
+    ],
+    "citation_arxiv_id": [
+      "2305.16291"
+    ],
+    "citation_abstract": [
+      "We introduce Voyager, the first LLM-powered embodied lifelong learning agent in Minecraft that continuously explores the world, acquires diverse skills, and makes novel discoveries without human intervention. Voyager consists of three key components: 1) an automatic curriculum that maximizes exploration, 2) an ever-growing skill library of executable code for storing and retrieving complex behaviors, and 3) a new iterative prompting mechanism that incorporates environment feedback, execution errors, and self-verification for program improvement. Voyager interacts with GPT-4 via blackbox queries, which bypasses the need for model parameter fine-tuning. The skills developed by Voyager are temporally extended, interpretable, and compositional, which compounds the agent's abilities rapidly and alleviates catastrophic forgetting. Empirically, Voyager shows strong in-context lifelong learning capability and exhibits exceptional proficiency in playing Minecraft. It obtains 3.3x more unique items, travels 2.3x longer distances, and unlocks key tech tree milestones up to 15.3x faster than prior SOTA. Voyager is able to utilize the learned skill library in a new Minecraft world to solve novel tasks from scratch, while other techniques struggle to generalize. We open-source our full codebase and prompts at https://voyager.minedojo.org/."
+    ],
+    "verified_version": "v2",
+    "verified_url": "https://arxiv.org/abs/2305.16291v2",
+    "official_author_order": [
+      "Guanzhi Wang",
+      "Yuqi Xie",
+      "Yunfan Jiang",
+      "Ajay Mandlekar",
+      "Chaowei Xiao",
+      "Yuke Zhu",
+      "Linxi Fan",
+      "Anima Anandkumar"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/10/19"
+  },
+  {
+    "id": "2310.08864",
+    "url": "https://arxiv.org/abs/2310.08864",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Open X-Embodiment: Robotic Learning Datasets and RT-X Models"
+    ],
+    "citation_author": [
+      "Open X-Embodiment Collaboration",
+      "O'Neill, Abby",
+      "Rehman, Abdul",
+      "Gupta, Abhinav",
+      "Maddukuri, Abhiram",
+      "Gupta, Abhishek",
+      "Padalkar, Abhishek",
+      "Lee, Abraham",
+      "Pooley, Acorn",
+      "Gupta, Agrim",
+      "Mandlekar, Ajay",
+      "Jain, Ajinkya",
+      "Tung, Albert",
+      "Bewley, Alex",
+      "Herzog, Alex",
+      "Irpan, Alex",
+      "Khazatsky, Alexander",
+      "Rai, Anant",
+      "Gupta, Anchit",
+      "Wang, Andrew",
+      "Kolobov, Andrey",
+      "Singh, Anikait",
+      "Garg, Animesh",
+      "Kembhavi, Aniruddha",
+      "Xie, Annie",
+      "Brohan, Anthony",
+      "Raffin, Antonin",
+      "Sharma, Archit",
+      "Yavary, Arefeh",
+      "Jain, Arhan",
+      "Balakrishna, Ashwin",
+      "Wahid, Ayzaan",
+      "Burgess-Limerick, Ben",
+      "Kim, Beomjoon",
+      "Schölkopf, Bernhard",
+      "Wulfe, Blake",
+      "Ichter, Brian",
+      "Lu, Cewu",
+      "Xu, Charles",
+      "Le, Charlotte",
+      "Finn, Chelsea",
+      "Wang, Chen",
+      "Xu, Chenfeng",
+      "Chi, Cheng",
+      "Huang, Chenguang",
+      "Chan, Christine",
+      "Agia, Christopher",
+      "Pan, Chuer",
+      "Fu, Chuyuan",
+      "Devin, Coline",
+      "Xu, Danfei",
+      "Morton, Daniel",
+      "Driess, Danny",
+      "Chen, Daphne",
+      "Pathak, Deepak",
+      "Shah, Dhruv",
+      "Büchler, Dieter",
+      "Jayaraman, Dinesh",
+      "Kalashnikov, Dmitry",
+      "Sadigh, Dorsa",
+      "Johns, Edward",
+      "Foster, Ethan",
+      "Liu, Fangchen",
+      "Ceola, Federico",
+      "Xia, Fei",
+      "Zhao, Feiyu",
+      "Frujeri, Felipe Vieira",
+      "Stulp, Freek",
+      "Zhou, Gaoyue",
+      "Sukhatme, Gaurav S.",
+      "Salhotra, Gautam",
+      "Yan, Ge",
+      "Feng, Gilbert",
+      "Schiavi, Giulio",
+      "Berseth, Glen",
+      "Kahn, Gregory",
+      "Yang, Guangwen",
+      "Wang, Guanzhi",
+      "Su, Hao",
+      "Fang, Hao-Shu",
+      "Shi, Haochen",
+      "Bao, Henghui",
+      "Amor, Heni Ben",
+      "Christensen, Henrik I",
+      "Furuta, Hiroki",
+      "Bharadhwaj, Homanga",
+      "Walke, Homer",
+      "Fang, Hongjie",
+      "Ha, Huy",
+      "Mordatch, Igor",
+      "Radosavovic, Ilija",
+      "Leal, Isabel",
+      "Liang, Jacky",
+      "Abou-Chakra, Jad",
+      "Kim, Jaehyung",
+      "Drake, Jaimyn",
+      "Peters, Jan",
+      "Schneider, Jan",
+      "Hsu, Jasmine",
+      "Vakil, Jay",
+      "Bohg, Jeannette",
+      "Bingham, Jeffrey",
+      "Wu, Jeffrey",
+      "Gao, Jensen",
+      "Hu, Jiaheng",
+      "Wu, Jiajun",
+      "Wu, Jialin",
+      "Sun, Jiankai",
+      "Luo, Jianlan",
+      "Gu, Jiayuan",
+      "Tan, Jie",
+      "Oh, Jihoon",
+      "Wu, Jimmy",
+      "Lu, Jingpei",
+      "Yang, Jingyun",
+      "Malik, Jitendra",
+      "Silvério, João",
+      "Hejna, Joey",
+      "Booher, Jonathan",
+      "Tompson, Jonathan",
+      "Yang, Jonathan",
+      "Salvador, Jordi",
+      "Lim, Joseph J.",
+      "Han, Junhyek",
+      "Wang, Kaiyuan",
+      "Rao, Kanishka",
+      "Pertsch, Karl",
+      "Hausman, Karol",
+      "Go, Keegan",
+      "Gopalakrishnan, Keerthana",
+      "Goldberg, Ken",
+      "Byrne, Kendra",
+      "Oslund, Kenneth",
+      "Kawaharazuka, Kento",
+      "Black, Kevin",
+      "Lin, Kevin",
+      "Zhang, Kevin",
+      "Ehsani, Kiana",
+      "Lekkala, Kiran",
+      "Ellis, Kirsty",
+      "Rana, Krishan",
+      "Srinivasan, Krishnan",
+      "Fang, Kuan",
+      "Singh, Kunal Pratap",
+      "Zeng, Kuo-Hao",
+      "Hatch, Kyle",
+      "Hsu, Kyle",
+      "Itti, Laurent",
+      "Chen, Lawrence Yunliang",
+      "Pinto, Lerrel",
+      "Fei-Fei, Li",
+      "Tan, Liam",
+      "Fan, Linxi \"Jim\"",
+      "Ott, Lionel",
+      "Lee, Lisa",
+      "Weihs, Luca",
+      "Chen, Magnum",
+      "Lepert, Marion",
+      "Memmel, Marius",
+      "Tomizuka, Masayoshi",
+      "Itkina, Masha",
+      "Castro, Mateo Guaman",
+      "Spero, Max",
+      "Du, Maximilian",
+      "Ahn, Michael",
+      "Yip, Michael C.",
+      "Zhang, Mingtong",
+      "Ding, Mingyu",
+      "Heo, Minho",
+      "Srirama, Mohan Kumar",
+      "Sharma, Mohit",
+      "Kim, Moo Jin",
+      "Irshad, Muhammad Zubair",
+      "Kanazawa, Naoaki",
+      "Hansen, Nicklas",
+      "Heess, Nicolas",
+      "Joshi, Nikhil J",
+      "Suenderhauf, Niko",
+      "Liu, Ning",
+      "Di Palo, Norman",
+      "Shafiullah, Nur Muhammad Mahi",
+      "Mees, Oier",
+      "Kroemer, Oliver",
+      "Bastani, Osbert",
+      "Sanketi, Pannag R",
+      "Miller, Patrick \"Tree\"",
+      "Yin, Patrick",
+      "Wohlhart, Paul",
+      "Xu, Peng",
+      "Fagan, Peter David",
+      "Mitrano, Peter",
+      "Sermanet, Pierre",
+      "Abbeel, Pieter",
+      "Sundaresan, Priya",
+      "Chen, Qiuyu",
+      "Vuong, Quan",
+      "Rafailov, Rafael",
+      "Tian, Ran",
+      "Doshi, Ria",
+      "Martín-Martín, Roberto",
+      "Baijal, Rohan",
+      "Scalise, Rosario",
+      "Hendrix, Rose",
+      "Lin, Roy",
+      "Qian, Runjia",
+      "Zhang, Ruohan",
+      "Mendonca, Russell",
+      "Shah, Rutav",
+      "Hoque, Ryan",
+      "Julian, Ryan",
+      "Bustamante, Samuel",
+      "Kirmani, Sean",
+      "Levine, Sergey",
+      "Lin, Shan",
+      "Moore, Sherry",
+      "Bahl, Shikhar",
+      "Dass, Shivin",
+      "Sonawani, Shubham",
+      "Tulsiani, Shubham",
+      "Song, Shuran",
+      "Xu, Sichun",
+      "Haldar, Siddhant",
+      "Karamcheti, Siddharth",
+      "Adebola, Simeon",
+      "Guist, Simon",
+      "Nasiriany, Soroush",
+      "Schaal, Stefan",
+      "Welker, Stefan",
+      "Tian, Stephen",
+      "Ramamoorthy, Subramanian",
+      "Dasari, Sudeep",
+      "Belkhale, Suneel",
+      "Park, Sungjae",
+      "Nair, Suraj",
+      "Mirchandani, Suvir",
+      "Osa, Takayuki",
+      "Gupta, Tanmay",
+      "Harada, Tatsuya",
+      "Matsushima, Tatsuya",
+      "Xiao, Ted",
+      "Kollar, Thomas",
+      "Yu, Tianhe",
+      "Ding, Tianli",
+      "Davchev, Todor",
+      "Zhao, Tony Z.",
+      "Armstrong, Travis",
+      "Darrell, Trevor",
+      "Chung, Trinity",
+      "Jain, Vidhi",
+      "Kumar, Vikash",
+      "Vanhoucke, Vincent",
+      "Guizilini, Vitor",
+      "Zhan, Wei",
+      "Zhou, Wenxuan",
+      "Burgard, Wolfram",
+      "Chen, Xi",
+      "Chen, Xiangyu",
+      "Wang, Xiaolong",
+      "Zhu, Xinghao",
+      "Geng, Xinyang",
+      "Liu, Xiyuan",
+      "Liangwei, Xu",
+      "Li, Xuanlin",
+      "Pang, Yansong",
+      "Lu, Yao",
+      "Ma, Yecheng Jason",
+      "Kim, Yejin",
+      "Chebotar, Yevgen",
+      "Zhou, Yifan",
+      "Zhu, Yifeng",
+      "Wu, Yilin",
+      "Xu, Ying",
+      "Wang, Yixuan",
+      "Bisk, Yonatan",
+      "Dou, Yongqiang",
+      "Cho, Yoonyoung",
+      "Lee, Youngwoon",
+      "Cui, Yuchen",
+      "Cao, Yue",
+      "Wu, Yueh-Hua",
+      "Tang, Yujin",
+      "Zhu, Yuke",
+      "Zhang, Yunchu",
+      "Jiang, Yunfan",
+      "Li, Yunshuang",
+      "Li, Yunzhu",
+      "Iwasawa, Yusuke",
+      "Matsuo, Yutaka",
+      "Ma, Zehan",
+      "Xu, Zhuo",
+      "Cui, Zichen Jeff",
+      "Zhang, Zichen",
+      "Fu, Zipeng",
+      "Lin, Zipeng"
+    ],
+    "citation_date": [
+      "2023/10/13"
+    ],
+    "citation_online_date": [
+      "2025/05/14"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2310.08864"
+    ],
+    "citation_arxiv_id": [
+      "2310.08864"
+    ],
+    "citation_abstract": [
+      "Large, high-capacity models trained on diverse datasets have shown remarkable successes on efficiently tackling downstream applications. In domains from NLP to Computer Vision, this has led to a consolidation of pretrained models, with general pretrained backbones serving as a starting point for many applications. Can such a consolidation happen in robotics? Conventionally, robotic learning methods train a separate model for every application, every robot, and even every environment. Can we instead train generalist X-robot policy that can be adapted efficiently to new robots, tasks, and environments? In this paper, we provide datasets in standardized data formats and models to make it possible to explore this possibility in the context of robotic manipulation, alongside experimental results that provide an example of effective X-robot policies. We assemble a dataset from 22 different robots collected through a collaboration between 21 institutions, demonstrating 527 skills (160266 tasks). We show that a high-capacity model trained on this data, which we call RT-X, exhibits positive transfer and improves the capabilities of multiple robots by leveraging experience from other platforms. More details can be found on the project website https://robotics-transformer-x.github.io."
+    ],
+    "verified_version": "v9",
+    "verified_url": "https://arxiv.org/abs/2310.08864v9",
+    "official_author_order": [
+      "Open X-Embodiment Collaboration",
+      "Abby O'Neill",
+      "Abdul Rehman",
+      "Abhinav Gupta",
+      "Abhiram Maddukuri",
+      "Abhishek Gupta",
+      "Abhishek Padalkar",
+      "Abraham Lee",
+      "Acorn Pooley",
+      "Agrim Gupta",
+      "Ajay Mandlekar",
+      "Ajinkya Jain",
+      "Albert Tung",
+      "Alex Bewley",
+      "Alex Herzog",
+      "Alex Irpan",
+      "Alexander Khazatsky",
+      "Anant Rai",
+      "Anchit Gupta",
+      "Andrew Wang",
+      "Andrey Kolobov",
+      "Anikait Singh",
+      "Animesh Garg",
+      "Aniruddha Kembhavi",
+      "Annie Xie",
+      "Anthony Brohan",
+      "Antonin Raffin",
+      "Archit Sharma",
+      "Arefeh Yavary",
+      "Arhan Jain",
+      "Ashwin Balakrishna",
+      "Ayzaan Wahid",
+      "Ben Burgess-Limerick",
+      "Beomjoon Kim",
+      "Bernhard Schölkopf",
+      "Blake Wulfe",
+      "Brian Ichter",
+      "Cewu Lu",
+      "Charles Xu",
+      "Charlotte Le",
+      "Chelsea Finn",
+      "Chen Wang",
+      "Chenfeng Xu",
+      "Cheng Chi",
+      "Chenguang Huang",
+      "Christine Chan",
+      "Christopher Agia",
+      "Chuer Pan",
+      "Chuyuan Fu",
+      "Coline Devin",
+      "Danfei Xu",
+      "Daniel Morton",
+      "Danny Driess",
+      "Daphne Chen",
+      "Deepak Pathak",
+      "Dhruv Shah",
+      "Dieter Büchler",
+      "Dinesh Jayaraman",
+      "Dmitry Kalashnikov",
+      "Dorsa Sadigh",
+      "Edward Johns",
+      "Ethan Foster",
+      "Fangchen Liu",
+      "Federico Ceola",
+      "Fei Xia",
+      "Feiyu Zhao",
+      "Felipe Vieira Frujeri",
+      "Freek Stulp",
+      "Gaoyue Zhou",
+      "Gaurav S. Sukhatme",
+      "Gautam Salhotra",
+      "Ge Yan",
+      "Gilbert Feng",
+      "Giulio Schiavi",
+      "Glen Berseth",
+      "Gregory Kahn",
+      "Guangwen Yang",
+      "Guanzhi Wang",
+      "Hao Su",
+      "Hao-Shu Fang",
+      "Haochen Shi",
+      "Henghui Bao",
+      "Heni Ben Amor",
+      "Henrik I Christensen",
+      "Hiroki Furuta",
+      "Homanga Bharadhwaj",
+      "Homer Walke",
+      "Hongjie Fang",
+      "Huy Ha",
+      "Igor Mordatch",
+      "Ilija Radosavovic",
+      "Isabel Leal",
+      "Jacky Liang",
+      "Jad Abou-Chakra",
+      "Jaehyung Kim",
+      "Jaimyn Drake",
+      "Jan Peters",
+      "Jan Schneider",
+      "Jasmine Hsu",
+      "Jay Vakil",
+      "Jeannette Bohg",
+      "Jeffrey Bingham",
+      "Jeffrey Wu",
+      "Jensen Gao",
+      "Jiaheng Hu",
+      "Jiajun Wu",
+      "Jialin Wu",
+      "Jiankai Sun",
+      "Jianlan Luo",
+      "Jiayuan Gu",
+      "Jie Tan",
+      "Jihoon Oh",
+      "Jimmy Wu",
+      "Jingpei Lu",
+      "Jingyun Yang",
+      "Jitendra Malik",
+      "João Silvério",
+      "Joey Hejna",
+      "Jonathan Booher",
+      "Jonathan Tompson",
+      "Jonathan Yang",
+      "Jordi Salvador",
+      "Joseph J. Lim",
+      "Junhyek Han",
+      "Kaiyuan Wang",
+      "Kanishka Rao",
+      "Karl Pertsch",
+      "Karol Hausman",
+      "Keegan Go",
+      "Keerthana Gopalakrishnan",
+      "Ken Goldberg",
+      "Kendra Byrne",
+      "Kenneth Oslund",
+      "Kento Kawaharazuka",
+      "Kevin Black",
+      "Kevin Lin",
+      "Kevin Zhang",
+      "Kiana Ehsani",
+      "Kiran Lekkala",
+      "Kirsty Ellis",
+      "Krishan Rana",
+      "Krishnan Srinivasan",
+      "Kuan Fang",
+      "Kunal Pratap Singh",
+      "Kuo-Hao Zeng",
+      "Kyle Hatch",
+      "Kyle Hsu",
+      "Laurent Itti",
+      "Lawrence Yunliang Chen",
+      "Lerrel Pinto",
+      "Li Fei-Fei",
+      "Liam Tan",
+      "Linxi \"Jim\" Fan",
+      "Lionel Ott",
+      "Lisa Lee",
+      "Luca Weihs",
+      "Magnum Chen",
+      "Marion Lepert",
+      "Marius Memmel",
+      "Masayoshi Tomizuka",
+      "Masha Itkina",
+      "Mateo Guaman Castro",
+      "Max Spero",
+      "Maximilian Du",
+      "Michael Ahn",
+      "Michael C. Yip",
+      "Mingtong Zhang",
+      "Mingyu Ding",
+      "Minho Heo",
+      "Mohan Kumar Srirama",
+      "Mohit Sharma",
+      "Moo Jin Kim",
+      "Muhammad Zubair Irshad",
+      "Naoaki Kanazawa",
+      "Nicklas Hansen",
+      "Nicolas Heess",
+      "Nikhil J Joshi",
+      "Niko Suenderhauf",
+      "Ning Liu",
+      "Norman Di Palo",
+      "Nur Muhammad Mahi Shafiullah",
+      "Oier Mees",
+      "Oliver Kroemer",
+      "Osbert Bastani",
+      "Pannag R Sanketi",
+      "Patrick \"Tree\" Miller",
+      "Patrick Yin",
+      "Paul Wohlhart",
+      "Peng Xu",
+      "Peter David Fagan",
+      "Peter Mitrano",
+      "Pierre Sermanet",
+      "Pieter Abbeel",
+      "Priya Sundaresan",
+      "Qiuyu Chen",
+      "Quan Vuong",
+      "Rafael Rafailov",
+      "Ran Tian",
+      "Ria Doshi",
+      "Roberto Martín-Martín",
+      "Rohan Baijal",
+      "Rosario Scalise",
+      "Rose Hendrix",
+      "Roy Lin",
+      "Runjia Qian",
+      "Ruohan Zhang",
+      "Russell Mendonca",
+      "Rutav Shah",
+      "Ryan Hoque",
+      "Ryan Julian",
+      "Samuel Bustamante",
+      "Sean Kirmani",
+      "Sergey Levine",
+      "Shan Lin",
+      "Sherry Moore",
+      "Shikhar Bahl",
+      "Shivin Dass",
+      "Shubham Sonawani",
+      "Shubham Tulsiani",
+      "Shuran Song",
+      "Sichun Xu",
+      "Siddhant Haldar",
+      "Siddharth Karamcheti",
+      "Simeon Adebola",
+      "Simon Guist",
+      "Soroush Nasiriany",
+      "Stefan Schaal",
+      "Stefan Welker",
+      "Stephen Tian",
+      "Subramanian Ramamoorthy",
+      "Sudeep Dasari",
+      "Suneel Belkhale",
+      "Sungjae Park",
+      "Suraj Nair",
+      "Suvir Mirchandani",
+      "Takayuki Osa",
+      "Tanmay Gupta",
+      "Tatsuya Harada",
+      "Tatsuya Matsushima",
+      "Ted Xiao",
+      "Thomas Kollar",
+      "Tianhe Yu",
+      "Tianli Ding",
+      "Todor Davchev",
+      "Tony Z. Zhao",
+      "Travis Armstrong",
+      "Trevor Darrell",
+      "Trinity Chung",
+      "Vidhi Jain",
+      "Vikash Kumar",
+      "Vincent Vanhoucke",
+      "Vitor Guizilini",
+      "Wei Zhan",
+      "Wenxuan Zhou",
+      "Wolfram Burgard",
+      "Xi Chen",
+      "Xiangyu Chen",
+      "Xiaolong Wang",
+      "Xinghao Zhu",
+      "Xinyang Geng",
+      "Xiyuan Liu",
+      "Xu Liangwei",
+      "Xuanlin Li",
+      "Yansong Pang",
+      "Yao Lu",
+      "Yecheng Jason Ma",
+      "Yejin Kim",
+      "Yevgen Chebotar",
+      "Yifan Zhou",
+      "Yifeng Zhu",
+      "Yilin Wu",
+      "Ying Xu",
+      "Yixuan Wang",
+      "Yonatan Bisk",
+      "Yongqiang Dou",
+      "Yoonyoung Cho",
+      "Youngwoon Lee",
+      "Yuchen Cui",
+      "Yue Cao",
+      "Yueh-Hua Wu",
+      "Yujin Tang",
+      "Yuke Zhu",
+      "Yunchu Zhang",
+      "Yunfan Jiang",
+      "Yunshuang Li",
+      "Yunzhu Li",
+      "Yusuke Iwasawa",
+      "Yutaka Matsuo",
+      "Zehan Ma",
+      "Zhuo Xu",
+      "Zichen Jeff Cui",
+      "Zichen Zhang",
+      "Zipeng Fu",
+      "Zipeng Lin"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2025/05/14",
+    "author_note": "The visible byline preserves the complete corporate name; citation_author meta tags truncate its first name."
+  },
+  {
+    "id": "2210.03629",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "ReAct: Synergizing Reasoning and Acting in Language Models"
+    ],
+    "citation_author": [
+      "Yao, Shunyu",
+      "Zhao, Jeffrey",
+      "Yu, Dian",
+      "Du, Nan",
+      "Shafran, Izhak",
+      "Narasimhan, Karthik",
+      "Cao, Yuan"
+    ],
+    "citation_date": [
+      "2022/10/06"
+    ],
+    "citation_online_date": [
+      "2023/03/10"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2210.03629"
+    ],
+    "citation_arxiv_id": [
+      "2210.03629"
+    ],
+    "citation_abstract": [
+      "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io"
+    ],
+    "verified_version": "v3",
+    "verified_url": "https://arxiv.org/abs/2210.03629v3",
+    "official_author_order": [
+      "Shunyu Yao",
+      "Jeffrey Zhao",
+      "Dian Yu",
+      "Nan Du",
+      "Izhak Shafran",
+      "Karthik Narasimhan",
+      "Yuan Cao"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2022,
+    "version_date": "2023/03/10"
+  },
+  {
+    "id": "2302.04761",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Toolformer: Language Models Can Teach Themselves to Use Tools"
+    ],
+    "citation_author": [
+      "Schick, Timo",
+      "Dwivedi-Yu, Jane",
+      "Dessì, Roberto",
+      "Raileanu, Roberta",
+      "Lomeli, Maria",
+      "Zettlemoyer, Luke",
+      "Cancedda, Nicola",
+      "Scialom, Thomas"
+    ],
+    "citation_date": [
+      "2023/02/09"
+    ],
+    "citation_online_date": [
+      "2023/02/09"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2302.04761"
+    ],
+    "citation_arxiv_id": [
+      "2302.04761"
+    ],
+    "citation_abstract": [
+      "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities."
+    ],
+    "verified_version": "v1",
+    "verified_url": "https://arxiv.org/abs/2302.04761v1",
+    "official_author_order": [
+      "Timo Schick",
+      "Jane Dwivedi-Yu",
+      "Roberto Dessì",
+      "Roberta Raileanu",
+      "Maria Lomeli",
+      "Luke Zettlemoyer",
+      "Nicola Cancedda",
+      "Thomas Scialom"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2023,
+    "version_date": "2023/02/09"
+  },
+  {
+    "id": "2201.11903",
+    "url": "https://arxiv.org/abs/2201.11903",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    ],
+    "citation_author": [
+      "Wei, Jason",
+      "Wang, Xuezhi",
+      "Schuurmans, Dale",
+      "Bosma, Maarten",
+      "Ichter, Brian",
+      "Xia, Fei",
+      "Chi, Ed",
+      "Le, Quoc",
+      "Zhou, Denny"
+    ],
+    "citation_date": [
+      "2022/01/28"
+    ],
+    "citation_online_date": [
+      "2023/01/10"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2201.11903"
+    ],
+    "citation_arxiv_id": [
+      "2201.11903"
+    ],
+    "citation_abstract": [
+      "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier."
+    ],
+    "verified_version": "v6",
+    "verified_url": "https://arxiv.org/abs/2201.11903v6",
+    "official_author_order": [
+      "Jason Wei",
+      "Xuezhi Wang",
+      "Dale Schuurmans",
+      "Maarten Bosma",
+      "Brian Ichter",
+      "Fei Xia",
+      "Ed Chi",
+      "Quoc Le",
+      "Denny Zhou"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2022,
+    "version_date": "2023/01/10"
+  },
+  {
+    "id": "2212.08073",
+    "url": "https://arxiv.org/abs/2212.08073",
+    "verified_on": "2026-11-09",
+    "citation_title": [
+      "Constitutional AI: Harmlessness from AI Feedback"
+    ],
+    "citation_author": [
+      "Bai, Yuntao",
+      "Kadavath, Saurav",
+      "Kundu, Sandipan",
+      "Askell, Amanda",
+      "Kernion, Jackson",
+      "Jones, Andy",
+      "Chen, Anna",
+      "Goldie, Anna",
+      "Mirhoseini, Azalia",
+      "McKinnon, Cameron",
+      "Chen, Carol",
+      "Olsson, Catherine",
+      "Olah, Christopher",
+      "Hernandez, Danny",
+      "Drain, Dawn",
+      "Ganguli, Deep",
+      "Li, Dustin",
+      "Tran-Johnson, Eli",
+      "Perez, Ethan",
+      "Kerr, Jamie",
+      "Mueller, Jared",
+      "Ladish, Jeffrey",
+      "Landau, Joshua",
+      "Ndousse, Kamal",
+      "Lukosuite, Kamile",
+      "Lovitt, Liane",
+      "Sellitto, Michael",
+      "Elhage, Nelson",
+      "Schiefer, Nicholas",
+      "Mercado, Noemi",
+      "DasSarma, Nova",
+      "Lasenby, Robert",
+      "Larson, Robin",
+      "Ringer, Sam",
+      "Johnston, Scott",
+      "Kravec, Shauna",
+      "Showk, Sheer El",
+      "Fort, Stanislav",
+      "Lanham, Tamera",
+      "Telleen-Lawton, Timothy",
+      "Conerly, Tom",
+      "Henighan, Tom",
+      "Hume, Tristan",
+      "Bowman, Samuel R.",
+      "Hatfield-Dodds, Zac",
+      "Mann, Ben",
+      "Amodei, Dario",
+      "Joseph, Nicholas",
+      "McCandlish, Sam",
+      "Brown, Tom",
+      "Kaplan, Jared"
+    ],
+    "citation_date": [
+      "2022/12/15"
+    ],
+    "citation_online_date": [
+      "2022/12/15"
+    ],
+    "citation_pdf_url": [
+      "https://arxiv.org/pdf/2212.08073"
+    ],
+    "citation_arxiv_id": [
+      "2212.08073"
+    ],
+    "citation_abstract": [
+      "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels."
+    ],
+    "verified_version": "v1",
+    "verified_url": "https://arxiv.org/abs/2212.08073v1",
+    "official_author_order": [
+      "Yuntao Bai",
+      "Saurav Kadavath",
+      "Sandipan Kundu",
+      "Amanda Askell",
+      "Jackson Kernion",
+      "Andy Jones",
+      "Anna Chen",
+      "Anna Goldie",
+      "Azalia Mirhoseini",
+      "Cameron McKinnon",
+      "Carol Chen",
+      "Catherine Olsson",
+      "Christopher Olah",
+      "Danny Hernandez",
+      "Dawn Drain",
+      "Deep Ganguli",
+      "Dustin Li",
+      "Eli Tran-Johnson",
+      "Ethan Perez",
+      "Jamie Kerr",
+      "Jared Mueller",
+      "Jeffrey Ladish",
+      "Joshua Landau",
+      "Kamal Ndousse",
+      "Kamile Lukosuite",
+      "Liane Lovitt",
+      "Michael Sellitto",
+      "Nelson Elhage",
+      "Nicholas Schiefer",
+      "Noemi Mercado",
+      "Nova DasSarma",
+      "Robert Lasenby",
+      "Robin Larson",
+      "Sam Ringer",
+      "Scott Johnston",
+      "Shauna Kravec",
+      "Sheer El Showk",
+      "Stanislav Fort",
+      "Tamera Lanham",
+      "Timothy Telleen-Lawton",
+      "Tom Conerly",
+      "Tom Henighan",
+      "Tristan Hume",
+      "Samuel R. Bowman",
+      "Zac Hatfield-Dodds",
+      "Ben Mann",
+      "Dario Amodei",
+      "Nicholas Joseph",
+      "Sam McCandlish",
+      "Tom Brown",
+      "Jared Kaplan"
+    ],
+    "author_verification": "Official visible byline, in source order; not alphabetized",
+    "preprint_year": 2022,
+    "version_date": "2022/12/15"
+  }
+]

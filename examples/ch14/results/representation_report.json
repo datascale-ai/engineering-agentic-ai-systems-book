@@ -1,0 +1,1550 @@
+{
+  "experiment_id": "Exp-14-01",
+  "kind": "deterministic_representation_measurement",
+  "case_count": 10,
+  "turns_per_case": 60,
+  "checkpoints": [
+    12,
+    24,
+    36,
+    48,
+    60
+  ],
+  "summary_limit_codepoints": 240,
+  "model": null,
+  "repeat_count": 1,
+  "summary": [
+    {
+      "strategy": "full_history",
+      "checkpoints": 50,
+      "retained_facts": 200,
+      "required_facts": 200,
+      "retention_rate": 1.0,
+      "stale_facts": 0,
+      "mean_utf8_bytes": 6127.2,
+      "mean_codepoints": 2990.4
+    },
+    {
+      "strategy": "recent_summary",
+      "checkpoints": 50,
+      "retained_facts": 10,
+      "required_facts": 200,
+      "retention_rate": 0.05,
+      "stale_facts": 0,
+      "mean_utf8_bytes": 745.6,
+      "mean_codepoints": 343.2
+    },
+    {
+      "strategy": "state_plus_summary",
+      "checkpoints": 50,
+      "retained_facts": 200,
+      "required_facts": 200,
+      "retention_rate": 1.0,
+      "stale_facts": 0,
+      "mean_utf8_bytes": 1143.9,
+      "mean_codepoints": 704.3
+    }
+  ],
+  "rows": [
+    {
+      "case_id": "T01",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8176,
+      "serialized_codepoints": 3968
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10312,
+      "serialized_codepoints": 4904
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T01",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8168,
+      "serialized_codepoints": 3966
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10304,
+      "serialized_codepoints": 4902
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T02",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8176,
+      "serialized_codepoints": 3968
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10312,
+      "serialized_codepoints": 4904
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T03",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8168,
+      "serialized_codepoints": 3966
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10304,
+      "serialized_codepoints": 4902
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T04",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8176,
+      "serialized_codepoints": 3968
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10312,
+      "serialized_codepoints": 4904
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T05",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8168,
+      "serialized_codepoints": 3966
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10304,
+      "serialized_codepoints": 4902
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T06",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8176,
+      "serialized_codepoints": 3968
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10312,
+      "serialized_codepoints": 4904
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T07",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8168,
+      "serialized_codepoints": 3966
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10304,
+      "serialized_codepoints": 4902
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T08",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1965,
+      "serialized_codepoints": 1045
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 720,
+      "serialized_codepoints": 320
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1109,
+      "serialized_codepoints": 675
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4079,
+      "serialized_codepoints": 2015
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1120,
+      "serialized_codepoints": 682
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6096,
+      "serialized_codepoints": 3006
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 837,
+      "serialized_codepoints": 425
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1239,
+      "serialized_codepoints": 789
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8176,
+      "serialized_codepoints": 3968
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10312,
+      "serialized_codepoints": 4904
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 723,
+      "serialized_codepoints": 323
+    },
+    {
+      "case_id": "T09",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1124,
+      "serialized_codepoints": 686
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 12,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1975,
+      "serialized_codepoints": 1055
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 12,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 724,
+      "serialized_codepoints": 324
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 12,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1114,
+      "serialized_codepoints": 680
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 24,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 4100,
+      "serialized_codepoints": 2036
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 24,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 727,
+      "serialized_codepoints": 327
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 24,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1125,
+      "serialized_codepoints": 687
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 36,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 6127,
+      "serialized_codepoints": 3037
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 36,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 1,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 841,
+      "serialized_codepoints": 429
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 36,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1244,
+      "serialized_codepoints": 794
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 48,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 8210,
+      "serialized_codepoints": 4008
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 48,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 727,
+      "serialized_codepoints": 327
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 48,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1130,
+      "serialized_codepoints": 692
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 60,
+      "strategy": "full_history",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 10358,
+      "serialized_codepoints": 4956
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 60,
+      "strategy": "recent_summary",
+      "required_facts": 4,
+      "retained_facts": 0,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 727,
+      "serialized_codepoints": 327
+    },
+    {
+      "case_id": "T10",
+      "checkpoint": 60,
+      "strategy": "state_plus_summary",
+      "required_facts": 4,
+      "retained_facts": 4,
+      "stale_facts": 0,
+      "serialized_utf8_bytes": 1130,
+      "serialized_codepoints": 692
+    }
+  ]
+}

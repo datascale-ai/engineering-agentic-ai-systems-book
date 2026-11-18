@@ -1,0 +1,94 @@
+[
+  {
+    "key": "oauth",
+    "url": "https://www.rfc-editor.org/rfc/rfc9700.html",
+    "bytes": 261599,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "revocation",
+    "url": "https://www.rfc-editor.org/rfc/rfc7009.html",
+    "bytes": 29785,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "introspection",
+    "url": "https://www.rfc-editor.org/rfc/rfc7662.html",
+    "bytes": 46520,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "prov",
+    "url": "https://www.w3.org/TR/prov-dm/",
+    "bytes": 271572,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "cloudevents",
+    "url": "https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md",
+    "bytes": 369965,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "aiwork",
+    "url": "https://www.nber.org/papers/w31161",
+    "bytes": 97030,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "bm25",
+    "url": "https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf",
+    "bytes": 423997,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "rrf",
+    "url": "https://dl.acm.org/doi/10.1145/1571941.1572114",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "reflexion",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "bytes": 43184,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "webarena",
+    "url": "https://arxiv.org/abs/2307.13854",
+    "bytes": 44064,
+    "verified_on": "2026-11-09"
+  },
+  {
+    "key": "privacy",
+    "url": "https://www.nist.gov/privacy-framework",
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.nist.gov:443 \n"
+  },
+  {
+    "key": "rmf",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.nist.gov:443 \n"
+  },
+  {
+    "key": "zero",
+    "url": "https://csrc.nist.gov/pubs/sp/800/207/final",
+    "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to csrc.nist.gov:443 \n"
+  },
+  {
+    "key": "sqlite",
+    "url": "https://www.sqlite.org/lang_transaction.html",
+    "verified_on": "2026-11-09",
+    "bytes": 27068
+  },
+  {
+    "key": "owasp",
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "verified_on": "2026-11-09",
+    "bytes": 364255
+  },
+  {
+    "key": "bge",
+    "url": "https://huggingface.co/BAAI/bge-small-zh-v1.5/raw/main/README.md",
+    "verified_on": "2026-11-09",
+    "bytes": 27670
+  }
+]

@@ -1,0 +1,39 @@
+fig_id,label_id,zh,en,source_file
+Fig-14-01,Fig-14-01-L01,任务状态,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L02,目标与任务修订,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L03,预算与审批记录,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L04,来源、版本、有效期,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L05,受控写入，保存当前业务事实,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L06,工作记忆,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L07,当前相关事实与证据,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L08,未解决问题与行动候选,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L09,派生摘要,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L10,保留来源；可重新生成,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L11,模型上下文,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L12,策略与当前用户请求,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L13,选中的工作记忆,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L14,工具模式与输出约束,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L15,一次调用的输入，受容量约束,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L16,选择,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L17,装配,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L18,模型生成候选行动,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L19,执行前校验,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L20,权限、修订、有效期与金额,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L21,建议,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L22,直接重读当前状态,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-01,Fig-14-01-L23,实线为读取与计算路径；虚线框为派生内容。模型建议须经执行前校验。,,docs/images/ch14/fig-14-01-state-memory-context.svg
+Fig-14-02,Fig-14-02-L01,可信事件来源,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L02,状态服务,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L03,状态存储,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L04,摘要工作者,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L05,新事件，预期版本 7,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L06,身份、字段、来源校验,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L07,条件更新并登记事件,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L08,提交版本 8，事实修订 4,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L09,读取快照 v8 / r4,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L10,随后到达的新事实,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L11,提交版本 9，事实修订 5,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L12,提交基于 v8 / r4 生成的摘要,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L13,依据已过期，拒绝发布并要求重读,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L14,新事实保持有效；旧摘要不能覆盖当前状态,,docs/images/ch14/fig-14-02-state-summary-sequence.svg
+Fig-14-02,Fig-14-02-L15,v 表示状态版本，r 表示事实修订。摘要生成在事务之外，发布时再次检查依据。,,docs/images/ch14/fig-14-02-state-summary-sequence.svg

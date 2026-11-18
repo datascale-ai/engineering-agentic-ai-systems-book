@@ -1,0 +1,40 @@
+{"question_id": "Q-direct-01", "kind": "direct", "query": "差旅住宿的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P01@2#1"], "expected_limit_yuan": 500}
+{"question_id": "Q-paraphrase-01", "kind": "paraphrase", "query": "出差酒店房费每晚能报销多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P01@2#1"], "expected_limit_yuan": 500}
+{"question_id": "Q-denied-01", "kind": "denied", "query": "差旅住宿部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R01@1#1"]}
+{"question_id": "Q-unknown-01", "kind": "unanswerable", "query": "差旅住宿是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-02", "kind": "direct", "query": "市内交通的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P02@2#1"], "expected_limit_yuan": 100}
+{"question_id": "Q-paraphrase-02", "kind": "paraphrase", "query": "出租车费用报销需要什么", "department": "B", "as_of": "2026-11-09", "relevant": ["P02@2#1"], "expected_limit_yuan": 100}
+{"question_id": "Q-denied-02", "kind": "denied", "query": "市内交通部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R02@1#1"]}
+{"question_id": "Q-unknown-02", "kind": "unanswerable", "query": "市内交通是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-03", "kind": "direct", "query": "业务招待的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P03@2#1"], "expected_limit_yuan": 180}
+{"question_id": "Q-paraphrase-03", "kind": "paraphrase", "query": "客户餐叙能报销多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P03@2#1"], "expected_limit_yuan": 180}
+{"question_id": "Q-denied-03", "kind": "denied", "query": "业务招待部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R03@1#1"]}
+{"question_id": "Q-unknown-03", "kind": "unanswerable", "query": "业务招待是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-04", "kind": "direct", "query": "培训报名的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P04@2#1"], "expected_limit_yuan": 3000}
+{"question_id": "Q-paraphrase-04", "kind": "paraphrase", "query": "参加课程允许支付多少报名费", "department": "B", "as_of": "2026-11-09", "relevant": ["P04@2#1"], "expected_limit_yuan": 3000}
+{"question_id": "Q-denied-04", "kind": "denied", "query": "培训报名部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R04@1#1"]}
+{"question_id": "Q-unknown-04", "kind": "unanswerable", "query": "培训报名是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-05", "kind": "direct", "query": "设备采购的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P05@2#1"], "expected_limit_yuan": 8000}
+{"question_id": "Q-paraphrase-05", "kind": "paraphrase", "query": "买工作电脑的预算是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P05@2#1"], "expected_limit_yuan": 8000}
+{"question_id": "Q-denied-05", "kind": "denied", "query": "设备采购部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R05@1#1"]}
+{"question_id": "Q-unknown-05", "kind": "unanswerable", "query": "设备采购是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-06", "kind": "direct", "query": "图书采购的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P06@2#1"], "expected_limit_yuan": 400}
+{"question_id": "Q-paraphrase-06", "kind": "paraphrase", "query": "专业书籍能购买多少金额", "department": "B", "as_of": "2026-11-09", "relevant": ["P06@2#1"], "expected_limit_yuan": 400}
+{"question_id": "Q-denied-06", "kind": "denied", "query": "图书采购部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R06@1#1"]}
+{"question_id": "Q-unknown-06", "kind": "unanswerable", "query": "图书采购是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-07", "kind": "direct", "query": "软件订阅的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P07@2#1"], "expected_limit_yuan": 300}
+{"question_id": "Q-paraphrase-07", "kind": "paraphrase", "query": "购买开发工具可以付多少钱", "department": "B", "as_of": "2026-11-09", "relevant": ["P07@2#1"], "expected_limit_yuan": 300}
+{"question_id": "Q-denied-07", "kind": "denied", "query": "软件订阅部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R07@1#1"]}
+{"question_id": "Q-unknown-07", "kind": "unanswerable", "query": "软件订阅是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-08", "kind": "direct", "query": "远程办公的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P08@2#1"], "expected_limit_yuan": 800}
+{"question_id": "Q-paraphrase-08", "kind": "paraphrase", "query": "居家工作配件可以报销多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P08@2#1"], "expected_limit_yuan": 800}
+{"question_id": "Q-denied-08", "kind": "denied", "query": "远程办公部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R08@1#1"]}
+{"question_id": "Q-unknown-08", "kind": "unanswerable", "query": "远程办公是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-09", "kind": "direct", "query": "会议注册的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P09@2#1"], "expected_limit_yuan": 2500}
+{"question_id": "Q-paraphrase-09", "kind": "paraphrase", "query": "学术会议注册费额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P09@2#1"], "expected_limit_yuan": 2500}
+{"question_id": "Q-denied-09", "kind": "denied", "query": "会议注册部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R09@1#1"]}
+{"question_id": "Q-unknown-09", "kind": "unanswerable", "query": "会议注册是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}
+{"question_id": "Q-direct-10", "kind": "direct", "query": "快递寄送的当前费用上限是多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P10@2#1"], "expected_limit_yuan": 80}
+{"question_id": "Q-paraphrase-10", "kind": "paraphrase", "query": "寄送项目材料可以报销多少", "department": "B", "as_of": "2026-11-09", "relevant": ["P10@2#1"], "expected_limit_yuan": 80}
+{"question_id": "Q-denied-10", "kind": "denied", "query": "快递寄送部门A专项例外额度是多少", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null, "forbidden": ["R10@1#1"]}
+{"question_id": "Q-unknown-10", "kind": "unanswerable", "query": "快递寄送是否可以给家属申请海外商业保险", "department": "B", "as_of": "2026-11-09", "relevant": [], "expected_limit_yuan": null}

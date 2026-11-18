@@ -1,0 +1,16 @@
+{
+  "id": "EXP-D-33-01",
+  "date": "2026-11-09",
+  "kind": "declared cost scenarios and authorization checks",
+  "materials": "2 departments;6 cost scenarios",
+  "license": "MIT original teaching materials",
+  "comparison": "manual / assisted / approved action",
+  "metrics": "total cost;sensitivity;revoked-cache denial",
+  "entry": "examples/ch33/run_adoption.py",
+  "repetitions": 1,
+  "randomness": "deterministic; runtime timing varies",
+  "budget": "see chapter and source; no generation model calls",
+  "success_criterion": "Business invariants and gold labels in report; failures retained",
+  "evidence_status": "executed locally",
+  "limitations": "No real worker timing or organizational adoption"
+}

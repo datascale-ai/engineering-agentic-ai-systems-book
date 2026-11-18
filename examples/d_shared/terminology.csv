@@ -1,0 +1,48 @@
+term_id,zh,en_candidate,status
+D-STATE,任务状态,task state,Chinese draft terminology; align at book freeze
+D-OBS,观察,observation,Chinese draft terminology; align at book freeze
+D-WM,工作记忆,working memory,Chinese draft terminology; align at book freeze
+D-SCOPE,作用域,scope,Chinese draft terminology; align at book freeze
+D-REV,修订,revision,Chinese draft terminology; align at book freeze
+D-GEN,任务世代,task generation,Chinese draft terminology; align at book freeze
+D-SOURCE,来源,provenance,Chinese draft terminology; align at book freeze
+D-EPISODIC,情景记忆,episodic memory,Chinese draft terminology; align at book freeze
+D-SEMANTIC,语义记忆,semantic memory,Chinese draft terminology; align at book freeze
+D-PROCEDURAL,程序记忆,procedural memory,Chinese draft terminology; align at book freeze
+D-PROFILE,用户画像,user profile,Chinese draft terminology; align at book freeze
+D-PREFERENCE,偏好,preference,Chinese draft terminology; align at book freeze
+D-TOMBSTONE,删除标记,tombstone,Chinese draft terminology; align at book freeze
+D-DELETION,删除传播,deletion propagation,Chinese draft terminology; align at book freeze
+D-VALIDITY,有效期,validity interval,Chinese draft terminology; align at book freeze
+D-RETENTION,保留期,retention period,Chinese draft terminology; align at book freeze
+D-RAG,检索增强生成,retrieval-augmented generation,Chinese draft terminology; align at book freeze
+D-DENSE,稠密检索,dense retrieval,Chinese draft terminology; align at book freeze
+D-HYBRID,混合检索,hybrid retrieval,Chinese draft terminology; align at book freeze
+D-RERANK,重排,reranking,Chinese draft terminology; align at book freeze
+D-CHUNK,片段,chunk,Chinese draft terminology; align at book freeze
+D-EVIDENCE,证据卡,evidence card,Chinese draft terminology; align at book freeze
+D-CLAIM,主张,claim,Chinese draft terminology; align at book freeze
+D-KG,知识图谱,knowledge graph,Chinese draft terminology; align at book freeze
+D-ABSTAIN,材料不足,insufficient evidence,Chinese draft terminology; align at book freeze
+D-FEEDBACK,外部反馈,external feedback,Chinese draft terminology; align at book freeze
+D-CRITIQUE,自我批评,self-critique,Chinese draft terminology; align at book freeze
+D-HOLDOUT,保留集,holdout set,Chinese draft terminology; align at book freeze
+D-ADAPT,运行时适应,runtime adaptation,Chinese draft terminology; align at book freeze
+D-CONTINUAL,持续学习,continual learning,Chinese draft terminology; align at book freeze
+D-ROLLBACK,回滚,rollback,Chinese draft terminology; align at book freeze
+D-IDENTITY,身份,identity,Chinese draft terminology; align at book freeze
+D-DELEGATION,委托授权,delegated authorization,Chinese draft terminology; align at book freeze
+D-APPROVAL,业务批准,business approval,Chinese draft terminology; align at book freeze
+D-REVIEW,人工审核,human review,Chinese draft terminology; align at book freeze
+D-TCO,总拥有成本,total cost of ownership,Chinese draft terminology; align at book freeze
+D-SHADOW,影子运行,shadow execution,Chinese draft terminology; align at book freeze
+D-HANDOFF,角色交接,role handoff,Chinese draft terminology; align at book freeze
+D-IDEMPOTENCY,幂等,idempotency,Chinese draft terminology; align at book freeze
+D-CHECKPOINT,持久检查点,durable checkpoint,Chinese draft terminology; align at book freeze
+D-CANCEL,用户取消,user cancellation,Chinese draft terminology; align at book freeze
+D-CONTROL,控制面,control plane,Chinese draft terminology; align at book freeze
+D-EXECUTION,执行面,execution plane,Chinese draft terminology; align at book freeze
+D-AUTONOMY,长程自主,long-horizon autonomy,Chinese draft terminology; align at book freeze
+D-SOCIAL,社会智能,social intelligence,Chinese draft terminology; align at book freeze
+D-EMBODIED,具身迁移,embodied transfer,Chinese draft terminology; align at book freeze
+D-FALSIFY,否定条件,falsification condition,Chinese draft terminology; align at book freeze
