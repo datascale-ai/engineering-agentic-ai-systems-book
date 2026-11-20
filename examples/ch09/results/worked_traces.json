@@ -1,0 +1,1057 @@
+{
+  "evidence_level": "deterministic_mock",
+  "model_calls": 0,
+  "input_sha256": "ea3365fcda1bee7cd856442ee11ddc001ed89592daecff9200d6e1e8e06230c9",
+  "source_sha256": {
+    "trace_plan.py": "9903c0c4d5f6b39077f9544a833c90376489e49bda5ed77f067fdbd0c39de328",
+    "plan_validator.py": "dfec6fefe80529e42311bc9c27966c865f2eb19910f50e6da8c97f2261f1bc38",
+    "run_experiment.py": "7093c15b420b26eca756059f744254fd8e7ccdacc20990ec4c7e6a822ce1610b"
+  },
+  "traces": [
+    {
+      "case_id": "CH09-SYN-01",
+      "annotation": "完整计划；两分支汇合",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "VALID_UNDER_MODEL",
+        "errors": [],
+        "checked_orders": 3,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": true,
+        "reason": "accepted_mock",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "tool": "submit",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": true,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "verify",
+            "tool": "verify",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request",
+              "submitted"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "submit",
+            "predicate": "submitted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "verify",
+            "predicate": "verified",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 7
+      },
+      "gated_dispatch": true
+    },
+    {
+      "case_id": "CH09-SYN-06",
+      "annotation": "计划遗漏审批；目标仍可行",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "APPROVAL_DEPENDENCY_MISSING",
+            "detail": "submit"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "precondition_missing",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "status": "blocked",
+            "reason": "precondition_missing"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 2
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-08",
+      "annotation": "候选依赖成环；目标仍可行",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "CYCLE",
+            "detail": "no complete topological order"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "cycle",
+        "events": [],
+        "evidence": [],
+        "spent_credit": 0
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-09",
+      "annotation": "审批遗漏资格依赖；一种拓扑序成功并不足够",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "PRECONDITION_UNSUPPORTED",
+            "detail": "approve"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": [
+          "draft",
+          "approve"
+        ],
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "precondition_missing",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "status": "blocked",
+            "reason": "precondition_missing"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 2
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-14",
+      "annotation": "静态快照有效，执行前submit下线",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "VALID_UNDER_MODEL",
+        "errors": [],
+        "checked_orders": 3,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "tool_unavailable",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "status": "blocked",
+            "reason": "tool_unavailable"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 4
+      },
+      "gated_dispatch": true
+    },
+    {
+      "case_id": "CH09-SYN-15",
+      "annotation": "submit返回200，但没有持久业务效果和证据",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "VALID_UNDER_MODEL",
+        "errors": [],
+        "checked_orders": 3,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "SAT_MODEL",
+        "expanded": 9,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ]
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "acceptance_evidence_missing",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "tool": "submit",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": true,
+            "status": "http_200"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 6
+      },
+      "gated_dispatch": true
+    },
+    {
+      "case_id": "CH09-SYN-16",
+      "annotation": "无可信审批能力；当前模型不可行",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "TOOL_UNAVAILABLE",
+            "detail": "approve"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "UNSAT_MODEL",
+        "expanded": 6,
+        "witness": null
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "tool_unavailable",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "status": "blocked",
+            "reason": "tool_unavailable"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 3
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-18",
+      "annotation": "最小完整链消耗7 credit，预算只有6",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "BUDGET_EXCEEDED",
+            "detail": "credit: 7"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "UNSAT_MODEL",
+        "expanded": 8,
+        "witness": null
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "budget_exceeded",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "tool": "submit",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": true,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "verify",
+            "status": "blocked",
+            "reason": "budget_exceeded"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "submit",
+            "predicate": "submitted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 6
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-19",
+      "annotation": "目标谓词互斥",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "GOAL_CONFLICT",
+            "detail": "mutually exclusive goal predicates"
+          }
+        ],
+        "checked_orders": 0,
+        "witness": null,
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "UNSAT_MODEL",
+        "expanded": 0,
+        "witness": null
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "goal_unreached",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "tool": "submit",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": true,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "verify",
+            "tool": "verify",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request",
+              "submitted"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "submit",
+            "predicate": "submitted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "verify",
+            "predicate": "verified",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 7
+      },
+      "gated_dispatch": false
+    },
+    {
+      "case_id": "CH09-SYN-20",
+      "annotation": "环境无任何动作产生archived",
+      "evidence_level": "deterministic_mock",
+      "static_report": {
+        "status": "INVALID",
+        "errors": [
+          {
+            "code": "GOAL_UNREACHED",
+            "detail": "archived"
+          }
+        ],
+        "checked_orders": 1,
+        "witness": [
+          "draft",
+          "read_policy",
+          "qualify",
+          "approve",
+          "submit",
+          "verify"
+        ],
+        "snapshot_id": "ch09-mock-snapshot-1",
+        "schema_version": "ch09-proposal-0.1"
+      },
+      "feasibility": {
+        "status": "UNSAT_MODEL",
+        "expanded": 9,
+        "witness": null
+      },
+      "direct_mock": {
+        "success": false,
+        "reason": "goal_unreached",
+        "events": [
+          {
+            "task_id": "draft",
+            "tool": "draft",
+            "state_before": [
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "read_policy",
+            "tool": "read_policy",
+            "state_before": [
+              "drafted",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "qualify",
+            "tool": "qualify",
+            "state_before": [
+              "drafted",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "approve",
+            "tool": "approve",
+            "state_before": [
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "submit",
+            "tool": "submit",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request"
+            ],
+            "requires_approval": true,
+            "status": "mock_effect_applied"
+          },
+          {
+            "task_id": "verify",
+            "tool": "verify",
+            "state_before": [
+              "approved",
+              "drafted",
+              "eligible",
+              "policy",
+              "request",
+              "submitted"
+            ],
+            "requires_approval": false,
+            "status": "mock_effect_applied"
+          }
+        ],
+        "evidence": [
+          {
+            "task_id": "draft",
+            "predicate": "drafted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "read_policy",
+            "predicate": "policy",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "qualify",
+            "predicate": "eligible",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "approve",
+            "predicate": "approved",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "submit",
+            "predicate": "submitted",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          },
+          {
+            "task_id": "verify",
+            "predicate": "verified",
+            "producer": "independent_mock_observer",
+            "level": "deterministic_mock"
+          }
+        ],
+        "spent_credit": 7
+      },
+      "gated_dispatch": false
+    }
+  ]
+}

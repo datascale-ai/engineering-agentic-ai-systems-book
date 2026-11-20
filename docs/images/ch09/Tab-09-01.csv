@@ -1,0 +1,9 @@
+字段,类型/样例,本章语义与检查,限制
+id,字符串，submit,本计划内唯一、非空,跨章ID命名待确认
+depends_on,"字符串数组，[""approve""]",前驱须存在；不可成环；必要因果边不能遗漏,不是线程或队列定义
+tool / tool_version,submit / mock-1,稳定能力引用及精确版本,版本兼容策略待Ch11确认
+preconditions,"eligible, drafted, approved",必须与可信动作模型一致，检查所有允许的串行化,本章只有正命题
+postconditions,"[""submitted""]",期望增加效果，不是完成证据,实际效果由观察确认
+delete_effects,字符串数组,被动作撤销的事实；用于检查因果威胁,不支持连续效应
+resources,"credit=2, duration_ms=10",与目录一致；总和不得超过计划和环境预算,未模拟并发容量与真实计费
+acceptance,非空谓词数组,候选声明的条件须能由该动作产生；执行时另收证据,完整证据卡交Ch13

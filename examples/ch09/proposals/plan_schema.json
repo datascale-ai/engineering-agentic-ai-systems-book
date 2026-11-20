@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:book:ch09:proposal:plan:0.1",
+  "title": "Ch09 teaching proposal ONLY - NOT FROZEN public Plan contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "plan_id", "version", "previous_version", "goal_ref", "snapshot_id", "goal_conditions", "constraints", "budget", "tasks"],
+  "properties": {
+    "schema_version": {"const": "ch09-proposal-0.1", "type": "string"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "version": {"type": "integer", "minimum": 1},
+    "previous_version": {"type": ["integer", "null"], "minimum": 1},
+    "goal_ref": {"type": "string", "minLength": 1},
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "goal_conditions": {"$ref": "#/$defs/nonemptyFacts"},
+    "constraints": {"type": "array", "items": {"$ref": "#/$defs/nonemptyFacts"}},
+    "budget": {"$ref": "#/$defs/resources"},
+    "tasks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/task"}}
+  },
+  "$defs": {
+    "facts": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "nonemptyFacts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "resources": {
+      "type": "object", "additionalProperties": false, "required": ["credit", "duration_ms"],
+      "properties": {"credit": {"type": "integer", "minimum": 0}, "duration_ms": {"type": "integer", "minimum": 0}}
+    },
+    "task": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "depends_on", "tool", "tool_version", "preconditions", "postconditions", "delete_effects", "resources", "acceptance"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "depends_on": {"$ref": "#/$defs/facts"},
+        "tool": {"type": "string", "minLength": 1},
+        "tool_version": {"type": "string", "minLength": 1},
+        "preconditions": {"$ref": "#/$defs/facts"},
+        "postconditions": {"$ref": "#/$defs/facts"},
+        "delete_effects": {"$ref": "#/$defs/facts"},
+        "resources": {"$ref": "#/$defs/resources"},
+        "acceptance": {"$ref": "#/$defs/nonemptyFacts"}
+      }
+    }
+  }
+}
