@@ -1,0 +1,342 @@
+{
+  "project": "PRJ-2-local-1",
+  "evidence": "local_sqlite_and_separate_processes",
+  "scope": "8 original tasks, 2 original clauses, trusted local identities; team integration pending",
+  "tasks": [
+    {
+      "task_id": "T-DEMO-01",
+      "decision": "eligible",
+      "status": "completed",
+      "ticket_count": 1,
+      "created_count": 1,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-02",
+      "decision": "eligible",
+      "status": "completed",
+      "ticket_count": 1,
+      "created_count": 1,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-03",
+      "decision": "needs_approval",
+      "status": "rejected",
+      "ticket_count": 0,
+      "created_count": 0,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-04",
+      "decision": "needs_approval",
+      "status": "rejected",
+      "ticket_count": 0,
+      "created_count": 0,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-05",
+      "decision": "ineligible",
+      "status": "rejected",
+      "ticket_count": 0,
+      "created_count": 0,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-06",
+      "decision": "ineligible",
+      "status": "rejected",
+      "ticket_count": 0,
+      "created_count": 0,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-07",
+      "decision": "ineligible",
+      "status": "rejected",
+      "ticket_count": 0,
+      "created_count": 0,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "P2-08",
+      "decision": "eligible",
+      "status": "completed",
+      "ticket_count": 1,
+      "created_count": 1,
+      "checks": {
+        "state": true,
+        "ticket_count": true,
+        "created_count": true,
+        "payload": true,
+        "rejection_reason": true
+      },
+      "passed": true
+    }
+  ],
+  "roles": [
+    "researcher",
+    "executor",
+    "verifier"
+  ],
+  "closed_jobs": 24,
+  "ticket_count": 3,
+  "budget": {
+    "used": 73,
+    "cap": 240
+  },
+  "commands": [
+    {
+      "job": "T-DEMO-01:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "T-DEMO-01:execute",
+      "actor": "executor",
+      "phase": "crash",
+      "exit_code": 42,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "T-DEMO-01:execute",
+      "actor": "executor",
+      "phase": "recover",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "T-DEMO-01:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-02:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-02:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-02:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-03:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-03:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-03:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-04:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-04:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-04:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-05:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-05:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-05:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-06:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-06:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-06:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-07:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-07:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-07:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-08:research",
+      "actor": "researcher",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-08:execute",
+      "actor": "executor",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job": "P2-08:verify",
+      "actor": "verifier",
+      "phase": "run",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "independent_student_reproduction": "pending",
+  "passed": true
+}

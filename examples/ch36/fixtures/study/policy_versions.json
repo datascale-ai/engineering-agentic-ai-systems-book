@@ -1,0 +1,14 @@
+[
+  {
+    "version": "P20-A@1.0",
+    "effective_before": "2026-07-01",
+    "amount_limit": 500,
+    "supervisor_threshold": 400
+  },
+  {
+    "version": "P20-A@2.0",
+    "effective_from": "2026-07-01",
+    "amount_limit": 500,
+    "supervisor_threshold": 300
+  }
+]

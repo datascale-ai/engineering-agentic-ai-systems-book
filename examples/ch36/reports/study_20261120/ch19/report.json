@@ -1,0 +1,1785 @@
+{
+  "experiment": "Exp-19-01",
+  "evidence": "deterministic_discrete_events_and_sqlite",
+  "workers": [
+    "W1",
+    "W2",
+    "W3"
+  ],
+  "scheduling": "20-tick serial task slots; no throughput claim",
+  "budget_unit": "authoritative RPC requests; transport attempts and replies reported separately",
+  "task_count": 20,
+  "protocol": [
+    {
+      "task_id": "T01",
+      "fault": "normal",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 4,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T01:main",
+            "job_id": "T01",
+            "task_id": "T01",
+            "parent_task_id": "T01",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 6,
+            "sent_at": 3,
+            "deadline": 16,
+            "candidate_id": "T01:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T01:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T02",
+      "fault": "normal",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 24,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T02:main",
+            "job_id": "T02",
+            "task_id": "T02",
+            "parent_task_id": "T02",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 26,
+            "sent_at": 23,
+            "deadline": 36,
+            "candidate_id": "T02:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T02:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T03",
+      "fault": "normal",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 44,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T03:main",
+            "job_id": "T03",
+            "task_id": "T03",
+            "parent_task_id": "T03",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 46,
+            "sent_at": 43,
+            "deadline": 56,
+            "candidate_id": "T03:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T03:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T04",
+      "fault": "normal",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 64,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T04:main",
+            "job_id": "T04",
+            "task_id": "T04",
+            "parent_task_id": "T04",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 66,
+            "sent_at": 63,
+            "deadline": 76,
+            "candidate_id": "T04:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T04:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T05",
+      "fault": "duplicate",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 84,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T05:main",
+            "job_id": "T05",
+            "task_id": "T05",
+            "parent_task_id": "T05",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 86,
+            "sent_at": 83,
+            "deadline": 96,
+            "candidate_id": "T05:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 4,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T05:main",
+            "job_id": "T05",
+            "task_id": "T05",
+            "parent_task_id": "T05",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 86,
+            "sent_at": 83,
+            "deadline": 96,
+            "candidate_id": "T05:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T05:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T06",
+      "fault": "duplicate_many",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 107,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 6,
+        "reply_attempts": 6,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T06:main",
+            "job_id": "T06",
+            "task_id": "T06",
+            "parent_task_id": "T06",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 106,
+            "sent_at": 103,
+            "deadline": 116,
+            "candidate_id": "T06:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 4,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T06:main",
+            "job_id": "T06",
+            "task_id": "T06",
+            "parent_task_id": "T06",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 106,
+            "sent_at": 103,
+            "deadline": 116,
+            "candidate_id": "T06:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 5,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T06:main",
+            "job_id": "T06",
+            "task_id": "T06",
+            "parent_task_id": "T06",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 106,
+            "sent_at": 103,
+            "deadline": 116,
+            "candidate_id": "T06:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 6,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T06:main",
+            "job_id": "T06",
+            "task_id": "T06",
+            "parent_task_id": "T06",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 106,
+            "sent_at": 103,
+            "deadline": 116,
+            "candidate_id": "T06:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 7,
+          "candidate_id": "T06:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T07",
+      "fault": "duplicate_after_close",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 124,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T07:main",
+            "job_id": "T07",
+            "task_id": "T07",
+            "parent_task_id": "T07",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 126,
+            "sent_at": 123,
+            "deadline": 136,
+            "candidate_id": "T07:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T07:main:candidate",
+          "passed": true
+        },
+        {
+          "op": "submit",
+          "tick": 9,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T07:main",
+            "job_id": "T07",
+            "task_id": "T07",
+            "parent_task_id": "T07",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 126,
+            "sent_at": 123,
+            "deadline": 136,
+            "candidate_id": "T07:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        }
+      ]
+    },
+    {
+      "task_id": "T08",
+      "fault": "late_old",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 2,
+      "terminal_tick": 150,
+      "fault_tick": 152,
+      "recovery_ticks": -2,
+      "communication": {
+        "request_attempts": 6,
+        "reply_attempts": 6,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 7,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 9,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T08:new",
+            "job_id": "T08",
+            "task_id": "T08",
+            "parent_task_id": "T08",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 153,
+            "sent_at": 149,
+            "deadline": 156,
+            "candidate_id": "T08:new:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 10,
+          "candidate_id": "T08:new:candidate",
+          "passed": true
+        },
+        {
+          "op": "submit",
+          "tick": 12,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T08:old",
+            "job_id": "T08",
+            "task_id": "T08",
+            "parent_task_id": "T08",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 146,
+            "sent_at": 152,
+            "deadline": 156,
+            "candidate_id": "T08:old:candidate",
+            "payload": {
+              "draft_version": 0,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 13,
+          "candidate_id": "T08:old:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T09",
+      "fault": "old_verification",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 1,
+      "terminal_tick": 167,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 7,
+        "reply_attempts": 7,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 2,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T09:old",
+            "job_id": "T09",
+            "task_id": "T09",
+            "parent_task_id": "T09",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 166,
+            "sent_at": 162,
+            "deadline": 176,
+            "candidate_id": "T09:old:candidate",
+            "payload": {
+              "draft_version": 0,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 3,
+          "candidate_id": "T09:old:candidate",
+          "passed": false
+        },
+        {
+          "op": "claim",
+          "tick": 4,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 6,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T09:new",
+            "job_id": "T09",
+            "task_id": "T09",
+            "parent_task_id": "T09",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 170,
+            "sent_at": 166,
+            "deadline": 176,
+            "candidate_id": "T09:new:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 7,
+          "candidate_id": "T09:new:candidate",
+          "passed": true
+        },
+        {
+          "op": "close",
+          "tick": 8,
+          "candidate_id": "T09:old:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T10",
+      "fault": "late_renew",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 3,
+      "terminal_tick": 190,
+      "fault_tick": 192,
+      "recovery_ticks": -2,
+      "communication": {
+        "request_attempts": 7,
+        "reply_attempts": 7,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 7,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "renew",
+          "tick": 8,
+          "actor": "W1"
+        },
+        {
+          "op": "submit",
+          "tick": 9,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T10:new",
+            "job_id": "T10",
+            "task_id": "T10",
+            "parent_task_id": "T10",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 193,
+            "sent_at": 189,
+            "deadline": 196,
+            "candidate_id": "T10:new:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 10,
+          "candidate_id": "T10:new:candidate",
+          "passed": true
+        },
+        {
+          "op": "submit",
+          "tick": 12,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T10:old",
+            "job_id": "T10",
+            "task_id": "T10",
+            "parent_task_id": "T10",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 186,
+            "sent_at": 192,
+            "deadline": 196,
+            "candidate_id": "T10:old:candidate",
+            "payload": {
+              "draft_version": 0,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 13,
+          "candidate_id": "T10:old:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T11",
+      "fault": "lost_grant_ack",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 204,
+      "fault_tick": 200,
+      "recovery_ticks": 4,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 1
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 2,
+          "actor": "W2",
+          "protocol_only": true
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T11:main",
+            "job_id": "T11",
+            "task_id": "T11",
+            "parent_task_id": "T11",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 206,
+            "sent_at": 203,
+            "deadline": 216,
+            "candidate_id": "T11:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T11:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T12",
+      "fault": "lost_submit_ack",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 224,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 1
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T12:main",
+            "job_id": "T12",
+            "task_id": "T12",
+            "parent_task_id": "T12",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 226,
+            "sent_at": 223,
+            "deadline": 236,
+            "candidate_id": "T12:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 4,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T12:main",
+            "job_id": "T12",
+            "task_id": "T12",
+            "parent_task_id": "T12",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 226,
+            "sent_at": 223,
+            "deadline": 236,
+            "candidate_id": "T12:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": true
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T12:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T13",
+      "fault": "lost_submit",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 245,
+      "fault_tick": 243,
+      "recovery_ticks": 2,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 3,
+        "lost_requests": 1,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T13:main",
+            "job_id": "T13",
+            "task_id": "T13",
+            "parent_task_id": "T13",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 246,
+            "sent_at": 243,
+            "deadline": 256,
+            "candidate_id": "T13:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": true,
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 4,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T13:main",
+            "job_id": "T13",
+            "task_id": "T13",
+            "parent_task_id": "T13",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 246,
+            "sent_at": 243,
+            "deadline": 256,
+            "candidate_id": "T13:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": true
+        },
+        {
+          "op": "close",
+          "tick": 5,
+          "candidate_id": "T13:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T14",
+      "fault": "before_expiry",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 266,
+      "fault_tick": null,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 5,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T14:main",
+            "job_id": "T14",
+            "task_id": "T14",
+            "parent_task_id": "T14",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 266,
+            "sent_at": 265,
+            "deadline": 276,
+            "candidate_id": "T14:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 6,
+          "candidate_id": "T14:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T15",
+      "fault": "at_expiry",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 1,
+      "terminal_tick": 291,
+      "fault_tick": 286,
+      "recovery_ticks": 5,
+      "communication": {
+        "request_attempts": 5,
+        "reply_attempts": 5,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 6,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T15:expired",
+            "job_id": "T15",
+            "task_id": "T15",
+            "parent_task_id": "T15",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 286,
+            "sent_at": 286,
+            "deadline": 296,
+            "candidate_id": "T15:expired:candidate",
+            "payload": {
+              "draft_version": 0,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 8,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 10,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T15:new",
+            "job_id": "T15",
+            "task_id": "T15",
+            "parent_task_id": "T15",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 294,
+            "sent_at": 290,
+            "deadline": 296,
+            "candidate_id": "T15:new:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 11,
+          "candidate_id": "T15:new:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T16",
+      "fault": "after_expiry",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 1,
+      "terminal_tick": 311,
+      "fault_tick": 307,
+      "recovery_ticks": 4,
+      "communication": {
+        "request_attempts": 5,
+        "reply_attempts": 5,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 7,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T16:expired",
+            "job_id": "T16",
+            "task_id": "T16",
+            "parent_task_id": "T16",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 306,
+            "sent_at": 307,
+            "deadline": 316,
+            "candidate_id": "T16:expired:candidate",
+            "payload": {
+              "draft_version": 0,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 8,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 10,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T16:new",
+            "job_id": "T16",
+            "task_id": "T16",
+            "parent_task_id": "T16",
+            "sender": "W2",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 314,
+            "sent_at": 310,
+            "deadline": 316,
+            "candidate_id": "T16:new:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 11,
+          "candidate_id": "T16:new:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T17",
+      "fault": "worker_exit",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 2,
+      "rejected_messages": 0,
+      "terminal_tick": 330,
+      "fault_tick": 322,
+      "recovery_ticks": 8,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 7,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 9,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T17:main",
+            "job_id": "T17",
+            "task_id": "T17",
+            "parent_task_id": "T17",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 2,
+            "lease_until": 333,
+            "sent_at": 329,
+            "deadline": 336,
+            "candidate_id": "T17:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 10,
+          "candidate_id": "T17:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T18",
+      "fault": "exit_after_submit",
+      "state": "closed",
+      "qualified_completion": true,
+      "acceptance_passed": true,
+      "close_count": 1,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 348,
+      "fault_tick": 344,
+      "recovery_ticks": 4,
+      "communication": {
+        "request_attempts": 3,
+        "reply_attempts": 3,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W3",
+          "protocol_only": false
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T18:main",
+            "job_id": "T18",
+            "task_id": "T18",
+            "parent_task_id": "T18",
+            "sender": "W3",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 346,
+            "sent_at": 343,
+            "deadline": 356,
+            "candidate_id": "T18:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 8,
+          "candidate_id": "T18:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T19",
+      "fault": "cancel",
+      "state": "cancelled",
+      "qualified_completion": false,
+      "acceptance_passed": true,
+      "close_count": 0,
+      "grants": 1,
+      "rejected_messages": 2,
+      "terminal_tick": 362,
+      "fault_tick": 363,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 4,
+        "reply_attempts": 4,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W1",
+          "protocol_only": false
+        },
+        {
+          "op": "cancel",
+          "tick": 2
+        },
+        {
+          "op": "submit",
+          "tick": 3,
+          "message": {
+            "schema_version": "coordination-local-1",
+            "message_id": "T19:main",
+            "job_id": "T19",
+            "task_id": "T19",
+            "parent_task_id": "T19",
+            "sender": "W1",
+            "recipient": "coordinator",
+            "stage": "draft",
+            "revision": 1,
+            "epoch": 1,
+            "lease_until": 366,
+            "sent_at": 363,
+            "deadline": 376,
+            "candidate_id": "T19:main:candidate",
+            "payload": {
+              "draft_version": 1,
+              "policy": "P20-A@2.0"
+            }
+          },
+          "dropped": false,
+          "protocol_only": false
+        },
+        {
+          "op": "close",
+          "tick": 4,
+          "candidate_id": "T19:main:candidate",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task_id": "T20",
+      "fault": "partition",
+      "state": "escalated",
+      "qualified_completion": false,
+      "acceptance_passed": true,
+      "close_count": 0,
+      "grants": 1,
+      "rejected_messages": 0,
+      "terminal_tick": 396,
+      "fault_tick": 381,
+      "recovery_ticks": null,
+      "communication": {
+        "request_attempts": 2,
+        "reply_attempts": 2,
+        "lost_requests": 0,
+        "lost_replies": 0
+      },
+      "trace": [
+        {
+          "op": "claim",
+          "tick": 0,
+          "actor": "W2",
+          "protocol_only": false
+        },
+        {
+          "op": "claim",
+          "tick": 16,
+          "actor": "W3",
+          "protocol_only": true
+        }
+      ]
+    }
+  ],
+  "simplified": [
+    {
+      "task_id": "T01",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T02",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T03",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T04",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T05",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 4
+    },
+    {
+      "task_id": "T06",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 3,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 6
+    },
+    {
+      "task_id": "T07",
+      "state": "submitted",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": true,
+      "request_attempts": 4
+    },
+    {
+      "task_id": "T08",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 1,
+      "close_count": 2,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 6
+    },
+    {
+      "task_id": "T09",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 0,
+      "stale_acceptances": 1,
+      "close_count": 2,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 7
+    },
+    {
+      "task_id": "T10",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 1,
+      "close_count": 2,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 7
+    },
+    {
+      "task_id": "T11",
+      "state": "leased",
+      "qualified_completion": false,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 0,
+      "cancel_reactivated": false,
+      "unaccounted": true,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T12",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T13",
+      "state": "leased",
+      "qualified_completion": false,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 0,
+      "cancel_reactivated": false,
+      "unaccounted": true,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T14",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T15",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 1,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 5
+    },
+    {
+      "task_id": "T16",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 1,
+      "stale_acceptances": 1,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 5
+    },
+    {
+      "task_id": "T17",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 4
+    },
+    {
+      "task_id": "T18",
+      "state": "closed",
+      "qualified_completion": true,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": false,
+      "unaccounted": false,
+      "request_attempts": 3
+    },
+    {
+      "task_id": "T19",
+      "state": "closed",
+      "qualified_completion": false,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 1,
+      "cancel_reactivated": true,
+      "unaccounted": false,
+      "request_attempts": 4
+    },
+    {
+      "task_id": "T20",
+      "state": "leased",
+      "qualified_completion": false,
+      "duplicate_effects": 0,
+      "stale_acceptances": 0,
+      "close_count": 0,
+      "cancel_reactivated": false,
+      "unaccounted": true,
+      "request_attempts": 1
+    }
+  ],
+  "budget": {
+    "used": 83,
+    "cap": 240
+  },
+  "protocol_qualified": 18,
+  "simplified_qualified": 8,
+  "simplified_unaccounted": 4,
+  "passed": true
+}

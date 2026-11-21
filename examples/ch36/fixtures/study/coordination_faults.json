@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "T01",
+    "fault": "normal",
+    "worker": "W1",
+    "start": 0,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T02",
+    "fault": "normal",
+    "worker": "W2",
+    "start": 20,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T03",
+    "fault": "normal",
+    "worker": "W3",
+    "start": 40,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T04",
+    "fault": "normal",
+    "worker": "W1",
+    "start": 60,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T05",
+    "fault": "duplicate",
+    "worker": "W2",
+    "start": 80,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T06",
+    "fault": "duplicate_many",
+    "worker": "W3",
+    "start": 100,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T07",
+    "fault": "duplicate_after_close",
+    "worker": "W1",
+    "start": 120,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T08",
+    "fault": "late_old",
+    "worker": "W2",
+    "start": 140,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T09",
+    "fault": "old_verification",
+    "worker": "W3",
+    "start": 160,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T10",
+    "fault": "late_renew",
+    "worker": "W1",
+    "start": 180,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T11",
+    "fault": "lost_grant_ack",
+    "worker": "W2",
+    "start": 200,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T12",
+    "fault": "lost_submit_ack",
+    "worker": "W3",
+    "start": 220,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T13",
+    "fault": "lost_submit",
+    "worker": "W1",
+    "start": 240,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T14",
+    "fault": "before_expiry",
+    "worker": "W2",
+    "start": 260,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T15",
+    "fault": "at_expiry",
+    "worker": "W3",
+    "start": 280,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T16",
+    "fault": "after_expiry",
+    "worker": "W1",
+    "start": 300,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T17",
+    "fault": "worker_exit",
+    "worker": "W2",
+    "start": 320,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T18",
+    "fault": "exit_after_submit",
+    "worker": "W3",
+    "start": 340,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T19",
+    "fault": "cancel",
+    "worker": "W1",
+    "start": 360,
+    "lease": 6,
+    "deadline_offset": 16
+  },
+  {
+    "task_id": "T20",
+    "fault": "partition",
+    "worker": "W2",
+    "start": 380,
+    "lease": 6,
+    "deadline_offset": 16
+  }
+]

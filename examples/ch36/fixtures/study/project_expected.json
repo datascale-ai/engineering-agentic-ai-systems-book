@@ -1,0 +1,106 @@
+{
+  "T-DEMO-01": {
+    "decision": "eligible",
+    "status": "completed",
+    "ticket_count": 1,
+    "payload": {
+      "task_id": "T-DEMO-01",
+      "revision": 1,
+      "amount": 250,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-02": {
+    "decision": "eligible",
+    "status": "completed",
+    "ticket_count": 1,
+    "payload": {
+      "task_id": "P2-02",
+      "revision": 1,
+      "amount": 300,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-03": {
+    "decision": "needs_approval",
+    "status": "rejected",
+    "ticket_count": 0,
+    "payload": {
+      "task_id": "P2-03",
+      "revision": 1,
+      "amount": 301,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-04": {
+    "decision": "needs_approval",
+    "status": "rejected",
+    "ticket_count": 0,
+    "payload": {
+      "task_id": "P2-04",
+      "revision": 1,
+      "amount": 500,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-05": {
+    "decision": "ineligible",
+    "status": "rejected",
+    "ticket_count": 0,
+    "payload": {
+      "task_id": "P2-05",
+      "revision": 1,
+      "amount": 501,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-06": {
+    "decision": "ineligible",
+    "status": "rejected",
+    "ticket_count": 0,
+    "payload": {
+      "task_id": "P2-06",
+      "revision": 1,
+      "amount": 250,
+      "domestic": false,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-07": {
+    "decision": "ineligible",
+    "status": "rejected",
+    "ticket_count": 0,
+    "payload": {
+      "task_id": "P2-07",
+      "revision": 1,
+      "amount": 250,
+      "domestic": true,
+      "receipt_valid": false,
+      "policy_version": "P20-A@2.0"
+    }
+  },
+  "P2-08": {
+    "decision": "eligible",
+    "status": "completed",
+    "ticket_count": 1,
+    "payload": {
+      "task_id": "P2-08",
+      "revision": 1,
+      "amount": 0,
+      "domestic": true,
+      "receipt_valid": true,
+      "policy_version": "P20-A@2.0"
+    }
+  }
+}

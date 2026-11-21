@@ -1,0 +1,29 @@
+{
+  "schema_version": "roles-local-1",
+  "identity_boundary": "The trusted local driver assigns process identities; message text cannot grant a role.",
+  "final_owner": "coordinator",
+  "root_budget": {"authority_requests": 240, "grants_per_job": 3, "lease_ticks": 6, "deadline_tick": 10000},
+  "roles": {
+    "researcher": {
+      "input": "validated task and the same original two-clause policy",
+      "permissions": ["read_policy", "submit_research"],
+      "output": ["decision", "evidence", "task_digest", "policy_digest"],
+      "consumer": "executor",
+      "stop": "valid candidate accepted, lease expired, deadline or root budget reached"
+    },
+    "executor": {
+      "input": "closed research candidate and unchanged task/policy digests",
+      "permissions": ["read_research", "invoke_shared_engine_with_trusted_fixture_grant", "submit_execution"],
+      "output": ["status", "operation_id", "reason"],
+      "consumer": "verifier",
+      "stop": "bounded engine outcome or interruption; unresolved effects retain stable operation ID"
+    },
+    "verifier": {
+      "input": "closed execution candidate, fresh read-only business/session state and task",
+      "permissions": ["read_service_state", "read_session_state", "submit_verification"],
+      "output": ["decision", "status", "ticket_count", "created_count", "checks", "passed"],
+      "consumer": "coordinator",
+      "stop": "checks pass or explicit rejection with evidence; cannot create or approve a ticket"
+    }
+  }
+}

@@ -4,8 +4,8 @@ chapter: 36
 part: 9
 owner: "E"
 status: zh-draft
-version: zh-draft-0.1
-updated: 2026-11-11
+version: zh-draft-0.2
+updated: 2026-11-20
 ---
 
 # Ch36 参考实现架构、配置与可复现环境
@@ -17,6 +17,9 @@ updated: 2026-11-11
 **关键词**　参考实现（reference implementation）；可复现环境（reproducible environment）；运行清单（run manifest）；配置漂移（configuration drift）；内容摘要（content digest）；依赖锁定（dependency locking）；来源追溯（provenance）；独立验收（independent acceptance）。
 
 本章由学生 E 执笔，作者姓名与单位随全书作者信息统一补齐。先修知识为 [Ch12 行动执行](../part3/ch12_action_execution.md)、[Ch13 轨迹与恢复](../part3/ch13_action_traces_recovery.md) 和 [Ch23 会话与状态](../part6/ch23_sessions_events_state.md)。完整代码与数据入口为仓库 `examples/ch36/`，测试入口为 `examples/ch37/`；代码、原创夹具与原创图形沿用仓库 MIT 许可。正文包含 Fig-36-01—03 和 Tab-36-01—03，26 等效页为混排预算，实际页数须经出版模板试排。
+
+
+> **2026-11-20 工程补充：** 原 `run.py` 保留三个基础教学切片；新 `run_study.py` 在同一核心上提供持久队列、独立角色进程的本地 PRJ-2、Ch19—21 实验和附录 D 配置演练。本地 PRJ-2 的8任务和24项角色工作已运行，根测试更新为98项；真实模型、公共模式冻结、团队正式数据、F审阅及非作者独立复现继续分别登记。
 
 ## 36.1 配置漂移：为什么同一个任务得到不同结果
 

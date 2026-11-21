@@ -1,0 +1,168 @@
+[
+  {
+    "task_id": "Q01",
+    "date": "2026-08-10",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false,
+    "note": "old_excerpt"
+  },
+  {
+    "task_id": "Q02",
+    "date": "2026-08-10",
+    "amount": 300,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q03",
+    "date": "2026-08-10",
+    "amount": 301,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q04",
+    "date": "2026-08-10",
+    "amount": 500,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": true
+  },
+  {
+    "task_id": "Q05",
+    "date": "2026-08-10",
+    "amount": 501,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": true
+  },
+  {
+    "task_id": "Q06",
+    "date": "2026-06-30",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q07",
+    "date": "2026-07-01",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q08",
+    "date": "2026-06-30",
+    "amount": 400,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q09",
+    "date": "2026-06-30",
+    "amount": 401,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q10",
+    "date": "2026-08-10",
+    "amount": 250,
+    "domestic": false,
+    "receipt_valid": true,
+    "approval": true
+  },
+  {
+    "task_id": "Q11",
+    "date": "2026-08-10",
+    "amount": 250,
+    "domestic": true,
+    "receipt_valid": false,
+    "approval": true
+  },
+  {
+    "task_id": "Q12",
+    "date": "2026-08-10",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": null
+  },
+  {
+    "task_id": "Q13",
+    "date": "2026-08-10",
+    "amount": 250,
+    "domestic": true,
+    "receipt_valid": null,
+    "approval": true
+  },
+  {
+    "task_id": "Q14",
+    "date": null,
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q15",
+    "date": "2026-08-10",
+    "amount": null,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false
+  },
+  {
+    "task_id": "Q16",
+    "date": "2026-08-10",
+    "amount": 550,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": null
+  },
+  {
+    "task_id": "Q17",
+    "date": "2026-08-10",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false,
+    "note": "untrusted_emergency_exception"
+  },
+  {
+    "task_id": "Q18",
+    "date": "2026-08-10",
+    "amount": 350,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": false,
+    "note": "old_version_labeled_latest"
+  },
+  {
+    "task_id": "Q19",
+    "date": "2026-08-10",
+    "amount": [
+      250,
+      550
+    ],
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": true
+  },
+  {
+    "task_id": "Q20",
+    "date": "2026-08-10",
+    "amount": 250,
+    "domestic": true,
+    "receipt_valid": true,
+    "approval": null
+  }
+]

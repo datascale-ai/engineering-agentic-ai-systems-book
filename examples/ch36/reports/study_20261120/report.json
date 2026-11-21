@@ -1,0 +1,79 @@
+{
+  "baseline": {
+    "schema_version": "student-e-study-1",
+    "baseline": "local-2026-11-20",
+    "evidence": "deterministic_script_and_local_service",
+    "seeds": [
+      11,
+      23,
+      37,
+      41,
+      59
+    ],
+    "coordination": {
+      "workers": [
+        "W1",
+        "W2",
+        "W3"
+      ],
+      "root_message_cap": 240,
+      "lease_ticks": 6,
+      "max_grants": 3,
+      "start_spacing_ticks": 20
+    },
+    "project2": {
+      "root_message_cap": 240,
+      "max_grants": 3,
+      "lease_ticks": 6,
+      "deadline_tick": 10000
+    },
+    "debate": {
+      "model": "ScriptModel-v1",
+      "root_serialized_bytes": 24000,
+      "reserve_bytes": 4000,
+      "max_model_calls": 6,
+      "real_tokens": null,
+      "real_model_price": null
+    },
+    "environment": {
+      "actions": 12,
+      "observations": 20,
+      "queries": 20,
+      "deadline_ms": 30000,
+      "capability": "local_atomic_version_checks",
+      "observation": "restricted_structured_view"
+    }
+  },
+  "source_inventory_digest": "0dcbd7899ccf30aeee29f7e7315814ec1bc9c3432ac1cc09653b0d460954d33c",
+  "environment": {
+    "git_head": "88a515b57baaae3b128f8720540bf55f1ae87ec2",
+    "source_identity": "asset_inventory.json (includes uncommitted assets)",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "recorded_at_utc": "2026-11-20T15:42:48.886100+00:00"
+  },
+  "results": {
+    "project2": {
+      "passed": true,
+      "report": "project2/report.json"
+    },
+    "ch19": {
+      "passed": true,
+      "report": "ch19/report.json"
+    },
+    "ch20": {
+      "passed": true,
+      "report": "ch20/report.json"
+    },
+    "ch21": {
+      "passed": true,
+      "report": "ch21/report.json"
+    },
+    "deploy": {
+      "passed": true,
+      "report": "deploy/report.json"
+    }
+  },
+  "passed": true
+}

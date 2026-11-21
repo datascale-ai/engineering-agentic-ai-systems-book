@@ -1,0 +1,102 @@
+[
+  {
+    "task_id": "A01",
+    "environment": "form",
+    "fault": "normal"
+  },
+  {
+    "task_id": "A02",
+    "environment": "form",
+    "fault": "button_moved"
+  },
+  {
+    "task_id": "A03",
+    "environment": "form",
+    "fault": "overlay"
+  },
+  {
+    "task_id": "A04",
+    "environment": "form",
+    "fault": "save_delayed"
+  },
+  {
+    "task_id": "A05",
+    "environment": "form",
+    "fault": "save_failed"
+  },
+  {
+    "task_id": "A06",
+    "environment": "form",
+    "fault": "submit_ack_lost"
+  },
+  {
+    "task_id": "A07",
+    "environment": "form",
+    "fault": "approval_revoked"
+  },
+  {
+    "task_id": "A08",
+    "environment": "form",
+    "fault": "external_edit"
+  },
+  {
+    "task_id": "A09",
+    "environment": "form",
+    "fault": "stale_capture"
+  },
+  {
+    "task_id": "A10",
+    "environment": "form",
+    "fault": "old_episode"
+  },
+  {
+    "task_id": "B01",
+    "environment": "grid",
+    "fault": "normal"
+  },
+  {
+    "task_id": "B02",
+    "environment": "grid",
+    "fault": "goal_moved"
+  },
+  {
+    "task_id": "B03",
+    "environment": "grid",
+    "fault": "obstacle"
+  },
+  {
+    "task_id": "B04",
+    "environment": "grid",
+    "fault": "move_delayed"
+  },
+  {
+    "task_id": "B05",
+    "environment": "grid",
+    "fault": "move_failed"
+  },
+  {
+    "task_id": "B06",
+    "environment": "grid",
+    "fault": "position_noise"
+  },
+  {
+    "task_id": "B07",
+    "environment": "grid",
+    "fault": "occlusion"
+  },
+  {
+    "task_id": "B08",
+    "environment": "grid",
+    "fault": "move_ack_lost"
+  },
+  {
+    "task_id": "B09",
+    "environment": "grid",
+    "fault": "blocked"
+  },
+  {
+    "task_id": "B10",
+    "environment": "grid",
+    "fault": "pending_reset"
+  }
+]

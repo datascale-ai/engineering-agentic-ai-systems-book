@@ -1,0 +1,61 @@
+{
+  "experiment": "Exp-21-01-local",
+  "tasks": 20,
+  "trials": 200,
+  "seeds": [
+    11,
+    23,
+    37,
+    41,
+    59
+  ],
+  "groups": {
+    "form-O": {
+      "trials": 50,
+      "business_success": 5,
+      "constraint_handling_passed": 50,
+      "actions": 95,
+      "reobservations": 0,
+      "queries": 0,
+      "blocked_requests": 20,
+      "wrong_effects": 0,
+      "unrecovered": 45
+    },
+    "form-C": {
+      "trials": 50,
+      "business_success": 40,
+      "constraint_handling_passed": 50,
+      "actions": 155,
+      "reobservations": 155,
+      "queries": 45,
+      "blocked_requests": 5,
+      "wrong_effects": 0,
+      "unrecovered": 10
+    },
+    "grid-O": {
+      "trials": 50,
+      "business_success": 15,
+      "constraint_handling_passed": 50,
+      "actions": 110,
+      "reobservations": 0,
+      "queries": 0,
+      "blocked_requests": 15,
+      "wrong_effects": 0,
+      "unrecovered": 35
+    },
+    "grid-C": {
+      "trials": 50,
+      "business_success": 40,
+      "constraint_handling_passed": 50,
+      "actions": 165,
+      "reobservations": 165,
+      "queries": 55,
+      "blocked_requests": 0,
+      "wrong_effects": 0,
+      "unrecovered": 10
+    }
+  },
+  "capability": "local_atomic_version_checks",
+  "scope": "known base map and structured views; deterministic policies; no browser pixels or physical device",
+  "passed": true
+}

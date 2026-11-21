@@ -1,0 +1,107 @@
+{
+  "experiment": "D-DEPLOY-LOCAL-01",
+  "release": {
+    "release_id": "local-v1",
+    "source_inventory": "0dcbd7899ccf30aeee29f7e7315814ec1bc9c3432ac1cc09653b0d460954d33c",
+    "policy_version": "P20-A@2.0",
+    "workers": 3,
+    "identity_mode": "trusted_local_fixture"
+  },
+  "candidate": {
+    "release_id": "local-v2",
+    "source_inventory": "0dcbd7899ccf30aeee29f7e7315814ec1bc9c3432ac1cc09653b0d460954d33c",
+    "policy_version": "P20-A@9.9",
+    "workers": 3,
+    "identity_mode": "trusted_local_fixture"
+  },
+  "records": [
+    {
+      "id": "D-LAUNCH-01",
+      "operation": "launch",
+      "actor": "trusted_local_driver",
+      "expected": "24 role jobs closed; 3 unique tickets",
+      "actual": {
+        "closed_jobs": 24,
+        "ticket_count": 3
+      },
+      "passed": true,
+      "evidence": "launch-project/report.json"
+    },
+    {
+      "id": "D-CANARY-01",
+      "operation": "canary",
+      "scope": [
+        "T-DEMO-01"
+      ],
+      "expected": "mismatched policy blocks dispatch before new effect",
+      "actual": "release_contract_mismatch",
+      "passed": true,
+      "traffic": "local routing assignment only; no network traffic"
+    },
+    {
+      "id": "D-ROLLBACK-01",
+      "operation": "rollback",
+      "from": "local-v2-canary",
+      "to": "local-v1",
+      "expected": "routing restored; existing effects unchanged",
+      "actual": {
+        "source_unchanged": true,
+        "business_snapshot_equal": true,
+        "old_candidate_admission_rejected": true
+      },
+      "passed": true,
+      "boundary": "configuration pointer rollback; no schema downgrade or business compensation"
+    },
+    {
+      "id": "D-RETIRE-01",
+      "operation": "retire",
+      "expected": "intake closed, local grants disabled, no in-flight role jobs",
+      "actual": {
+        "in_flight": 0,
+        "intake_and_grants_disabled": true,
+        "new_admission_rejected": true,
+        "archive": "retired-control.sqlite"
+      },
+      "passed": true,
+      "retention": "original teaching data retained locally; no deletion or production credential revocation"
+    }
+  ],
+  "tenant_probe": {
+    "course-A": 1,
+    "course-B": 2,
+    "cross_tenant_grant_rejected": true
+  },
+  "profiles": {
+    "single": {
+      "processes": 1,
+      "storage": "local SQLite",
+      "identity": "trusted local driver",
+      "demonstrated": "original Ch36 baseline",
+      "not_demonstrated": "high availability or performance capacity"
+    },
+    "queue_worker": {
+      "workers": [
+        "researcher",
+        "executor",
+        "verifier"
+      ],
+      "storage": "one authoritative SQLite board and separate business service",
+      "execution": "separate processes scheduled sequentially",
+      "demonstrated": "leases, receipts, role handoff, root request budget and restart recovery",
+      "not_demonstrated": "distributed broker, multi-host concurrency or network partitions"
+    },
+    "multi_tenant": {
+      "tenants": [
+        "course-A",
+        "course-B"
+      ],
+      "identity": "trusted fixture identity; not authentication",
+      "demonstrated": "service keys partitioned by tenant; mismatched grant rejected",
+      "not_demonstrated": "real IAM, row-level database security, quotas, TLS or production isolation"
+    }
+  },
+  "source_inventory_digest": "0dcbd7899ccf30aeee29f7e7315814ec1bc9c3432ac1cc09653b0d460954d33c",
+  "scope": "local configuration, SQLite routing/archival and trusted tenant fixtures; no real queues, IAM, TLS, capacity or production rollout",
+  "independent_review_F": "pending",
+  "passed": true
+}

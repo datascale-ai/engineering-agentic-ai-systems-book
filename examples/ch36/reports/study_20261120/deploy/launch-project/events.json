@@ -1,0 +1,1540 @@
+[
+  {
+    "seq": 1,
+    "tick": 0,
+    "job_id": "T-DEMO-01:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 2,
+    "tick": 0,
+    "job_id": "T-DEMO-01:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 3,
+    "tick": 1,
+    "job_id": "T-DEMO-01:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "T-DEMO-01:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "T-DEMO-01:research",
+        "lease_until": 6,
+        "message_id": "T-DEMO-01:research:1",
+        "parent_task_id": "T-DEMO-01",
+        "payload": {
+          "decision": "eligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "956ba0700516e3064c37ec5f55a981c602b8a18a204689302402f3f5b4021fc3"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 1,
+        "stage": "research",
+        "task_id": "T-DEMO-01"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 4,
+    "tick": 2,
+    "job_id": "T-DEMO-01:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "T-DEMO-01:research:1:candidate"
+    }
+  },
+  {
+    "seq": 5,
+    "tick": 0,
+    "job_id": "T-DEMO-01:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 6,
+    "tick": 10,
+    "job_id": "T-DEMO-01:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 7,
+    "tick": 17,
+    "job_id": "T-DEMO-01:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 2
+    }
+  },
+  {
+    "seq": 8,
+    "tick": 18,
+    "job_id": "T-DEMO-01:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "T-DEMO-01:execute:2:candidate",
+        "deadline": 10000,
+        "epoch": 2,
+        "job_id": "T-DEMO-01:execute",
+        "lease_until": 23,
+        "message_id": "T-DEMO-01:execute:2",
+        "parent_task_id": "T-DEMO-01",
+        "payload": {
+          "operation_id": "T-DEMO-01:1:create",
+          "reason": null,
+          "status": "completed"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 18,
+        "stage": "execute",
+        "task_id": "T-DEMO-01"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 9,
+    "tick": 19,
+    "job_id": "T-DEMO-01:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "T-DEMO-01:execute:2:candidate"
+    }
+  },
+  {
+    "seq": 10,
+    "tick": 0,
+    "job_id": "T-DEMO-01:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 11,
+    "tick": 27,
+    "job_id": "T-DEMO-01:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 12,
+    "tick": 28,
+    "job_id": "T-DEMO-01:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "T-DEMO-01:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "T-DEMO-01:verify",
+        "lease_until": 33,
+        "message_id": "T-DEMO-01:verify:1",
+        "parent_task_id": "T-DEMO-01",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 1,
+          "decision": "eligible",
+          "passed": true,
+          "status": "completed",
+          "task_id": "T-DEMO-01",
+          "ticket_count": 1
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 28,
+        "stage": "verify",
+        "task_id": "T-DEMO-01"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 13,
+    "tick": 29,
+    "job_id": "T-DEMO-01:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "T-DEMO-01:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 14,
+    "tick": 0,
+    "job_id": "P2-02:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 15,
+    "tick": 37,
+    "job_id": "P2-02:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 16,
+    "tick": 38,
+    "job_id": "P2-02:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-02:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-02:research",
+        "lease_until": 43,
+        "message_id": "P2-02:research:1",
+        "parent_task_id": "P2-02",
+        "payload": {
+          "decision": "eligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "b60ef998dc1f9cdc86178cf6aa3f4adc5520eed8ce1ed87854bda8c8ed743da9"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 38,
+        "stage": "research",
+        "task_id": "P2-02"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 17,
+    "tick": 39,
+    "job_id": "P2-02:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-02:research:1:candidate"
+    }
+  },
+  {
+    "seq": 18,
+    "tick": 0,
+    "job_id": "P2-02:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 19,
+    "tick": 47,
+    "job_id": "P2-02:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 20,
+    "tick": 48,
+    "job_id": "P2-02:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-02:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-02:execute",
+        "lease_until": 53,
+        "message_id": "P2-02:execute:1",
+        "parent_task_id": "P2-02",
+        "payload": {
+          "operation_id": "P2-02:1:create",
+          "reason": null,
+          "status": "completed"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 48,
+        "stage": "execute",
+        "task_id": "P2-02"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 21,
+    "tick": 49,
+    "job_id": "P2-02:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-02:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 22,
+    "tick": 0,
+    "job_id": "P2-02:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 23,
+    "tick": 57,
+    "job_id": "P2-02:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 24,
+    "tick": 58,
+    "job_id": "P2-02:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-02:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-02:verify",
+        "lease_until": 63,
+        "message_id": "P2-02:verify:1",
+        "parent_task_id": "P2-02",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 1,
+          "decision": "eligible",
+          "passed": true,
+          "status": "completed",
+          "task_id": "P2-02",
+          "ticket_count": 1
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 58,
+        "stage": "verify",
+        "task_id": "P2-02"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 25,
+    "tick": 59,
+    "job_id": "P2-02:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-02:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 26,
+    "tick": 0,
+    "job_id": "P2-03:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 27,
+    "tick": 67,
+    "job_id": "P2-03:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 28,
+    "tick": 68,
+    "job_id": "P2-03:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-03:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-03:research",
+        "lease_until": 73,
+        "message_id": "P2-03:research:1",
+        "parent_task_id": "P2-03",
+        "payload": {
+          "decision": "needs_approval",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "1fa628fd628907cfd458588193e851f60ffbbc31dce72aee073824c4e0c21dbd"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 68,
+        "stage": "research",
+        "task_id": "P2-03"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 29,
+    "tick": 69,
+    "job_id": "P2-03:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-03:research:1:candidate"
+    }
+  },
+  {
+    "seq": 30,
+    "tick": 0,
+    "job_id": "P2-03:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 31,
+    "tick": 77,
+    "job_id": "P2-03:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 32,
+    "tick": 78,
+    "job_id": "P2-03:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-03:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-03:execute",
+        "lease_until": 83,
+        "message_id": "P2-03:execute:1",
+        "parent_task_id": "P2-03",
+        "payload": {
+          "operation_id": null,
+          "reason": "needs_approval",
+          "status": "rejected"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 78,
+        "stage": "execute",
+        "task_id": "P2-03"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 33,
+    "tick": 79,
+    "job_id": "P2-03:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-03:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 34,
+    "tick": 0,
+    "job_id": "P2-03:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 35,
+    "tick": 87,
+    "job_id": "P2-03:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 36,
+    "tick": 88,
+    "job_id": "P2-03:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-03:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-03:verify",
+        "lease_until": 93,
+        "message_id": "P2-03:verify:1",
+        "parent_task_id": "P2-03",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 0,
+          "decision": "needs_approval",
+          "passed": true,
+          "status": "rejected",
+          "task_id": "P2-03",
+          "ticket_count": 0
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 88,
+        "stage": "verify",
+        "task_id": "P2-03"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 37,
+    "tick": 89,
+    "job_id": "P2-03:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-03:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 38,
+    "tick": 0,
+    "job_id": "P2-04:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 39,
+    "tick": 97,
+    "job_id": "P2-04:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 40,
+    "tick": 98,
+    "job_id": "P2-04:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-04:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-04:research",
+        "lease_until": 103,
+        "message_id": "P2-04:research:1",
+        "parent_task_id": "P2-04",
+        "payload": {
+          "decision": "needs_approval",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "7d9adbd0ef1fc5dd3223bec63a9f53ce11ffbf57f4489add3ba0958960bcfbaa"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 98,
+        "stage": "research",
+        "task_id": "P2-04"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 41,
+    "tick": 99,
+    "job_id": "P2-04:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-04:research:1:candidate"
+    }
+  },
+  {
+    "seq": 42,
+    "tick": 0,
+    "job_id": "P2-04:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 43,
+    "tick": 107,
+    "job_id": "P2-04:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 44,
+    "tick": 108,
+    "job_id": "P2-04:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-04:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-04:execute",
+        "lease_until": 113,
+        "message_id": "P2-04:execute:1",
+        "parent_task_id": "P2-04",
+        "payload": {
+          "operation_id": null,
+          "reason": "needs_approval",
+          "status": "rejected"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 108,
+        "stage": "execute",
+        "task_id": "P2-04"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 45,
+    "tick": 109,
+    "job_id": "P2-04:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-04:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 46,
+    "tick": 0,
+    "job_id": "P2-04:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 47,
+    "tick": 117,
+    "job_id": "P2-04:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 48,
+    "tick": 118,
+    "job_id": "P2-04:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-04:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-04:verify",
+        "lease_until": 123,
+        "message_id": "P2-04:verify:1",
+        "parent_task_id": "P2-04",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 0,
+          "decision": "needs_approval",
+          "passed": true,
+          "status": "rejected",
+          "task_id": "P2-04",
+          "ticket_count": 0
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 118,
+        "stage": "verify",
+        "task_id": "P2-04"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 49,
+    "tick": 119,
+    "job_id": "P2-04:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-04:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 50,
+    "tick": 0,
+    "job_id": "P2-05:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 51,
+    "tick": 127,
+    "job_id": "P2-05:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 52,
+    "tick": 128,
+    "job_id": "P2-05:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-05:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-05:research",
+        "lease_until": 133,
+        "message_id": "P2-05:research:1",
+        "parent_task_id": "P2-05",
+        "payload": {
+          "decision": "ineligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "86b5e8a7acf6a40daa6fcf9f3a9c90600d27a499e3087415fbccf40a39ecba34"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 128,
+        "stage": "research",
+        "task_id": "P2-05"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 53,
+    "tick": 129,
+    "job_id": "P2-05:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-05:research:1:candidate"
+    }
+  },
+  {
+    "seq": 54,
+    "tick": 0,
+    "job_id": "P2-05:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 55,
+    "tick": 137,
+    "job_id": "P2-05:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 56,
+    "tick": 138,
+    "job_id": "P2-05:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-05:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-05:execute",
+        "lease_until": 143,
+        "message_id": "P2-05:execute:1",
+        "parent_task_id": "P2-05",
+        "payload": {
+          "operation_id": null,
+          "reason": "ineligible",
+          "status": "rejected"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 138,
+        "stage": "execute",
+        "task_id": "P2-05"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 57,
+    "tick": 139,
+    "job_id": "P2-05:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-05:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 58,
+    "tick": 0,
+    "job_id": "P2-05:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 59,
+    "tick": 147,
+    "job_id": "P2-05:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 60,
+    "tick": 148,
+    "job_id": "P2-05:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-05:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-05:verify",
+        "lease_until": 153,
+        "message_id": "P2-05:verify:1",
+        "parent_task_id": "P2-05",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 0,
+          "decision": "ineligible",
+          "passed": true,
+          "status": "rejected",
+          "task_id": "P2-05",
+          "ticket_count": 0
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 148,
+        "stage": "verify",
+        "task_id": "P2-05"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 61,
+    "tick": 149,
+    "job_id": "P2-05:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-05:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 62,
+    "tick": 0,
+    "job_id": "P2-06:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 63,
+    "tick": 157,
+    "job_id": "P2-06:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 64,
+    "tick": 158,
+    "job_id": "P2-06:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-06:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-06:research",
+        "lease_until": 163,
+        "message_id": "P2-06:research:1",
+        "parent_task_id": "P2-06",
+        "payload": {
+          "decision": "ineligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "ada8ab43da3d6254249b4ad55dd605d346adbab9764fa4095b2a582eb7ebe1f6"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 158,
+        "stage": "research",
+        "task_id": "P2-06"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 65,
+    "tick": 159,
+    "job_id": "P2-06:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-06:research:1:candidate"
+    }
+  },
+  {
+    "seq": 66,
+    "tick": 0,
+    "job_id": "P2-06:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 67,
+    "tick": 167,
+    "job_id": "P2-06:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 68,
+    "tick": 168,
+    "job_id": "P2-06:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-06:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-06:execute",
+        "lease_until": 173,
+        "message_id": "P2-06:execute:1",
+        "parent_task_id": "P2-06",
+        "payload": {
+          "operation_id": null,
+          "reason": "ineligible",
+          "status": "rejected"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 168,
+        "stage": "execute",
+        "task_id": "P2-06"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 69,
+    "tick": 169,
+    "job_id": "P2-06:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-06:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 70,
+    "tick": 0,
+    "job_id": "P2-06:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 71,
+    "tick": 177,
+    "job_id": "P2-06:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 72,
+    "tick": 178,
+    "job_id": "P2-06:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-06:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-06:verify",
+        "lease_until": 183,
+        "message_id": "P2-06:verify:1",
+        "parent_task_id": "P2-06",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 0,
+          "decision": "ineligible",
+          "passed": true,
+          "status": "rejected",
+          "task_id": "P2-06",
+          "ticket_count": 0
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 178,
+        "stage": "verify",
+        "task_id": "P2-06"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 73,
+    "tick": 179,
+    "job_id": "P2-06:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-06:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 74,
+    "tick": 0,
+    "job_id": "P2-07:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 75,
+    "tick": 187,
+    "job_id": "P2-07:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 76,
+    "tick": 188,
+    "job_id": "P2-07:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-07:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-07:research",
+        "lease_until": 193,
+        "message_id": "P2-07:research:1",
+        "parent_task_id": "P2-07",
+        "payload": {
+          "decision": "ineligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "cb7aec27f9b59aea6b3900c514065f8bc20418aad912d20e5454647e2b11b977"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 188,
+        "stage": "research",
+        "task_id": "P2-07"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 77,
+    "tick": 189,
+    "job_id": "P2-07:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-07:research:1:candidate"
+    }
+  },
+  {
+    "seq": 78,
+    "tick": 0,
+    "job_id": "P2-07:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 79,
+    "tick": 197,
+    "job_id": "P2-07:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 80,
+    "tick": 198,
+    "job_id": "P2-07:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-07:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-07:execute",
+        "lease_until": 203,
+        "message_id": "P2-07:execute:1",
+        "parent_task_id": "P2-07",
+        "payload": {
+          "operation_id": null,
+          "reason": "ineligible",
+          "status": "rejected"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 198,
+        "stage": "execute",
+        "task_id": "P2-07"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 81,
+    "tick": 199,
+    "job_id": "P2-07:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-07:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 82,
+    "tick": 0,
+    "job_id": "P2-07:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 83,
+    "tick": 207,
+    "job_id": "P2-07:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 84,
+    "tick": 208,
+    "job_id": "P2-07:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-07:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-07:verify",
+        "lease_until": 213,
+        "message_id": "P2-07:verify:1",
+        "parent_task_id": "P2-07",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 0,
+          "decision": "ineligible",
+          "passed": true,
+          "status": "rejected",
+          "task_id": "P2-07",
+          "ticket_count": 0
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 208,
+        "stage": "verify",
+        "task_id": "P2-07"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 85,
+    "tick": 209,
+    "job_id": "P2-07:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-07:verify:1:candidate"
+    }
+  },
+  {
+    "seq": 86,
+    "tick": 0,
+    "job_id": "P2-08:research",
+    "kind": "job_created",
+    "detail": {
+      "stage": "research",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 87,
+    "tick": 217,
+    "job_id": "P2-08:research",
+    "kind": "granted",
+    "detail": {
+      "actor": "researcher",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 88,
+    "tick": 218,
+    "job_id": "P2-08:research",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-08:research:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-08:research",
+        "lease_until": 223,
+        "message_id": "P2-08:research:1",
+        "parent_task_id": "P2-08",
+        "payload": {
+          "decision": "eligible",
+          "evidence": [
+            "P20-A@2.0#1",
+            "P20-A@2.0#2"
+          ],
+          "policy_digest": "f2ad29820ba30acf0495da7a346d51faec828cb60e3d9c3b75366e58842c156a",
+          "task_digest": "b28254fac41ca6c83bbb430e66dcfcb1f4fcaedfe08ab7cdd08c68b270de4452"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "researcher",
+        "sent_at": 218,
+        "stage": "research",
+        "task_id": "P2-08"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 89,
+    "tick": 219,
+    "job_id": "P2-08:research",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-08:research:1:candidate"
+    }
+  },
+  {
+    "seq": 90,
+    "tick": 0,
+    "job_id": "P2-08:execute",
+    "kind": "job_created",
+    "detail": {
+      "stage": "execute",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 91,
+    "tick": 227,
+    "job_id": "P2-08:execute",
+    "kind": "granted",
+    "detail": {
+      "actor": "executor",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 92,
+    "tick": 228,
+    "job_id": "P2-08:execute",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-08:execute:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-08:execute",
+        "lease_until": 233,
+        "message_id": "P2-08:execute:1",
+        "parent_task_id": "P2-08",
+        "payload": {
+          "operation_id": "P2-08:1:create",
+          "reason": null,
+          "status": "completed"
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "executor",
+        "sent_at": 228,
+        "stage": "execute",
+        "task_id": "P2-08"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 93,
+    "tick": 229,
+    "job_id": "P2-08:execute",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-08:execute:1:candidate"
+    }
+  },
+  {
+    "seq": 94,
+    "tick": 0,
+    "job_id": "P2-08:verify",
+    "kind": "job_created",
+    "detail": {
+      "stage": "verify",
+      "tenant": "course"
+    }
+  },
+  {
+    "seq": 95,
+    "tick": 237,
+    "job_id": "P2-08:verify",
+    "kind": "granted",
+    "detail": {
+      "actor": "verifier",
+      "epoch": 1
+    }
+  },
+  {
+    "seq": 96,
+    "tick": 238,
+    "job_id": "P2-08:verify",
+    "kind": "candidate_accepted",
+    "detail": {
+      "message": {
+        "candidate_id": "P2-08:verify:1:candidate",
+        "deadline": 10000,
+        "epoch": 1,
+        "job_id": "P2-08:verify",
+        "lease_until": 243,
+        "message_id": "P2-08:verify:1",
+        "parent_task_id": "P2-08",
+        "payload": {
+          "checks": {
+            "created_count": true,
+            "payload": true,
+            "rejection_reason": true,
+            "state": true,
+            "ticket_count": true
+          },
+          "created_count": 1,
+          "decision": "eligible",
+          "passed": true,
+          "status": "completed",
+          "task_id": "P2-08",
+          "ticket_count": 1
+        },
+        "recipient": "coordinator",
+        "revision": 1,
+        "schema_version": "coordination-local-1",
+        "sender": "verifier",
+        "sent_at": 238,
+        "stage": "verify",
+        "task_id": "P2-08"
+      },
+      "reason": null
+    }
+  },
+  {
+    "seq": 97,
+    "tick": 239,
+    "job_id": "P2-08:verify",
+    "kind": "closed",
+    "detail": {
+      "candidate_id": "P2-08:verify:1:candidate"
+    }
+  }
+]

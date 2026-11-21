@@ -1,0 +1,45 @@
+{
+  "schema_version": "student-e-study-1",
+  "baseline": "local-2026-11-20",
+  "evidence": "deterministic_script_and_local_service",
+  "seeds": [
+    11,
+    23,
+    37,
+    41,
+    59
+  ],
+  "coordination": {
+    "workers": [
+      "W1",
+      "W2",
+      "W3"
+    ],
+    "root_message_cap": 240,
+    "lease_ticks": 6,
+    "max_grants": 3,
+    "start_spacing_ticks": 20
+  },
+  "project2": {
+    "root_message_cap": 240,
+    "max_grants": 3,
+    "lease_ticks": 6,
+    "deadline_tick": 10000
+  },
+  "debate": {
+    "model": "ScriptModel-v1",
+    "root_serialized_bytes": 24000,
+    "reserve_bytes": 4000,
+    "max_model_calls": 6,
+    "real_tokens": null,
+    "real_model_price": null
+  },
+  "environment": {
+    "actions": 12,
+    "observations": 20,
+    "queries": 20,
+    "deadline_ms": 30000,
+    "capability": "local_atomic_version_checks",
+    "observation": "restricted_structured_view"
+  }
+}

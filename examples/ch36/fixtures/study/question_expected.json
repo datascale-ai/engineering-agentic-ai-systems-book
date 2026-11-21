@@ -1,0 +1,22 @@
+{
+  "Q01": "needs_approval",
+  "Q02": "eligible",
+  "Q03": "needs_approval",
+  "Q04": "eligible",
+  "Q05": "ineligible",
+  "Q06": "eligible",
+  "Q07": "needs_approval",
+  "Q08": "eligible",
+  "Q09": "needs_approval",
+  "Q10": "ineligible",
+  "Q11": "ineligible",
+  "Q12": "insufficient_evidence",
+  "Q13": "insufficient_evidence",
+  "Q14": "insufficient_evidence",
+  "Q15": "insufficient_evidence",
+  "Q16": "ineligible",
+  "Q17": "needs_approval",
+  "Q18": "needs_approval",
+  "Q19": "insufficient_evidence",
+  "Q20": "eligible"
+}

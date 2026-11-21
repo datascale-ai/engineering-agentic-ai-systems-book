@@ -31,7 +31,7 @@ def file_digest(path):
 
 
 def asset_paths(root):
-    paths = [root / p for p in (".gitattributes", "run.py", "pyproject.toml", "uv.lock", "run_manifest.toml")]
+    paths = [root / p for p in (".gitattributes", "run.py", "run_study.py", "pyproject.toml", "uv.lock", "run_manifest.toml")]
     paths += sorted((root / "src").rglob("*.py"))
     paths += sorted(p for p in (root / "fixtures").rglob("*") if p.is_file())
     return paths

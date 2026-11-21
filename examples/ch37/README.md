@@ -36,3 +36,7 @@ uv run python examples/ch37/regression_probe.py --client fixed --output outputs/
 | PRJ-3 | 重现 after_commit，解释 42→0 与唯一作用 | 接真实队列和认证服务，增加撤销/查权、并发与取消竞争；再与 Ch38/39 的观测和发布演练衔接 |
 
 提交清单、夹具、断言理由和原始报告。不要只交最终答复截图。
+
+## 2026-11-20 补充验证
+
+`tests/test_student_e_studies.py` 新增21个展开测试项：持久回执、冲突重复、精确到期、旧代次/核验、并发领取、跨重启预算、消息模式、20故障脚本、规则/人工答案、证据缺口、字节预算、两环境200试次、延迟查询/幂等、退役门禁和独立进程PRJ-2。根入口98项通过，原77项均保留。报告见 [新增JUnit](reports/student-e-20261120-junit.xml) 和 [项目及实验报告](../ch36/experiment_report.md)。旧报告仅代表其原日期；本轮没有声明真实模型、生产部署、远程CI或其他学生已完成复现。

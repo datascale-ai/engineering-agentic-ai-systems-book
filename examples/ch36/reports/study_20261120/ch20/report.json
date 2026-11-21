@@ -1,0 +1,74 @@
+{
+  "experiment": "Exp-20-01-script",
+  "model": "ScriptModel-v1",
+  "questions": 20,
+  "seeds": [
+    11,
+    23,
+    37,
+    41,
+    59
+  ],
+  "trials": 300,
+  "groups": {
+    "single": {
+      "trials": 100,
+      "correct": 70,
+      "evidence_qualified": 66,
+      "member_consensus": null,
+      "consensus_wrong": null,
+      "determined_answers": 80,
+      "determined_correct": 54,
+      "calls": 100,
+      "serialized_utf8_bytes": 61962,
+      "per_seed_correct": {
+        "11": 14,
+        "23": 12,
+        "37": 13,
+        "41": 16,
+        "59": 15
+      }
+    },
+    "vote": {
+      "trials": 100,
+      "correct": 78,
+      "evidence_qualified": 74,
+      "member_consensus": 69,
+      "consensus_wrong": 17,
+      "determined_answers": 81,
+      "determined_correct": 61,
+      "calls": 300,
+      "serialized_utf8_bytes": 185858,
+      "per_seed_correct": {
+        "11": 15,
+        "23": 13,
+        "37": 17,
+        "41": 16,
+        "59": 17
+      }
+    },
+    "debate": {
+      "trials": 100,
+      "correct": 100,
+      "evidence_qualified": 100,
+      "member_consensus": 69,
+      "consensus_wrong": 17,
+      "determined_answers": 75,
+      "determined_correct": 75,
+      "calls": 500,
+      "serialized_utf8_bytes": 443754,
+      "per_seed_correct": {
+        "11": 20,
+        "23": 20,
+        "37": 20,
+        "41": 20,
+        "59": 20
+      }
+    }
+  },
+  "member_0_1_error_correlation": 0.42857142857142855,
+  "correct_minority_claims": 5,
+  "correct_minority_reviewed": 5,
+  "scope": "programmed errors and deterministic rule review; no real model, tokens or price measurements",
+  "passed": true
+}

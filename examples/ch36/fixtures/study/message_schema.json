@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:book:coordination-local-1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "message_id",
+    "job_id",
+    "task_id",
+    "parent_task_id",
+    "sender",
+    "stage",
+    "candidate_id",
+    "recipient",
+    "revision",
+    "epoch",
+    "lease_until",
+    "sent_at",
+    "deadline",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "coordination-local-1"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "job_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "task_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "parent_task_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "sender": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "stage": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "candidate_id": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "recipient": {
+      "type": "string",
+      "enum": [
+        "coordinator"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "epoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "lease_until": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sent_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "deadline": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

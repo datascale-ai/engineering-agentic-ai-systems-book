@@ -1,0 +1,22 @@
+{
+  "single": {
+    "processes": 1,
+    "storage": "local SQLite",
+    "identity": "trusted local driver",
+    "demonstrated": "original Ch36 baseline",
+    "not_demonstrated": "high availability or performance capacity"
+  },
+  "queue_worker": {
+    "workers": ["researcher", "executor", "verifier"],
+    "storage": "one authoritative SQLite board and separate business service",
+    "execution": "separate processes scheduled sequentially",
+    "demonstrated": "leases, receipts, role handoff, root request budget and restart recovery",
+    "not_demonstrated": "distributed broker, multi-host concurrency or network partitions"
+  },
+  "multi_tenant": {
+    "tenants": ["course-A", "course-B"],
+    "identity": "trusted fixture identity; not authentication",
+    "demonstrated": "service keys partitioned by tenant; mismatched grant rejected",
+    "not_demonstrated": "real IAM, row-level database security, quotas, TLS or production isolation"
+  }
+}
