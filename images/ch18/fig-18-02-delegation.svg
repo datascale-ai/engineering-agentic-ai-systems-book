@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">委派链中的责任与预算传递</title><desc id="desc">一个根预算、一个最终负责角色；向子任务传递更窄权限和有界预算，核验后由原负责者收口，超限则停止并升级。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker>
+<marker id="back" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10 0 L 0 5 L 10 10 z" fill="context-stroke"/></marker>
+</defs><rect width="100%" height="100%" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif">
+<text x="44" y="42" font-size="27" fill="#203047" font-weight="700" text-anchor="start">委派传递工作与约束，最终责任始终可定位</text>
+<rect x="120" y="78" width="960" height="68" rx="12" fill="#eaf0f6" stroke="#285b8e" stroke-width="1.8"/>
+<text x="600" y="107" font-size="23" fill="#203047" font-weight="700" text-anchor="middle">父任务：总上限 80 ＝ 常规池 76 ＋ 恢复保留 4</text>
+<text x="600" y="132" font-size="17" fill="#203047" font-weight="400" text-anchor="middle">已消耗 ＋ 未消耗的有效预留 ≤ 总上限；一份账本原子记账</text>
+<polyline points="600,146 600,198" fill="none" stroke="#285b8e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="350" y="198" width="500" height="100" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="1.8"/>
+<text x="600" y="234" font-size="24" fill="#203047" font-weight="700" text-anchor="middle">唯一最终负责角色 owner</text>
+<text x="600" y="270" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">保留 16：分配、协调、核验接收与收口</text>
+<polyline points="600,298 600,344 220,344 220,394" fill="none" stroke="#285b8e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="600,298 600,344 600,344 600,394" fill="none" stroke="#285b8e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="600,298 600,344 980,344 980,394" fill="none" stroke="#285b8e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="600" y="373" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">父子任务 ID · 更窄权限 · 深度与截止条件</text>
+<polyline points="370,459 450,459" fill="none" stroke="#087e82" stroke-width="2.5" marker-end="url(#arrow)"/>
+<polyline points="750,459 830,459" fill="none" stroke="#087e82" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="70" y="394" width="300" height="124" rx="12" fill="#f5f8fa" stroke="#087e82" stroke-width="1.8"/>
+<text x="220" y="428" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">研究子任务</text>
+<text x="220" y="478" font-size="15" fill="#203047" font-weight="400" text-anchor="middle">只读政策，产出带出处证据</text>
+<text x="220" y="504" font-size="16" fill="#203047" font-weight="400" text-anchor="middle">示意预留 32 · 深度 1（上限 2）</text>
+<rect x="450" y="394" width="300" height="124" rx="12" fill="#f5f8fa" stroke="#087e82" stroke-width="1.8"/>
+<text x="600" y="428" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">准备子任务</text>
+<text x="600" y="478" font-size="15" fill="#203047" font-weight="400" text-anchor="middle">生成工单草稿，不提交外部写入</text>
+<text x="600" y="504" font-size="16" fill="#203047" font-weight="400" text-anchor="middle">示意预留 16 · 深度 1（上限 2）</text>
+<rect x="830" y="394" width="300" height="124" rx="12" fill="#f5f8fa" stroke="#087e82" stroke-width="1.8"/>
+<text x="980" y="428" font-size="22" fill="#203047" font-weight="700" text-anchor="middle">核验子任务</text>
+<text x="980" y="478" font-size="15" fill="#203047" font-weight="400" text-anchor="middle">检查原证据与草稿，返回核验记录</text>
+<text x="980" y="504" font-size="16" fill="#203047" font-weight="400" text-anchor="middle">示意预留 12 · 深度 1（上限 2）</text>
+<polyline points="980,518 980,590 780,590 780,642" fill="none" stroke="#087e82" stroke-width="2.5" marker-end="url(#arrow)"/>
+<polyline points="220,518 220,642" fill="none" stroke="#a54a3f" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<polyline points="600,518 600,560 235,560 235,642" fill="none" stroke="#a54a3f" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="70" y="642" width="330" height="116" rx="12" fill="#fcf0ed" stroke="#a54a3f" stroke-width="1.8"/>
+<text x="235" y="679" font-size="21" fill="#a54a3f" font-weight="700" text-anchor="middle">超时／预算不足／深度超限</text>
+<text x="235" y="714" font-size="18" fill="#203047" font-weight="400" text-anchor="middle">取消后续工作 → 原 owner 升级</text>
+<text x="235" y="741" font-size="17" fill="#203047" font-weight="400" text-anchor="middle">保留已完成证据与支出记录</text>
+<rect x="540" y="642" width="480" height="116" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="1.8"/>
+<text x="780" y="679" font-size="24" fill="#203047" font-weight="700" text-anchor="middle">原 owner 收口</text>
+<text x="780" y="715" font-size="19" fill="#203047" font-weight="400" text-anchor="middle">核验通过 ＋ 结果版本有效 ＋ 预算对账</text>
+<text x="780" y="742" font-size="17" fill="#203047" font-weight="400" text-anchor="middle">业务待审批可以是研究任务的合格交付</text>
+<text x="44" y="810" font-size="18" fill="#203047" font-weight="400" text-anchor="start">实线：任务／证据流　　虚线：委派约束或失败升级</text>
+<text x="44" y="846" font-size="18" fill="#203047" font-weight="400" text-anchor="start">预算数字为分配示意；实验使用逐阶段预留，不固定角色配额。</text>
+</g></svg>

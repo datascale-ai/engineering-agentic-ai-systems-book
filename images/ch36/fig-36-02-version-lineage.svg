@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title desc">
+<title id="title">结果必须能追溯到实际输入组合</title><desc id="desc">源码、依赖锁、清单和原创夹具汇入内容清单，运行时保存解析后配置和实际环境，再关联状态库、事件与独立验收。Git提交只覆盖已提交内容；内容散列不证明来源可信。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="920" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" text-anchor="start" font-size="28" fill="#203047" font-weight="700">结果必须能追溯到实际输入组合</text>
+<rect x="45" y="115" width="330" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="210.0" y="149" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">源码</text>
+<text x="210.0" y="181" text-anchor="middle" font-size="20" fill="#203047">run.py＋src/*.py</text>
+<rect x="435" y="115" width="330" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="149" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">依赖与清单</text>
+<text x="600.0" y="181" text-anchor="middle" font-size="20" fill="#203047">pyproject＋uv.lock＋TOML</text>
+<rect x="825" y="115" width="330" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="990.0" y="149" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">原创夹具</text>
+<text x="990.0" y="181" text-anchor="middle" font-size="20" fill="#203047">政策／任务／人工预期</text>
+<path d="M210 225V270H600V315" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M600 225V270H600V315" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M990 225V270H600V315" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="230" y="315" width="740" height="115" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="349" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">asset_inventory.json</text>
+<text x="600.0" y="381" text-anchor="middle" font-size="20" fill="#203047">逐字节 SHA-256；运行只核验，修改需显式审查更新</text>
+<path d="M600 430V480" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="230" y="480" width="740" height="115" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="514" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">resolved_manifest.json</text>
+<text x="600.0" y="546" text-anchor="middle" font-size="20" fill="#203047">实际配置＋项目入口＋资产摘要＋Python／SQLite／平台</text>
+<path d="M600 595V645" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<rect x="135" y="645" width="930" height="115" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="679" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">状态库 → 事件 → summary.json 独立验收</text>
+<text x="600.0" y="711" text-anchor="middle" font-size="20" fill="#203047">正文中的结果指向本次报告；差异按业务不变量解释</text>
+<text x="600" y="830" text-anchor="middle" font-size="21" fill="#a96a16">Git HEAD 不包含未提交文件；相同散列也不等于签名或可信来源</text>
+</g></svg>

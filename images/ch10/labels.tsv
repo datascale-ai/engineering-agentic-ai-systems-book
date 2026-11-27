@@ -1,0 +1,34 @@
+key	zh	en
+RUNNING	执行	Running
+CHECKPOINT	检查点	Checkpoint
+ACCEPT	完成	Accept
+WAIT	等待	Wait
+REVISE	修订	Revise
+STOP	终止	Stop
+ESCALATE	升级	Escalate
+observation	观测	Observation
+evidence	完成证据	Completion evidence
+budget	剩余预算	Remaining budget
+no_progress	无进展	No progress
+completed	已完成	Completed
+retired	废弃未执行节点	Retired unexecuted node
+effect_key	副作用业务键	Business effect key
+delta	版本差异	Version difference
+ready	就绪集合	Ready set
+CONTINUE	继续	Continue
+goal_version	目标版本	Goal version
+running_cost	动作收费，记录事实	Charge action cost and record facts
+checkpoint_inputs	观测、进度、目标、预算	Observation, progress, goal and budget
+goal_accepted	当前目标证据通过	Evidence for the current goal passes
+revision_candidate	图校验、版本差异、计费	Graph validation, version diff and charging
+stop_reasons	阈值、未知结果、越权	Limits, unknown outcome or missing authorization
+node_A	读取政策，证据eA	Read policy, evidence eA
+node_B	工单登记，业务副作用键k	Register ticket, business effect key k
+node_C	旧资源	Original resource
+node_D	旧目标核验	Verify original goal
+node_C2	替代资源	Substitute resource
+node_D2	当前目标核验	Verify current goal
+keep_history	保留ID与证据	Preserve IDs and evidence
+no_replay	不重放副作用	Do not replay side effects
+pending	待执行	Pending execution
+added	新增	Added

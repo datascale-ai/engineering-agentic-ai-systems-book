@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+<title id="title">分层测试分别回答不同正确性问题</title><desc id="desc">金字塔表达低层反馈快、高层覆盖边界多，不给固定测试数量比例。单元层核契约，集成层核存储与作用，端到端层核本地完整入口。业务断言独立于模型生成，各层共享人工预期但不共享错误的自报成功。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="960" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" text-anchor="start" font-size="28" fill="#203047" font-weight="700">分层测试分别回答不同正确性问题</text>
+<polygon points="390,120 810,120 870,310 330,310" fill="#e4f3f0" stroke="#285b8e" stroke-width="2"/>
+<polygon points="330,330 870,330 960,530 240,530" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<polygon points="240,550 960,550 1080,775 120,775" fill="#f6f8fb" stroke="#285b8e" stroke-width="2"/>
+<text x="600" y="169" text-anchor="middle" font-size="25" fill="#203047" font-weight="700">本地端到端</text>
+<text x="600" y="211" text-anchor="middle" font-size="20" fill="#203047">CLI／恢复／最终业务状态</text>
+<text x="600" y="243" text-anchor="middle" font-size="20" fill="#203047">慢一些，覆盖完整教学入口</text>
+<text x="600" y="380" text-anchor="middle" font-size="25" fill="#203047" font-weight="700">集成</text>
+<text x="600" y="422" text-anchor="middle" font-size="20" fill="#203047">客户端与服务分库；批准、幂等和取消</text>
+<text x="600" y="454" text-anchor="middle" font-size="20" fill="#203047">检查接口组合与真实持久事实</text>
+<text x="600" y="605" text-anchor="middle" font-size="25" fill="#203047" font-weight="700">单元与契约</text>
+<text x="600" y="647" text-anchor="middle" font-size="20" fill="#203047">字段／版本／政策／消息去重</text>
+<text x="600" y="679" text-anchor="middle" font-size="20" fill="#203047">小范围，定位快，边界输入多</text>
+<text x="600" y="855" text-anchor="middle" font-size="21" fill="#a96a16">每层都需独立业务断言；金字塔形状不是固定数量或覆盖率指标</text>
+</g></svg>

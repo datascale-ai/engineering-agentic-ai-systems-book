@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+<title id="title">共同接口连接不同环境，能力逐项声明</title><desc id="desc">上层共享观测、估计、行动、核验和停止循环。契约连接数字环境、网格或游戏仿真以及物理环境。各自登记原子版本检查、观测范围、反馈、重置、延迟和安全能力。数字与仿真为本章实验设计，物理环境仅用于外部研究边界讨论，不声称完成实机验证。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="1000" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" font-size="29" text-anchor="start" fill="#203047" font-weight="700">共同接口连接不同环境，能力逐项声明</text>
+<rect x="170" y="105" width="860" height="105" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="139" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">共同控制循环</text>
+<text x="600.0" y="170" font-size="20" text-anchor="middle" fill="#203047">观测 → 估计 → 前置检查 → 行动 → 核验／停止</text>
+<path d="M600 210V255" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="170" y="255" width="860" height="105" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="289" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">环境契约与能力声明</text>
+<text x="600.0" y="320" font-size="20" text-anchor="middle" fill="#203047">observe / act / reset；时间、对象、episode 与结果状态</text>
+<path d="M600 360V400H210V445" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M600 360V400H600V445" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M600 360V400H990V445" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<rect x="45" y="445" width="330" height="220" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="210.0" y="479" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">数字环境</text>
+<text x="210.0" y="510" font-size="20" text-anchor="middle" fill="#203047">API／本地表单／浏览器</text>
+<text x="210.0" y="538" font-size="20" text-anchor="middle" fill="#203047">版本检查按真实能力声明</text>
+<text x="210.0" y="566" font-size="20" text-anchor="middle" fill="#203047">受理后仍须查询与验收</text>
+<text x="210.0" y="594" font-size="20" text-anchor="middle" fill="#203047">重置只限允许的夹具</text>
+<text x="210.0" y="622" font-size="20" text-anchor="middle" fill="#203047">本章：表单实验设计</text>
+<rect x="435" y="445" width="330" height="220" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="479" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">网格／游戏仿真</text>
+<text x="600.0" y="510" font-size="20" text-anchor="middle" fill="#203047">状态与扰动可控</text>
+<text x="600.0" y="538" font-size="20" text-anchor="middle" fill="#203047">局部观测、动作队列</text>
+<text x="600.0" y="566" font-size="20" text-anchor="middle" fill="#203047">终止与成功分别定义</text>
+<text x="600.0" y="594" font-size="20" text-anchor="middle" fill="#203047">重置必须隔离旧动作</text>
+<text x="600.0" y="622" font-size="20" text-anchor="middle" fill="#203047">本章：网格实验设计</text>
+<rect x="825" y="445" width="330" height="220" rx="12" fill="#fff2dc" stroke="#a96a16" stroke-width="2"/>
+<text x="990.0" y="479" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">物理环境</text>
+<text x="990.0" y="510" font-size="20" text-anchor="middle" fill="#203047">传感器与执行器误差</text>
+<text x="990.0" y="538" font-size="20" text-anchor="middle" fill="#203047">制动、接触及不可逆作用</text>
+<text x="990.0" y="566" font-size="20" text-anchor="middle" fill="#203047">没有通用重置保证</text>
+<text x="990.0" y="594" font-size="20" text-anchor="middle" fill="#203047">需设备级安全与接管验证</text>
+<text x="990.0" y="622" font-size="20" text-anchor="middle" fill="#203047">本章：仅引外部研究</text>
+<path d="M210 665V720H600V765" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M600 665V765" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M990 665V720H600" fill="none" stroke="#a96a16" stroke-width="2.8"/>
+<rect x="120" y="765" width="960" height="115" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="600.0" y="799" font-size="23" text-anchor="middle" fill="#203047" font-weight="700">分别登记证据，再讨论迁移</text>
+<text x="600.0" y="830" font-size="20" text-anchor="middle" fill="#203047">观测／延迟／噪声／可逆性／重置／安全约束／验收渠道</text>
+<text x="600.0" y="858" font-size="20" text-anchor="middle" fill="#203047">共同接口不赋予环境原本没有的保证</text>
+<text x="600" y="944" font-size="22" text-anchor="middle" fill="#a96a16">数字与仿真结果不能直接证明真实机器人安全</text>
+</g></svg>

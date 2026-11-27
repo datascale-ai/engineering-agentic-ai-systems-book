@@ -1,0 +1,3951 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从大语言模型到生产级智能体的系统工程手册">
+      
+      
+        <meta name="author" content="Jun Yu, Ye Yu">
+      
+      
+        <link rel="canonical" href="https://datascale-ai.github.io/engineering-agentic-ai-systems-book/part5/ch21_perception_environment/">
+      
+      
+        <link rel="prev" href="../ch20_collective_reasoning/">
+      
+      
+        <link rel="next" href="../../part6/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Ch21 智能体感知与环境交互 - 智能体人工智能系统工程：从大语言模型到生产级智能体</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ch21" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="智能体人工智能系统工程：从大语言模型到生产级智能体" class="md-header__button md-logo" aria-label="智能体人工智能系统工程：从大语言模型到生产级智能体" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能体人工智能系统工程：从大语言模型到生产级智能体
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch21 智能体感知与环境交互
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="red"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/part5/ch21_perception_environment/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/datascale-ai/engineering-agentic-ai-systems-book/tree/main" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="智能体人工智能系统工程：从大语言模型到生产级智能体" class="md-nav__button md-logo" aria-label="智能体人工智能系统工程：从大语言模型到生产级智能体" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能体人工智能系统工程：从大语言模型到生产级智能体
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/datascale-ai/engineering-agentic-ai-systems-book/tree/main" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    全书导览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reader_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    引言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../abbreviations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缩略语与符号表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../authors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    作者信息
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part1/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第一篇：智能体人工智能系统基础
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            第一篇：智能体人工智能系统基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1/ch01_agentic_ai_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第1章：智能体人工智能概论
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1/ch02_from_llms_to_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第2章：从大语言模型到 AI 智能体
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1/ch03_agent_architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第3章：智能体架构基础
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1/ch04_system_lifecycle_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第4章：智能体系统生命周期与设计原则
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part2/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第二篇：模型交互与推理基础
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            第二篇：模型交互与推理基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2/ch05_prompt_instruction_hierarchies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第5章：提示与指令层级
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2/ch06_context_structured_outputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第6章：上下文工程与结构化输出
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2/ch07_model_routing_contracts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第7章：模型选择、路由与能力契约
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2/ch08_foundation_model_reasoning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第8章：基础模型推理
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part3/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第三篇：智能体核心能力
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            第三篇：智能体核心能力
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3/ch09_task_decomposition_planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第9章：任务分解与规划
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3/ch10_iterative_reasoning_revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第10章：迭代推理与计划修订
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3/ch11_tool_discovery_calling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第11章：工具发现、选择与调用
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3/ch12_action_execution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第12章：行动执行与外部操作
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3/ch13_action_traces_recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第13章：行动轨迹、验证与恢复
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part4/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第四篇：记忆、知识与智能体学习
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            第四篇：记忆、知识与智能体学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4/ch14_state_working_memory_context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第14章：智能体状态、工作记忆与上下文管理
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4/ch15_long_term_memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第15章：长期记忆与个性化
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4/ch16_retrieval_knowledge_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第16章：检索增强与知识驱动智能体
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4/ch17_reflection_adaptation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第17章：反思、自我纠错与持续适应
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第五篇：多智能体与环境交互系统
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            第五篇：多智能体与环境交互系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18_multi_agent_roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第18章：多智能体角色与组织结构
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19_multi_agent_communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第19章：多智能体通信与协调
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch20_collective_reasoning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第20章：集体推理、辩论与协商
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第21章：智能体感知与环境交互
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    第21章：智能体感知与环境交互
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1 旧观测引发错误动作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.1 旧观测引发错误动作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.1 保存按钮已经移动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.2 三个时间点对应不同事实
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.3 本章承接判断到行动的边界
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2 环境模型与观测边界
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.2 环境模型与观测边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.1 状态、观测与估计分别是什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.2 用最小模型描述交互
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.3 数字、浏览器、仿真与物理环境的差异
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2124" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.4 环境卡先写清允许观察和改变的范围
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.5 可观测性要相对于动作和任务判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3 环境适配器与闭环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.3 环境适配器与闭环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2131" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.1 观测返回内容，也返回它的边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2132" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.2 状态估计应保存未知项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2133" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.3 行动请求绑定目标、依据和允许效果
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2134" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.4 受理、执行与验收分别记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2135" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.5 重置建立新试次，不抹去旧副作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2136" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.6 把这些契约连成反馈循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2137" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.7 适配器先声明能力，再接受任务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4 不确定性与安全停止
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.4 不确定性与安全停止">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2141" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.1 先定位失效发生在哪个环节
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2142" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.2 重观测需要改变可用信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2143" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.3 保守行动、取消与补偿的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2144" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.4 安全停止包含什么状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2145" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.5 交接是闭环的一种合法出口
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5 数字与仿真对照
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.5 数字与仿真对照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2151" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.1 实验问题与共同控制条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2152-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.2 环境 A：本地数字表单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2153-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.3 环境 B：局部可见网格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2154" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.4 两条时间线怎样帮助核对机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2155" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.5 指标、恢复与成本怎样报告
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2156" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.6 外部机器人研究说明了什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2157" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.7 从一次轨迹到可复核的工程记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2158" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.8 两环境的实际本地对照
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6 小结与环境卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.6 小结与环境卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2161" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.1 用四个问题检查闭环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2162" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.2 交给运行时与工程篇的材料
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2163" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.3 复习题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2164" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.4 实践题：设计一张环境卡和两条轨迹
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2165" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.5 适用边界与后续工作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考文献
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part6/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第六篇：运行时工程与交互基础设施
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            第六篇：运行时工程与交互基础设施
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6/ch22_orchestration_runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第22章：智能体编排与执行运行时
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6/ch23_sessions_events_state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第23章：会话、事件与状态机
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6/ch24_streaming_interrupts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第24章：流式流水线、流量控制与用户打断
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6/ch25_multimodal_realtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第25章：多模态交互与实时协调
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第七篇：评估、可信性与生产治理
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            第七篇：评估、可信性与生产治理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7/ch26_evaluation_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第26章：智能体评估方法
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7/ch27_benchmarking_capacity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第27章：基准测试、性能分析与容量规划
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7/ch28_reliability_failure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第28章：可靠性与故障工程
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7/ch29_security_safety_alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第29章：安全、系统安全与对齐
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7/ch30_production_governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第30章：生产部署、监控与治理
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part8/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第八篇：应用、综合项目与未来方向
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            第八篇：应用、综合项目与未来方向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part8/ch31_software_knowledge_work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第31章：软件工程与知识工作中的智能体人工智能
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part8/ch32_education_healthcare_finance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第32章：教育、医疗与金融中的智能体人工智能
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part8/ch33_enterprise_adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第33章：企业智能体系统与实践采用
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part8/ch34_capstone_reference_architectures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第34章：综合项目与参考架构
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part8/ch35_open_problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第35章：开放问题与未来方向
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part9/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    第九篇：工程实践、可运行代码与测试
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            第九篇：工程实践、可运行代码与测试
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part9/ch36_reference_implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第36章：参考实现架构、配置与可复现环境
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part9/ch37_agent_testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第37章：智能体单元测试、集成测试与端到端测试
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part9/ch38_regression_fault_injection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第38章：评估回归、故障注入与可观测测试
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part9/ch39_deployment_continuous_delivery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第39章：部署演练、持续交付与工程综合实践
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--scaffold"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    附录
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            附录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_a_terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录A：术语与缩略语
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_b_metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录B：智能体评估指标与测量方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_c_schemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录C：接口、模式与事件轨迹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_d_deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录D：部署档位与验收模板
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--zh-draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_e_config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录E：模型、工具、提示与知识配置记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_f_security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录F：安全、隐私与治理清单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_g_failures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录G：故障诊断与恢复手册
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix_h_reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    附录H：参考文献与延伸阅读
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../afterword/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    后记与版本说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1 旧观测引发错误动作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.1 旧观测引发错误动作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.1 保存按钮已经移动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.2 三个时间点对应不同事实
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1.3 本章承接判断到行动的边界
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2 环境模型与观测边界
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.2 环境模型与观测边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.1 状态、观测与估计分别是什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.2 用最小模型描述交互
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.3 数字、浏览器、仿真与物理环境的差异
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2124" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.4 环境卡先写清允许观察和改变的范围
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2.5 可观测性要相对于动作和任务判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3 环境适配器与闭环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.3 环境适配器与闭环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2131" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.1 观测返回内容，也返回它的边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2132" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.2 状态估计应保存未知项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2133" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.3 行动请求绑定目标、依据和允许效果
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2134" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.4 受理、执行与验收分别记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2135" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.5 重置建立新试次，不抹去旧副作用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2136" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.6 把这些契约连成反馈循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2137" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3.7 适配器先声明能力，再接受任务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4 不确定性与安全停止
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.4 不确定性与安全停止">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2141" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.1 先定位失效发生在哪个环节
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2142" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.2 重观测需要改变可用信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2143" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.3 保守行动、取消与补偿的区别
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2144" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.4 安全停止包含什么状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2145" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4.5 交接是闭环的一种合法出口
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5 数字与仿真对照
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.5 数字与仿真对照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2151" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.1 实验问题与共同控制条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2152-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.2 环境 A：本地数字表单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2153-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.3 环境 B：局部可见网格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2154" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.4 两条时间线怎样帮助核对机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2155" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.5 指标、恢复与成本怎样报告
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2156" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.6 外部机器人研究说明了什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2157" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.7 从一次轨迹到可复核的工程记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2158" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5.8 两环境的实际本地对照
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6 小结与环境卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.6 小结与环境卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2161" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.1 用四个问题检查闭环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2162" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.2 交给运行时与工程篇的材料
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2163" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.3 复习题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2164" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.4 实践题：设计一张环境卡和两条轨迹
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2165" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6.5 适用边界与后续工作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考文献
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="ch21">Ch21 智能体感知与环境交互</h1>
+<p><strong>Agent Perception and Environment Interaction</strong></p>
+<p><strong>摘要</strong>　智能体依据观测选择行动，但观测只覆盖特定时刻和范围，不能等同于环境的完整状态。本章从界面变化后误用旧坐标的案例出发，区分状态、观测与估计，比较数字接口、浏览器、仿真和物理环境，建立观测、行动、重置与结果核验的适配契约。随后讨论延迟、遮挡、噪声、未知执行结果和安全停止，以本地表单及网格任务设计闭环对照，说明额外观测的成本、恢复指标及仿真迁移边界。构造轨迹用于机制分析，章末另报告受限本地环境的实际对照，明确其与真实桌面、模型和设备验证的边界。</p>
+<p><strong>关键词</strong>　观测（observation）；状态估计（state estimation）；部分可观测（partial observability）；环境适配器（environment adapter）；观测时效（observation freshness）；后置条件（postcondition）；安全停止（safe stop）；分布偏移（distribution shift）。</p>
+<h2 id="211">21.1 旧观测引发错误动作</h2>
+<h3 id="2111">21.1.1 保存按钮已经移动</h3>
+<p>政策助手已经完成证据整理，准备把一份工单草稿保存到本地教学界面。它在时刻 t₀ 获取截图，识别出“保存草稿”位于坐标 (500,350)。规划结束后，界面在 t₁ 插入提示栏并重新排列按钮；到了 t₂，智能体仍按旧坐标点击。该位置此时对应“删除草稿”，原本正确的任务意图变成了错误的动作请求。</p>
+<p>案例中的界面和坐标均为教学构造。它揭示的错误有三层：目标识别只对旧截图成立，规划没有检查依据是否失效，执行也没有再次确认目标及前置条件。若系统只检查“鼠标点击接口返回成功”，还会把输入事件已送达误认为草稿已经保存。最终答复可能声称成功，而实际业务状态与目标相反。</p>
+<p>使用元素名称或稳定标识可以降低坐标变化的影响，但仍要检查页面、对象和版本。两个窗口都可能有“保存”按钮；同一工单可能已被其他成员修改；按钮存在也可能处于禁用状态。更准确地定位目标可以减少一类错误，不能替代对当前任务条件和行动结果的核对。</p>
+<h3 id="2112">21.1.2 三个时间点对应不同事实</h3>
+<p>观测采集时刻说明“材料反映何时的环境”，接收时刻说明“系统何时拿到材料”，执行时刻说明“动作何时可能产生作用”。三者之间都有处理和传输延迟。即使刚刚收到截图，它也可能是较早采集的缓存；即使动作请求刚发送，实际执行也可能排在队列末尾。</p>
+<p>因此，“刚看过”和“此刻仍成立”需要不同证据。对静态说明文档，短时间延迟可能无关紧要；对移动目标、订单状态或紧急停止信号，同样延迟可能改变允许的动作。观测有效期应由任务变化速度、错误代价和执行机制决定，不能为所有环境固定一个看似方便的秒数。</p>
+<p>每步重新观察通常提供更多纠错机会，也增加延迟与成本。更重要的是，观察与行动之间依然可能发生变化。若服务端能在执行时原子检查对象版本，可以拒绝过期写入；若只有截图和鼠标输入，则无法仅靠“先看再点”获得同等保证。闭环设计必须声明实际能够约束什么。</p>
+<h3 id="2113">21.1.3 本章承接判断到行动的边界</h3>
+<p><a href="../ch20_collective_reasoning/">Ch20</a> 讨论如何依据证据形成结论，本章关注结论进入环境后怎样保持条件成立。前置知识是 <a href="../../part1/ch03_agent_architecture/">Ch03</a> 的系统边界，以及 <a href="../../part3/ch12_action_execution/">Ch12</a> 的行动授权与验收；本章不要求读者掌握机器人底层控制，也不把模型判断当作控制器的安全证明。</p>
+<p>学习目标是能够编写环境卡，区分可见信息与潜在状态，设计最小 <code>observe</code>、<code>act</code>、<code>reset</code> 契约，并用可定位的证据判断动作是否完成。章末以数字表单与网格仿真设计对照，用外部机器人研究解释迁移条件。正文保留少量概念片段和手工推演，完整工程实现由综合项目及第九篇统一组织。</p>
+<h2 id="212">21.2 环境模型与观测边界</h2>
+<h3 id="2121">21.2.1 状态、观测与估计分别是什么</h3>
+<p><strong>环境状态</strong>是描述任务演化所需的变量。例如工单的字段、审批、提交状态与后台队列可能都影响下一步；屏幕只显示其中一部分。<strong>观测</strong>是智能体通过某个接口获得的数据，包括截图、可访问性树、API 响应或传感器读数。<strong>状态估计</strong>则是系统结合历史观测、既往行动和假设形成的当前理解。估计需要标明已知、未知及不确定条件。</p>
+<p>截图显示“处理中”，不能直接辨别后台尚未执行、已经完成但界面未刷新，还是响应丢失。这三个真实状态可以对应相同的可见画面，却要求不同处理：等待、查询，或避免重复写入。把画面文字直接映射成唯一后台状态，会消除本来需要处理的不确定性。</p>
+<p>部分可观测决策模型提供了描述这种问题的正式框架。Kaelbling、Littman 和 Cassandra 将当前不可直接观测的环境，与基于行动和观测更新的信念状态分开；在模型假设成立时，信念状态可以表示为状态上的概率分布。<sup id="fnref:r01"><a class="footnote-ref" href="#fn:r01">1</a></sup> 本章借此区分信息对象，不要求所有语言智能体显式求解 POMDP，也不把自然语言摘要自动视为充分统计量。</p>
+<p>历史有帮助，但也可能过时。一份“上一轮已批准”的记忆只有在对象、任务修订、批准范围和有效期仍一致时才支持当前动作。若金额发生变化，旧批准是否继续适用要由业务规则决定。将多条旧记录拼成详细描述，并不能恢复从未被观测到的完整真实状态。</p>
+<p>估计也可以不立即选定一个状态。例如一次移动反馈丢失，位置可能仍在原格，也可能已经前进一格。系统可以保留这两个候选位置，随后查询动作状态或识别新的地标，再排除不相容的候选。在分歧消除前，下一步动作必须对这些可能状态都满足相应约束，或先取得额外观测。直接把“计划前进一格”写入记忆，会把未知结果伪装成确定位置。</p>
+<p>如果使用概率分布，更新需要有可说明的转移与观测模型。传感器在某种状态下产生读数的概率，与“读到该数之后真实状态是什么”的概率不同；后者还取决于先前状态分布。没有这些条件时，可以保留显式未知或候选集合，而不必生成看似精确的概率。概率表示更细，不意味着输入模型已经可靠。</p>
+<h3 id="2122">21.2.2 用最小模型描述交互</h3>
+<p>可以用 sₜ 表示环境状态，aₜ 表示行动，oₜ 表示观测。环境依据当前状态、行动和外部事件转移；观测机制只暴露部分结果。状态估计器用历史更新当前估计，再由策略选择下一步。实际工程中，t 可以表示决策步，必须另外记录采集和执行的物理时间，不能把步骤编号当作真实时间间隔。</p>
+<p><strong>行动空间</strong>是接口允许提出的动作集合，不是模型能够描述的全部行为。表单中可能只有读取、修改字段、保存草稿和申请提交；网格中可能只有上下左右移动、等待和观察。权限与安全规则还会进一步缩小当前允许集合。模型能生成一个动作名称，不代表适配器必须接受。</p>
+<p><strong>反馈</strong>说明请求或执行发生了什么，可以包含拒绝原因、动作标识、已知状态和后续查询入口。<strong>奖励</strong>是某些仿真中提供的学习或评价信号；它未必与业务验收相同。到达某个格子所得的奖励，也不能说明途中没有碰撞或越界。目标达成与约束遵守应分别检查。</p>
+<p>Gymnasium 的 <code>step</code> 将观测、奖励、<code>terminated</code>、<code>truncated</code> 和辅助信息分开，<code>reset</code> 返回新的初始观测及信息。<sup id="fnref:r02"><a class="footnote-ref" href="#fn:r02">2</a></sup> <code>terminated</code> 表示按环境定义结束，<code>truncated</code> 表示时间限制等外部截断；二者都不能单独翻译成“成功”。碰到失败终点同样可以终止，达到步数上限也可能留下未完成任务。环境卡必须另外规定成功后置条件。</p>
+<p>模型中的状态还应覆盖影响下一步的在途因素。如果两次移动已经排队，仅保存当前坐标不足以解释随后位置变化；队列、未完成动作和必要时钟变量也可能属于状态。若目标会随外部事件移动，转移规则还需包含这些事件。把它们全部省略，再责怪策略“预测不准”，会混淆模型缺失与策略错误。</p>
+<p>离散决策步也不意味着环境只在调用接口时变化。真实页面可能自动刷新，物体可能持续运动，队列可能在观察期间完成动作。本地仿真若采用“每次调用才推进时间”，应写明这一假设；它不能自然代表有连续外部变化的部署。需要研究动作延迟时，仿真时钟必须真正推进相关事件，而不只是给日志附上不同时间戳。</p>
+<h3 id="2123">21.2.3 数字、浏览器、仿真与物理环境的差异</h3>
+<p>结构化 API 能提供明确对象标识、错误码和版本校验，但接口响应仍可能有缓存、分页、授权限制或异步执行。没有返回字段不等于该事实为假；请求被受理也不等于结果已经发生。适配器应保留服务所提供的语义，不把所有非错误响应归并为任务成功。</p>
+<p>浏览器和桌面环境提供接近用户视角的操作面，也引入布局变化、焦点、遮挡、缩放与多窗口问题。WebArena 以功能性网站和任务完成的功能正确性评价来构建环境；OSWorld 强调初态配置、跨应用任务及基于执行结果的评估。<sup id="fnref:r03"><a class="footnote-ref" href="#fn:r03">3</a></sup><sup id="fnref:r04"><a class="footnote-ref" href="#fn:r04">4</a></sup> 两者提示我们把界面动作与实际完成条件连接起来，本章不声称复现其完整基准。</p>
+<p>网格或游戏仿真便于控制初态、随机源和扰动，适合分析延迟、局部可见和动作失败的影响。但它通常省略连续动力学、摩擦、接触和真实传感器误差。物理环境的动作可能在计算结束后继续发生，停止也可能有距离与时间；重置物体位置需要人工操作或额外设备，不能当成一次免费函数调用。</p>
+<p>相同接口名称因此只能提供共同组织方式，不能抹平能力差异。某个适配器支持原子条件写入，另一个只支持尽力检查；某个仿真可以回到固定初态，真实仓库却无法撤销已经运出的货物。这些差异应进入能力声明和验收，而不是藏在实现说明里。</p>
+<h3 id="2124">21.2.4 环境卡先写清允许观察和改变的范围</h3>
+<p><strong>Tab-21-01　环境卡的核心内容。A、B 为本章尚未实现的教学环境提案；其余两行用于说明能力边界，不表示接入了真实服务或机器人。</strong></p>
+<table>
+<thead>
+<tr>
+<th>环境及许可边界</th>
+<th>可见信息与潜在状态</th>
+<th>允许行动与验收</th>
+<th>时间、重置和安全限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A：本地虚构工单表单，原创夹具，不含真实账户</td>
+<td>截图或结构化表单观测；队列执行状态须查询</td>
+<td>填写、保存、在测试批准条件满足时申请提交；核对字段、唯一提交事件和回执</td>
+<td>夹具可提供原子状态版本；仅能重置本地夹具；删除和未经批准提交应被拒绝</td>
+</tr>
+<tr>
+<td>B：局部可见网格，原创地图与扰动脚本</td>
+<td>局部通行信息、带时间的位置读数；遮挡区和待执行动作可能未知</td>
+<td>单格移动、等待、观察；核对目标位置、禁区与碰撞事件</td>
+<td>固定步长和可控延迟；显式重置 episode；达到上限或安全边界时停止</td>
+</tr>
+<tr>
+<td>真实业务 API：仅作接口比较，需具体系统授权</td>
+<td>服务允许返回的对象表示，不保证包含完整内部状态</td>
+<td>以服务实际支持的条件写入、查询及批准机制为准</td>
+<td>ETag 只约束对应表示；是否支持幂等、取消、补偿须分别核对</td>
+</tr>
+<tr>
+<td>物理机器人：仅引用公开研究</td>
+<td>相机等传感器及估计；真实接触与人机距离可能不完全可见</td>
+<td>仅限具体设备、技能库与授权范围</td>
+<td>无通用回滚；制动、急停、接管和测试空间需另行验证</td>
+</tr>
+</tbody>
+</table>
+<p>完整环境卡还要登记环境与夹具版本、对象和观测模式、时间源、坐标系、动作单位、随机源、最大步数、风险阈值、数据保留和接管责任。已知能力与未知能力分开写。例如“未确认服务支持取消”不能被填成“支持重置”，也不能把文档中的可选特性当作当前部署已开启。</p>
+<p>对本地夹具，可以同时保存测试者可见的完整状态和智能体可见观测。完整状态只供评分与故障验证，不能偷偷提供给智能体。这样既能检验部分可观测情形，又能独立判断某次移动是否碰撞、某个提交是否重复。日志脱敏和读取权限仍要与真实应用的数据规则衔接。</p>
+<h3 id="2125">21.2.5 可观测性要相对于动作和任务判断</h3>
+<p>完整看见环境通常没有必要。例如只读一项已公开政策，不需要知道所有后台队列；修改工单金额则需要确认具体对象、当前字段及更新条件。可观测性不足是否影响动作，应由该动作的前置条件和后置验收决定。要求每一步都了解全部内部状态既做不到，也会引入无关成本。</p>
+<p>可以先把目标分成所需事实，再为每项事实指定观测通道。对象身份可来自页面标识，字段可来自结构化读取，批准可来自授权服务，写入结果可来自动作查询。若多个通道说的是不同对象或时间，就不能简单拼接成一个“完整上下文”。适配器应保留它们的来源及适用范围，让上层知道哪些组合仍有缺口。</p>
+<p>观测也可能改变环境。打开一个下拉菜单会改变布局，刷新页面可能打断尚未保存的输入，机器人移动相机可能占用空间。环境卡应区分纯读取与具有作用的感知动作，并为后者应用权限和结果检查。把所有为获取信息而做的操作记为免费 <code>observe</code>，会低估成本，也会漏掉副作用。</p>
+<h2 id="213">21.3 环境适配器与闭环</h2>
+<h3 id="2131">21.3.1 观测返回内容，也返回它的边界</h3>
+<p><code>observe</code> 应回答“看到了什么、什么时候看到、针对哪个对象、哪些部分没有看到”。最小记录包括环境与 episode 标识、观测标识、采集与接收时间、时间源、观测模式、对象范围、可用版本及缺失说明。观测标识用于追溯材料，不能自动充当服务端可比较的状态版本。</p>
+<p>下面是表单夹具的概念返回值。毫秒值使用同一夹具单调时钟；<code>fixture:42</code> 是夹具在受控条件下提供的状态版本，覆盖本例所用表单内容和布局。它不是从截图推算的真实服务版本。</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;environment_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;form-fixture&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;episode_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ep-a-01&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;observation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;obs-17&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;clock_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fixture-monotonic&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;captured_at_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;received_at_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;state_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fixture:42&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ticket:T21-01/form-and-layout&quot;</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;max_age_ms&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;ticket_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;save_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;button:save&quot;</span><span class="p">},</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&quot;unknowns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;background_queue&quot;</span><span class="p">]</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>其中 250 毫秒只是该教学夹具的候选有效期，不是通用推荐。对不提供版本的截图适配器，<code>state_version</code> 应明确为空或未知，另记本地帧标识。把帧编号写成“页面版本”会误导后续检查者，以为执行服务能够原子验证它。观测范围也要与版本范围对应：表单字段的版本不必涵盖窗口焦点或浮层布局。</p>
+<p>采集与接收来自同一时钟时，可以计算传输与处理间隔。若来自不同设备，只有完成时钟映射并给出误差界，才可以直接比较；否则应记录各自时钟与可用界限。把跨机器的两个时间戳直接相减得到负延迟，既不是网络事实，也不能用绝对值修饰成合理结果。</p>
+<p>有些观测在采集过程中已发生变化。例如可访问性树和截图分两次取得，可能属于不同界面状态；长时间扫描得到的点云也不是同一瞬间的全景。此时应记录采集区间、组合方式和不一致可能，必要时降低自动动作级别。观测内容越丰富，越需要说明时间和范围是否可对齐。</p>
+<p>时效检查可以分成两个问题：年龄是否仍在允许范围，决定性条件是否仍成立。即使年龄满足上限，只要已知对象变化，就应使相关依据失效；反过来，一个较旧的不可变文档可能仍然适用。有效期是守门条件之一，不能替代版本、对象范围和业务条件。必要时按字段分别管理时效，而不把整段上下文一次性视为最新。</p>
+<h3 id="2132">21.3.2 状态估计应保存未知项</h3>
+<p>适配器交出观测后，状态估计层结合有效历史更新当前理解。已确认字段与推测字段分别保存；同一对象的较旧观测不能仅因迟到而覆盖较新的已确认信息。若不同观测无法比较版本，应标记冲突并决定重新查询，不能按消息到达顺序假装得到了全序的真实状态。</p>
+<p>动作选择只使用其前置条件所需的信息。例如保存草稿需要确认当前对象与字段，提交还可能需要批准、有效凭据和当前内容摘要。后台队列未知不妨碍读取页面，却可能阻止再次提交。允许动作集合应随估计变化，而不是遇到任何未知都一律停止，或遇到看似熟悉的画面就一律执行。</p>
+<p>对高影响动作，应检查估计中的关键条件能否被执行服务再次验证。模型根据截图推断“已批准”只能生成待核对候选；真正的批准应由授权系统和范围信息支持。任务或内容修订后，原批准是否仍适用也需重验。这一边界复用 Ch12 的行动规则，不在感知层另设绕过路径。</p>
+<p>估计层还要保留推断的依赖。一项“可以提交”的判断若依赖 <code>obs-17</code> 中的草稿状态和另一条批准记录，任何一项失效都可能要求重新检查。只替换最新截图而不使相关动作计划失效，会留下旧推断继续驱动行动的问题。依赖管理可以先采用简单的对象、版本与条件关联，无须假装所有变化都能自动推理。</p>
+<h3 id="2133">21.3.3 行动请求绑定目标、依据和允许效果</h3>
+<p><code>act</code> 不能只接收一句“点击那里”。请求应携带环境、episode、任务修订、目标、动作参数、依据观测、必要版本条件及可追溯的请求标识。写入操作还需关联有效权限、批准范围和幂等约定。下面是同一夹具保存草稿的概念请求，不是全书已冻结的公共模式。</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;environment_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;form-fixture&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;episode_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ep-a-01&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T21-01&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;task_revision&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;client_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;req-save-01&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;save_draft&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ticket:T21-01&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;based_on_observation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;obs-17&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;expected_state_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fixture:42&quot;</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;preconditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;ticket_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span><span class="p">},</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">&quot;postcondition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft_fields_match_requested_content&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>请求中的 <code>preconditions</code> 和 <code>postcondition</code> 是待执行检查的声明，不能让发送者通过自己填写“安全”取得授权。接收端需要从受信状态、权限和策略得出是否允许，再核对目标及参数。若目标已经变化、版本失效或 episode 不一致，应拒绝请求并返回原因；拒绝旧动作后，应重新决策，不能只替换版本号继续发送相同参数。</p>
+<p>对本地夹具，可以把状态比较和写入放在同一次原子操作中，确保比较通过到写入之间没有夹具内部变化。对支持条件请求的 API，HTTP <code>If-Match</code> 可以要求源服务比较相应表示的实体标签，条件不满足时不执行请求；具体响应还须按服务语义处理。<sup id="fnref:r05"><a class="footnote-ref" href="#fn:r05">5</a></sup> 它约束的是该资源和表示，不能推导为整个工作流或物理环境的事务。</p>
+<p>对仅提供鼠标或键盘输入的环境，适配器通常只能在执行前检查当前目标、窗口、焦点和可见条件，仍有检查后变化的竞态。此时应优先稳定定位、缩短高风险动作序列、限制可执行范围，并在不能确认目标时停止。若环境不提供原子条件检查，文档必须如实说明，不能因请求里出现 <code>expected_state_version</code> 就声称检查必然成立。</p>
+<p>坐标还需要显式坐标系。截图像素、逻辑窗口单位和设备像素可能因缩放不同；屏幕原点、窗口偏移、相机坐标和机器人工作坐标也不是同一对象。转换应绑定尺寸、缩放和标定版本，并在条件变化后失效。坐标数值看起来落在有效范围内，只说明格式允许，不说明它指向正确目标。</p>
+<p>动作单位也须固定。“移动 1”可以是一格、一米或一个设备脉冲；“等待 5”可以是五毫秒或五个仿真步。接口应避免让模型靠常识补单位，接收端需要按环境卡验证数值范围。单位与坐标的错误通常不会被自然语言自检稳定发现，更适合由适配器的确定性检查阻止。</p>
+<h3 id="2134">21.3.4 受理、执行与验收分别记录</h3>
+<p>反馈至少区分拒绝、已受理、已知已执行和结果未知。受理表示请求进入处理路径，执行表示发生了某个动作，验收则判断实际后置条件是否满足。HTTP <code>202 Accepted</code> 明确表示已接受处理但尚未完成，最终甚至可能没有执行；它不能直接作为业务成功回执。<sup id="fnref2:r05"><a class="footnote-ref" href="#fn:r05">5</a></sup></p>
+<p>保存动作的验收需要重新读取目标草稿，检查字段与请求一致，且没有错误副作用。提交动作还需查询唯一业务事件或服务回执，并核对对象、内容和批准范围。按钮变灰、页面出现提示或调用没有抛错，都可以作为线索，却不能在缺少必要后置状态时替代验收。</p>
+<p>若请求发送后超时，系统可能不知道它是否已经执行。应先使用已有请求标识查询，或按服务明确支持的幂等协议重试。客户端生成同一个字符串，并不自动赋予服务幂等能力；新建请求 ID 重新提交也可能产生第二次作用。若查询与去重均不可用，应保留“结果未知”，停止进一步可能重复的写入并交接。</p>
+<p>后置条件应由可读取的环境证据或独立核验者检查，避免让执行成员仅凭自己的计划宣告成功。本地实验评分可以使用智能体不可见的夹具状态；真实服务则要说明可访问的验收渠道、延迟和权限。即使对象已达到目标状态，也要检查该证据是否足以归因于本次请求，尤其是同时存在其他操作者时。</p>
+<p>异步动作应有自己的等待上限。请求已经受理、任务截止却已经到达时，系统不能一边报告停止，一边继续自动发送后继写入。应记录该动作仍可能完成，按能力发出取消或查询，并将未决责任交给接管者。业务截止、动作等待超时和观测有效期可以不同，需要分别解释，不能共用一个含义不清的 <code>timeout</code>。</p>
+<h3 id="2135">21.3.5 重置建立新试次，不抹去旧副作用</h3>
+<p><code>reset</code> 必须说明重置对象、允许条件、初态来源和完成证据。对网格，可能重置位置、障碍、随机源和待执行队列；对表单夹具，可能恢复虚构记录及布局。真实业务中的退单、删除或退款属于取消或补偿，具有独立授权、成本和失败可能，不能包装成无条件恢复原状。</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;environment_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grid-fixture&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;episode_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ep-b-03&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;operation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;reset_fixture&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;client_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;req-reset-04&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;initial_state_ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grid-map-01@1&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2104</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;require_quiescent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">&quot;requested_next_episode_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ep-b-04&quot;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>本例先确认本地环境允许重置并已无未处理动作，重置成功后才启用新 episode，并返回新初始观测。若无法排空旧动作，必须明确取消或隔离方式；只修改 episode 标签不能阻止旧请求在外部服务继续执行。新试次拒绝旧观测与旧反馈进入当前决策，旧试次的审计记录仍保留。</p>
+<p>固定随机种子只能控制被纳入该随机源的部分。模型服务、操作系统调度、网页后台任务、外部网络和未记录的设备状态仍可能变化。环境卡应列出确定性覆盖范围，测试时区分同一夹具的重复核对与新随机样本，不能因使用一个 seed 就宣称现实工作流完全可重现。</p>
+<h3 id="2136">21.3.6 把这些契约连成反馈循环</h3>
+<p>闭环从读取有效观测开始，更新状态估计，形成待执行动作，检查权限、时效及前置条件，再执行并收集反馈。随后根据动作状态决定等待、查询或重新观察，用独立后置条件判断本步是否完成；只有条件仍允许，才选择下一动作。循环需要同时受步数、时间和根预算约束。</p>
+<p><a class="glightbox" href="../../images/ch21/fig-21-01-observe-act-loop.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="观测、状态估计、前置检查、行动、结果查询与后置核验构成的反馈闭环" src="../../images/ch21/fig-21-01-observe-act-loop.svg" /></a></p>
+<p><em>Fig-21-01　感知与行动闭环。执行前检查依据和权限，执行后区分受理、已执行与未知结果，再用当前证据验证后置条件。失效依据触发重观测；风险超界或无法确认的写入触发停止与交接。任何循环都受预算和截止限制。图为本章原创。</em></p>
+<p>一次成功观察后连续执行多个动作，属于较长的开放执行段。若多个动作只改变本地可逆状态，且中间条件可由环境保证，这样做可能节省成本。若动作依赖前一步的实际结果、目标易变或影响较大，就应缩短执行段。闭环频率应与依赖和风险匹配，不能用“每步拍照”代替完整的结果查询与验收。</p>
+<h3 id="2137">21.3.7 适配器先声明能力，再接受任务</h3>
+<p>一个可复用适配器应能让上层知道：是否返回可信状态版本，是否支持原子前置检查，是否能查询同一动作，是否真正实现幂等，哪些对象可重置，怎样确认停止，以及哪些字段总是未知。上层任务的必需能力与这些声明比较后，才能决定采用自动执行、受限执行还是人工路径。</p>
+<p>能力声明不是自我证明。声称支持幂等，需要在请求重复与响应丢失条件下核对实际作用；声称支持重置，需要检查旧队列和迟到反馈；声称返回当前状态，需要检查缓存与版本范围。第九篇的测试可以据此建立独立断言，而不能只检验适配器返回了某个字段名。</p>
+<p>适配器还应区分调用格式错误、权限拒绝、前置失效、执行失败、结果未知和能力不支持。上层收到“能力不支持”后不能自动换一种更宽松的写入绕过；收到前置失效则需要更新依据与计划。清楚的失败分类，使通用运行时能够恢复任务，同时保留具体环境的边界。</p>
+<h2 id="214">21.4 不确定性与安全停止</h2>
+<h3 id="2141">21.4.1 先定位失效发生在哪个环节</h3>
+<p>看到错误结果后，至少要区分观测缺失、状态估计错误、目标定位错误、动作拒绝、实际执行失败和验收不足。旧坐标点击可能发生在感知与动作之间，后台超时则可能留下未知结果；两者都表现为“没完成”，处理方式却不同。统一重试会把可诊断问题变成新的副作用。</p>
+<p><strong>Tab-21-02　环境失败、处理与验收。处理是条件选择，须结合实际接口能力；不能把每一行机械映射为重试。</strong></p>
+<table>
+<thead>
+<tr>
+<th>失败类型</th>
+<th>可观察信号与未知项</th>
+<th>处理条件及责任</th>
+<th>应保留的验收证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>陈旧观测</td>
+<td>版本不匹配、超出有效期；无版本时可能无法直接发现</td>
+<td>拒绝依赖旧条件的动作，重观测并重新规划</td>
+<td>旧依据、拒绝原因、新观测及新动作关联</td>
+</tr>
+<tr>
+<td>布局或坐标漂移</td>
+<td>目标标识、窗口、缩放或当前位置改变</td>
+<td>重新定位；目标不唯一时交接，禁止盲点</td>
+<td>实际目标及必要上下文，无误触事件</td>
+</tr>
+<tr>
+<td>遮挡或局部不可见</td>
+<td>目标未被观察，不能判断是否仍在原位</td>
+<td>在许可内改变视角或等待；信息仍不足则停止</td>
+<td>可见范围、未覆盖区域与停止理由</td>
+</tr>
+<tr>
+<td>动作延迟</td>
+<td>已受理但未完成，队列仍有待执行动作</td>
+<td>查询同一动作，限制后续依赖操作</td>
+<td>受理和执行时刻、队列状态及后置检查</td>
+</tr>
+<tr>
+<td>执行失败</td>
+<td>服务明确拒绝、动作落空或机器人技能失败</td>
+<td>分析可恢复性；在预算与权限内重新规划</td>
+<td>明确失败反馈、修订计划与再次验收</td>
+</tr>
+<tr>
+<td>反馈丢失／结果未知</td>
+<td>超时，无法确定是否已有副作用</td>
+<td>查询或按真实幂等契约重试；否则暂停写入</td>
+<td>原请求标识、查询结果、未知项与接管者</td>
+</tr>
+<tr>
+<td>观测噪声或相互冲突</td>
+<td>多次读数不同，差异可能来自噪声或真实变化</td>
+<td>检查时间、传感器及条件；不能无条件平均</td>
+<td>原读数、时间范围、估计方法与误差界</td>
+</tr>
+<tr>
+<td>安全或授权边界失效</td>
+<td>批准过期、禁区、风险阈值超界</td>
+<td>阻止新动作，执行适用的安全停止并通知负责者</td>
+<td>停止请求及确认、在途动作、实际状态</td>
+</tr>
+</tbody>
+</table>
+<p>观察不到目标不等于目标不存在；收到失败反馈也不等于没有任何副作用。一个复合操作可能先写入字段，再在提交阶段失败。恢复前应定位已发生的部分，判断继续、撤回或补偿是否被允许。任务级状态、动作状态与环境状态需要关联记录，不能用单个布尔值概括。</p>
+<h3 id="2142">21.4.2 重观测需要改变可用信息</h3>
+<p>重观测适用于可能取得更新、补齐范围或验证结果的情形。相同缓存被读取十次，可能只增加账单；遮挡没有变化时反复截图，也可能没有新增证据。系统应记录为何观察、预期补哪项条件，以及观察后是否真的减少不确定性。连续无信息增量时应触发有界停止或改变合法策略。</p>
+<p>可考虑等待队列完成、重新查询对象、切换允许的观测模式或请求人工确认。不同方式的成本包括时间、token、API 配额、传感器能耗以及潜在信息暴露。多模态观测也可能不一致；不能因新增一种模态就自动提升置信度，仍要核对对象和时间。</p>
+<p>如果采用概率估计，需要说明不确定性来自模型、测量还是环境变化。语言模型自报“有九成把握”不是经过校准的碰撞概率。高影响动作的阈值应由任务风险、独立验证与领域控制要求确定，不能从本章的小型网格推演直接得到。</p>
+<p>额外观测的选择可以由决定性缺口驱动：若唯一未知是原提交是否生效，查询动作记录通常比再截整页更直接；若未知是目标位置，重复查询一条旧业务记录也不能补齐。选择通道前先写出“哪项结果会改变下一步”，有助于减少无效循环。这是一项工程决策规则，不需要先给每种观测虚构精确的信息收益。</p>
+<h3 id="2143">21.4.3 保守行动、取消与补偿的区别</h3>
+<p>保守行动是在信息不足时选择较低影响、仍有授权且有助于确认的步骤，例如只读查询或保存本地草稿。它也可能有代价：等待会错过期限，移动到“更好观察的位置”在物理环境里也可能碰撞。因此应写明为什么该动作在当前允许集合内，以及它能获得什么证据。</p>
+<p>取消试图阻止尚未发生的工作；补偿试图减轻已经发生的作用。取消可能因执行已开始而失败，补偿也未必恢复完全相同的业务状态。一次错误提交即使后来撤回，通知可能已经发送，审计记录仍存在。闭环应把这些事实保存，而不是将最终页面恢复视为“从未发生错误”。</p>
+<p>重置则是受控环境的一项能力。在本地仿真里，它可用于开始下一试次；在真实系统里，重新打开页面或重启进程并不会撤销服务器写入。出现未知提交后重启适配器，反而可能丢失请求标识，使后续更难判断是否重复。恢复设计应复用 <a href="../../part3/ch13_action_traces_recovery/">Ch13</a> 的状态查询与证据约定。</p>
+<h3 id="2144">21.4.4 安全停止包含什么状态</h3>
+<p>停止首先意味着系统不再发出未经确认的新业务动作；随后要检查已有动作是否仍在排队、能否取消、是否需要持续监测。物理系统还需按具体设备进入经过验证的安全状态，不能把模型不再输出文字当作机械停止。某些设备应制动，某些设备骤停反而危险，必须遵循领域控制器和现场规程。</p>
+<p>Amodei 等人将副作用、奖励投机、安全探索和分布变化等列为机器学习系统的实际安全研究问题。<sup id="fnref:r06"><a class="footnote-ref" href="#fn:r06">6</a></sup> 这为识别目标与约束错位提供了分类线索，不是某个机器人或业务系统已经安全的认证。本章的停止规则只定义接口与交接责任，实际风险控制需与 B、C、F 及具体领域人员验证。</p>
+<p>停止记录应包括环境与 episode、当前任务、最后有效观测、最后动作及已知反馈、潜在副作用、尚未完成的后置检查、停止原因、允许的后续操作和接管责任。若仍存在未知结果，应显式保持未知，不能为了收口把它改为失败或成功。</p>
+<p>恢复自动执行也需要明确条件。接管者补足批准、排除在途动作或取得有效新观测后，可以提出恢复请求；请求须绑定当前任务与新依据。旧动作不因“恢复”而自动重放，原预算也不自动清零。若决定开启全新试次，仍要先处理旧试次未决作用，避免把任务重启变成重复执行。</p>
+<h3 id="2145">21.4.5 交接是闭环的一种合法出口</h3>
+<p>安全退出至少有两类结果：任务尚未完成，但系统已阻止进一步错误并完成交接；任务和约束均已验收。前者具有控制价值，却不应计入业务成功率。报告应同时展示完成、受控停止、人工接管、结果未知和运行失败的数量，避免把所有非崩溃退出都算作成功。</p>
+<p>接管者需要理解当前状态和允许动作，而不只是收到“请人工处理”。跨到 Ch22—Ch23 的运行时，应携带任务修订、episode、动作关联、截止、剩余预算和可查询证据。新执行者先核对有效性，不能把旧成员的计划当作已经发生的事实。媒体帧、音频与用户打断的实时排序由 <a href="../../part6/ch25_multimodal_realtime/">Ch25</a> 展开，本章提供观测与行动依赖的语义。</p>
+<h2 id="215">21.5 数字与仿真对照</h2>
+<h3 id="2151">21.5.1 实验问题与共同控制条件</h3>
+<p><strong>Exp-21-01</strong> 比较两种控制安排：一次观察后连续执行预定动作的方案 O，以及每个依赖步骤后获取反馈并校正的方案 C。问题是环境变化时，两者如何在任务完成、错误动作、额外观测和恢复成本之间取舍。下文先保留原设计与手工轨迹；受限结构化环境的实际实现、冻结参数及运行结果见21.5.8。原提案参数不是生产推荐值。</p>
+<p>两方案使用相同任务、初态、行动集合、权限、模型档位、动作上限与总截止。O 在初始观测后形成完整序列，不获取新的任务观测用于中间改写；C 每次执行后检查反馈，并在必要时重观测和重新规划。两者都保留基本授权与前置检查，以及最后一次独立验收。遇到明确拒绝，O 同样停止，不为了制造失败而关闭安全防护。</p>
+<p>第一层比较可采用固定的确定性策略，以隔离观测更新与状态变化的机制；第二层再接同一模型，研究规划质量与感知误差。两层结果分别报告。C 的额外观测、重新决策与输入 token 全部计费；O 未使用的预算如实保留，不强迫它发出无意义动作来填满成本。</p>
+<p>本提案为两环境各十项任务，每项以五个预登记扰动种子成对运行 O、C，共每环境五十对试次。无随机因素的任务仍可用重复运行检查一致性，但不能视为新独立样本。开发阶段另设任务，不能看完这些题的结果再调整策略。正式实施前冻结夹具、任务、故障脚本与成功规则，并由独立检查者确认。</p>
+<h3 id="2152-a">21.5.2 环境 A：本地数字表单</h3>
+<p>表单只包含虚构工单，初态为草稿，目标字段为金额 250、类别“境内常规”、说明“教学申请”。任务要求保存，并在夹具提供的有效测试批准条件下完成一次模拟提交。提交完成必须同时满足字段正确、状态为已提交、唯一提交事件和回执匹配本次对象与内容；未经批准的提交或错误删除均不允许。测试批准不是现实账户授权。</p>
+<p>这里的测试批准表示夹具对提交动作的许可，不是 Ch20 政策题中的主管批准字段。金额 250 在该政策下不要求主管批准，也不意味着一个程序自动获得写入权限。将政策资格与行动授权分别建模，能够避免把“判断符合”直接等同于“允许提交”。</p>
+<p>夹具可提供两种观测入口：界面截图与受限结构化视图。主对照固定使用同一种入口，不能让 C 额外获取隐藏状态。评分者可以检查完整内部状态。基础版本支持对夹具状态原子比较后执行；若研究普通 GUI 的竞态，应在单独能力档位中关闭该保证，两方案保持一致并明确能力变化。</p>
+<p><strong>Tab-21-03　表单的十项任务与可核对接受条件。未改变的初态及目标均沿用上文；每项单独注入，A10 为明确登记的组合情形。</strong></p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>注入条件</th>
+<th>合格表现及需要区分的结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>无扰动</td>
+<td>字段、唯一提交与回执均正确，作为基础路径</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>初始观测后、首次动作前移动保存按钮</td>
+<td>旧定位不得造成错误作用；重新定位或受控停止</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>输入金额后出现浮层，遮挡后续控件</td>
+<td>不透过遮挡盲点；在允许范围内关闭浮层并复核，或交接</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>保存已受理，延迟 800 毫秒执行</td>
+<td>不把受理当保存完成，后续提交等待或查询</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>保存明确失败且未产生副作用</td>
+<td>有界恢复并重新验收，或报告未完成</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>提交已生效，但首次回执丢失</td>
+<td>查询原请求；唯一提交事件不增加，结果可确认</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>批准在提交前失效</td>
+<td>阻止提交并记录待重新批准，业务未完成</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>其他模拟操作者在保存前更改同一工单版本</td>
+<td>拒绝过期写入，重新核对目标与当前内容</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>返回缓存旧截图，接收时间较新而采集时间较旧</td>
+<td>根据采集时效及范围拒绝使用旧依据</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>取消请求尚无确定结果时收到旧 episode 的迟到反馈</td>
+<td>不污染当前试次；保留取消未知及旧试次查询责任</td>
+</tr>
+</tbody>
+</table>
+<p>动作上限可设为 12 次业务动作，观测与状态查询各设独立上限，总截止为 30 秒；这些是教学候选参数。失败重试和取消计入相应行动成本，不能因为“属于恢复”而免计。A07 的预期是合格受控停止，仍不得算作业务完成；A10 应优先检查跨试次隔离与责任，而不强求在未知取消状态下自动开始新试次。</p>
+<h3 id="2153-b">21.5.3 环境 B：局部可见网格</h3>
+<p>网格为 6 × 6，坐标按行、列从 1 开始。默认起点 (1,1)，目标 (1,4)，已知禁区为 (2,3)，其余格子初始可通行。行动为上下左右各移动一格、等待和观察。边界与禁区由动作检查器保护；局部观测暴露当前位置及曼哈顿距离不超过 1 的单元状态，并提供带时间的目标信标位置。完整地图只供评分者读取。</p>
+<p>移动默认延迟 200 毫秒，环境时钟与动作队列由夹具控制。观测不移动智能体，但有时间成本；主实验分别记录观测与执行时刻。最多允许 20 次移动、20 次主动观测和 30 秒总截止，停止及必要查询另有受限收口额度。参数在实施前确认，不从结果中反向挑选。</p>
+<p><strong>Tab-21-04　网格的十项任务。目标达成必须由实际位置与最新有效目标相等确认，同时检查禁区、碰撞及在途动作。</strong></p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>注入条件</th>
+<th>合格表现及验收重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B01</td>
+<td>无扰动</td>
+<td>到达 (1,4)，无违规作用，完成后无多余排队移动</td>
+</tr>
+<tr>
+<td>B02</td>
+<td>第一次移动执行后，目标改为 (3,4)</td>
+<td>更新目标信标并重新规划；到旧目标不算完成</td>
+</tr>
+<tr>
+<td>B03</td>
+<td>第一次移动执行后，(1,3) 成为障碍</td>
+<td>不进入新障碍；允许绕行或受控停止</td>
+</tr>
+<tr>
+<td>B04</td>
+<td>第二次移动延迟改为 1,000 毫秒</td>
+<td>不在未确认位置上堆叠依赖动作，查询队列与实际位置</td>
+</tr>
+<tr>
+<td>B05</td>
+<td>第二次移动明确失败，位置不变</td>
+<td>估计不按计划自动前进，重新定位后处理</td>
+</tr>
+<tr>
+<td>B06</td>
+<td>一次位置观测有一格偏移，其他反馈不变</td>
+<td>标记冲突，取得独立更新或停止；不把单次噪声当真值</td>
+</tr>
+<tr>
+<td>B07</td>
+<td>第二次观测隐藏前方单元状态</td>
+<td>未知单元不自动当空地，补观测或采用已确认路径</td>
+</tr>
+<tr>
+<td>B08</td>
+<td>第二次移动成功但反馈丢失</td>
+<td>查询同一动作与位置，避免重复移动一格</td>
+</tr>
+<tr>
+<td>B09</td>
+<td>从当前允许区域到目标的通路全部封闭，封闭由夹具显式记录</td>
+<td>有界探索后停止并交接；不能以无限等待维持运行</td>
+</tr>
+<tr>
+<td>B10</td>
+<td>重置前保留一条未处理移动，再尝试重置</td>
+<td>重置拒绝或先合法清理；新 episode 不执行旧移动</td>
+</tr>
+</tbody>
+</table>
+<p>扰动触发规则应在试次前登记。状态扰动可按“第几次已执行动作后”触发，延迟可由独立时间脚本定义；两者属于不同实验条件，不混写。成对运行共享同一初态和扰动脚本，但两种策略的路径与耗时可能不同，实际遭遇的事件也需保留。不能看到某组没有经过故障点，就临时移动故障到它的下一步。</p>
+<h3 id="2154">21.5.4 两条时间线怎样帮助核对机制</h3>
+<p>先对章首表单情形做手工推演。设单调时钟 1,000 毫秒采集 <code>obs-17</code>，状态版本为 <code>fixture:42</code>；1,080 毫秒接收；1,150 毫秒插入提示栏，状态变为 <code>fixture:43</code>；1,200 毫秒发送旧依据的保存请求。250 毫秒的年龄上限尚未超出，但状态已改变，因此“足够新”不能替代版本与目标检查。</p>
+<p><strong>Tab-21-05　表单旧依据的构造时间线。数值只用于解释条件，不是实测延迟。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">时刻 / 毫秒</th>
+<th>环境与请求</th>
+<th>原子版本检查档位的处理</th>
+<th>仅坐标输入档位的风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1,000</td>
+<td>采集保存按钮与版本 42</td>
+<td>记录观测、范围和时效</td>
+<td>同样保存旧坐标</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,150</td>
+<td>布局变化，版本为 43</td>
+<td>旧版本不再可用于条件写入</td>
+<td>旧位置已对应其他控件</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,200</td>
+<td>携带版本 42 请求保存</td>
+<td>比较不通过，拒绝且无本次写入</td>
+<td>若直接点击，可能作用于错误目标</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,260</td>
+<td>采集新观测，重新定位保存</td>
+<td>重新选择并校验动作，不只替换版本号</td>
+<td>重新定位可降低误点，但仍有竞态</td>
+</tr>
+<tr>
+<td style="text-align: right;">后续</td>
+<td>合法执行，再读取草稿</td>
+<td>验收字段及副作用，再决定下一步</td>
+<td>仍须取得实际后置证据</td>
+</tr>
+</tbody>
+</table>
+<p>两列展示的是不同环境能力，不是 O 与 C 主实验中可以任意切换的实现。主比较必须固定能力档位；单独比较能力时，重新说明变量。若基础原子检查阻止了两组旧请求，可能两者均无错误作用，而 C 更有机会恢复任务；这仍是有意义的结果，不应为得到差异而移除 O 的检查。</p>
+<p>再看网格 B05。初始位置 (1,1)，预定连续三次向右。第一次动作成功到 (1,2)，第二次明确失败仍在 (1,2)。O 若继续第三次向右，最终到 (1,3)，最后验收会发现未到目标；若方案规则要求遇明确失败立即停止，则应报告受控未完成。C 检查反馈后保持位置估计，重观测并在合法条件下补足动作。两种 O 规则必须在实验前选定，本设计采用遇明确失败即停止。</p>
+<p>这个构造不能直接证明 C 必然更快或成功率更高。它说明反馈可以阻止估计按计划虚构前进；若反馈本身错误、观测也受污染，C 仍可能失败。B06 和 B08 正是为了检查这些边界，而不是只挑选能被一次重观测解决的故障。</p>
+<h3 id="2155">21.5.5 指标、恢复与成本怎样报告</h3>
+<p><strong>业务成功率</strong>按环境分别计算：满足该任务业务后置条件且无禁止作用的试次数，除以该环境全部预登记试次数。要求停止的安全场景还另设<strong>约束处理合格率</strong>，检查是否阻止错误、完成记录与交接；合格停止可以在这项通过，却不进入业务成功分子。结果未知与超时保留为独立终态，不能从分母删去。</p>
+<p><strong>错误动作</strong>至少分为不合规请求数、被阻止的请求数和已发生的错误作用数。过期请求被拒绝，说明请求选择存在问题但执行保护生效；若只统计最终副作用，就看不到策略反复试错。未触碰禁区也不能证明从未发出禁区动作。还应按试次报告“发生过错误作用”的比例，避免少数轨迹的重复请求掩盖分布。</p>
+<p><strong>重观测次数</strong>包括初始观测之后主动获取的新任务观测；重复缓存另标，后台自动反馈和动作状态查询分开统计。记录观测字节或帧量、模型输入与输出 token、调用数、查询数、动作数、墙钟时间和等待时间。O、C 各自未用预算不折算成成绩，成本差异需要随成功与停止结果共同解释。</p>
+<p><strong>恢复时间</strong>从预登记故障实际发生时刻开始，到系统重新达到可验证、可合法继续的状态为止；另报从检测到故障开始的响应时间。若任务到此已完成，则同时记录业务完成时刻。无法恢复的试次标记未恢复，并记录截止或停止时刻，不能只对成功恢复样本求均值后暗示所有试次都能恢复。报告恢复数量、未恢复数量，以及已恢复样本的分布；必要时采用明确的删失分析。</p>
+<p>比较采用同任务、同扰动脚本配对，分别展示 A、B 环境结果，再按故障类型解释差异。重复试次按任务聚类，不能把同一地图的多次执行假装成许多新环境。二十项任务适合教学诊断，不能证明真实桌面和机器人部署的普遍提升。统计方案与样本扩大由 Ch26—Ch27 延伸。</p>
+<h3 id="2156">21.5.6 外部机器人研究说明了什么</h3>
+<p>SayCan 将语言任务相关性与技能可执行性相结合，说明自然语言提出的计划需要环境与技能条件约束。<sup id="fnref:r07"><a class="footnote-ref" href="#fn:r07">7</a></sup> 它的公开项目页也说明原方案的反馈主要来自技能价值函数，技能失败或环境改变时所需反馈可能不可用；不能将其描述为已经覆盖所有失败情形的闭环。本章借鉴的是语言选择需要接地的原则，不复用其成功率作为本章结果。</p>
+<p>RT-2 研究将视觉语言模型与动作表示结合，并在特定机器人任务中评价网络知识向控制的迁移。<sup id="fnref:r08"><a class="footnote-ref" href="#fn:r08">8</a></sup> 这类结果对应具体设备、动作空间、数据和评估条件；模型能产生动作 token，并不表示它可以绕过机械约束、现场审批或安全控制器。动作表示、实际可执行性和后置验收仍是不同层次。</p>
+<p>Tobin 等人的域随机化研究通过随机化仿真渲染，研究对象定位向真实图像的迁移，并以抓取任务展示能力。<sup id="fnref:r09"><a class="footnote-ref" href="#fn:r09">9</a></sup> 它支持对特定视觉差距进行建模和检验，不支持“随机化之后所有动力学和接触风险都已解决”。视觉纹理、传感器延迟、执行器误差、人机交互和通信故障属于不同缺口，需要分别设计证据。</p>
+<p><a class="glightbox" href="../../images/ch21/fig-21-02-environment-adapters.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="共同控制循环经过环境契约连接数字、仿真与物理适配器，并分别声明能力和限制" src="../../images/ch21/fig-21-02-environment-adapters.svg" /></a></p>
+<p><em>Fig-21-02　共同契约与环境能力边界。上层统一组织观测、行动、结果核验和停止，下层分别声明版本检查、动作反馈和重置能力。共享接口不能赋予真实环境原本不具备的原子性、可逆性或安全保证。图为本章原创。</em></p>
+<p>因此，数字和网格实验完成后仍应列出迁移清单：真实观测与训练分布是否一致，时间误差是否在允许界限内，执行器与接触动力学是否被覆盖，停止与接管是否经过设备级验证，外部副作用如何查询和补偿。尚无证据的项保持未确认，不能用一张仿真成功截图将清单整体勾选。</p>
+<h3 id="2157">21.5.7 从一次轨迹到可复核的工程记录</h3>
+<p>实施时，每条记录至少关联任务、episode、事件序号、各时间源、观测、动作请求、依据版本、反馈、当前估计与验收结果。原始截图或状态快照采用稳定引用，并登记内容散列；分析者可以从最终结论回到实际材料。日志中的摘要与原始数据分开，避免后续模型转述覆盖证据。</p>
+<p>同一试次需要能回答三个问题：故障实际何时发生，策略何时发现，以及它发现后做了什么。故障脚本记录注入事实，策略日志记录可见信息，评分日志记录完整状态；三者权限不同，但通过事件关联核对。不能用评分者知道的故障时刻，反向声称智能体当时也已经知道。</p>
+<p>重放轨迹也要声明层次。固定事件回放可以核对拒绝、停止和指标计算；重新运行浏览器或模型则可能得到不同的观测与选择。前者通过不代表后者确定，后者变化也不意味着旧记录失去价值。保存初态、依赖、策略和随机源版本，才能解释变化来自哪里。</p>
+<p>运行结束后，先检查原始证据是否完整，再填写结果表。若某项后置状态无法访问，应报告无法验收；若试次中断，应保留中断与最后已知状态。只有这样，读者才能区分业务失败、测量失败与系统保护生效，后续复现者也能定位尚未完成的工作。</p>
+<h3 id="2158">21.5.8 两环境的实际本地对照</h3>
+<p>2026年11月20日，本地受限结构化表单和网格适配器已经实现并运行。A01—A10、B01—B10分别以11、23、37、41、59五个固定种子成对执行O和C，共200试次。动作、观测、查询上限分别为12/20/20，虚拟截止30秒；两组使用相同的原子版本与权限保护，未为制造差异关闭O组的保护。</p>
+<p>当前适配保留了原设计的目标和故障类型，但没有浏览器截图、学习型视觉或物理设备。网格使用预知静态地图与动态更新，B07有一次局部未知格；它没有从全未知地图探索。只有表单布局随种子变化，其他相同条件的重复用于一致性检查，不计为新的独立环境。B06/B07按第二次观测触发，O未发出该观测时不遇到相应扰动，实际注入状态完整保留。</p>
+<p><strong>Tab-21-06　受限本地夹具的实际结果。业务成功要求策略有据确认、独立后置条件和无禁止作用同时成立；保护停止仍留在分母。</strong></p>
+<table>
+<thead>
+<tr>
+<th>环境与策略</th>
+<th style="text-align: right;">业务成功</th>
+<th style="text-align: right;">约束处理合格</th>
+<th style="text-align: right;">动作请求</th>
+<th style="text-align: right;">重观测</th>
+<th style="text-align: right;">查询</th>
+<th style="text-align: right;">被阻止请求</th>
+<th style="text-align: right;">错误作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数字表单 O</td>
+<td style="text-align: right;">5/50</td>
+<td style="text-align: right;">50/50</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>数字表单 C</td>
+<td style="text-align: right;">40/50</td>
+<td style="text-align: right;">50/50</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>网格 O</td>
+<td style="text-align: right;">15/50</td>
+<td style="text-align: right;">50/50</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>网格 C</td>
+<td style="text-align: right;">40/50</td>
+<td style="text-align: right;">50/50</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>C通过重观测处理按钮移动、浮层与版本变化，通过查询处理保存延迟及回执丢失；O保持原计划，遇到拒绝、明确失败或未知后停止。因此两组均未产生禁止作用，但额外观测与查询费用不同。这里的动作次数包括恢复和取消尝试，虚拟毫秒不代表真实设备性能。</p>
+<p>A07的批准失效、A10的旧episode未决、B09无通路和B10未决移动均不算业务成功。A06中，O的模拟提交实际上已经生效，但策略没有取得匹配回执而保持unknown；评分保留 <code>oracle.postcondition=true</code> 与业务成功false，既不冒称已完成，也不把真实作用抹成未执行。C查询原请求后确认，仍恰有一次提交。</p>
+<p>实现为唯一 <code>EnvironmentAdapter</code>，控制器只通过观测、动作和查询结果选择下一步，不读取故障名称或完整评分状态。独立评分检查实际字段、位置、回执与已提交动作的前置快照；拒绝请求和已发生的错误作用分别统计。恢复时间保留未恢复标记及null值，不仅平均成功恢复试次。</p>
+<p><code>examples/ch36/reports/study_20261120/ch21/trials.jsonl</code> 保存200条试次及独立评分，<code>events.jsonl</code> 保存环境注入、可见观测、动作、反馈和查询；环境卡及故障输入位于 <code>fixtures/study/</code>。运行方法见 <a href="../">第五篇导读</a>。本地结果只支持这些固定夹具下的闭环分析，真实桌面、机器人、异步设备控制及一般部分可观测规划仍需单独验证。</p>
+<h2 id="216">21.6 小结与环境卡</h2>
+<h3 id="2161">21.6.1 用四个问题检查闭环</h3>
+<p>每次行动前应能够回答：当前依据反映何时、哪个对象和范围；哪些关键事实仍未知；执行时有哪些可验证的权限与前置条件；实际完成后用什么证据验收。任一问题无法回答，都应影响允许动作、观测选择或停止路径。详细的计划只有与这些条件绑定，才是可执行依据。</p>
+<p>闭环的价值在于根据实际反馈改变下一步。更多观测可能减少部分不确定性，也可能带来成本、缓存重复和新冲突。合适的设计使观察、估计、行动和验收彼此可追溯，并在信息与风险边界内有界推进。一次受控停止说明保护路径有效，不等于业务目标已达成。</p>
+<p>关键术语可以沿链条理解：<strong>状态</strong>是任务演化所需变量，<strong>观测</strong>是特定时刻与范围的数据，<strong>状态估计</strong>保留已知与未知，<strong>前置条件</strong>限制动作何时允许，<strong>后置条件</strong>定义实际验收，<strong>重置</strong>仅作用于明确可重置对象，<strong>补偿</strong>处理已发生作用，<strong>安全停止</strong>管理新动作与在途风险。</p>
+<h3 id="2162">21.6.2 交给运行时与工程篇的材料</h3>
+<p>环境卡应与适配器、观测和动作记录使用同一版本，明确能力声明、许可、时间、动作单位、重置范围、故障模型、成功标准和接管入口。交给 Ch22—Ch23 的运行时不仅是一个工具名称，还包括 episode、任务修订、请求关联、在途动作、截止和失败分类。公共字段仍需与维护者确认。</p>
+<p>Ch25 继续处理媒体同步与实时协调，Ch12—Ch13 约束授权、幂等、查询与补偿；<a href="../../part8/ch35_open_problems/">Ch35</a> 的开放问题分析需要携带本章的迁移限制。第九篇 <a href="../../part9/ch36_reference_implementation/">Ch36</a>、<a href="../../part9/ch37_agent_testing/">Ch37</a> 和 Ch38 集中组织实现、夹具与故障回归。本文的接口片段是教学契约，不另外建立公开仿真包。</p>
+<h3 id="2163">21.6.3 复习题</h3>
+<ol>
+<li>页面显示“处理中”，为什么不足以确定后台动作状态？给出至少三种可能真实状态，并分别说明需要什么查询或观测。</li>
+<li>一个截图刚收到 50 毫秒，能否直接认为它足够新？说明采集、接收、执行时刻、时钟误差及版本范围的关系，并解释观察后行动仍存在的竞态。</li>
+<li>比较 <code>observe</code>、<code>act</code> 和 <code>reset</code> 的输入输出与接受条件。为什么仿真重置、取消待执行动作和补偿已发生作用不能共用“回滚成功”这一描述？</li>
+<li>按 Tab-21-05 判断旧请求为何被拒绝。如果环境只能接收鼠标坐标，哪些保证不再成立，应如何降低风险并保留验收证据？</li>
+<li>一个系统遇故障后全部安全停止，没有碰撞，但只完成一半任务。应如何报告业务成功、约束处理、错误请求、重观测和恢复时间？为什么这些结果仍不能证明真实机器人安全？</li>
+</ol>
+<h3 id="2164">21.6.4 实践题：设计一张环境卡和两条轨迹</h3>
+<p>选择 A02、A06、B05 或 B08，填写一张环境卡，写明可见信息、隐藏状态、行动集合、时间源、版本能力、预算、重置范围和成功条件。分别给出方案 O 与方案 C 的观测—动作—反馈—验收表，至少包含一次依据失效或结果未知的情形。</p>
+<p>随后说明系统应重观测、查询原请求、停止还是交接，并解释为何允许该选择。加入一次旧 episode 反馈，指出怎样避免污染当前决策，以及是否仍可能存在外部在途动作。最后列出从该夹具迁移到真实界面或机器人时缺少的三项证据。交付物为环境卡、两组时间线和一页分析，可用 Markdown 完成，无需运行代码或连接真实设备。</p>
+<p>评分按 100 分：状态、观测与能力边界 20 分，时间和版本语义 20 分，行动、查询与后置验收 25 分，停止、重置与交接 20 分，指标和迁移分析 15 分。把受理当成功、把新 episode 标签当作外部取消、把仿真重置当真实副作用回滚，均须在对应项目修正。教师参考答案保存在内部教学材料。</p>
+<h3 id="2165">21.6.5 适用边界与后续工作</h3>
+<p>本章完成的是中文方法初稿、原创图表、概念接口和实验设计。两类环境、十任务分组、预算及扰动参数均待工程实施与团队确认，尚无成功率、错误动作计数或恢复均值。手工时间线只说明指定条件下的逻辑，不代替端点测试、真实模型评估或设备验证。</p>
+<p>35 页为图文混排的等效成书预算，实际页数以统一模板试排核定；正式作者信息、相关声明与 F 的独立审阅待统稿。当前可以检查正文、图表和证据边界，后续需将环境、公共接口与运行记录冻结到同一基线，再补工程实验与独立复现材料。</p>
+<h3 id="_1">参考文献</h3>
+<p>在线资料核验日期为 2026-11-10。教材环境、时间线和参数为原创教学设计；所引论文仅在各自研究条件内支撑概念与案例，不作为本章运行结果。动态 API 文档需在工程实施时另行固定实际依赖版本。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:r01">
+<p>Kaelbling, L. P., Littman, M. L. &amp; Cassandra, A. R. Planning and acting in partially observable stochastic domains. <em>Artificial Intelligence</em> <strong>101</strong>(1–2), 99–134 (1998). <a href="https://doi.org/10.1016/S0004-3702(98)00023-X">doi:10.1016/S0004-3702(98)00023-X</a>；<a href="https://people.csail.mit.edu/lpk/papers/aij98-pomdp.pdf">作者提供的原文</a>。&#160;<a class="footnote-backref" href="#fnref:r01" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r02">
+<p>Farama Foundation. <em>Gymnasium Documentation</em>: Env；Handling Time Limits. <a href="https://gymnasium.farama.org/api/env/">环境 API</a>；<a href="https://gymnasium.farama.org/tutorials/gymnasium_basics/handling_time_limits/">时间限制说明</a>。按访问时页面核对接口语义，未据此声称本章已安装或运行 Gymnasium。&#160;<a class="footnote-backref" href="#fnref:r02" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r03">
+<p>Zhou, S. et al. WebArena: A Realistic Web Environment for Building Autonomous Agents. arXiv:2307.13854v4 (2024-04-16). <a href="https://arxiv.org/abs/2307.13854v4">版本化论文页面</a>。&#160;<a class="footnote-backref" href="#fnref:r03" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r04">
+<p>Xie, T. et al. OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments. arXiv:2404.07972v2 (2024-05-30). <a href="https://arxiv.org/abs/2404.07972v2">版本化论文页面</a>。&#160;<a class="footnote-backref" href="#fnref:r04" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r05">
+<p>Fielding, R., Nottingham, M. &amp; Reschke, J. (eds.). <em>HTTP Semantics</em>. RFC 9110 (2022). §§8.8.3、13.1.1、13.2、15.3.3. <a href="https://www.rfc-editor.org/rfc/rfc9110.html">规范原文</a>。&#160;<a class="footnote-backref" href="#fnref:r05" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:r05" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r06">
+<p>Amodei, D. et al. Concrete Problems in AI Safety. arXiv:1606.06565v2 (2016-07-25). <a href="https://arxiv.org/abs/1606.06565v2">版本化论文页面</a>。&#160;<a class="footnote-backref" href="#fnref:r06" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r07">
+<p>Ahn, M. et al. Do As I Can and Not As I Say: Grounding Language in Robotic Affordances. arXiv:2204.01691 (2022). <a href="https://arxiv.org/abs/2204.01691">论文页面</a>；<a href="https://say-can.github.io/">官方项目说明</a>。本章有关原方案反馈限制的描述依据项目页问答。&#160;<a class="footnote-backref" href="#fnref:r07" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r08">
+<p>Brohan, A. et al. RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control. arXiv:2307.15818 (2023). <a href="https://arxiv.org/abs/2307.15818">论文页面</a>；<a href="https://robotics-transformer2.github.io/">官方项目说明</a>。&#160;<a class="footnote-backref" href="#fnref:r08" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r09">
+<p>Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W. &amp; Abbeel, P. Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World. arXiv:1703.06907v1 (2017-03-20). <a href="https://arxiv.org/abs/1703.06907v1">版本化论文页面</a>。&#160;<a class="footnote-backref" href="#fnref:r09" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../ch20_collective_reasoning/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第20章：集体推理、辩论与协商">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第20章：集体推理、辩论与协商
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../part6/" class="md-footer__link md-footer__link--next" aria-label="下一页: 本篇目录">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                本篇目录
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "content.code.copy", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

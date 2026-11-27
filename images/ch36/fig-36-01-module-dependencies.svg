@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+<title id="title">一套实现承接三个项目的教学切片</title><desc id="desc">运行入口先核验清单和内容摘要。共享引擎依赖契约、替身和两个独立本地存储。Ch37从边界外读取业务事实，不复制核心实现。箭头表示调用或依赖，不表示消息并发。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="960" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" text-anchor="start" font-size="28" fill="#203047" font-weight="700">一套实现承接三个项目的教学切片</text>
+<rect x="65" y="110" width="1070" height="110" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="144" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">入口：run.py → 清单与摘要核验 → Engine</text>
+<text x="600.0" y="176" text-anchor="middle" font-size="20" fill="#203047">PRJ-1 基础执行　／　PRJ-2 研究核验　／　PRJ-3 持久恢复</text>
+<path d="M600 220V270" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="320" y="270" width="560" height="120" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="304" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">共享核心 Engine</text>
+<text x="600.0" y="336" text-anchor="middle" font-size="20" fill="#203047">提案 → 独立政策检查 → 意图持久化</text>
+<text x="600.0" y="364" text-anchor="middle" font-size="20" fill="#203047">查询 → 有界写入 → 后置条件核验</text>
+<path d="M320 330H220V445" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M600 390V445" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<path d="M880 330H980V445" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="55" y="445" width="330" height="155" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="220.0" y="479" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">contracts.py</text>
+<text x="220.0" y="511" text-anchor="middle" font-size="20" fill="#203047">字段／版本／批准范围</text>
+<text x="220.0" y="539" text-anchor="middle" font-size="20" fill="#203047">拒绝码与局部消息门</text>
+<rect x="435" y="445" width="330" height="155" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="479" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">adapters.py</text>
+<text x="600.0" y="511" text-anchor="middle" font-size="20" fill="#203047">固定模型＋受控时钟</text>
+<text x="600.0" y="539" text-anchor="middle" font-size="20" fill="#203047">不调用真实模型或网络</text>
+<rect x="815" y="445" width="330" height="155" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="980.0" y="479" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">storage.py</text>
+<text x="980.0" y="511" text-anchor="middle" font-size="20" fill="#203047">SessionStore／TicketService</text>
+<text x="980.0" y="539" text-anchor="middle" font-size="20" fill="#203047">两个 SQLite 文件</text>
+<rect x="65" y="690" width="1070" height="115" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="600.0" y="724" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">Ch37 独立测试读取持久事实</text>
+<text x="600.0" y="756" text-anchor="middle" font-size="20" fill="#203047">检查 tickets、created 事件、批准摘要和状态；不复制 Engine</text>
+<path d="M980 690V600" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)" stroke-dasharray="8 6"/>
+<text x="600" y="874" text-anchor="middle" font-size="21" fill="#a96a16">本地教学边界：没有分布式事务、真实认证或完整 PRJ-3 平台</text>
+</g></svg>

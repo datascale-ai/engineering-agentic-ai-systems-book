@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+<title id="title">只替换需要控制的边界，保留验收对象</title><desc id="desc">固定模型、受控时钟和故障钩子分别控制提案、时间及响应丢失。客户端状态与本地工具服务真实持久化，独立SQLite读取验证作用，不经模型或Engine判断。无真实网络和模型能力验证。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+</defs>
+<rect width="1200" height="1000" fill="white"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="40" y="48" text-anchor="start" font-size="28" fill="#203047" font-weight="700">只替换需要控制的边界，保留验收对象</text>
+<rect x="385" y="125" width="430" height="130" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="600.0" y="159" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">Engine：被测控制逻辑</text>
+<text x="600.0" y="191" text-anchor="middle" font-size="20" fill="#203047">授权／意图／恢复／取消／核验</text>
+<rect x="55" y="350" width="330" height="150" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="220.0" y="384" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">固定模型替身</text>
+<text x="220.0" y="416" text-anchor="middle" font-size="20" fill="#203047">稳定 JSON 与明确错误输入</text>
+<text x="220.0" y="444" text-anchor="middle" font-size="20" fill="#203047">不测真实语言模型能力</text>
+<rect x="435" y="350" width="330" height="150" rx="12" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="600.0" y="384" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">受控时钟与故障点</text>
+<text x="600.0" y="416" text-anchor="middle" font-size="20" fill="#203047">边界时刻；提交后丢失响应</text>
+<text x="600.0" y="444" text-anchor="middle" font-size="20" fill="#203047">不用 sleep 猜测先后顺序</text>
+<rect x="815" y="350" width="330" height="150" rx="12" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="980.0" y="384" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">持久存储与本地服务</text>
+<text x="980.0" y="416" text-anchor="middle" font-size="20" fill="#203047">真实 SQLite；不 mock 提交</text>
+<text x="980.0" y="444" text-anchor="middle" font-size="20" fill="#203047">分库保留未知结果窗口</text>
+<path d="M385 190H220V350" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M600 255V350" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<path d="M815 190H980V350" fill="none" stroke="#285b8e" stroke-width="2.8" marker-end="url(#blue)"/>
+<rect x="140" y="620" width="920" height="140" rx="12" fill="#f6f8fb" stroke="#a6b4c4" stroke-width="2"/>
+<text x="600.0" y="654" text-anchor="middle" font-size="23" fill="#203047" font-weight="700">独立验收连接读取 tickets 与 service_events</text>
+<text x="600.0" y="686" text-anchor="middle" font-size="20" fill="#203047">人工预期：对象／字段／次数／批准范围／事件偏序</text>
+<text x="600.0" y="714" text-anchor="middle" font-size="20" fill="#203047">不接受“模型说已完成”作为成功证据</text>
+<path d="M980 500V620" fill="none" stroke="#087e82" stroke-width="2.8" marker-end="url(#teal)"/>
+<text x="600" y="860" text-anchor="middle" font-size="21" fill="#a96a16">隔离了外部网络，不等于验证了真实服务的认证、延迟和幂等语义</text>
+</g></svg>

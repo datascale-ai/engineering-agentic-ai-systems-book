@@ -1,0 +1,13 @@
+figure_id,zh,en
+Fig-09-01,查询政策,Read policy
+Fig-09-01,核验资格,Check eligibility
+Fig-09-01,准备材料,Prepare materials
+Fig-09-01,取得审批,Obtain approval
+Fig-09-01,提交申请,Submit request
+Fig-09-01,核验业务状态,Verify business state
+Fig-09-02,可信输入快照,Trusted input snapshot
+Fig-09-02,候选任务图,Candidate task graph
+Fig-09-02,静态校验,Static validation
+Fig-09-02,执行前可信边界,Trusted pre-execution boundary
+Fig-09-02,诊断与退回,Diagnosis and return
+Fig-09-02,执行与独立验收,Execution and independent acceptance

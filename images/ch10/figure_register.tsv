@@ -1,0 +1,5 @@
+id	title	status	source	labels	first_section	origin_license
+Fig-10-01	检查点与重规划状态机	svg_illustration	illustrator_20261116/Fig-10-01.svg	labels.tsv	10.2	original_MIT
+Fig-10-02	新旧任务图差异：完成节点和失效依赖	svg_illustration	illustrator_20261116/Fig-10-02.svg	labels.tsv	10.3	original_MIT
+Tab-10-01	修订触发条件：证据、动作、上限	editable_table	Tab-10-01.tsv	labels.tsv	10.2	original_MIT
+Tab-10-02	恢复账本	editable_table	examples/ch10/results/Tab-10-02.tsv	labels.tsv	10.5	original_MIT_deterministic_mock
