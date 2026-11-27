@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
+<title id="title">Fig-22-01 智能体编排运行时组件与故障域划分</title><desc id="desc">展示控制面、调度与队列故障域、worker池、以及模型/工具/状态适配器故障域的隔离边界。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="730" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-22-01 智能体编排运行时组件与故障域划分</text>
+<rect x="36" y="75" width="1128" height="115" rx="12" fill="#f6f8fb" stroke="#5c6c80" stroke-width="1.8" stroke-dasharray="8 5"/>
+<text x="56" y="102" font-size="16" font-weight="700" fill="#5c6c80">控制面（独立高优先级通道，不排在拥塞数据队列之后）</text>
+<rect x="60" y="114" width="310" height="62" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="215.0" y="144" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">入口网关与租户准入</text>
+<text x="215.0" y="170" text-anchor="middle" font-size="13" fill="#2c3e55">身份/预算校验 · 过载快速拒绝</text>
+<rect x="440" y="114" width="320" height="62" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="600.0" y="144" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">取消传播总线 (CancelToken)</text>
+<text x="600.0" y="170" text-anchor="middle" font-size="13" fill="#2c3e55">带外广播 · 即时释放 worker/句柄</text>
+<rect x="830" y="114" width="310" height="62" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="985.0" y="144" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">插件微内核 (PluginContext)</text>
+<text x="985.0" y="170" text-anchor="middle" font-size="13" fill="#2c3e55">参考 DeepSeek Harness 可逆注册/卸载</text>
+<rect x="36" y="218" width="1128" height="225" rx="12" fill="#fbfcfe" stroke="#285b8e" stroke-width="1.8"/>
+<text x="56" y="246" font-size="16" font-weight="700" fill="#285b8e">编排与调度故障域（有界并发 · 租户公平 · 租约接管）</text>
+<rect x="65" y="268" width="250" height="145" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="190.0" y="298" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">DAG 调度器</text>
+<text x="190.0" y="324" text-anchor="middle" font-size="15" fill="#2c3e55">消费 Ch09 任务图</text>
+<text x="190.0" y="346" text-anchor="middle" font-size="15" fill="#2c3e55">依赖就绪计算</text>
+<text x="190.0" y="368" text-anchor="middle" font-size="15" fill="#2c3e55">禁止单任务无限扇出</text>
+<rect x="375" y="268" width="290" height="145" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="520.0" y="298" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">有界多租户队列</text>
+<text x="520.0" y="324" text-anchor="middle" font-size="15" fill="#2c3e55">全局上限=40 / 租户上限=18</text>
+<text x="520.0" y="346" text-anchor="middle" font-size="15" fill="#2c3e55">分租户隔离防噪音邻居</text>
+<text x="520.0" y="368" text-anchor="middle" font-size="15" fill="#2c3e55">超限显式 reject_overload</text>
+<rect x="725" y="268" width="410" height="145" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="930.0" y="298" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">有界 Worker 池 (max=6, 单租户&lt;=3)</text>
+<text x="930.0" y="324" text-anchor="middle" font-size="15" fill="#2c3e55">租约 TTL=80ms · 心跳续约</text>
+<text x="930.0" y="346" text-anchor="middle" font-size="15" fill="#2c3e55">Worker 崩溃后自动接管 (reclaim)</text>
+<text x="930.0" y="368" text-anchor="middle" font-size="15" fill="#2c3e55">协作式切片取消检查</text>
+<line x1="315" y1="340" x2="375" y2="340" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="345.0" y="332.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">入队</text>
+<line x1="665" y1="340" x2="725" y2="340" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="695.0" y="332.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">派发</text>
+<line x1="215" y1="176" x2="190" y2="268" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="202.5" y="214.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">准入任务</text>
+<line x1="600" y1="176" x2="860" y2="268" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="760" y="210" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">带外取消信号</text>
+<rect x="36" y="472" width="1128" height="190" rx="12" fill="#f9fbfa" stroke="#087e82" stroke-width="1.8"/>
+<text x="56" y="500" font-size="16" font-weight="700" fill="#087e82">执行适配器与持久化故障域（可替换边界 · 外部副作用独立核对）</text>
+<rect x="65" y="520" width="320" height="120" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="225.0" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">模型适配器 (ModelAdapter)</text>
+<text x="225.0" y="576" text-anchor="middle" font-size="15" fill="#2c3e55">统一超时 / 限流 / 结构化输出</text>
+<text x="225.0" y="598" text-anchor="middle" font-size="15" fill="#2c3e55">替换厂商不影响调度接口</text>
+<rect x="435" y="520" width="330" height="120" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="600.0" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">工具执行器 (ToolExecutor)</text>
+<text x="600.0" y="576" text-anchor="middle" font-size="15" fill="#2c3e55">读写分级 · 幂等键账本</text>
+<text x="600.0" y="598" text-anchor="middle" font-size="15" fill="#2c3e55">取消不自动撤销已提交写入</text>
+<rect x="815" y="520" width="320" height="120" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="975.0" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">持久状态与事件存储 (Ch23)</text>
+<text x="975.0" y="576" text-anchor="middle" font-size="15" fill="#2c3e55">WAL 事件日志 + 快照</text>
+<text x="975.0" y="598" text-anchor="middle" font-size="15" fill="#2c3e55">保存意图与操作 ID 供恢复</text>
+<line x1="820" y1="413" x2="225" y2="520" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<line x1="900" y1="413" x2="600" y2="520" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)"/>
+<line x1="980" y1="413" x2="975" y2="520" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="600" y="704" text-anchor="middle" font-size="16" fill="#a96a16">故障域隔离原则：慢工具或单租户扇出被阻隔在队列与信号量内，不阻塞控制面取消与其他租户</text>
+</g></svg>

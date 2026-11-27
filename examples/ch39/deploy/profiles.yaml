@@ -1,0 +1,37 @@
+# Ch39 三档部署环境边界定义 (deploy/profiles.yaml)
+# 与附录 D (appendix_d_deployment.md) 对齐，明确镜像、配置、身份、秘密、数据、网络与可观测边界
+schema_version: "deploy-profiles-1.0"
+
+profiles:
+  local:
+    tier: "single_instance_local"
+    artifact: "local-workspace-git-head"
+    config_source: "examples/ch36/run_manifest.toml"
+    identity_boundary: "trusted_local_driver (教学进程内标识，非真实认证)"
+    secrets_policy: "zero_secrets_required (仅确定性 mock 端点，禁止读取真实密钥)"
+    data_boundary: "isolated_tmp_dir (session.sqlite + service.sqlite)"
+    network_egress: "deny_all (离线可运行)"
+    observability: "local JSONL events + console summary"
+    rollback_scope: ["code_ref", "config_digest", "permission_cache"]
+
+  test:
+    tier: "ci_ephemeral_sandbox"
+    artifact: "immutable-build-bundle-sha256"
+    config_source: "examples/ch38/golden_slices.yaml + examples/ch38/trace_assertions.yaml"
+    identity_boundary: "ephemeral_ci_service_account (只读仓库 + 临时沙箱)"
+    secrets_policy: "ephemeral_masked_env (日志与 trace 强制执行 TA-04 密钥扫描)"
+    data_boundary: "fresh_temp_sandbox_per_job (执行后归档报告并销毁临时库)"
+    network_egress: "mock_loopback_only"
+    observability: "JUnit XML + OTel span JSON + Ch38 regression_report.md"
+    rollback_scope: ["code_ref", "config_digest", "test_fixtures_digest"]
+
+  staging:
+    tier: "queue_worker_preprod"
+    artifact: "signed-release-bundle (code + prompt + policy + schema manifest)"
+    config_source: "versioned_release_manifest (不可变内容摘要绑定)"
+    identity_boundary: "scoped_tenant_token + explicit_approval_grant_service"
+    secrets_policy: "secret_manager_injection (禁止明文落盘或进入发布清单与日志)"
+    data_boundary: "staging_isolated_db (开启快照备份与回滚前校验点)"
+    network_egress: "allowlist_staging_services_only"
+    observability: "SLO dashboard + OTel traces + structured audit log + alert hooks"
+    rollback_scope: ["code_ref", "config_digest", "data_snapshot_ref", "permission_grants", "permission_cache"]

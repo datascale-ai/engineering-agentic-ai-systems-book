@@ -1,0 +1,63 @@
+{
+  "experiment_id": "Exp-24-01",
+  "total_cases_per_strategy": 40,
+  "strategies": {
+    "ui_only_stop": {
+      "total_cases": 40,
+      "passed_cases": 0,
+      "failed_cases": 40,
+      "late_tool_leaks": 14,
+      "stale_chunks_rendered_total": 670,
+      "stale_chunks_dropped_total": 0,
+      "resources_released_rate": 0.0,
+      "valid_output_lost_cases": 0,
+      "committed_effects_preserved": 5,
+      "propagation_p50_ms": 7.0,
+      "propagation_p95_ms": 11.0,
+      "producer_stop_p50_ms": 246.0,
+      "producer_stop_p95_ms": 290.0,
+      "visible_stop_p50_ms": 376.0,
+      "visible_stop_p95_ms": 850.0,
+      "visible_stop_p99_ms": 850.0,
+      "visible_stop_max_ms": 850.0
+    },
+    "cancel_propagation_only": {
+      "total_cases": 40,
+      "passed_cases": 2,
+      "failed_cases": 38,
+      "late_tool_leaks": 14,
+      "stale_chunks_rendered_total": 299,
+      "stale_chunks_dropped_total": 0,
+      "resources_released_rate": 1.0,
+      "valid_output_lost_cases": 0,
+      "committed_effects_preserved": 5,
+      "propagation_p50_ms": 14.0,
+      "propagation_p95_ms": 28.0,
+      "producer_stop_p50_ms": 26.0,
+      "producer_stop_p95_ms": 36.0,
+      "visible_stop_p50_ms": 147.5,
+      "visible_stop_p95_ms": 570.0,
+      "visible_stop_p99_ms": 570.0,
+      "visible_stop_max_ms": 570.0
+    },
+    "cancel_plus_gen_and_flush": {
+      "total_cases": 40,
+      "passed_cases": 40,
+      "failed_cases": 0,
+      "late_tool_leaks": 0,
+      "stale_chunks_rendered_total": 37,
+      "stale_chunks_dropped_total": 262,
+      "resources_released_rate": 1.0,
+      "valid_output_lost_cases": 3,
+      "committed_effects_preserved": 5,
+      "propagation_p50_ms": 10.0,
+      "propagation_p95_ms": 15.0,
+      "producer_stop_p50_ms": 15.5,
+      "producer_stop_p95_ms": 19.0,
+      "visible_stop_p50_ms": 16.0,
+      "visible_stop_p95_ms": 21.0,
+      "visible_stop_p99_ms": 21.0,
+      "visible_stop_max_ms": 21.0
+    }
+  }
+}

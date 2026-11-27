@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title desc">
+<title id="title">Fig-38-03 OpenTelemetry GenAI 轨迹断言（TA-01—TA-05）在事件链中的位置</title><desc id="desc">标出五条可观测断言在 invoke_agent、policy_evaluate、execute_tool 与 verify_postcondition 上的检查点。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="450" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-38-03 OpenTelemetry GenAI 轨迹断言（TA-01—TA-05）在事件链中的位置</text>
+<rect x="55" y="120" width="240" height="105" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="175.0" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a3d">invoke_agent</text>
+<text x="175.0" y="176" text-anchor="middle" font-size="13" fill="#2c3e55">TA-01: 校验租户/任务</text>
+<text x="175.0" y="198" text-anchor="middle" font-size="13" fill="#2c3e55">政策版本/模型属性</text>
+<rect x="335" y="120" width="240" height="105" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="455.0" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a3d">policy_evaluate</text>
+<text x="455.0" y="176" text-anchor="middle" font-size="13" fill="#2c3e55">TA-02: 必先于工具</text>
+<text x="455.0" y="198" text-anchor="middle" font-size="13" fill="#2c3e55">TA-03: 拒批无写入</text>
+<rect x="615" y="120" width="240" height="105" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="735.0" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a3d">execute_tool</text>
+<text x="735.0" y="176" text-anchor="middle" font-size="13" fill="#2c3e55">TA-04: 扫描零密钥</text>
+<text x="735.0" y="198" text-anchor="middle" font-size="13" fill="#2c3e55">记录稳定 op_id</text>
+<rect x="895" y="120" width="240" height="105" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="1015.0" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a3d">verify_postcondition</text>
+<text x="1015.0" y="176" text-anchor="middle" font-size="13" fill="#2c3e55">TA-05: 轨迹计数 ==</text>
+<text x="1015.0" y="198" text-anchor="middle" font-size="13" fill="#2c3e55">service.sqlite 实查</text>
+<line x1="295" y1="172" x2="335" y2="172" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<line x1="575" y1="172" x2="615" y2="172" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<line x1="855" y1="172" x2="895" y2="172" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<rect x="55" y="290" width="520" height="120" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="315.0" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">稳定断言字段 (Stable Fields)</text>
+<text x="315.0" y="346" text-anchor="middle" font-size="13" fill="#2c3e55">gen_ai.operation.name · agent.tenant · agent.task_id</text>
+<text x="315.0" y="368" text-anchor="middle" font-size="13" fill="#2c3e55">agent.policy_version · agent.operation_id · agent.ticket_count</text>
+<text x="315.0" y="390" text-anchor="middle" font-size="13" fill="#2c3e55">任何偏离即触发回归告警</text>
+<rect x="615" y="290" width="520" height="120" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="875.0" y="320" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">允许波动字段 (Allowed Variable Fields)</text>
+<text x="875.0" y="346" text-anchor="middle" font-size="13" fill="#2c3e55">trace_id · span_id · start_time_ms · duration_ms · host.name</text>
+<text x="875.0" y="368" text-anchor="middle" font-size="13" fill="#2c3e55">不纳入字节相等比较，避免虚假抖动破坏 CI 门禁</text>
+</g></svg>

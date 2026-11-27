@@ -1,0 +1,43 @@
+# Ch39 持续交付与发布门禁流水线定义 (ci/cd_pipeline.yaml)
+schema_version: "cd-pipeline-1.0"
+pipeline_name: "agentic-reference-release-cd"
+
+stages:
+  - stage_id: "S1_build_and_lock"
+    description: "检出源码、验证依赖锁与资产清单 SHA-256 摘要，生成不可变发布包标识。"
+    gate_required: true
+    entry_command: "python examples/ch36/run.py verify"
+    failure_action: "block_pipeline"
+
+  - stage_id: "S2_behavior_tests"
+    description: "运行 Ch37 分层单元测试、集成测试与端到端行为断言。"
+    gate_required: true
+    entry_command: "python -m pytest examples/ch37/tests/test_behaviour.py -q"
+    failure_action: "block_pipeline"
+
+  - stage_id: "S3_regression_and_fault_gate"
+    description: "运行 Ch38 黄金切片回归、OpenTelemetry 轨迹断言（TA-01—TA-05）与 9 类沙箱故障注入。"
+    gate_required: true
+    entry_command: "python examples/ch38/regression_runner/runner.py"
+    failure_action: "block_pipeline"
+
+  - stage_id: "S4_security_and_secret_scan"
+    description: "验证配置不包含明文凭证、审批权限边界有效、策略版本与发布清单一致。"
+    gate_required: true
+    failure_action: "block_pipeline"
+
+  - stage_id: "S5_release_approval"
+    description: "核对发布就绪检查表（release_checklist.md），记录审批人与目标部署档位。"
+    gate_required: true
+    approver_role: "release_owner"
+    failure_action: "hold_for_manual_review"
+
+  - stage_id: "S6_staging_deploy_and_smoke"
+    description: "将不可变发布包部署至预发布档位，并执行健康检查、业务验收与缓存一致性验证。"
+    gate_required: true
+    failure_action: "trigger_automated_rollback"
+
+  - stage_id: "S7_post_deploy_observability_or_rollback"
+    description: "监测 SLO、轨迹断言与权限缓存；若任一异常，按 rollback_runbook.md 执行全五项原子回滚并复验业务状态。"
+    gate_required: true
+    rollback_order: ["intake_pause", "code_ref", "config_digest", "permission_grants", "permission_cache_purge", "data_reconcile_verify"]

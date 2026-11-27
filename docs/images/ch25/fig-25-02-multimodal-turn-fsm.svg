@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="565" viewBox="0 0 1200 565" role="img" aria-labelledby="title desc">
+<title id="title">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</title><desc id="desc">展示 idle、listening、thinking、speaking、overlapping 与 degraded 状态之间的转移与 LiveKit 式适应性打断分流。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="565" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</text>
+<rect x="65" y="235" width="165" height="86" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="147.5" y="265" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">idle</text>
+<text x="147.5" y="291" text-anchor="middle" font-size="15" fill="#2c3e55">等待用户输入</text>
+<text x="147.5" y="313" text-anchor="middle" font-size="15" fill="#2c3e55">无活跃生成</text>
+<rect x="310" y="235" width="205" height="86" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="412.5" y="265" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">listening</text>
+<text x="412.5" y="291" text-anchor="middle" font-size="15" fill="#2c3e55">VAD + 增量 ASR</text>
+<text x="412.5" y="313" text-anchor="middle" font-size="15" fill="#2c3e55">语义端点判定(EOT)</text>
+<rect x="605" y="110" width="210" height="86" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="710.0" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">thinking / acting</text>
+<text x="710.0" y="166" text-anchor="middle" font-size="15" fill="#2c3e55">融合共享状态版本</text>
+<text x="710.0" y="188" text-anchor="middle" font-size="15" fill="#2c3e55">校验权限与工具</text>
+<rect x="605" y="345" width="210" height="86" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="710.0" y="375" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">speaking</text>
+<text x="710.0" y="401" text-anchor="middle" font-size="15" fill="#2c3e55">流式文本/语音输出</text>
+<text x="710.0" y="423" text-anchor="middle" font-size="15" fill="#2c3e55">受 Ch24 gen_id 保护</text>
+<rect x="915" y="235" width="235" height="102" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="1032.5" y="265" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">overlapping (重叠判定)</text>
+<text x="1032.5" y="291" text-anchor="middle" font-size="12" fill="#2c3e55">backchannel(嗯嗯)→继续播报</text>
+<text x="1032.5" y="313" text-anchor="middle" font-size="12" fill="#2c3e55">barge-in→触发 Ch24 取消</text>
+<text x="1032.5" y="335" text-anchor="middle" font-size="12" fill="#2c3e55">显式文本输入→立即抢占</text>
+<rect x="310" y="455" width="505" height="76" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="562.5" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">degraded (优雅降级受控态)</text>
+<text x="562.5" y="511" text-anchor="middle" font-size="12" fill="#2c3e55">丢包&gt;=20%→text_only · 丢帧→audio+file · 同步漂移&gt;=120ms→字幕先行 · 陈旧传感器→人工复核</text>
+<line x1="230" y1="278" x2="310" y2="278" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="270.0" y="270.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">检测到输入</text>
+<line x1="515" y1="255" x2="605" y2="155" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="535" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">EOT 确认</text>
+<line x1="710" y1="196" x2="710" y2="345" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="775" y="275" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">流式输出开始</text>
+<line x1="815" y1="385" x2="915" y2="305" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
+<text x="895" y="375" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">播报期收到声学/文本</text>
+<path d="M 1030 337 L 1030 415 L 815 415" fill="none" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)" stroke-dasharray="7 5"/>
+<text x="940" y="434" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">附和/噪声→恢复播报</text>
+<path d="M 1030 235 L 1030 72 L 412 72 L 412 235" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
+<text x="720" y="62" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">真打断→flush 缓冲并转入新轮次 listening</text>
+<line x1="412" y1="321" x2="412" y2="455" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)" stroke-dasharray="7 5"/>
+<text x="340" y="395" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">模态故障/漂移</text>
+<line x1="560" y1="455" x2="640" y2="431" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)" stroke-dasharray="7 5"/>
+<text x="575" y="425" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">降级后继续服务</text>
+</g></svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="455" viewBox="0 0 1200 455" role="img" aria-labelledby="title desc">
+<title id="title">Fig-39-01 从提交到预发布的持续交付流水线与发布门禁（S1—S7）</title><desc id="desc">展示构建锁定、行为测试、回归门禁、安全扫描、审批、预发布冒烟及五要素回滚闭环。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="455" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-39-01 从提交到预发布的持续交付流水线与发布门禁（S1—S7）</text>
+<rect x="40" y="105" width="195" height="115" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="137.5" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S1 构建与锁定</text>
+<text x="137.5" y="161" text-anchor="middle" font-size="13" fill="#2c3e55">验证资产摘要</text>
+<text x="137.5" y="183" text-anchor="middle" font-size="13" fill="#2c3e55">不可变发布包</text>
+<rect x="270" y="105" width="195" height="115" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="367.5" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S2 行为测试</text>
+<text x="367.5" y="161" text-anchor="middle" font-size="13" fill="#2c3e55">Ch37 单元/集成</text>
+<text x="367.5" y="183" text-anchor="middle" font-size="13" fill="#2c3e55">与端到端断言</text>
+<rect x="500" y="105" width="195" height="115" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="597.5" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S3 回归与故障门禁</text>
+<text x="597.5" y="161" text-anchor="middle" font-size="13" fill="#2c3e55">Ch38 黄金切片</text>
+<text x="597.5" y="183" text-anchor="middle" font-size="13" fill="#2c3e55">9类注入+TA断言</text>
+<rect x="730" y="105" width="195" height="115" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="827.5" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S4 安全与密钥扫描</text>
+<text x="827.5" y="161" text-anchor="middle" font-size="13" fill="#2c3e55">零明文凭证</text>
+<text x="827.5" y="183" text-anchor="middle" font-size="13" fill="#2c3e55">策略清单核对</text>
+<rect x="960" y="105" width="195" height="115" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="1057.5" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S5 发布审批</text>
+<text x="1057.5" y="161" text-anchor="middle" font-size="13" fill="#2c3e55">release_checklist</text>
+<text x="1057.5" y="183" text-anchor="middle" font-size="13" fill="#2c3e55">审批人签认</text>
+<line x1="235" y1="162" x2="270" y2="162" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="465" y1="162" x2="500" y2="162" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="695" y1="162" x2="730" y2="162" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="925" y1="162" x2="960" y2="162" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<rect x="500" y="295" width="310" height="120" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="655.0" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S6 预发布部署与冒烟验收</text>
+<text x="655.0" y="351" text-anchor="middle" font-size="13" fill="#2c3e55">部署至 staging 档位</text>
+<text x="655.0" y="373" text-anchor="middle" font-size="13" fill="#2c3e55">合规探针 + 高风险拒批探针</text>
+<text x="655.0" y="395" text-anchor="middle" font-size="13" fill="#2c3e55">独立核对 SQLite 与 OTel trace</text>
+<rect x="85" y="295" width="330" height="120" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="250.0" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">S7 异常触发五要素回滚</text>
+<text x="250.0" y="351" text-anchor="middle" font-size="13" fill="#2c3e55">1.暂停入口 2.切回代码 3.恢复配置</text>
+<text x="250.0" y="373" text-anchor="middle" font-size="13" fill="#2c3e55">4.清空权限缓存 5.核对业务数据</text>
+<text x="250.0" y="395" text-anchor="middle" font-size="13" fill="#2c3e55">复验通过方宣告恢复</text>
+<rect x="885" y="295" width="270" height="120" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="1020.0" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">发布档案归档</text>
+<text x="1020.0" y="351" text-anchor="middle" font-size="13" fill="#2c3e55">release_report.md</text>
+<text x="1020.0" y="373" text-anchor="middle" font-size="13" fill="#2c3e55">ch39_drill_results.json</text>
+<text x="1020.0" y="395" text-anchor="middle" font-size="13" fill="#2c3e55">回链附录 C / D / F</text>
+<path d="M 1057 220 L 1057 258 L 655 258 L 655 295" fill="none" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="860" y="250" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">门禁全绿</text>
+<line x1="500" y1="355" x2="415" y2="355" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="458" y="342" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">异常/漂移</text>
+<line x1="810" y1="355" x2="885" y2="355" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="847.5" y="347.0" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">验收通过</text>
+</g></svg>

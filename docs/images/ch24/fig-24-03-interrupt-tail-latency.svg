@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="585" viewBox="0 0 1200 585" role="img" aria-labelledby="title desc">
+<title id="title">Fig-24-03 三组对照下的端到端可见打断延迟分布（实测日志生成）</title><desc id="desc">由 examples/ch24/interrupt_timeline.jsonl 生成的 P50、P95 与最大值对比柱状图。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="585" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-24-03 三组对照下的端到端可见打断延迟分布（实测日志生成）</text>
+<text x="36" y="78" font-size="15" fill="#475569">数据源：examples/ch24/interrupt_timeline.jsonl（40 确定性时序用例 × 3 组对照，单位：ms；验收线 ≤ 60 ms）</text>
+<line x1="290.0" y1="108" x2="290.0" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="290.0" y="514" text-anchor="middle" font-size="13" fill="#64748b">0 ms</text>
+<line x1="340.7" y1="108" x2="340.7" y2="490" stroke="#b83227" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="340.7" y="514" text-anchor="middle" font-size="13" fill="#b83227">60 ms</text>
+<line x1="458.9" y1="108" x2="458.9" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="458.9" y="514" text-anchor="middle" font-size="13" fill="#64748b">200 ms</text>
+<line x1="627.8" y1="108" x2="627.8" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="627.8" y="514" text-anchor="middle" font-size="13" fill="#64748b">400 ms</text>
+<line x1="796.7" y1="108" x2="796.7" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="796.7" y="514" text-anchor="middle" font-size="13" fill="#64748b">600 ms</text>
+<line x1="965.6" y1="108" x2="965.6" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="965.6" y="514" text-anchor="middle" font-size="13" fill="#64748b">800 ms</text>
+<line x1="1050.0" y1="108" x2="1050.0" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+<text x="1050.0" y="514" text-anchor="middle" font-size="13" fill="#64748b">900 ms</text>
+<text x="346.7" y="122" font-size="13" font-weight="700" fill="#b83227">60ms 验收门槛</text>
+<text x="275" y="180" text-anchor="end" font-size="16" font-weight="700" fill="#1b2a3d">仅修改 UI 状态</text>
+<text x="275" y="202" text-anchor="end" font-size="13" fill="#64748b">通过 0/40 · 泄露 14 次</text>
+<rect x="290" y="148" width="317.5" height="20" rx="4" fill="#b83227" fill-opacity="0.55"/>
+<text x="615.5" y="163" font-size="13" font-weight="600" fill="#1b2a3d">P50: 376.0 ms</text>
+<rect x="290" y="174" width="717.8" height="20" rx="4" fill="#b83227" fill-opacity="0.85"/>
+<text x="1015.8" y="189" font-size="13" font-weight="600" fill="#1b2a3d">P95: 850.0 ms</text>
+<rect x="290" y="200" width="717.8" height="20" rx="4" fill="#b83227" fill-opacity="1.0"/>
+<text x="1015.8" y="215" font-size="13" font-weight="600" fill="#1b2a3d">Max: 850.0 ms</text>
+<text x="275" y="300" text-anchor="end" font-size="16" font-weight="700" fill="#1b2a3d">仅传播取消（不清队列）</text>
+<text x="275" y="322" text-anchor="end" font-size="13" fill="#64748b">通过 2/40 · 泄露 14 次</text>
+<rect x="290" y="268" width="124.6" height="20" rx="4" fill="#a96a16" fill-opacity="0.55"/>
+<text x="422.6" y="283" font-size="13" font-weight="600" fill="#1b2a3d">P50: 147.5 ms</text>
+<rect x="290" y="294" width="481.3" height="20" rx="4" fill="#a96a16" fill-opacity="0.85"/>
+<text x="779.3" y="309" font-size="13" font-weight="600" fill="#1b2a3d">P95: 570.0 ms</text>
+<rect x="290" y="320" width="481.3" height="20" rx="4" fill="#a96a16" fill-opacity="1.0"/>
+<text x="779.3" y="335" font-size="13" font-weight="600" fill="#1b2a3d">Max: 570.0 ms</text>
+<text x="275" y="420" text-anchor="end" font-size="16" font-weight="700" fill="#1b2a3d">传播取消 + gen_id + 清队列</text>
+<text x="275" y="442" text-anchor="end" font-size="13" fill="#64748b">通过 40/40 · 泄露 0 次</text>
+<rect x="290" y="388" width="13.5" height="20" rx="4" fill="#087e82" fill-opacity="0.55"/>
+<text x="311.5" y="403" font-size="13" font-weight="600" fill="#1b2a3d">P50: 16.0 ms</text>
+<rect x="290" y="414" width="17.7" height="20" rx="4" fill="#087e82" fill-opacity="0.85"/>
+<text x="315.7" y="429" font-size="13" font-weight="600" fill="#1b2a3d">P95: 21.0 ms</text>
+<rect x="290" y="440" width="17.7" height="20" rx="4" fill="#087e82" fill-opacity="1.0"/>
+<text x="315.7" y="455" font-size="13" font-weight="600" fill="#1b2a3d">Max: 21.0 ms</text>
+<text x="600" y="558" text-anchor="middle" font-size="14" fill="#5c6c80">注：完整机制下 40/40 用例均满足可见停止 ≤ 60ms 且旧轮次迟到回调零泄露（旧片段丢弃 262 帧，仅保留 37 帧物理在途 DMA）。</text>
+</g></svg>

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datascale-ai.github.io/engineering-agentic-ai-systems-book/schemas/ch25-multimodal-event-v1.json",
+  "title": "MultimodalInteractionEvent",
+  "description": "Ch25 多模态事件公共模式（同步至附录 C），区分事件发生时间与接收时间，覆盖文本、语音、视觉、文件与传感器五类模态。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "event_id",
+    "modality",
+    "source_id",
+    "event_time_ms",
+    "receive_time_ms",
+    "turn_id",
+    "generation_id",
+    "chunk_id",
+    "revision",
+    "state_version",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "mm-event-v1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modality": {
+      "type": "string",
+      "enum": ["text", "audio", "vision", "file", "sensor"]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "采集源标识，如 mic-0、cam-0、upload-pdf-1、temp-sensor-2。"
+    },
+    "event_time_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "物理采集或用户发出时刻（事件时间），用于跨模态对齐与指代消解。"
+    },
+    "receive_time_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "协调器收到事件时刻（接收时间），用于抖动缓冲、超时与网络延迟诊断。"
+    },
+    "turn_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generation_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "chunk_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "增量转写或视觉/文件提取的修订版本；高版本覆盖同 chunk_id 低版本。"
+    },
+    "is_final": {
+      "type": "boolean",
+      "default": true
+    },
+    "state_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ref_target_id": {
+      "type": ["string", "null"],
+      "description": "显式指向的目标对象（如视觉帧 ID、文件页码或传感器读数 ID）。"
+    },
+    "privacy_class": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"],
+      "default": "confidential"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

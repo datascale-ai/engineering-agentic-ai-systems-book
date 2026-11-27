@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
+<title id="title">Fig-39-03 故障注入、不完全回滚反例与五要素回滚恢复验收时间线</title><desc id="desc">基于 ch39_drill_results.json 实测时间线，呈现从受控发布、坏配置注入、缓存残留反例到五要素回滚恢复的完整事件链。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="610" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-39-03 故障注入、不完全回滚反例与五要素回滚恢复验收时间线</text>
+<text x="36" y="78" font-size="15" fill="#475569">数据源：examples/ch39/results/ch39_drill_results.json（DRILL-01 至 DRILL-04 真实演练审计时间线）</text>
+<line x1="90" y1="120" x2="90" y2="575" stroke="#285b8e" stroke-width="3"/>
+<circle cx="90" cy="135" r="7" fill="#285b8e" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="140" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=10ms</text>
+<rect x="115" y="119" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#285b8e" stroke-width="1.3"/>
+<text x="132" y="139" font-size="14" font-weight="600" fill="#285b8e">[release-v1.0.0] DRILL-01 启动 CD 回归门禁 (release-v1.0.0)</text>
+<circle cx="90" cy="173" r="7" fill="#087e82" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="178" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=20ms</text>
+<rect x="115" y="157" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#087e82" stroke-width="1.3"/>
+<text x="132" y="177" font-size="14" font-weight="600" fill="#087e82">[release-v1.0.0] CD 回归门禁通过（3 切片 12 任务全绿）</text>
+<circle cx="90" cy="211" r="7" fill="#087e82" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="216" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=30ms</text>
+<rect x="115" y="195" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#087e82" stroke-width="1.3"/>
+<text x="132" y="215" font-size="14" font-weight="600" fill="#087e82">[release-v1.0.0] 预发布冒烟验收通过（合规 1 工单，高风险拒批）</text>
+<circle cx="90" cy="249" r="7" fill="#a96a16" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="254" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=40ms</text>
+<rect x="115" y="233" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#a96a16" stroke-width="1.3"/>
+<text x="132" y="253" font-size="14" font-weight="600" fill="#a96a16">[release-v1.0.0] DRILL-02 注入坏配置候选 + 密钥脱敏验证</text>
+<circle cx="90" cy="287" r="7" fill="#087e82" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="292" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=50ms</text>
+<rect x="115" y="271" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#087e82" stroke-width="1.3"/>
+<text x="132" y="291" font-size="14" font-weight="600" fill="#087e82">[release-v1.0.0] 完整 CD 门禁拦截坏候选（定位模型与配置层）</text>
+<circle cx="90" cy="325" r="7" fill="#b83227" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="330" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=60ms</text>
+<rect x="115" y="309" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#b83227" stroke-width="1.3"/>
+<text x="132" y="329" font-size="14" font-weight="600" fill="#b83227">[release-v1.0.0] 反例：跳过门禁且仅回滚代码→权限缓存残留致越权</text>
+<circle cx="90" cy="363" r="7" fill="#a96a16" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="368" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=70ms</text>
+<rect x="115" y="347" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#a96a16" stroke-width="1.3"/>
+<text x="132" y="367" font-size="14" font-weight="600" fill="#a96a16">[release-v1.0.0] DRILL-03 五要素回滚[1]：暂停入口流量</text>
+<circle cx="90" cy="401" r="7" fill="#285b8e" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="406" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=80ms</text>
+<rect x="115" y="385" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#285b8e" stroke-width="1.3"/>
+<text x="132" y="405" font-size="14" font-weight="600" fill="#285b8e">[release-v1.0.0] 五要素回滚[2-3]：恢复代码与政策摘要</text>
+<circle cx="90" cy="439" r="7" fill="#b83227" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="444" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=90ms</text>
+<rect x="115" y="423" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#b83227" stroke-width="1.3"/>
+<text x="132" y="443" font-size="14" font-weight="600" fill="#b83227">[release-v1.0.0] 五要素回滚[4]：清空旧权限缓存并递增 epoch=2</text>
+<circle cx="90" cy="477" r="7" fill="#087e82" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="482" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=100ms</text>
+<rect x="115" y="461" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#087e82" stroke-width="1.3"/>
+<text x="132" y="481" font-size="14" font-weight="600" fill="#087e82">[release-v1.0.0] 五要素回滚[5]：恢复入口流量</text>
+<circle cx="90" cy="515" r="7" fill="#087e82" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="520" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=110ms</text>
+<rect x="115" y="499" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#087e82" stroke-width="1.3"/>
+<text x="132" y="519" font-size="14" font-weight="600" fill="#087e82">[release-v1.0.0] 回滚后独立业务验收：高风险重新拒批、合法工单完好</text>
+<circle cx="90" cy="553" r="7" fill="#285b8e" stroke="#ffffff" stroke-width="2"/>
+<text x="72" y="558" text-anchor="end" font-size="13" font-weight="700" fill="#475569">t=120ms</text>
+<rect x="115" y="537" width="1025" height="30" rx="6" fill="#f8fafc" stroke="#285b8e" stroke-width="1.3"/>
+<text x="132" y="557" font-size="14" font-weight="600" fill="#285b8e">[release-v1.0.0] DRILL-04 PRJ-3 崩溃恢复综合演练通过（1 工单 + 轨迹 PASS）</text>
+</g></svg>

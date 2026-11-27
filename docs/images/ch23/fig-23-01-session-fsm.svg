@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
+<title id="title">Fig-23-01 显式会话状态机与禁止转换规则</title><desc id="desc">展示 created、running、paused 及三个终态之间的合法事件迁移与红色虚线标出的禁止转换。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="610" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-23-01 显式会话状态机与禁止转换规则</text>
+<rect x="60" y="240" width="180" height="90" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="150.0" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">created</text>
+<text x="150.0" y="296" text-anchor="middle" font-size="15" fill="#2c3e55">会话已建档</text>
+<text x="150.0" y="318" text-anchor="middle" font-size="15" fill="#2c3e55">seq = 1</text>
+<rect x="340" y="240" width="210" height="90" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="445.0" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">running</text>
+<text x="445.0" y="296" text-anchor="middle" font-size="15" fill="#2c3e55">活跃轮次执行</text>
+<text x="445.0" y="318" text-anchor="middle" font-size="15" fill="#2c3e55">记录意图与提交</text>
+<rect x="340" y="430" width="210" height="90" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="445.0" y="460" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">paused</text>
+<text x="445.0" y="486" text-anchor="middle" font-size="15" fill="#2c3e55">等待人工审批</text>
+<text x="445.0" y="508" text-anchor="middle" font-size="15" fill="#2c3e55">持久化检查点</text>
+<rect x="760" y="110" width="220" height="88" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="870.0" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">completed (终态)</text>
+<text x="870.0" y="166" text-anchor="middle" font-size="15" fill="#2c3e55">独立验收通过</text>
+<text x="870.0" y="188" text-anchor="middle" font-size="15" fill="#2c3e55">禁止回退运行</text>
+<rect x="760" y="245" width="220" height="88" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="870.0" y="275" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">cancelled (终态)</text>
+<text x="870.0" y="301" text-anchor="middle" font-size="15" fill="#2c3e55">主动取消释放资源</text>
+<text x="870.0" y="323" text-anchor="middle" font-size="15" fill="#2c3e55">已提交副作用另登记</text>
+<rect x="760" y="385" width="220" height="88" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="870.0" y="415" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">failed (终态)</text>
+<text x="870.0" y="441" text-anchor="middle" font-size="15" fill="#2c3e55">超预算/契约违背</text>
+<text x="870.0" y="463" text-anchor="middle" font-size="15" fill="#2c3e55">保留完整事件链</text>
+<line x1="240" y1="285" x2="340" y2="285" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="290.0" y="277.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">turn_started</text>
+<line x1="410" y1="330" x2="410" y2="430" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)"/>
+<text x="330" y="385" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">approval_requested</text>
+<line x1="480" y1="430" x2="480" y2="330" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="560" y="385" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">approval_granted</text>
+<line x1="550" y1="260" x2="760" y2="155" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="640" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">session_completed</text>
+<line x1="550" y1="285" x2="760" y2="285" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)"/>
+<text x="655.0" y="277.0" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">session_cancelled</text>
+<line x1="550" y1="310" x2="760" y2="425" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
+<text x="640" y="390" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">session_failed</text>
+<path d="M 550 475 L 700 475 L 760 440" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
+<text x="660" y="500" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">paused→failed/cancelled</text>
+<path d="M 150 240 Q 440 50 760 130" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="460" y="96" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">禁止：未经执行直接 completed</text>
+<path d="M 980 285 Q 1120 215 980 155" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="1075" y="225" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">禁止：cancelled 翻转为 completed</text>
+<path d="M 870 110 Q 650 25 445 240" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="650" y="62" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">禁止：终态重启为 running</text>
+<text x="600" y="575" text-anchor="middle" font-size="15" fill="#5c6c80">不变式：单会话内 sequence 严格单调递增；合法重放仅重建状态，绝不重复触发已提交副作用</text>
+</g></svg>

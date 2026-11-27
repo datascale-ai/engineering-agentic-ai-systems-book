@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="565" viewBox="0 0 1200 565" role="img" aria-labelledby="title desc">
+<title id="title">Fig-24-01 模型到界面/播放端的流式流水线、水位线缓冲与带外打断总线</title><desc id="desc">展示多通道流生产者、高低水位背压缓冲、媒体分片与带外高优先级取消传播总线。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="565" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-24-01 模型到界面/播放端的流式流水线、水位线缓冲与带外打断总线</text>
+<rect x="40" y="160" width="235" height="170" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="157.5" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">上游流式生产者</text>
+<text x="157.5" y="216" text-anchor="middle" font-size="13" fill="#2c3e55">DeepSeek 多通道 SSE:</text>
+<text x="157.5" y="238" text-anchor="middle" font-size="13" fill="#2c3e55">• reasoning_content</text>
+<text x="157.5" y="260" text-anchor="middle" font-size="13" fill="#2c3e55">• text token delta</text>
+<text x="157.5" y="282" text-anchor="middle" font-size="13" fill="#2c3e55">• tool_calls (完整后行动)</text>
+<text x="157.5" y="304" text-anchor="middle" font-size="13" fill="#2c3e55">标记 turn_id + gen_id</text>
+<rect x="335" y="160" width="245" height="170" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="457.5" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">有界水位线缓冲 Q1</text>
+<text x="457.5" y="216" text-anchor="middle" font-size="13" fill="#2c3e55">容量 cap=16</text>
+<text x="457.5" y="238" text-anchor="middle" font-size="13" fill="#2c3e55">高水位 HWM=12 → 背压暂停</text>
+<text x="457.5" y="260" text-anchor="middle" font-size="13" fill="#2c3e55">低水位 LWM=4 → 恢复拉取</text>
+<text x="457.5" y="282" text-anchor="middle" font-size="13" fill="#2c3e55">gen_id 过滤旧轮次</text>
+<rect x="640" y="160" width="235" height="170" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="757.5" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">TTS / 媒体分片与 Q2</text>
+<text x="757.5" y="216" text-anchor="middle" font-size="13" fill="#2c3e55">文本切句 → 音频块</text>
+<text x="757.5" y="238" text-anchor="middle" font-size="13" fill="#2c3e55">校验完整性后提交工具</text>
+<text x="757.5" y="260" text-anchor="middle" font-size="13" fill="#2c3e55">收到取消立即 flush()</text>
+<rect x="935" y="160" width="225" height="170" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="1047.5" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">UI / 音频播放端</text>
+<text x="1047.5" y="216" text-anchor="middle" font-size="13" fill="#2c3e55">渲染增量文本与字幕</text>
+<text x="1047.5" y="238" text-anchor="middle" font-size="13" fill="#2c3e55">声卡 DMA 在途&lt;=1帧</text>
+<text x="1047.5" y="260" text-anchor="middle" font-size="13" fill="#2c3e55">已播内容物理不可撤回</text>
+<line x1="275" y1="220" x2="335" y2="220" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="305.0" y="212.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">token</text>
+<line x1="580" y1="220" x2="640" y2="220" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="610.0" y="212.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">片段</text>
+<line x1="875" y1="220" x2="935" y2="220" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="905.0" y="212.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">音频块</text>
+<path d="M 455 160 L 455 112 L 155 112 L 155 160" fill="none" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)" stroke-dasharray="7 5"/>
+<text x="305" y="102" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">背压暂停信号 (depth &gt;= HWM)</text>
+<rect x="120" y="405" width="960" height="88" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="600.0" y="435" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2a3d">带外高优先级打断总线：InterruptionFrame / CancelToken（绕过 FIFO 数据队列双向广播）</text>
+<text x="600.0" y="461" text-anchor="middle" font-size="14" fill="#2c3e55">1) 递增 active_generation_id 拦截迟到回调  2) 通知生产者终止流  3) 立即清空 Q1/Q2 残留旧帧</text>
+<line x1="155" y1="405" x2="155" y2="330" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<line x1="455" y1="405" x2="455" y2="330" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<line x1="755" y1="405" x2="755" y2="330" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<line x1="1045" y1="405" x2="1045" y2="330" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="600" y="535" text-anchor="middle" font-size="15" fill="#5c6c80">架构映射：DeepSeek 多通道 SSE 增量协议 × Pipecat SystemFrame 带外打断 × Reactive Streams 有界背压</text>
+</g></svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="670" viewBox="0 0 1200 670" role="img" aria-labelledby="title desc">
+<title id="title">Fig-22-02 DAG 到有界队列与 Worker 的调度、接管及取消时序</title><desc id="desc">展示任务图节点就绪、有界排队、worker崩溃租约接管与控制面带外取消的时间顺序。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="670" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-22-02 DAG 到有界队列与 Worker 的调度、接管及取消时序</text>
+<text x="36" y="116" font-size="16" font-weight="700" fill="#285b8e">DAG 调度器</text>
+<line x1="175" y1="110" x2="1150" y2="110" stroke="#cbd5e1" stroke-width="2"/>
+<text x="36" y="266" font-size="16" font-weight="700" fill="#a96a16">有界公平队列</text>
+<line x1="175" y1="260" x2="1150" y2="260" stroke="#cbd5e1" stroke-width="2"/>
+<text x="36" y="416" font-size="16" font-weight="700" fill="#087e82">Worker-1 / 2</text>
+<line x1="175" y1="410" x2="1150" y2="410" stroke="#cbd5e1" stroke-width="2"/>
+<text x="36" y="566" font-size="16" font-weight="700" fill="#b83227">控制面取消</text>
+<line x1="175" y1="560" x2="1150" y2="560" stroke="#cbd5e1" stroke-width="2"/>
+<line x1="210" y1="78" x2="210" y2="600" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="210" y="72" text-anchor="middle" font-size="13" fill="#64748b">t0 入队</text>
+<line x1="380" y1="78" x2="380" y2="600" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="380" y="72" text-anchor="middle" font-size="13" fill="#64748b">t1 并行扇出</text>
+<line x1="580" y1="78" x2="580" y2="600" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="580" y="72" text-anchor="middle" font-size="13" fill="#64748b">t2 崩溃/接管</text>
+<line x1="810" y1="78" x2="810" y2="600" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="810" y="72" text-anchor="middle" font-size="13" fill="#64748b">t3 带外取消</text>
+<line x1="1030" y1="78" x2="1030" y2="600" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="1030" y="72" text-anchor="middle" font-size="13" fill="#64748b">t4 资源归零</text>
+<rect x="185" y="86" width="150" height="48" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="260.0" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">plan 就绪</text>
+<text x="260.0" y="142" text-anchor="middle" font-size="12" fill="#2c3e55">deps=()</text>
+<rect x="335" y="236" width="180" height="48" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="425.0" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">branch_0..4 入队</text>
+<text x="425.0" y="292" text-anchor="middle" font-size="12" fill="#2c3e55">按租户配额限流</text>
+<rect x="490" y="386" width="150" height="48" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="565.0" y="416" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">W1 执行中崩溃</text>
+<text x="565.0" y="442" text-anchor="middle" font-size="12" fill="#2c3e55">租约 TTL 到期</text>
+<rect x="665" y="386" width="165" height="48" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="747.5" y="416" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">W2 接管完成</text>
+<text x="747.5" y="442" text-anchor="middle" font-size="12" fill="#2c3e55">同幂等键零重复</text>
+<rect x="760" y="536" width="180" height="48" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="850.0" y="566" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">CancelToken.set()</text>
+<text x="850.0" y="592" text-anchor="middle" font-size="12" fill="#2c3e55">绕过数据队列直达</text>
+<rect x="965" y="386" width="170" height="48" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="1050.0" y="416" text-anchor="middle" font-size="14" font-weight="700" fill="#1b2a3d">句柄/信号量释放</text>
+<text x="1050.0" y="442" text-anchor="middle" font-size="12" fill="#2c3e55">登记已提交副作用</text>
+<line x1="260" y1="134" x2="360" y2="236" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="270" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">展开就绪节点</text>
+<line x1="460" y1="284" x2="520" y2="386" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)"/>
+<text x="465" y="345" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">派发</text>
+<line x1="640" y1="410" x2="665" y2="410" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
+<text x="652.5" y="402.0" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">reclaim</text>
+<line x1="850" y1="536" x2="1020" y2="434" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="975" y="505" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">即时协作中断</text>
+<text x="600" y="642" text-anchor="middle" font-size="15" fill="#5c6c80">实验依据：examples/ch22/async_runtime.py（50 任务、2 租户）；有界模式峰值并发=6，取消后 active_handles=0</text>
+</g></svg>

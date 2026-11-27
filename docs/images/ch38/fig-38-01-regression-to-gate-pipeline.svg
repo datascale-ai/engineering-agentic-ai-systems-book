@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="475" viewBox="0 0 1200 475" role="img" aria-labelledby="title desc">
+<title id="title">Fig-38-01 评估回归、故障注入与可观测断言到发布门禁的流水线</title><desc id="desc">展示变更提交经过黄金切片、轨迹与存储断言、9类故障注入到门禁判决的自动化流程。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="475" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-38-01 评估回归、故障注入与可观测断言到发布门禁的流水线</text>
+<rect x="40" y="140" width="195" height="130" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="137.5" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">1. 变更输入</text>
+<text x="137.5" y="196" text-anchor="middle" font-size="13" fill="#2c3e55">模型/提示/配置</text>
+<text x="137.5" y="218" text-anchor="middle" font-size="13" fill="#2c3e55">或代码 PR 提交</text>
+<rect x="260" y="140" width="195" height="130" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
+<text x="357.5" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">2. 黄金切片回归</text>
+<text x="357.5" y="196" text-anchor="middle" font-size="13" fill="#2c3e55">12 黄金任务分切片</text>
+<text x="357.5" y="218" text-anchor="middle" font-size="13" fill="#2c3e55">普通/高风险独立阈值</text>
+<rect x="485" y="140" width="195" height="130" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
+<text x="582.5" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">3. 轨迹与库断言</text>
+<text x="582.5" y="196" text-anchor="middle" font-size="13" fill="#2c3e55">OTel TA-01—05</text>
+<text x="582.5" y="218" text-anchor="middle" font-size="13" fill="#2c3e55">直读 service.sqlite</text>
+<rect x="710" y="140" width="195" height="130" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
+<text x="807.5" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">4. 沙箱故障注入</text>
+<text x="807.5" y="196" text-anchor="middle" font-size="13" fill="#2c3e55">9 类受控故障</text>
+<text x="807.5" y="218" text-anchor="middle" font-size="13" fill="#2c3e55">验证业务恢复不变量</text>
+<rect x="940" y="140" width="195" height="130" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="1037.5" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">5. 质量门禁判决</text>
+<text x="1037.5" y="196" text-anchor="middle" font-size="13" fill="#2c3e55">PASS → 进入 Ch39</text>
+<text x="1037.5" y="218" text-anchor="middle" font-size="13" fill="#2c3e55">BLOCK → 定位缺陷层</text>
+<line x1="235" y1="205" x2="260" y2="205" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="455" y1="205" x2="485" y2="205" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="680" y1="205" x2="710" y2="205" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<line x1="905" y1="205" x2="940" y2="205" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<rect x="120" y="340" width="960" height="96" rx="10" fill="#f6f8fb" stroke="#5c6c80" stroke-width="2"/>
+<text x="600.0" y="370" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">共享证据底座：examples/ch36/src/book_reference/ + golden_slices.yaml + regression_report.md</text>
+<text x="600.0" y="396" text-anchor="middle" font-size="14" fill="#2c3e55">核心原则：mock 回归仅验证控制逻辑与权限不变量，不宣称模型能力；关键高风险切片不允许例外豁免</text>
+</g></svg>

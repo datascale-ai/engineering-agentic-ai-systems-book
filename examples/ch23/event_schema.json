@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datascale-ai.github.io/engineering-agentic-ai-systems-book/schemas/ch23-event-v2.json",
+  "title": "AgentSessionEvent",
+  "description": "Ch23 公共会话事件模式（附录 C 同步版本 event-v2），支持版本迁移、去重、因果追踪与快照回放。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "turn_id",
+    "event_id",
+    "sequence",
+    "event_type",
+    "occurred_at_ms",
+    "producer",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["event-v1", "event-v2"],
+      "description": "事件模式版本；v1 读取时经由 upcaster 显式迁移为 v2。"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "turn_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "在 producer 命名空间内全局唯一，用于幂等去重。"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "权威事件存储分配的会话内严格单调递增序号。"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "session_created",
+        "turn_started",
+        "tool_intent_recorded",
+        "tool_effect_committed",
+        "approval_requested",
+        "approval_granted",
+        "session_paused",
+        "session_resumed",
+        "turn_completed",
+        "session_completed",
+        "session_cancelled",
+        "session_failed"
+      ]
+    },
+    "occurred_at_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "command_id": {
+      "type": ["string", "null"],
+      "description": "触发本事件的客户端命令幂等键，用于重连去重。"
+    },
+    "correlation_id": {
+      "type": ["string", "null"]
+    },
+    "causation_id": {
+      "type": ["string", "null"]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Fig-24-02 用户打断传播五时间点分解与迟到结果隔离</title><desc id="desc">分解用户停止(t0)、感知(t1)、传播(t2)、生产者退出(t3)、最后旧输出呈现(t4)及迟到工具回调拦截。</desc>
+<defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
+<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+</defs>
+<rect width="1200" height="500" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
+<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-24-02 用户打断传播五时间点分解与迟到结果隔离</text>
+<line x1="80" y1="220" x2="1120" y2="220" stroke="#285b8e" stroke-width="3.5" marker-end="url(#blue)"/>
+<circle cx="130" cy="220" r="10" fill="#b83227" stroke="#ffffff" stroke-width="2.5"/>
+<text x="130" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#b83227">t0 用户发出停止</text>
+<text x="130" y="258" text-anchor="middle" font-size="13" fill="#334155">物理起点（按键/语音打断）</text>
+<circle cx="305" cy="220" r="10" fill="#a96a16" stroke="#ffffff" stroke-width="2.5"/>
+<text x="305" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#a96a16">t1 入口感知停止</text>
+<text x="305" y="258" text-anchor="middle" font-size="13" fill="#334155">VAD/事件到达 (+5~10ms)</text>
+<circle cx="500" cy="220" r="10" fill="#285b8e" stroke="#ffffff" stroke-width="2.5"/>
+<text x="500" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#285b8e">t2 取消传播到位</text>
+<text x="500" y="258" text-anchor="middle" font-size="13" fill="#334155">gen_id 递增 &amp; 队列清空</text>
+<circle cx="705" cy="220" r="10" fill="#087e82" stroke="#ffffff" stroke-width="2.5"/>
+<text x="705" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#087e82">t3 生产者退出</text>
+<text x="705" y="258" text-anchor="middle" font-size="13" fill="#334155">上游流关闭 &amp; 句柄释放</text>
+<circle cx="900" cy="220" r="10" fill="#087e82" stroke="#ffffff" stroke-width="2.5"/>
+<text x="900" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#087e82">t4 最后旧片段呈现</text>
+<text x="900" y="258" text-anchor="middle" font-size="13" fill="#334155">在途 DMA 结束（可见停止）</text>
+<line x1="130" y1="125" x2="500" y2="125" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
+<text x="315.0" y="117.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">控制传播延迟 (t2 - t0)</text>
+<line x1="130" y1="92" x2="900" y2="92" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
+<text x="515.0" y="84.0" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">端到端可见打断延迟 (t4 - t0)：完整机制 P95 = 21.0 ms vs 仅改 UI P95 = 850.0 ms</text>
+<rect x="660" y="325" width="455" height="130" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
+<text x="887.5" y="355" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">迟到工具回调隔离区 (t &gt; t4，如 t0 + 95ms)</text>
+<text x="887.5" y="381" text-anchor="middle" font-size="13" fill="#2c3e55">旧工具响应携带 generation_id=2 晚到</text>
+<text x="887.5" y="403" text-anchor="middle" font-size="13" fill="#2c3e55">当前会话已进入新轮次 generation_id=3</text>
+<text x="887.5" y="425" text-anchor="middle" font-size="13" fill="#2c3e55">→ gen_id 围栏拦截：不混入新轮次上下文，仅记入审计日志</text>
+<text x="887.5" y="447" text-anchor="middle" font-size="13" fill="#2c3e55">→ 若远端已提交工单，标记 committed 供 Ch12/13 核对</text>
+<line x1="980" y1="220" x2="980" y2="325" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)" stroke-dasharray="7 5"/>
+<text x="1045" y="280" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">迟到回调抵达</text>
+</g></svg>

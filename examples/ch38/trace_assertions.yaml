@@ -1,0 +1,49 @@
+# Ch38 可观测与轨迹断言契约 (trace_assertions.yaml)
+# 遵循 OpenTelemetry GenAI Semantic Conventions (gen_ai.*) 与本书公共事件模型
+schema_version: "trace-assertions-1.0"
+
+stable_fields:
+  - "gen_ai.operation.name"
+  - "agent.tenant"
+  - "agent.task_id"
+  - "agent.policy_version"
+  - "agent.decision"
+  - "agent.permission_checked"
+  - "agent.operation_id"
+  - "agent.ticket_count"
+
+allowed_variable_fields:
+  - "trace_id"
+  - "span_id"
+  - "start_time_ms"
+  - "duration_ms"
+  - "host.name"
+
+assertions:
+  - id: "TA-01"
+    name: "root_agent_span_present"
+    required_operation: "invoke_agent"
+    required_attributes: ["agent.tenant", "agent.task_id", "agent.policy_version", "gen_ai.request.model"]
+    description: "每次任务运行必须产生 invoke_agent 根 span，并绑定租户、任务与政策版本。"
+
+  - id: "TA-02"
+    name: "policy_before_tool_order"
+    ordered_operations: ["policy_evaluate", "execute_tool", "verify_postcondition"]
+    applies_when: "status == completed"
+    description: "任何产生外部写入的成功轨迹中，独立政策评估必须严格早于工具执行，且工具执行后必有独立后置验收。"
+
+  - id: "TA-03"
+    name: "no_tool_write_on_rejected"
+    forbidden_operation: "execute_tool"
+    applies_when: "status == rejected and reason in [needs_approval, ineligible, policy_version]"
+    description: "因审批缺失、不合规或政策不匹配被拒绝的任务，轨迹中不得出现写工具执行 span。"
+
+  - id: "TA-04"
+    name: "no_secret_in_telemetry"
+    forbidden_patterns: ["sk-", "Bearer ", "PRIVATE KEY", "password="]
+    description: "可观测 span 与事件载荷中严禁泄露明文密钥或凭证。"
+
+  - id: "TA-05"
+    name: "independent_ticket_reconciliation"
+    rule: "trace.ticket_count == db.tickets_count"
+    description: "轨迹宣称的外部工单数必须与独立读取 service.sqlite 的实际记录数完全一致。"
