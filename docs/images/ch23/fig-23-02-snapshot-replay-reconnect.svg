@@ -1,42 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
-<title id="title">Fig-23-02 快照加增量事件回放的重连协调时序</title><desc id="desc">展示断连重发命令命中幂等去重、旧快照检测与缺口补传后通过确定性 reducer 恢复一致终态。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="728" viewBox="0 0 1200 728" role="img" aria-labelledby="title desc">
+<title id="title">Fig-23-02 快照加增量事件回放的重连协调时序</title>
+<desc id="desc">展示断连重发命令命中幂等去重、旧快照检测与缺口补传后通过确定性 reducer 恢复一致终态。</desc>
 <defs>
-<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
-<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
-<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
-<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
-<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+  <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>
+  </filter>
+  <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0F172A" flood-opacity="0.08"/>
+  </filter>
+  <marker id="arr-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#1E40AF"/></marker>
+  <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#0F766E"/></marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#B45309"/></marker>
+  <marker id="arr-crimson" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#BE123C"/></marker>
+  <marker id="arr-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#475569"/></marker>
 </defs>
-<rect width="1200" height="640" fill="#ffffff"/>
-<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
-<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-23-02 快照加增量事件回放的重连协调时序</text>
-<rect x="45" y="76" width="230" height="48" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="160.0" y="106" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">客户端 (Reconciler)</text>
-<line x1="160" y1="124" x2="160" y2="615" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
-<rect x="455" y="76" width="230" height="48" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="570.0" y="106" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">权威会话服务端</text>
-<line x1="570" y1="124" x2="570" y2="615" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
-<rect x="875" y="76" width="230" height="48" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="990.0" y="106" text-anchor="middle" font-size="16" font-weight="700" fill="#1b2a3d">外部工单服务</text>
-<line x1="990" y1="124" x2="990" y2="615" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
-<line x1="160" y1="165" x2="570" y2="165" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<text x="365.0" y="157.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">1. Command(cmd_id=cmd-3, op=op-1)</text>
-<line x1="570" y1="205" x2="990" y2="205" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
-<text x="780.0" y="197.0" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">2. 幂等创建工单 (op-1) → TK-1001</text>
-<line x1="990" y1="245" x2="570" y2="245" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
-<text x="780.0" y="237.0" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">3. 已提交事实 (seq=4 落盘)</text>
-<rect x="270" y="268" width="210" height="34" rx="6" fill="#fbeae8" stroke="#b83227" stroke-width="1.6"/>
-<text x="375" y="290" text-anchor="middle" font-size="14" font-weight="700" fill="#b83227">网络断连（客户端未收到回执）</text>
-<line x1="160" y1="340" x2="570" y2="340" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)"/>
-<text x="365.0" y="332.0" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">4. 重连重发同一 Command(cmd_id=cmd-3)</text>
-<line x1="570" y1="382" x2="160" y2="382" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
-<text x="365.0" y="374.0" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">5. 命中幂等账本：返回原回执（不再次调用外部服务）</text>
-<line x1="160" y1="432" x2="570" y2="432" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<text x="365.0" y="424.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">6. 载入旧快照(seq=3)并请求 backfill(after=3)</text>
-<line x1="570" y1="476" x2="160" y2="476" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<text x="365.0" y="468.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">7. 补传增量事件 seq=4,5,6（自动 v1→v2 迁移）</text>
-<rect x="50" y="512" width="320" height="74" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
-<text x="210.0" y="542" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">确定性 Reducer 重放</text>
-<text x="210.0" y="568" text-anchor="middle" font-size="13" fill="#2c3e55">state = reduce(snap@3, ev[4..6])</text>
-<text x="210.0" y="590" text-anchor="middle" font-size="13" fill="#2c3e55">终态与权威服务端字节一致 · 零重复写入</text>
+<g font-family="'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+<rect width="1200" height="728" fill="#FFFFFF"/>
+<rect x="36" y="30" width="215.4" height="20" rx="10" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+<text x="143.7" y="43.8" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700" fill="#0F766E">PART VI · CH23 RECONCILIATION</text>
+<text x="36" y="76" font-size="21.5" font-weight="700" fill="#0F172A">Fig-23-02 快照加增量事件回放的重连协调时序</text>
+<text x="36" y="96" font-size="12.5" fill="#64748B">断连重发命中幂等账本去重，随后通过旧快照（seq=3）加缺口补传（seq=4..6）确定性恢复与服务端一致的终态</text>
+<line x1="36" y1="106" x2="1164" y2="106" stroke="#E2E8F0" stroke-width="1.2"/>
+<rect x="36" y="194" width="1128" height="152" rx="10" fill="#F1F5F9" fill-opacity="0.45" stroke="#CBD5E1" stroke-width="1"/><rect x="46" y="204" width="64" height="18" rx="9" fill="#475569"/><text x="78" y="216.5" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">PHASE 1</text><text x="48" y="238" font-size="11.2" font-weight="700" fill="#334155">正常写入与断连</text>
+<rect x="36" y="360" width="1128" height="114" rx="10" fill="#FFFBEB" fill-opacity="0.45" stroke="#FDE68A" stroke-width="1"/><rect x="46" y="370" width="64" height="18" rx="9" fill="#B45309"/><text x="78" y="382.5" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">PHASE 2</text><text x="48" y="404" font-size="11.2" font-weight="700" fill="#92400E">重连幂等去重</text>
+<rect x="36" y="488" width="1128" height="210" rx="10" fill="#F0FDFA" fill-opacity="0.45" stroke="#99F6E4" stroke-width="1"/><rect x="46" y="498" width="64" height="18" rx="9" fill="#0F766E"/><text x="78" y="510.5" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">PHASE 3</text><text x="48" y="532" font-size="11.2" font-weight="700" fill="#115E59">增量补传与重放</text>
+<line x1="215.0" y1="172" x2="215.0" y2="686" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="620.0" y1="172" x2="620.0" y2="686" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="1020.0" y1="172" x2="1020.0" y2="686" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="5 4"/>
+<rect x="615.0" y="210" width="10" height="86" rx="3" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.2"/>
+<rect x="615.0" y="382" width="10" height="66" rx="3" fill="#FFFBEB" stroke="#B45309" stroke-width="1.2"/>
+<rect x="615.0" y="510" width="10" height="64" rx="3" fill="#EFF6FF" stroke="#1E40AF" stroke-width="1.2"/>
+<g filter="url(#card-shadow)"><rect x="102.0" y="120" width="226" height="52" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.35"/><rect x="102.0" y="120" width="226" height="3.5" rx="1.5" fill="#1E40AF"/><g transform="translate(116.0,138.0)"><rect x="2.5" y="2.5" width="11" height="4.5" rx="1.2" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="2.5" y="9" width="11" height="4.5" rx="1.2" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="5" cy="4.8" r="0.7" fill="#1E40AF"/><circle cx="5" cy="11.2" r="0.7" fill="#1E40AF"/></g><text x="140.0" y="144" font-size="13.2" font-weight="700" fill="#0F172A">客户端 (Reconciler)</text><text x="140.0" y="161" font-size="11.0" fill="#64748B">本地缓存 + 重连器</text></g>
+<g filter="url(#card-shadow)"><rect x="507.0" y="120" width="226" height="52" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.35"/><rect x="507.0" y="120" width="226" height="3.5" rx="1.5" fill="#0F766E"/><g transform="translate(521.0,138.0)"><ellipse cx="8" cy="4" rx="5.5" ry="2" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2.5 4 V12 C2.5 13.1 5 14 8 14 C11 14 13.5 13.1 13.5 12 V4" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2.5 8 C2.5 9.1 5 10 8 10 C11 10 13.5 9.1 13.5 8" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><text x="545.0" y="144" font-size="13.2" font-weight="700" fill="#0F172A">权威会话服务端</text><text x="545.0" y="161" font-size="11.0" fill="#64748B">WAL 日志 + 幂等账本</text></g>
+<g filter="url(#card-shadow)"><rect x="907.0" y="120" width="226" height="52" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.35"/><rect x="907.0" y="120" width="226" height="3.5" rx="1.5" fill="#B45309"/><g transform="translate(921.0,138.0)"><path d="M10.8 2.4 A3.2 3.2 0 0 0 6.8 6.4 L2.6 10.6 A1.6 1.6 0 0 0 4.9 12.9 L9.1 8.7 A3.2 3.2 0 0 0 13.1 4.7 L11.3 6.5 L9.5 4.7 Z" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><text x="945.0" y="144" font-size="13.2" font-weight="700" fill="#0F172A">外部工单服务</text><text x="945.0" y="161" font-size="11.0" fill="#64748B">独立业务事实库</text></g>
+<line x1="215.0" y1="228" x2="613.0" y2="228" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g filter="url(#pill-shadow)"><rect x="292.0" y="204.0" width="246.0" height="21" rx="10.5" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.1"/><circle cx="304.0" cy="214.5" r="7.5" fill="#1E40AF"/><text x="304.0" y="218.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">1</text><text x="317.0" y="218.5" font-size="11.4" font-weight="600" fill="#1E3A8A">Command(cmd_id=cmd-3, op=op-1)</text></g>
+<line x1="625.0" y1="260" x2="1018.0" y2="260" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)"/>
+<g filter="url(#pill-shadow)"><rect x="706.7" y="236.0" width="231.7" height="21" rx="10.5" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.1"/><circle cx="718.7" cy="246.5" r="7.5" fill="#0F766E"/><text x="718.7" y="250.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">2</text><text x="731.7" y="250.5" font-size="11.4" font-weight="600" fill="#115E59">幂等创建工单 (op-1) → TK-1001</text></g>
+<line x1="1020.0" y1="294" x2="627.0" y2="294" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)" stroke-dasharray="6 4"/>
+<g filter="url(#pill-shadow)"><rect x="734.9" y="270.0" width="175.1" height="21" rx="10.5" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.1"/><circle cx="746.9" cy="280.5" r="7.5" fill="#0F766E"/><text x="746.9" y="284.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">3</text><text x="759.9" y="284.5" font-size="11.4" font-weight="600" fill="#115E59">已提交事实落盘 (seq=4)</text></g>
+<g filter="url(#pill-shadow)"><rect x="278" y="310" width="278" height="26" rx="13" fill="#FFF1F2" stroke="#BE123C" stroke-width="1.35"/><text x="417" y="327" text-anchor="middle" font-size="11.6" font-weight="700" fill="#BE123C">⚡ 网络断连（客户端未收到回执）</text></g>
+<line x1="215.0" y1="398" x2="613.0" y2="398" stroke="#B45309" stroke-width="2" marker-end="url(#arr-amber)"/>
+<g filter="url(#pill-shadow)"><rect x="284.0" y="374.0" width="262.0" height="21" rx="10.5" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.1"/><circle cx="296.0" cy="384.5" r="7.5" fill="#B45309"/><text x="296.0" y="388.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">4</text><text x="309.0" y="388.5" font-size="11.4" font-weight="600" fill="#92400E">重连重发同一 Command(cmd_id=cmd-3)</text></g>
+<line x1="615.0" y1="444" x2="217.0" y2="444" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)" stroke-dasharray="6 4"/>
+<g filter="url(#pill-shadow)"><rect x="271.1" y="420.0" width="287.8" height="21" rx="10.5" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.1"/><circle cx="283.1" cy="430.5" r="7.5" fill="#0F766E"/><text x="283.1" y="434.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">5</text><text x="296.1" y="434.5" font-size="11.4" font-weight="600" fill="#115E59">命中幂等账本：返回原回执（不重调外部服务）</text></g>
+<line x1="215.0" y1="524" x2="613.0" y2="524" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g filter="url(#pill-shadow)"><rect x="254.2" y="500.0" width="321.5" height="21" rx="10.5" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.1"/><circle cx="266.2" cy="510.5" r="7.5" fill="#1E40AF"/><text x="266.2" y="514.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">6</text><text x="279.2" y="514.5" font-size="11.4" font-weight="600" fill="#1E3A8A">载入旧快照 (seq=3) 并请求 backfill(after=3)</text></g>
+<line x1="615.0" y1="568" x2="217.0" y2="568" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)" stroke-dasharray="6 4"/>
+<g filter="url(#pill-shadow)"><rect x="255.8" y="544.0" width="318.3" height="21" rx="10.5" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.1"/><circle cx="267.8" cy="554.5" r="7.5" fill="#1E40AF"/><text x="267.8" y="558.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">7</text><text x="280.8" y="558.5" font-size="11.4" font-weight="600" fill="#1E3A8A">补传增量事件 seq=4, 5, 6（自动 v1→v2 迁移）</text></g>
+<g data-card-group="red">
+<clipPath id="clip-red"><rect x="160.0" y="594.0" width="496.0" height="86.0" rx="9"/></clipPath>
+<rect data-card="red" x="160.0" y="594.0" width="496.0" height="86.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-red)">
+<rect x="160.0" y="594.0" width="496.0" height="34.0" fill="#F0FDFA"/>
+<rect x="160.0" y="594.0" width="496.0" height="3.5" fill="#0F766E"/>
+<line x1="160.0" y1="628.0" x2="656.0" y2="628.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(173.0,604.0)"><path d="M3 6.5 A5.2 5.2 0 0 1 12.2 4.4 M13 9.5 A5.2 5.2 0 0 1 3.8 11.6" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12.2 2 V4.6 H9.6 M3.8 14 V11.4 H6.4" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="red" x="195.0" y="616.2" font-size="13.8" font-weight="700" fill="#0F172A">确定性 Reducer 重放恢复一致终态</text>
+<rect x="577.2" y="602.8" width="68.8" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="red" x="611.6" y="615.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">0 重复写入</text>
+<circle cx="176.0" cy="643.3" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="red" x="185.0" y="647.3" font-size="11.8" fill="#334155">state = reduce(snapshot@seq=3, events[4..6])</text>
+<circle cx="176.0" cy="663.3" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="red" x="185.0" y="667.3" font-size="11.8" fill="#334155">本地视图与权威服务端字节级一致，外部工单始终唯一（TK-1001）</text>
+</g>
+<g data-card-group="note23">
+<clipPath id="clip-note23"><rect x="686.0" y="594.0" width="448.0" height="86.0" rx="9"/></clipPath>
+<rect data-card="note23" x="686.0" y="594.0" width="448.0" height="86.0" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-note23)">
+<rect x="686.0" y="594.0" width="448.0" height="34.0" fill="#FFFBEB"/>
+<rect x="686.0" y="594.0" width="448.0" height="3.5" fill="#B45309"/>
+<line x1="686.0" y1="628.0" x2="1134.0" y2="628.0" stroke="#FDE68A" stroke-width="1"/></g>
+<g transform="translate(699.0,604.0)"><path d="M8 1.5 L13.5 3.8 V8.2 C13.5 11.4 11.1 13.7 8 14.8 C4.9 13.7 2.5 11.4 2.5 8.2 V3.8 Z" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.7 8.1 L7.3 9.7 L10.6 6.4" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="note23" x="721.0" y="616.2" font-size="13.8" font-weight="700" fill="#0F172A">外部服务零二次调用保证</text>
+<rect x="1057.8" y="602.8" width="66.2" height="18" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1"/><text data-in="note23" x="1090.9" y="615.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#B45309">op-1 唯一</text>
+<circle cx="702.0" cy="643.3" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="note23" x="711.0" y="647.3" font-size="11.8" fill="#334155">Phase 2 重发请求在权威服务端即被 cmd_id 账本拦截</text>
+<circle cx="702.0" cy="663.3" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="note23" x="711.0" y="667.3" font-size="11.8" fill="#334155">Phase 3 回放只重演事实事件，绝不触发副作用执行器</text>
+</g>
 </g></svg>

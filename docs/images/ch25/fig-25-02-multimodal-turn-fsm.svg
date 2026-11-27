@@ -1,53 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="565" viewBox="0 0 1200 565" role="img" aria-labelledby="title desc">
-<title id="title">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</title><desc id="desc">展示 idle、listening、thinking、speaking、overlapping 与 degraded 状态之间的转移与 LiveKit 式适应性打断分流。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</title>
+<desc id="desc">展示 idle、listening、thinking、speaking、overlapping 与 degraded 状态之间的转移与适应性打断分流。</desc>
 <defs>
-<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
-<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
-<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
-<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
-<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+  <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>
+  </filter>
+  <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0F172A" flood-opacity="0.08"/>
+  </filter>
+  <marker id="arr-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#1E40AF"/></marker>
+  <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#0F766E"/></marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#B45309"/></marker>
+  <marker id="arr-crimson" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#BE123C"/></marker>
+  <marker id="arr-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#475569"/></marker>
 </defs>
-<rect width="1200" height="565" fill="#ffffff"/>
-<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
-<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</text>
-<rect x="65" y="235" width="165" height="86" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="147.5" y="265" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">idle</text>
-<text x="147.5" y="291" text-anchor="middle" font-size="15" fill="#2c3e55">等待用户输入</text>
-<text x="147.5" y="313" text-anchor="middle" font-size="15" fill="#2c3e55">无活跃生成</text>
-<rect x="310" y="235" width="205" height="86" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
-<text x="412.5" y="265" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">listening</text>
-<text x="412.5" y="291" text-anchor="middle" font-size="15" fill="#2c3e55">VAD + 增量 ASR</text>
-<text x="412.5" y="313" text-anchor="middle" font-size="15" fill="#2c3e55">语义端点判定(EOT)</text>
-<rect x="605" y="110" width="210" height="86" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="710.0" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">thinking / acting</text>
-<text x="710.0" y="166" text-anchor="middle" font-size="15" fill="#2c3e55">融合共享状态版本</text>
-<text x="710.0" y="188" text-anchor="middle" font-size="15" fill="#2c3e55">校验权限与工具</text>
-<rect x="605" y="345" width="210" height="86" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
-<text x="710.0" y="375" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">speaking</text>
-<text x="710.0" y="401" text-anchor="middle" font-size="15" fill="#2c3e55">流式文本/语音输出</text>
-<text x="710.0" y="423" text-anchor="middle" font-size="15" fill="#2c3e55">受 Ch24 gen_id 保护</text>
-<rect x="915" y="235" width="235" height="102" rx="10" fill="#fbeae8" stroke="#b83227" stroke-width="2"/>
-<text x="1032.5" y="265" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">overlapping (重叠判定)</text>
-<text x="1032.5" y="291" text-anchor="middle" font-size="12" fill="#2c3e55">backchannel(嗯嗯)→继续播报</text>
-<text x="1032.5" y="313" text-anchor="middle" font-size="12" fill="#2c3e55">barge-in→触发 Ch24 取消</text>
-<text x="1032.5" y="335" text-anchor="middle" font-size="12" fill="#2c3e55">显式文本输入→立即抢占</text>
-<rect x="310" y="455" width="505" height="76" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
-<text x="562.5" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#1b2a3d">degraded (优雅降级受控态)</text>
-<text x="562.5" y="511" text-anchor="middle" font-size="12" fill="#2c3e55">丢包&gt;=20%→text_only · 丢帧→audio+file · 同步漂移&gt;=120ms→字幕先行 · 陈旧传感器→人工复核</text>
-<line x1="230" y1="278" x2="310" y2="278" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<text x="270.0" y="270.0" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">检测到输入</text>
-<line x1="515" y1="255" x2="605" y2="155" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
-<text x="535" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">EOT 确认</text>
-<line x1="710" y1="196" x2="710" y2="345" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<text x="775" y="275" text-anchor="middle" font-size="14" font-weight="600" fill="#285b8e">流式输出开始</text>
-<line x1="815" y1="385" x2="915" y2="305" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
-<text x="895" y="375" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">播报期收到声学/文本</text>
-<path d="M 1030 337 L 1030 415 L 815 415" fill="none" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)" stroke-dasharray="7 5"/>
-<text x="940" y="434" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">附和/噪声→恢复播报</text>
-<path d="M 1030 235 L 1030 72 L 412 72 L 412 235" fill="none" stroke="#b83227" stroke-width="2.4" marker-end="url(#red)"/>
-<text x="720" y="62" text-anchor="middle" font-size="14" font-weight="600" fill="#b83227">真打断→flush 缓冲并转入新轮次 listening</text>
-<line x1="412" y1="321" x2="412" y2="455" stroke="#a96a16" stroke-width="2.4" marker-end="url(#amber)" stroke-dasharray="7 5"/>
-<text x="340" y="395" text-anchor="middle" font-size="14" font-weight="600" fill="#a96a16">模态故障/漂移</text>
-<line x1="560" y1="455" x2="640" y2="431" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)" stroke-dasharray="7 5"/>
-<text x="575" y="425" text-anchor="middle" font-size="14" font-weight="600" fill="#087e82">降级后继续服务</text>
+<g font-family="'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+<rect width="1200" height="650" fill="#FFFFFF"/>
+<rect x="36" y="30" width="202.4" height="20" rx="10" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+<text x="137.2" y="43.8" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700" fill="#0F766E">PART VI · CH25 TURN CONTROL</text>
+<text x="36" y="76" font-size="21.5" font-weight="700" fill="#0F172A">Fig-25-02 多模态轮次状态机（含重叠判定与优雅降级）</text>
+<text x="36" y="96" font-size="12.5" fill="#64748B">结合语义端点判定（EOT）、LiveKit 式适应性打断分流与四类模态故障降级策略，在全双工交互中守住秩序</text>
+<line x1="36" y1="106" x2="1164" y2="106" stroke="#E2E8F0" stroke-width="1.2"/>
+<g data-card-group="idl">
+<clipPath id="clip-idl"><rect x="36.0" y="266.0" width="174.0" height="96.0" rx="9"/></clipPath>
+<rect data-card="idl" x="36.0" y="266.0" width="174.0" height="96.0" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-idl)">
+<rect x="36.0" y="266.0" width="174.0" height="36.0" fill="#EFF6FF"/>
+<rect x="36.0" y="266.0" width="174.0" height="3.5" fill="#1E40AF"/>
+<line x1="36.0" y1="302.0" x2="210.0" y2="302.0" stroke="#BFDBFE" stroke-width="1"/></g>
+<g transform="translate(49.0,277.0)"><circle cx="8" cy="8" r="5.8" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 4.8 V8 L10.4 9.6" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="idl" x="71.0" y="289.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">idle</text>
+<rect x="164.8" y="275.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="idl" x="182.4" y="288.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#1E40AF">待机</text>
+<circle cx="52.0" cy="320.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="idl" x="61.0" y="324.7" font-size="12.2" fill="#334155">等待用户输入</text>
+<circle cx="52.0" cy="341.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="idl" x="61.0" y="345.7" font-size="12.2" fill="#334155">无活跃流式生成</text>
+</g>
+<g data-card-group="lis">
+<clipPath id="clip-lis"><rect x="284.0" y="266.0" width="206.0" height="96.0" rx="9"/></clipPath>
+<rect data-card="lis" x="284.0" y="266.0" width="206.0" height="96.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-lis)">
+<rect x="284.0" y="266.0" width="206.0" height="36.0" fill="#F0FDFA"/>
+<rect x="284.0" y="266.0" width="206.0" height="3.5" fill="#0F766E"/>
+<line x1="284.0" y1="302.0" x2="490.0" y2="302.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(297.0,277.0)"><path d="M2.5 8 V8 M5 5.2 V10.8 M8 2.8 V13.2 M11 5.2 V10.8 M13.5 7 V9" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="lis" x="319.0" y="289.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">listening</text>
+<rect x="444.8" y="275.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="lis" x="462.4" y="288.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">聆听</text>
+<circle cx="300.0" cy="320.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="lis" x="309.0" y="324.7" font-size="12.2" fill="#334155">VAD + 增量 ASR</text>
+<circle cx="300.0" cy="341.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="lis" x="309.0" y="345.7" font-size="12.2" fill="#334155">语义端点判定 (EOT)</text>
+</g>
+<g data-card-group="thk">
+<clipPath id="clip-thk"><rect x="576.0" y="174.0" width="204.0" height="94.0" rx="9"/></clipPath>
+<rect data-card="thk" x="576.0" y="174.0" width="204.0" height="94.0" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-thk)">
+<rect x="576.0" y="174.0" width="204.0" height="34.0" fill="#EFF6FF"/>
+<rect x="576.0" y="174.0" width="204.0" height="3.5" fill="#1E40AF"/>
+<line x1="576.0" y1="208.0" x2="780.0" y2="208.0" stroke="#BFDBFE" stroke-width="1"/></g>
+<g transform="translate(589.0,184.0)"><path d="M8 2 L9.6 6.4 L14 8 L9.6 9.6 L8 14 L6.4 9.6 L2 8 L6.4 6.4 Z" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="thk" x="611.0" y="196.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="12.4" font-weight="700" fill="#0F172A">thinking/acting</text>
+<rect x="734.8" y="182.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="thk" x="752.4" y="195.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#1E40AF">融合</text>
+<circle cx="592.0" cy="227.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="thk" x="601.0" y="231.7" font-size="12.2" fill="#334155">绑定共享状态版本</text>
+<circle cx="592.0" cy="247.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="thk" x="601.0" y="251.7" font-size="12.2" fill="#334155">校验权限与工具调用</text>
+</g>
+<g data-card-group="spk">
+<clipPath id="clip-spk"><rect x="576.0" y="344.0" width="204.0" height="94.0" rx="9"/></clipPath>
+<rect data-card="spk" x="576.0" y="344.0" width="204.0" height="94.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-spk)">
+<rect x="576.0" y="344.0" width="204.0" height="34.0" fill="#F0FDFA"/>
+<rect x="576.0" y="344.0" width="204.0" height="3.5" fill="#0F766E"/>
+<line x1="576.0" y1="378.0" x2="780.0" y2="378.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(589.0,354.0)"><path d="M3 6.2 H5.8 L9.5 3.2 V12.8 L5.8 9.8 H3 Z" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M11.6 5.6 A3.2 3.2 0 0 1 11.6 10.4" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="spk" x="611.0" y="366.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">speaking</text>
+<rect x="734.8" y="352.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="spk" x="752.4" y="365.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">播报</text>
+<circle cx="592.0" cy="397.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="spk" x="601.0" y="401.7" font-size="12.2" fill="#334155">流式文本 / 语音输出</text>
+<circle cx="592.0" cy="417.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="spk" x="601.0" y="421.7" font-size="12.2" fill="#334155">受 Ch24 gen_id 保护</text>
+</g>
+<g data-card-group="ovl">
+<clipPath id="clip-ovl"><rect x="908.0" y="232.0" width="256.0" height="128.0" rx="9"/></clipPath>
+<rect data-card="ovl" x="908.0" y="232.0" width="256.0" height="128.0" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-ovl)">
+<rect x="908.0" y="232.0" width="256.0" height="34.0" fill="#FFF1F2"/>
+<rect x="908.0" y="232.0" width="256.0" height="3.5" fill="#BE123C"/>
+<line x1="908.0" y1="266.0" x2="1164.0" y2="266.0" stroke="#FECDD3" stroke-width="1"/></g>
+<g transform="translate(921.0,242.0)"><path d="M9.2 1.5 L3.5 9 H8 L6.8 14.5 L12.5 7 H8 Z" stroke="#BE123C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="ovl" x="943.0" y="254.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">overlapping</text>
+<rect x="1097.6" y="240.8" width="56.4" height="18" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1"/><text data-in="ovl" x="1125.8" y="253.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#BE123C">重叠判定</text>
+<circle cx="924.0" cy="289.3" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="ovl" x="933.0" y="293.3" font-size="11.8" fill="#334155">附和 (嗯嗯) → 继续播报</text>
+<circle cx="924.0" cy="311.3" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="ovl" x="933.0" y="315.3" font-size="11.8" fill="#334155">真打断 → 触发 Ch24 取消</text>
+<circle cx="924.0" cy="333.3" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="ovl" x="933.0" y="337.3" font-size="11.8" fill="#334155">显式文本输入 → 立即抢占</text>
+</g>
+<g data-card-group="deg"><clipPath id="clip-deg-25"><rect x="36" y="508" width="1128" height="112" rx="10"/></clipPath><rect data-card="deg" x="36" y="508" width="1128" height="112" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4" filter="url(#card-shadow)"/><g clip-path="url(#clip-deg-25)"><rect x="36" y="508" width="1128" height="36" fill="#FFFBEB"/><rect x="36" y="508" width="1128" height="3.5" fill="#B45309"/><line x1="36" y1="544" x2="1164" y2="544" stroke="#FDE68A" stroke-width="1"/></g><g transform="translate(51.0,519.0)"><path d="M8 2.2 L14 13 H2 Z" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 6.4 V9.5 M8 11.4 V11.6" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><text data-in="deg" x="74" y="531.8" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="700" fill="#0F172A">degraded</text><text data-in="deg" x="152" y="531.8" font-size="13.0" font-weight="700" fill="#92400E">优雅降级受控态（四类模态异常确定性降级矩阵）</text></g>
+<rect x="57.0" y="556" width="258" height="50" rx="7" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/><text data-in="deg" x="69.0" y="576" font-size="11.8" font-weight="700" fill="#92400E">音频丢包 ≥ 20%</text><text data-in="deg" x="69.0" y="595" font-size="11.2" fill="#334155">降级为 text_only 文本通道</text>
+<rect x="333.0" y="556" width="258" height="50" rx="7" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/><text data-in="deg" x="345.0" y="576" font-size="11.8" font-weight="700" fill="#92400E">视觉持续丢帧</text><text data-in="deg" x="345.0" y="595" font-size="11.2" fill="#334155">切为 audio + file 显式引用</text>
+<rect x="609.0" y="556" width="258" height="50" rx="7" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/><text data-in="deg" x="621.0" y="576" font-size="11.8" font-weight="700" fill="#92400E">音画漂移 ≥ 120ms</text><text data-in="deg" x="621.0" y="595" font-size="11.2" fill="#334155">字幕先行，异步对齐语音</text>
+<rect x="885.0" y="556" width="258" height="50" rx="7" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/><text data-in="deg" x="897.0" y="576" font-size="11.8" font-weight="700" fill="#92400E">传感器读数陈旧</text><text data-in="deg" x="897.0" y="595" font-size="11.2" fill="#334155">冻结自动写操作 → 人工复核</text>
+<line x1="210" y1="314.0" x2="282" y2="314.0" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<text x="247.0" y="304.0" text-anchor="middle" font-size="11.0" font-weight="700" fill="#1E40AF">检测到输入</text>
+<path d="M 490.0 294.0 L 536.0 294.0 Q 544.0 294.0 544.0 286.0 L 544.0 229.0 Q 544.0 221.0 552.0 221.0 L 574.0 221.0" fill="none" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="491.2" y="188.0" width="69.7" height="22.0" rx="11" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25"/><text x="526.0" y="203.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#0F766E">EOT 确认</text></g>
+<line x1="678.0" y1="268" x2="678.0" y2="342" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="633.7" y="295.0" width="88.7" height="22.0" rx="11" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25"/><text x="678.0" y="310.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#1E40AF">流式输出开始</text></g>
+<path d="M 780.0 372.0 L 836.0 372.0 Q 844.0 372.0 844.0 364.0 L 844.0 304.0 Q 844.0 296.0 852.0 296.0 L 906.0 296.0" fill="none" stroke="#BE123C" stroke-width="2" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="792.2" y="249.0" width="103.6" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="844.0" y="264.0" text-anchor="middle" font-size="10.4" font-weight="600" fill="#BE123C">播报期声学/文本</text></g>
+<path d="M 1036.0 360.0 L 1036.0 406.0 Q 1036.0 416.0 1026.0 416.0 L 782.0 416.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-teal)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="889.7" y="405.0" width="156.5" height="22.0" rx="11" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25"/><text x="968.0" y="420.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#0F766E">附和 / 噪声 → 恢复播报</text></g>
+<path d="M 1036.0 232.0 L 1036.0 144.0 Q 1036.0 134.0 1026.0 134.0 L 397.0 134.0 Q 387.0 134.0 387.0 144.0 L 387.0 264.0" fill="none" stroke="#BE123C" stroke-width="2.1" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="574.7" y="123.0" width="282.7" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="716.0" y="138.0" text-anchor="middle" font-size="11.0" font-weight="600" fill="#BE123C">真打断 → flush 缓冲并切入新轮次 listening</text></g>
+<line x1="387.0" y1="362" x2="387.0" y2="506" stroke="#B45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-amber)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="321.2" y="424.0" width="131.7" height="22.0" rx="11" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25"/><text x="387.0" y="439.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#B45309">模态故障 / 同步漂移</text></g>
+<line x1="678.0" y1="508" x2="678.0" y2="440" stroke="#0F766E" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-teal)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="627.9" y="462.0" width="100.1" height="22.0" rx="11" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25"/><text x="678.0" y="477.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#0F766E">降级后继续服务</text></g>
 </g></svg>

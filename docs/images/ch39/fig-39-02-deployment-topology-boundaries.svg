@@ -1,40 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
-<title id="title">Fig-39-02 Local、Test 与 Staging 三档部署拓扑及身份/数据/网络边界</title><desc id="desc">并列比较三档环境的制品、身份、秘密、数据、网络与可观测边界。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+<title id="title">Fig-39-02 Local、Test 与 Staging 三档部署拓扑及身份/数据/网络边界</title>
+<desc id="desc">并列比较三档环境的制品、身份、秘密、数据、网络与可观测边界。</desc>
 <defs>
-<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#285b8e"/></marker>
-<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#087e82"/></marker>
-<marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a96a16"/></marker>
-<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b83227"/></marker>
-<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#5c6c80"/></marker>
+  <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>
+  </filter>
+  <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0F172A" flood-opacity="0.08"/>
+  </filter>
+  <marker id="arr-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#1E40AF"/></marker>
+  <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#0F766E"/></marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#B45309"/></marker>
+  <marker id="arr-crimson" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#BE123C"/></marker>
+  <marker id="arr-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#475569"/></marker>
 </defs>
-<rect width="1200" height="470" fill="#ffffff"/>
-<g font-family="Microsoft YaHei, Noto Sans CJK SC, SimHei, sans-serif" fill="#203047">
-<text x="36" y="46" font-size="25" font-weight="700" fill="#1b2a3d">Fig-39-02 Local、Test 与 Staging 三档部署拓扑及身份/数据/网络边界</text>
-<rect x="45" y="100" width="350" height="290" rx="10" fill="#e4edf7" stroke="#285b8e" stroke-width="2"/>
-<text x="220.0" y="130" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">Local 本地档位</text>
-<text x="220.0" y="156" text-anchor="middle" font-size="14" fill="#2c3e55">制品：本地工作区 + run_manifest.toml</text>
-<text x="220.0" y="178" text-anchor="middle" font-size="14" fill="#2c3e55">身份：trusted_local_driver（无认证）</text>
-<text x="220.0" y="200" text-anchor="middle" font-size="14" fill="#2c3e55">秘密：零密钥（纯离线确定性 mock）</text>
-<text x="220.0" y="222" text-anchor="middle" font-size="14" fill="#2c3e55">数据：隔离 tmp 目录 SQLite</text>
-<text x="220.0" y="244" text-anchor="middle" font-size="14" fill="#2c3e55">网络：deny_all（完全离线）</text>
-<text x="220.0" y="266" text-anchor="middle" font-size="14" fill="#2c3e55">观测：本地 JSONL 事件日志</text>
-<rect x="425" y="100" width="350" height="290" rx="10" fill="#e4f3f0" stroke="#087e82" stroke-width="2"/>
-<text x="600.0" y="130" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">Test 测试沙箱档位</text>
-<text x="600.0" y="156" text-anchor="middle" font-size="14" fill="#2c3e55">制品：CI 不可变构建包 + SHA-256</text>
-<text x="600.0" y="178" text-anchor="middle" font-size="14" fill="#2c3e55">身份：临时只读 CI 服务账号</text>
-<text x="600.0" y="200" text-anchor="middle" font-size="14" fill="#2c3e55">秘密：掩码环境变量 + TA-04 扫描</text>
-<text x="600.0" y="222" text-anchor="middle" font-size="14" fill="#2c3e55">数据：每任务新建沙箱库，跑完销毁</text>
-<text x="600.0" y="244" text-anchor="middle" font-size="14" fill="#2c3e55">网络：仅 loopback mock 服务</text>
-<text x="600.0" y="266" text-anchor="middle" font-size="14" fill="#2c3e55">观测：JUnit + OTel Span + 回归报告</text>
-<rect x="805" y="100" width="350" height="290" rx="10" fill="#fdf4e7" stroke="#a96a16" stroke-width="2"/>
-<text x="980.0" y="130" text-anchor="middle" font-size="18" font-weight="700" fill="#1b2a3d">Staging 预发布档位</text>
-<text x="980.0" y="156" text-anchor="middle" font-size="14" fill="#2c3e55">制品：签名发布包（代码+配置+模式）</text>
-<text x="980.0" y="178" text-anchor="middle" font-size="14" fill="#2c3e55">身份：作用域租户令牌 + 审批服务</text>
-<text x="980.0" y="200" text-anchor="middle" font-size="14" fill="#2c3e55">秘密：Secret Manager 注入不落盘</text>
-<text x="980.0" y="222" text-anchor="middle" font-size="14" fill="#2c3e55">数据：预发布独立库 + 回滚前快照</text>
-<text x="980.0" y="244" text-anchor="middle" font-size="14" fill="#2c3e55">网络：仅白名单预发布依赖出站</text>
-<text x="980.0" y="266" text-anchor="middle" font-size="14" fill="#2c3e55">观测：SLO 仪表板 + 审计 + 回滚演练</text>
-<line x1="395" y1="245" x2="425" y2="245" stroke="#285b8e" stroke-width="2.4" marker-end="url(#blue)"/>
-<line x1="775" y1="245" x2="805" y2="245" stroke="#087e82" stroke-width="2.4" marker-end="url(#teal)"/>
-<text x="600" y="438" text-anchor="middle" font-size="15" fill="#a96a16">边界声明：三档部署边界沿用附录 D；预发布演练不替代真实生产集群容灾、跨区多活或真实组织 IAM 治理</text>
+<g font-family="'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+<rect width="1200" height="510" fill="#FFFFFF"/>
+<rect x="36" y="30" width="267.5" height="20" rx="10" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+<text x="169.7" y="43.8" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700" fill="#0F766E">PART IX · CH39 ENVIRONMENT BOUNDARIES</text>
+<text x="36" y="76" font-size="21.5" font-weight="700" fill="#0F172A">Fig-39-02 Local、Test 与 Staging 三档部署拓扑及身份 / 数据 / 网络边界</text>
+<text x="36" y="96" font-size="12.5" fill="#64748B">逐档收紧制品不可变性、最小权限身份、秘密注入、数据隔离与网络出站白名单，杜绝跨环境污染</text>
+<line x1="36" y1="106" x2="1164" y2="106" stroke="#E2E8F0" stroke-width="1.2"/>
+<g data-card-group="loc"><clipPath id="clip-env-loc"><rect x="36.0" y="126" width="346" height="290" rx="10"/></clipPath><rect data-card="loc" x="36.0" y="126" width="346" height="290" rx="10" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.4" filter="url(#card-shadow)"/><g clip-path="url(#clip-env-loc)"><rect x="36.0" y="126" width="346" height="44" fill="#EFF6FF"/><rect x="36.0" y="126" width="346" height="4" fill="#1E40AF"/><line x1="36.0" y1="170" x2="382.0" y2="170" stroke="#BFDBFE" stroke-width="1"/></g><g transform="translate(50.0,141.0)"><rect x="4" y="4" width="8" height="8" rx="1.5" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="6.5" y="6.5" width="3" height="3" rx="0.5" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M6 1.8 V4 M10 1.8 V4 M6 12 V14.2 M10 12 V14.2 M1.8 6 H4 M1.8 10 H4 M12 6 H14.2 M12 10 H14.2" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><text data-in="loc" x="74.0" y="153.5" font-size="14.2" font-weight="700" fill="#0F172A">Local 本地档位</text><rect x="316.0" y="139" width="54" height="19" rx="9.5" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="loc" x="343.0" y="152.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.8" font-weight="700" fill="#1E40AF">TIER 1</text>
+<rect x="50.0" y="186.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="200.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">制品</text><text data-in="loc" x="102.0" y="201.0" font-size="11.8" fill="#334155">本地工作区 + run_manifest.toml</text>
+<line x1="50.0" y1="216.0" x2="368.0" y2="216.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="50.0" y="224.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="238.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">身份</text><text data-in="loc" x="102.0" y="239.0" font-size="11.8" fill="#334155">trusted_local_driver（无认证）</text>
+<line x1="50.0" y1="254.0" x2="368.0" y2="254.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="50.0" y="262.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="276.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">秘密</text><text data-in="loc" x="102.0" y="277.0" font-size="11.8" fill="#334155">零密钥（纯离线确定性 mock）</text>
+<line x1="50.0" y1="292.0" x2="368.0" y2="292.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="50.0" y="300.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="314.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">数据</text><text data-in="loc" x="102.0" y="315.0" font-size="11.8" fill="#334155">隔离 tmp 目录独立 SQLite</text>
+<line x1="50.0" y1="330.0" x2="368.0" y2="330.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="50.0" y="338.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="352.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">网络</text><text data-in="loc" x="102.0" y="353.0" font-size="11.8" fill="#334155">deny_all（完全离线断网）</text>
+<line x1="50.0" y1="368.0" x2="368.0" y2="368.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="50.0" y="376.0" width="42" height="22" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.85"/><text data-in="loc" x="71.0" y="390.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#1E3A8A">观测</text><text data-in="loc" x="102.0" y="391.0" font-size="11.8" fill="#334155">本地 JSONL 确定性事件日志</text>
+</g>
+<line x1="382" y1="271.0" x2="425" y2="271.0" stroke="#1E40AF" stroke-width="2.1" marker-end="url(#arr-navy)"/>
+<text x="404.5" y="261.0" text-anchor="middle" font-size="10.4" font-weight="700" fill="#1E40AF">PR 提交</text>
+<g data-card-group="tst"><clipPath id="clip-env-tst"><rect x="427.0" y="126" width="346" height="290" rx="10"/></clipPath><rect data-card="tst" x="427.0" y="126" width="346" height="290" rx="10" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.4" filter="url(#card-shadow)"/><g clip-path="url(#clip-env-tst)"><rect x="427.0" y="126" width="346" height="44" fill="#F0FDFA"/><rect x="427.0" y="126" width="346" height="4" fill="#0F766E"/><line x1="427.0" y1="170" x2="773.0" y2="170" stroke="#99F6E4" stroke-width="1"/></g><g transform="translate(441.0,141.0)"><path d="M2.5 4.2 H9.5 M5 8 H13.5 M7.5 11.8 H12.5" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="2.5" cy="4.2" r="0.9" fill="#0F766E"/><circle cx="5" cy="8" r="0.9" fill="#0F766E"/><circle cx="7.5" cy="11.8" r="0.9" fill="#0F766E"/></g><text data-in="tst" x="465.0" y="153.5" font-size="14.2" font-weight="700" fill="#0F172A">Test 测试沙箱档位</text><rect x="707.0" y="139" width="54" height="19" rx="9.5" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="tst" x="734.0" y="152.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.8" font-weight="700" fill="#0F766E">TIER 2</text>
+<rect x="441.0" y="186.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="200.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">制品</text><text data-in="tst" x="493.0" y="201.0" font-size="11.8" fill="#334155">CI 不可变构建包 + SHA-256</text>
+<line x1="441.0" y1="216.0" x2="759.0" y2="216.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="441.0" y="224.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="238.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">身份</text><text data-in="tst" x="493.0" y="239.0" font-size="11.8" fill="#334155">临时只读 CI 服务账号</text>
+<line x1="441.0" y1="254.0" x2="759.0" y2="254.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="441.0" y="262.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="276.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">秘密</text><text data-in="tst" x="493.0" y="277.0" font-size="11.8" fill="#334155">掩码环境变量 + TA-04 扫描</text>
+<line x1="441.0" y1="292.0" x2="759.0" y2="292.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="441.0" y="300.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="314.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">数据</text><text data-in="tst" x="493.0" y="315.0" font-size="11.8" fill="#334155">每任务新建沙箱库，跑完销毁</text>
+<line x1="441.0" y1="330.0" x2="759.0" y2="330.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="441.0" y="338.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="352.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">网络</text><text data-in="tst" x="493.0" y="353.0" font-size="11.8" fill="#334155">仅允许 loopback mock 服务</text>
+<line x1="441.0" y1="368.0" x2="759.0" y2="368.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="441.0" y="376.0" width="42" height="22" rx="5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.85"/><text data-in="tst" x="462.0" y="390.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#115E59">观测</text><text data-in="tst" x="493.0" y="391.0" font-size="11.8" fill="#334155">JUnit + OTel Span + 回归报告</text>
+</g>
+<line x1="773" y1="271.0" x2="816" y2="271.0" stroke="#0F766E" stroke-width="2.1" marker-end="url(#arr-teal)"/>
+<text x="795.5" y="261.0" text-anchor="middle" font-size="10.4" font-weight="700" fill="#0F766E">门禁放行</text>
+<g data-card-group="stg"><clipPath id="clip-env-stg"><rect x="818.0" y="126" width="346" height="290" rx="10"/></clipPath><rect data-card="stg" x="818.0" y="126" width="346" height="290" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4" filter="url(#card-shadow)"/><g clip-path="url(#clip-env-stg)"><rect x="818.0" y="126" width="346" height="44" fill="#FFFBEB"/><rect x="818.0" y="126" width="346" height="4" fill="#B45309"/><line x1="818.0" y1="170" x2="1164.0" y2="170" stroke="#FDE68A" stroke-width="1"/></g><g transform="translate(832.0,141.0)"><rect x="2.5" y="2.5" width="11" height="4.5" rx="1.2" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="2.5" y="9" width="11" height="4.5" rx="1.2" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="5" cy="4.8" r="0.7" fill="#B45309"/><circle cx="5" cy="11.2" r="0.7" fill="#B45309"/></g><text data-in="stg" x="856.0" y="153.5" font-size="14.2" font-weight="700" fill="#0F172A">Staging 预发布档位</text><rect x="1098.0" y="139" width="54" height="19" rx="9.5" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1"/><text data-in="stg" x="1125.0" y="152.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.8" font-weight="700" fill="#B45309">TIER 3</text>
+<rect x="832.0" y="186.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="200.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">制品</text><text data-in="stg" x="884.0" y="201.0" font-size="11.8" fill="#334155">签名发布包（代码+配置+模式）</text>
+<line x1="832.0" y1="216.0" x2="1150.0" y2="216.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="832.0" y="224.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="238.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">身份</text><text data-in="stg" x="884.0" y="239.0" font-size="11.8" fill="#334155">作用域租户令牌 + 独立审批服务</text>
+<line x1="832.0" y1="254.0" x2="1150.0" y2="254.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="832.0" y="262.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="276.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">秘密</text><text data-in="stg" x="884.0" y="277.0" font-size="11.8" fill="#334155">Secret Manager 注入不落盘</text>
+<line x1="832.0" y1="292.0" x2="1150.0" y2="292.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="832.0" y="300.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="314.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">数据</text><text data-in="stg" x="884.0" y="315.0" font-size="11.8" fill="#334155">预发布独立库 + 回滚前快照</text>
+<line x1="832.0" y1="330.0" x2="1150.0" y2="330.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="832.0" y="338.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="352.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">网络</text><text data-in="stg" x="884.0" y="353.0" font-size="11.8" fill="#334155">仅白名单预发布依赖出站</text>
+<line x1="832.0" y1="368.0" x2="1150.0" y2="368.0" stroke="#F1F5F9" stroke-width="1"/>
+<rect x="832.0" y="376.0" width="42" height="22" rx="5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.85"/><text data-in="stg" x="853.0" y="390.8" text-anchor="middle" font-size="11.2" font-weight="700" fill="#92400E">观测</text><text data-in="stg" x="884.0" y="391.0" font-size="11.8" fill="#334155">SLO 仪表板 + 审计 + 回滚演练</text>
+</g>
+<g data-footer="true"><clipPath id="clip-ft-438"><rect x="36" y="438.0" width="1128" height="42.0" rx="8"/></clipPath><rect x="36" y="438.0" width="1128" height="42.0" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.2"/><g clip-path="url(#clip-ft-438)"><rect x="36" y="438.0" width="4.5" height="42.0" fill="#B45309"/></g><text x="54" y="463.5" font-size="12.2" font-weight="700" fill="#92400E">边界声明：</text><text x="126.7" y="463.5" font-size="12.2" fill="#334155">三档部署边界沿用附录 D；本演练覆盖本地到预发布完整门禁，不替代真实生产集群容灾、跨区多活或组织级 IAM 治理。</text></g>
 </g></svg>
