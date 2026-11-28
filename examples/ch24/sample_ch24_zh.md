@@ -7,16 +7,23 @@
 从仓库根目录运行：
 
 ```powershell
+# 1. 离线必跑：40 项确定性离散事件模拟（Exp-24-01）与本地回环 HTTP SSE 墙钟实测（Exp-24-02）
 python examples/ch24/stream_interrupt_demo.py
+python examples/ch24/realtime_sse_benchmark.py
 python -m pytest tests/ch22_25/test_part6_runtime.py -q
+
+# 2. 可选在线实测：连接真实 OpenAI 兼容 HTTPS SSE 端点（Exp-24-03，需自行配置环境变量）
+# $env:OPENAI_API_KEY="..."; $env:OPENAI_BASE_URL="https://.../v1"; $env:OPENAI_MODEL="gpt-6.2-astra"
+# python examples/ch24/live_api_sse_benchmark.py
 ```
 
 ## 2. 产出文件清单
 
-- `examples/ch24/stream_interrupt_demo.py`：40 个确定性取消时序用例与三组对照（`ui_only_stop`、`cancel_propagation_only`、`cancel_plus_gen_and_flush`）的实现与评测脚本。
-- `examples/ch24/interrupt_timeline.jsonl`：全部 120 条（40 用例 × 3 对照）含五时间点（`t0`—`t4`）、旧片段统计、迟到回调泄露标记与验收判定原因的原始事件日志。
-- `examples/ch24/results/ch24_summary.json`：三组对照的 P50/P95/P99/Max 打断延迟、旧输出残留、资源释放率与通过数汇总。
-- `docs/images/ch24/fig-24-03-interrupt-tail-latency.svg`：由 `interrupt_timeline.jsonl` 真实实验日志直接生成的打断尾延迟分布图。
+- `examples/ch24/stream_interrupt_demo.py`：`Exp-24-01`，40 个确定性取消时序用例与三组对照（`ui_only_stop`、`cancel_propagation_only`、`cancel_plus_gen_and_flush`）的离散事件模拟脚本。
+- `examples/ch24/interrupt_timeline.jsonl` & `results/ch24_summary.json`：`Exp-24-01` 全部 120 条（40 用例 × 3 对照）离散事件原始日志与分位数汇总。
+- `examples/ch24/realtime_sse_benchmark.py` & `results/realtime_sse_wallclock.json`：`Exp-24-02`，本机 `127.0.0.1` 真实 HTTP/1.1 SSE + `asyncio.Queue` 墙钟实测（36 次，零密钥离线可复现）。
+- `examples/ch24/live_api_sse_benchmark.py` & `results/live_llm_sse_wallclock.json`：`Exp-24-03`，真实在线大模型（`gpt-6.2-astra`）HTTPS/TLS SSE 墙钟实测脚本与脱敏汇总（不含任何密钥或私有主机地址；CI 默认跳过）。
+- `docs/images/ch24/fig-24-03-interrupt-tail-latency.svg`：由 `interrupt_timeline.jsonl` 离散事件模拟日志直接生成的打断尾延迟分布图。
 
 ## 3. 样章独立验收边界
 

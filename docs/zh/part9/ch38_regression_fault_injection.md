@@ -14,11 +14,11 @@ updated: 2026-11-27
 
 > **工程实践章节**：本章属于团队保留扩展篇，直接复用 [Ch36](ch36_reference_implementation.md) 的唯一共享核心 `examples/ch36/src/book_reference/` 与 [Ch37](ch37_agent_testing.md) 的行为测试资产，提供可直接运行的切片回归门禁、OpenTelemetry GenAI 风格轨迹断言与 9 类沙箱故障注入套件。所有结果均在本地隔离沙箱与确定性模拟端点下测得，仅证明控制逻辑与门禁机制，不代表真实模型能力评测。
 
-**摘要**　智能体系统迭代中，一次看似无害的提示润色、政策阈值调整或客户端重试改动，往往能在人工演示里表现流畅，却暗中击穿高风险审批边界。本章从“人工演示掩盖风险切片退化”的教学场景出发，将 [Ch26](../part7/ch26_evaluation_methods.md) 的分层指标、[Ch28](../part7/ch28_reliability_failure.md) 的故障分类与 OpenTelemetry GenAI 语义规范落成可自动执行的 CI 质量门禁。我们在 `examples/ch38/` 下构建了涵盖 3 个风险切片 12 项黄金任务的回归集、区分稳定字段与可波动字段的五条轨迹断言，以及 9 类本地沙箱故障注入，并对基线与三类受控回归候选开展对照实测。结果表明，仅看最终答复的评估脚本把越权写入的提示回归误判为 1.0 通过，而本章切片门禁与独立数据库、轨迹断言全部准确拦截并自动定位到模型与提示层、配置层或工具运行时层，9 类沙箱故障注入也全部通过业务恢复验收。
+**摘要**　智能体系统迭代中，一次看似无害的提示润色、政策阈值调整或客户端重试改动，往往能在人工演示里表现流畅，却暗中击穿高风险审批边界。本章从“人工演示掩盖风险切片退化”的教学场景出发，将 [Ch26](../part7/ch26_evaluation_methods.md) 的分层指标、[Ch28](../part7/ch28_reliability_failure.md) 的故障分类与 OpenTelemetry GenAI 语义规范落成可自动执行的 CI 质量门禁。我们在 `examples/ch38/` 下构建了涵盖 3 个风险切片 12 项黄金任务的回归集、区分稳定字段与可波动字段的五条轨迹断言，以及 9 类本地沙箱故障注入，并对基线与三类受控回归候选开展沙箱回归对照。结果表明，仅看最终答复的评估脚本把越权写入的提示回归误判为 1.0 通过，而本章切片门禁与独立数据库、轨迹断言全部准确拦截并自动定位到模型与提示层、配置层或工具运行时层，9 类沙箱故障注入也全部通过业务恢复验收。
 
 **关键词**　评估回归（evaluation regression）；风险切片（risk slices）；轨迹回放与差异（trajectory diffing）；可观测断言（observability assertions）；故障注入（fault injection）；质量门禁（quality gate）；OpenTelemetry GenAI；确定性验证器（deterministic verifier）。
 
-本章拟定主笔由主编统筹，内部执笔学生 F，独立审稿学生 A，当前版本为 `zh-draft-0.3`（2026-11-27），无商业利益冲突。先修知识包括 [Ch26 智能体评估方法论](../part7/ch26_evaluation_methods.md)、[Ch27 性能剖析](../part7/ch27_benchmarking_capacity.md)、[Ch28 可靠性与故障工程](../part7/ch28_reliability_failure.md)、[Ch30 生产治理](../part7/ch30_production_governance.md)、[Ch36](ch36_reference_implementation.md) 与 [Ch37](ch37_agent_testing.md)。运行环境为 Python 3.11+（本轮实测 Python 3.13.7 + PyYAML + 标准库 SQLite），零密钥离线可运行；入口命令为 `python examples/ch38/regression_runner/runner.py` 与 `python -m pytest tests/ch38_39/test_part9_engineering.py -q`；产物与夹具位于 `examples/ch38/`，采用仓库 MIT 许可。正文包含 `Fig-38-01` 至 `Fig-38-03` 与 `Tab-38-01`、`Tab-38-02`，28 等效页为混排预算。
+本章拟定主笔由主编统筹，内部执笔学生 F，独立审稿学生 A，当前版本为 `zh-draft-0.3`（2026-11-27），无商业利益冲突。先修知识包括 [Ch26 智能体评估方法论](../part7/ch26_evaluation_methods.md)、[Ch27 性能剖析](../part7/ch27_benchmarking_capacity.md)、[Ch28 可靠性与故障工程](../part7/ch28_reliability_failure.md)、[Ch30 生产治理](../part7/ch30_production_governance.md)、[Ch36](ch36_reference_implementation.md) 与 [Ch37](ch37_agent_testing.md)。运行环境为 Python 3.11+（本轮验证环境 Python 3.13.7 + PyYAML + 标准库 SQLite），零密钥离线可运行；入口命令为 `python examples/ch38/regression_runner/runner.py` 与 `python -m pytest tests/ch38_39/test_part9_engineering.py -q`；产物与夹具位于 `examples/ch38/`，采用仓库 MIT 许可。正文包含 `Fig-38-01` 至 `Fig-38-03` 与 `Tab-38-01`、`Tab-38-02`，28 等效页为混排预算。
 
 ---
 
@@ -32,7 +32,7 @@ updated: 2026-11-27
 
 将候选运行的事件轨迹与基线并列展开，故障分叉点在几秒内就暴露无遗：在第 2 步模型提案阶段，原本应输出 `needs_approval` 的 350 元申请被错判为 `eligible`，紧接着第 3 步被弱化的策略门槛放行了 `execute_tool` 写跨度，最终独立读取 `service.sqlite` 发现实际工单数为 1、而预期应为 0。
 
-要彻底堵住这类“演示好看、上线闯祸”的盲区，团队必须把验收从人工抽查升级为三道自动防线：把黄金任务按风险切片隔离并禁止对关键切片发放豁免；将 OpenTelemetry GenAI 风格的轨迹断言与独立业务库对账写进 CI 门禁；在临时沙箱里常态化执行多类故障注入验证异常恢复。在后文实测中，提示回归、配置漂移与重复写入三类受控缺陷被 100% 阻断并自动归因至对应责任层，9 类沙箱故障注入全部通过恢复验收。需要指出的是，本章基础套件运行在确定性模拟适配器之上，真实大模型的跨批次随机波动仍须叠加 [Ch26](../part7/ch26_evaluation_methods.md) 的多轮采样统计。
+要彻底堵住这类“演示好看、上线闯祸”的盲区，团队必须把验收从人工抽查升级为三道自动防线：把黄金任务按风险切片隔离并禁止对关键切片发放豁免；将 OpenTelemetry GenAI 风格的轨迹断言与独立业务库对账写进 CI 门禁；在临时沙箱里常态化执行多类故障注入验证异常恢复。在后文沙箱回归实验中，提示回归、配置漂移与重复写入三类受控缺陷被 100% 阻断并自动归因至对应责任层，9 类沙箱故障注入全部通过恢复验收。需要指出的是，本章基础套件运行在确定性模拟适配器之上，真实大模型的跨批次随机波动仍须叠加 [Ch26](../part7/ch26_evaluation_methods.md) 的多轮采样统计。
 
 ### 38.1.2 开源工程共识：用确定性状态与轨迹验证取代文本拍脑袋
 
@@ -88,11 +88,11 @@ OpenTelemetry GenAI Semantic Conventions[^r38-otel] 为智能体遥测确立了�
 
 ## 38.4 沙箱故障注入与业务恢复验证
 
-借鉴混沌工程原则[^r38-chaos]，在系统里主动制造故障前必须先锁死**爆炸半径**（blast radius）——也就是故障最坏情况下可能波及的最大影响范围。本章全部 9 类故障注入 `FI-01` 至 `FI-09` 均运行在临时隔离目录的新建本地 SQLite 实例上，绝不触碰任何共享存储或外部真实网络服务；只要任何写操作企图逸出沙箱，或单次注入诱发未授权与重复工单，演练立刻中止并保留现场。更重要的是，每项故障的恢复验收都不看“进程是否还活着”，而是直接检查外部业务库与事件日志里的客观业务事实。表 **Tab-38-01** 列出了全部 9 类故障的注入位置、预期防护与本轮实测验收结果。
+借鉴混沌工程原则[^r38-chaos]，在系统里主动制造故障前必须先锁死**爆炸半径**（blast radius）——也就是故障最坏情况下可能波及的最大影响范围。本章全部 9 类故障注入 `FI-01` 至 `FI-09` 均运行在临时隔离目录的新建本地 SQLite 实例上，绝不触碰任何共享存储或外部真实网络服务；只要任何写操作企图逸出沙箱，或单次注入诱发未授权与重复工单，演练立刻中止并保留现场。更重要的是，每项故障的恢复验收都不看“进程是否还活着”，而是直接检查外部业务库与事件日志里的客观业务事实。表 **Tab-38-01** 列出了全部 9 类故障的注入位置、预期防护与本轮沙箱演练验收结果。
 
-**Tab-38-01　九类沙箱故障注入矩阵与实测恢复验收（来源：`examples/ch38/fault_injection_matrix.yaml` 与 `ch38_regression_results.json`）。**
+**Tab-38-01　九类沙箱故障注入矩阵与沙箱恢复验收（来源：`examples/ch38/fault_injection_matrix.yaml` 与 `ch38_regression_results.json`）。**
 
-| 故障 ID | 故障类别 | 注入位置 | 沙箱范围与停止条件 | 期望系统防护 | 业务恢复实测结果 |
+| 故障 ID | 故障类别 | 注入位置 | 沙箱范围与停止条件 | 期望系统防护 | 沙箱恢复验收结果 |
 | --- | --- | --- | --- | --- | --- |
 | `FI-01` | `model_timeout` | `model.propose` | 单沙箱临时库，写逸出即停 | 拒绝建单意图，零外部工单 | 防护触发，工单 0，**PASS** |
 | `FI-02` | `tool_lookup_timeout` | `service.lookup` | 同上 | 保持 `pending` 与 `outcome_unknown`，禁盲目重发写入 | 防护触发，工单 0，**PASS** |
@@ -106,17 +106,17 @@ OpenTelemetry GenAI Semantic Conventions[^r38-otel] 为智能体遥测确立了�
 
 ---
 
-## 38.5 回归门禁实测与十项工程实验记录
+## 38.5 沙箱回归门禁与十项工程实验记录
 
 ### 38.5.1 实验十项工程规范
 
 按照第九篇工程实验十项统一约定，`Exp-38-01` 的完整复现边界如下：学习目标是复用共享参考核心搭建切片回归门禁、轨迹差异定位与 9 类沙箱故障注入；先决章节为 Ch26、Ch28、Ch36 与 Ch37；运行环境为 Python 3.11+ 与 PyYAML，离线零密钥；输入数据为 `examples/ch38/` 下的黄金切片、故障矩阵、轨迹断言配置及 `examples/ch36/src/book_reference/`；操作步骤为在仓库根目录运行 `python examples/ch38/regression_runner/runner.py`；预期结果为基线全部通过、三类受控缺陷候选全部阻断并精准定位缺陷层、9 类故障全部恢复通过；失败定位直接核查 `examples/ch38/results/ch38_regression_results.json` 中的事件链、实际工单数与 `trace_errors`；自动化测试命令为 `python -m pytest tests/ch38_39/test_part9_engineering.py -q`；扩展作业与 100 分评分依据见第 38.6.4 节。
 
-### 38.5.2 三类受控变更与“仅看最终答复”实测对照
+### 38.5.2 三类受控变更与“仅看最终答复”沙箱对照
 
-表 **Tab-38-02** 直接取自 `examples/ch38/regression_report.md` 的实测输出。
+表 **Tab-38-02** 直接取自 `examples/ch38/regression_report.md` 的沙箱回归输出。
 
-**Tab-38-02　基线与三类受控变更候选的质量门禁实测报告（数据源：`examples/ch38/results/ch38_regression_results.json`）。**
+**Tab-38-02　基线与三类受控变更候选的沙箱质量门禁报告（数据源：`examples/ch38/results/ch38_regression_results.json`）。**
 
 | 候选版本 | 门禁判决 | 自动归因缺陷层 | `standard_eligible` 通过率 | `high_risk_approval` 通过率 | `ineligible_auth` 通过率 | 未授权写入 | 重复副作用 | 仅看最终答复高风险通过率 | 责任与处置 |
 | --- | :---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |

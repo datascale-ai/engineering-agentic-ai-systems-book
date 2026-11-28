@@ -28,7 +28,7 @@ $$\text{Agent} = \text{Model (Cognition)} + \text{Harness (Runtime Infrastructur
 | --- | ---: | --- | --- |
 | [Ch22 智能体编排与执行运行时](ch22_orchestration_runtime.md) | 32 页 | 将任务图落实为有资源边界的异步运行时；掌握 DAG 调度、有界公平队列、租户隔离、worker 租约接管与控制面取消 | 运行时分层契约、`async_runtime.py`、`runtime_config.yaml` 与负载报告 |
 | [Ch23 会话、事件与状态机](ch23_sessions_events_state.md) | 30 页 | 将长会话建模为显式状态机与追加式事件日志；实现确定性归约器、快照加增量回放、v1 到 v2 模式升级与零重复副作用重连 | `session_state_machine.yaml`、`event_schema.json`、`session_replay.py`（送入附录 C） |
-| [Ch24 流式流水线、流量控制与用户打断](ch24_streaming_interrupts.md) | 34 页 | **提案指定样章**。设计多通道增量流、高低水位背压缓冲、带外取消传播、`generation_id` 围栏与五时间点打断延迟评测 | `stream_interrupt_demo.py`、`interrupt_timeline.jsonl`、样章验收清单与实测尾延迟图 |
+| [Ch24 流式流水线、流量控制与用户打断](ch24_streaming_interrupts.md) | 34 页 | **提案指定样章**。设计多通道增量流、高低水位背压缓冲、带外取消传播、`generation_id` 围栏与五时间点打断延迟评测 | `stream_interrupt_demo.py`、`realtime_sse_benchmark.py`、`live_api_sse_benchmark.py`、样章验收清单与模拟尾延迟图 |
 | [Ch25 多模态交互与实时协调](ch25_multimodal_realtime.md) | 34 页 | 统一文本、语音、视觉、文件与传感器五类模态进入共享状态；区分事件时间与接收时间，处理增量转写修订、重叠轮次与优雅降级 | `multimodal_event_schema.json`、`media_sync_cases.jsonl`、`degradation_matrix.md` |
 
 四章构成逐层递进的运行时纵深：Ch22 保证任务在受控算力与配额内异步推进；Ch23 为任意中断与跨进程重启提供权威事件真相与确定性恢复；Ch24 在单轮次与亚秒级尺度上管理增量输出、背压与用户打断；Ch25 将实时通道扩展至多模态双时钟同步与降级韧性。

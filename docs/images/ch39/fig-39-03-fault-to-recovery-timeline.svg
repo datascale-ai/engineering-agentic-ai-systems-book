@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="754" viewBox="0 0 1200 754" role="img" aria-labelledby="title desc">
 <title id="title">Fig-39-03 故障注入、不完全回滚反例与五要素回滚恢复验收时间线</title>
-<desc id="desc">基于 ch39_drill_results.json 实测时间线，呈现从受控发布、坏配置注入、缓存残留反例到五要素回滚恢复的完整事件链。</desc>
+<desc id="desc">基于 ch39_drill_results.json 沙箱演练审计时间线，呈现从受控发布、坏配置注入、缓存残留反例到五要素回滚恢复的完整事件链。</desc>
 <defs>
   <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
     <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>

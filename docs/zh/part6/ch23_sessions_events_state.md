@@ -144,11 +144,11 @@ def replay_from_snapshot(session_id, events, snapshot=None):
 
 实验将本章的 `events_plus_snapshots` 方案与仅保存聊天文本的传统基线 `chat_text_only` 进行对照。每个变体都须独立满足四项验收：客户端协调终态与权威服务端终态一致、全量重放与快照加尾重放字节一致、外部工单账本重复副作用数为 0、非法迁移与终态后迟到写命令被准确拦截。运行 `python examples/ch23/session_replay.py` 即可复现，完整 20 条记录输出至 `examples/ch23/results/replay_report.json`。
 
-### 23.5.2 实测结果对比
+### 23.5.2 沙箱重放实验结果对比
 
-表 **Tab-23-03** 直接汇总了实测结果。
+表 **Tab-23-03** 直接汇总了本地沙箱重放实验结果。
 
-**Tab-23-03　`Exp-23-01` 20 种中断、重连与投递变体实测汇总（来源：`examples/ch23/results/replay_report.json`）。**
+**Tab-23-03　`Exp-23-01` 20 种中断、重连与投递变体沙箱重放结果汇总（来源：`examples/ch23/results/replay_report.json`）。**
 
 | 评价维度 | `chat_text_only`（仅存聊天文本基线） | `events_plus_snapshots`（本章方案） | 差异根因 |
 | --- | ---: | ---: | --- |

@@ -121,13 +121,13 @@ updated: 2026-11-27
 
 实验对比按到达顺序融合的朴素基线 `arrival_order_fusion` 与本章的 `turn_ref_time_fusion`。运行 `python examples/ch25/multimodal_coordinator.py` 即可复现，明细报告保存在 `examples/ch25/results/ch25_report.json`。
 
-### 25.5.2 实测结果与延迟权衡分析
+### 25.5.2 离散事件模拟结果与延迟权衡分析
 
-表 **Tab-25-03** 汇总了两组方案在全部 20 项用例上的实测结果。
+表 **Tab-25-03** 汇总了两组方案在全部 20 项用例上的模拟实验结果。
 
-**Tab-25-03　`Exp-25-01` 20 项多模态同步与错位交互实测对照（数据源：`examples/ch25/results/ch25_report.json`，模拟时间戳实验）。**
+**Tab-25-03　`Exp-25-01` 20 项多模态同步与错位交互离散事件模拟对照（数据源：`examples/ch25/results/ch25_report.json`，模拟时间戳实验）。**
 
-| 实测指标 | `arrival_order_fusion`（按到达顺序） | `turn_ref_time_fusion`（轮次、引用与事件时间） | 机制归因 |
+| 评测指标 | `arrival_order_fusion`（按到达顺序） | `turn_ref_time_fusion`（轮次、引用与事件时间） | 机制归因 |
 | --- | ---: | ---: | --- |
 | 对象关联准确率 | **11 / 20 (55.0%)** | **20 / 20 (100.0%)** | 双时钟事件时间与单调版本号消除错位与旧包覆写 |
 | 轮次决策误判次数 | **11 / 20** | **0 / 20** | 适应性打断过滤附和与噪声；等待终稿防止草稿抢跑 |

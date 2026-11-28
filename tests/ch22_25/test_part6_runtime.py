@@ -16,6 +16,7 @@ for sub in ("examples/ch22", "examples/ch23", "examples/ch24", "examples/ch25"):
 import async_runtime as ch22  # noqa: E402
 import session_replay as ch23  # noqa: E402
 import stream_interrupt_demo as ch24  # noqa: E402
+import realtime_sse_benchmark as ch24_rt  # noqa: E402
 import multimodal_coordinator as ch25  # noqa: E402
 
 
@@ -92,6 +93,23 @@ def test_ch24_40_interruption_cases_zero_leak_and_latency_bound(tmp_path):
     assert ui["late_tool_leaks"] == 14
     assert prop["late_tool_leaks"] == 14
     assert full["visible_stop_p95_ms"] < prop["visible_stop_p95_ms"] < ui["visible_stop_p95_ms"]
+
+
+def test_ch24_realtime_loopback_sse_wallclock_benchmark():
+    out = asyncio.run(ch24_rt.run_benchmark(trials_per_strategy=3))
+    s = out["summary"]["strategies"]
+    full = s["cancel_plus_gen_and_flush"]
+    prop = s["cancel_propagation_only"]
+    ui = s["ui_only_stop"]
+
+    assert full["incomplete_tool_executed_total"] == 0
+    assert full["late_tool_leaks"] == 0
+    assert ui["late_tool_leaks"] == 3
+    assert prop["late_tool_leaks"] == 3
+    assert full["producer_clean_close_rate"] == 1.0
+    assert full["stale_chunks_dropped_total"] > 0
+    assert full["visible_stop_p95_ms"] < prop["visible_stop_p95_ms"] < ui["visible_stop_p95_ms"]
+    assert full["visible_stop_p95_ms"] < 60.0
 
 
 def test_ch25_multimodal_dual_clock_and_degradation(tmp_path):

@@ -57,7 +57,7 @@ updated: 2026-11-27
 | `Fig-37-02` | 模型、工具、时钟与网络的确定性 mock 边界 | 边界图 | 本书原创 SVG | MIT | `docs/images/ch37/fig-37-02-test-double-boundaries.svg` | [Ch37](part9/ch37_agent_testing.md) |
 | `Fig-37-03` | 端到端场景的事件断言链 | 断言图 | 本书原创 SVG | MIT | `docs/images/ch37/fig-37-03-event-assertion-chain.svg` | [Ch37](part9/ch37_agent_testing.md) |
 | `Fig-38-01` | 评估回归、故障注入与可观测断言到发布门禁的流水线 | 流程图 | 本书原创 SVG（`regression_runner/`） | MIT | `docs/images/ch38/fig-38-01-regression-to-gate-pipeline.svg` | [Ch38](part9/ch38_regression_fault_injection.md) |
-| `Fig-38-02` | 基线与候选运行的轨迹差异视图 | 差异图 | 真实回归实测 `ch38_regression_results.json` | MIT | `docs/images/ch38/fig-38-02-trajectory-diff-view.svg` | [Ch38](part9/ch38_regression_fault_injection.md) |
+| `Fig-38-02` | 基线与候选运行的轨迹差异视图 | 差异图 | 沙箱回归日志 `ch38_regression_results.json` | MIT | `docs/images/ch38/fig-38-02-trajectory-diff-view.svg` | [Ch38](part9/ch38_regression_fault_injection.md) |
 | `Fig-38-03` | OpenTelemetry GenAI 轨迹断言（TA-01—TA-05）在事件链中的位置 | 断言图 | 本书原创 SVG（`trace_assertions.yaml`） | MIT | `docs/images/ch38/fig-38-03-trace-assertions-event-chain.svg` | [Ch38](part9/ch38_regression_fault_injection.md) |
 | `Fig-39-01` | 从提交到预发布的持续交付流水线与发布门禁（S1—S7） | 流水线图 | 本书原创 SVG（`cd_pipeline.yaml`） | MIT | `docs/images/ch39/fig-39-01-cd-pipeline-gates.svg` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
 | `Fig-39-02` | Local、Test 与 Staging 三档部署拓扑及身份/数据/网络边界 | 拓扑图 | 本书原创 SVG（`profiles.yaml`） | MIT | `docs/images/ch39/fig-39-02-deployment-topology-boundaries.svg` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
@@ -71,20 +71,21 @@ updated: 2026-11-27
 | --- | --- | --- | --- | --- | --- | --- |
 | `Tab-22-01` | 运行时五维资源控制项与过载处置契约 | 契约表 | `examples/ch22/runtime_config.yaml` | MIT | `docs/zh/part6/ch22_orchestration_runtime.md` | [Ch22](part6/ch22_orchestration_runtime.md) |
 | `Tab-22-02` | Worker 生命周期、租约超时与崩溃接管规则 | 规则表 | `examples/ch22/async_runtime.py` | MIT | `docs/zh/part6/ch22_orchestration_runtime.md` | [Ch22](part6/ch22_orchestration_runtime.md) |
-| `Tab-22-03` | `Exp-22-01` 三种调度模式在 50 任务双租户负载下的实测对照 | 实验表 | `examples/ch22/results/runtime_metrics.json` | MIT | `examples/ch22/runtime_load_report.md` | [Ch22](part6/ch22_orchestration_runtime.md) |
+| `Tab-22-03` | `Exp-22-01` 三种调度模式在 50 任务双租户负载下的模拟实验对照 | 实验表 | `examples/ch22/results/runtime_metrics.json` | MIT | `examples/ch22/runtime_load_report.md` | [Ch22](part6/ch22_orchestration_runtime.md) |
 | `Tab-23-01` | Ch23 公共事件字段规范（`event-v2`） | 契约表 | `examples/ch23/event_schema.json` | MIT | `docs/zh/part6/ch23_sessions_events_state.md` | [Ch23](part6/ch23_sessions_events_state.md) |
 | `Tab-23-02` | 重连与投递异常协调判定矩阵 | 决策表 | `examples/ch23/session_replay.py` | MIT | `docs/zh/part6/ch23_sessions_events_state.md` | [Ch23](part6/ch23_sessions_events_state.md) |
-| `Tab-23-03` | `Exp-23-01` 20 种中断、重连与投递变体实测汇总 | 实验表 | `examples/ch23/results/replay_report.json` | MIT | `docs/zh/part6/ch23_sessions_events_state.md` | [Ch23](part6/ch23_sessions_events_state.md) |
+| `Tab-23-03` | `Exp-23-01` 20 种中断、重连与投递变体沙箱重放汇总 | 实验表 | `examples/ch23/results/replay_report.json` | MIT | `docs/zh/part6/ch23_sessions_events_state.md` | [Ch23](part6/ch23_sessions_events_state.md) |
 | `Tab-24-01` | 流式流水线各层缓冲治理契约 | 治理表 | `examples/ch24/stream_interrupt_demo.py` | MIT | `docs/zh/part6/ch24_streaming_interrupts.md` | [Ch24](part6/ch24_streaming_interrupts.md) |
 | `Tab-24-02` | 流式打断高频竞态矩阵与确定性处置规则 | 竞态表 | `examples/ch24/stream_interrupt_demo.py` | MIT | `docs/zh/part6/ch24_streaming_interrupts.md` | [Ch24](part6/ch24_streaming_interrupts.md) |
-| `Tab-24-03` | 样章验收对照表（40 个确定性时序用例实测） | 验收表 | `examples/ch24/results/ch24_summary.json` | MIT | `examples/ch24/interrupt_timeline.jsonl` | [Ch24](part6/ch24_streaming_interrupts.md) |
+| `Tab-24-03` | 样章验收对照表（40 个确定性时序用例离散事件模拟） | 验收表 | `examples/ch24/results/ch24_summary.json` | MIT | `examples/ch24/interrupt_timeline.jsonl` | [Ch24](part6/ch24_streaming_interrupts.md) |
+| `Tab-24-04` | 真实异步流式墙钟实测汇总（本地回环 SSE 与在线 `gpt-6.2-astra`） | 实测表 | `examples/ch24/results/realtime_sse_wallclock.json` / `live_llm_sse_wallclock.json` | MIT | `examples/ch24/live_api_sse_benchmark.py` | [Ch24](part6/ch24_streaming_interrupts.md) |
 | `Tab-25-01` | 多模态事件公共模式核心字段（`mm-event-v1`） | 契约表 | `examples/ch25/multimodal_event_schema.json` | MIT | `docs/zh/part6/ch25_multimodal_realtime.md` | [Ch25](part6/ch25_multimodal_realtime.md) |
 | `Tab-25-02` | 多模态失模态优雅降级与恢复矩阵 | 降级表 | `examples/ch25/degradation_matrix.md` | MIT | `docs/zh/part6/ch25_multimodal_realtime.md` | [Ch25](part6/ch25_multimodal_realtime.md) |
-| `Tab-25-03` | `Exp-25-01` 20 项多模态同步与错位交互实测对照 | 实验表 | `examples/ch25/results/ch25_report.json` | MIT | `examples/ch25/media_sync_cases.jsonl` | [Ch25](part6/ch25_multimodal_realtime.md) |
-| `Tab-38-01` | 九类沙箱故障注入矩阵与实测恢复验收 | 故障表 | `examples/ch38/fault_injection_matrix.yaml` | MIT | `examples/ch38/regression_report.md` | [Ch38](part9/ch38_regression_fault_injection.md) |
-| `Tab-38-02` | 基线与三类受控变更候选的质量门禁实测报告 | 回归表 | `examples/ch38/results/ch38_regression_results.json` | MIT | `examples/ch38/regression_report.md` | [Ch38](part9/ch38_regression_fault_injection.md) |
+| `Tab-25-03` | `Exp-25-01` 20 项多模态同步与错位交互离散事件模拟对照 | 实验表 | `examples/ch25/results/ch25_report.json` | MIT | `examples/ch25/media_sync_cases.jsonl` | [Ch25](part6/ch25_multimodal_realtime.md) |
+| `Tab-38-01` | 九类沙箱故障注入矩阵与沙箱恢复验收 | 故障表 | `examples/ch38/fault_injection_matrix.yaml` | MIT | `examples/ch38/regression_report.md` | [Ch38](part9/ch38_regression_fault_injection.md) |
+| `Tab-38-02` | 基线与三类受控变更候选的沙箱质量门禁报告 | 回归表 | `examples/ch38/results/ch38_regression_results.json` | MIT | `examples/ch38/regression_report.md` | [Ch38](part9/ch38_regression_fault_injection.md) |
 | `Tab-39-01` | 发布就绪检查表（含 `release-v1.0.0` 已填写样例） | 检查表 | `examples/ch39/release_checklist.md` | MIT | `docs/zh/part9/ch39_deployment_continuous_delivery.md` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
 | `Tab-39-02` | 智能体五要素回滚序列与恢复验收判据 | 手册表 | `examples/ch39/rollback_runbook.md` | MIT | `docs/zh/part9/ch39_deployment_continuous_delivery.md` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
-| `Tab-39-03` | `Exp-39-01` 四项预发布与回滚演练实测结果 | 演练表 | `examples/ch39/results/ch39_drill_results.json` | MIT | `examples/ch39/release_report.md` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
+| `Tab-39-03` | `Exp-39-01` 四项预发布与回滚沙箱演练结果 | 演练表 | `examples/ch39/results/ch39_drill_results.json` | MIT | `examples/ch39/release_report.md` | [Ch39](part9/ch39_deployment_continuous_delivery.md) |
 
 > **说明**：其余章节（Ch05—Ch08、Ch11—Ch17、Ch28—Ch35）的图表条目将在各章进入 G1 正式中文稿后按同一字段格式汇总入本表。

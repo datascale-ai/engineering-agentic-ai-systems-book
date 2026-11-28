@@ -1,0 +1,58 @@
+{
+  "experiment_id": "Exp-24-03",
+  "environment": "live_openai_compatible_https_tls_sse_wallclock",
+  "endpoint_type": "openai_compatible_https_sse",
+  "model": "gpt-6.2-astra",
+  "trials_per_strategy": 5,
+  "interrupt_after_chunks": 20,
+  "consumer_chunk_ms": 25,
+  "ttft_p50_ms": 2380.09,
+  "ttft_p95_ms": 3318.49,
+  "strategies": {
+    "ui_only_stop": {
+      "trials": 5,
+      "propagation_p50_ms": 0.0,
+      "propagation_p95_ms": 0.01,
+      "producer_stop_p50_ms": 1810.93,
+      "producer_stop_p95_ms": 1910.62,
+      "visible_stop_p50_ms": 2172.06,
+      "visible_stop_p95_ms": 2414.25,
+      "visible_stop_max_ms": 2426.89,
+      "chunks_received_after_stop_total": 323,
+      "stale_chunks_rendered_total": 357,
+      "stale_chunks_dropped_total": 0,
+      "late_tool_leaks": 5,
+      "socket_abort_rate": 0.0
+    },
+    "cancel_propagation_only": {
+      "trials": 5,
+      "propagation_p50_ms": 0.32,
+      "propagation_p95_ms": 0.39,
+      "producer_stop_p50_ms": 0.27,
+      "producer_stop_p95_ms": 2.32,
+      "visible_stop_p50_ms": 130.92,
+      "visible_stop_p95_ms": 439.0,
+      "visible_stop_max_ms": 513.66,
+      "chunks_received_after_stop_total": 0,
+      "stale_chunks_rendered_total": 33,
+      "stale_chunks_dropped_total": 0,
+      "late_tool_leaks": 5,
+      "socket_abort_rate": 1.0
+    },
+    "cancel_plus_gen_and_flush": {
+      "trials": 5,
+      "propagation_p50_ms": 0.38,
+      "propagation_p95_ms": 0.41,
+      "producer_stop_p50_ms": 0.29,
+      "producer_stop_p95_ms": 1.76,
+      "visible_stop_p50_ms": 9.66,
+      "visible_stop_p95_ms": 28.55,
+      "visible_stop_max_ms": 29.44,
+      "chunks_received_after_stop_total": 1,
+      "stale_chunks_rendered_total": 5,
+      "stale_chunks_dropped_total": 34,
+      "late_tool_leaks": 0,
+      "socket_abort_rate": 1.0
+    }
+  }
+}

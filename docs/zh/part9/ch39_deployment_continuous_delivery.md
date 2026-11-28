@@ -18,7 +18,7 @@ updated: 2026-11-27
 
 **关键词**　部署演练（deployment drill）；持续交付（continuous delivery）；发布门禁（release gate）；五要素回滚（five-element rollback）；权限缓存残留（stale permission cache）；运行手册（runbook）；工程综合实践（engineering capstone）；证据可追溯性（evidence traceability）。
 
-本章拟定主笔由主编统筹，内部执笔学生 F，独立审稿学生 A，当前版本为 `zh-draft-0.3`（2026-11-27），无商业利益冲突。先修知识包括 [Ch30 生产部署、监控与治理](../part7/ch30_production_governance.md)、[Ch34 综合项目](../part8/ch34_capstone_reference_architectures.md)、[Ch36](ch36_reference_implementation.md)、[Ch37](ch37_agent_testing.md) 与 [Ch38](ch38_regression_fault_injection.md)。运行环境为 Python 3.11+（本轮实测 Python 3.13.7 + PyYAML + 标准库 SQLite），零密钥离线可运行；入口命令为 `python examples/ch39/drill_runner.py` 与 `python -m pytest tests/ch38_39/test_part9_engineering.py -q`；产物与运行手册位于 `examples/ch39/`，采用仓库 MIT 许可。正文包含 `Fig-39-01` 至 `Fig-39-03` 与 `Tab-39-01` 至 `Tab-39-03`，30 等效页为混排预算。
+本章拟定主笔由主编统筹，内部执笔学生 F，独立审稿学生 A，当前版本为 `zh-draft-0.3`（2026-11-27），无商业利益冲突。先修知识包括 [Ch30 生产部署、监控与治理](../part7/ch30_production_governance.md)、[Ch34 综合项目](../part8/ch34_capstone_reference_architectures.md)、[Ch36](ch36_reference_implementation.md)、[Ch37](ch37_agent_testing.md) 与 [Ch38](ch38_regression_fault_injection.md)。运行环境为 Python 3.11+（本轮验证环境 Python 3.13.7 + PyYAML + 标准库 SQLite），零密钥离线可运行；入口命令为 `python examples/ch39/drill_runner.py` 与 `python -m pytest tests/ch38_39/test_part9_engineering.py -q`；产物与运行手册位于 `examples/ch39/`，采用仓库 MIT 许可。正文包含 `Fig-39-01` 至 `Fig-39-03` 与 `Tab-39-01` 至 `Tab-39-03`，30 等效页为混排预算。
 
 ---
 
@@ -98,13 +98,13 @@ updated: 2026-11-27
 | 4 | 权限与缓存 | 撤销候选临时授权，强制清空权限缓存并递增代次 `epoch` | `cleared_entries >= 0` 且旧缓存键全部失效 | 忽略权限缓存导致越权在旧版本上继续生效 |
 | 5 | 数据对账与双向探针 | 核对既有合法工单完好无损；恢复入口后同时跑通高风险拒批与合规建单探针 | 合法工单保留、高风险被拒、合规任务通过 | 只看健康检查接口返回 200 就宣布事故结束 |
 
-### 39.4.2 四项自动化预发布演练实测
+### 39.4.2 四项自动化预发布沙箱演练结果
 
-在仓库根目录执行 `python examples/ch39/drill_runner.py`，脚本在隔离临时沙箱中连续完成四项演练：受控发布、配置错配与缓存残留对照、五要素完整回滚以及 PRJ-3 端到端崩溃恢复。实测汇总见表 **Tab-39-03**，由真实审计日志自动生成的运行时间线见图 **Fig-39-03**。
+在仓库根目录执行 `python examples/ch39/drill_runner.py`，脚本在隔离临时沙箱中连续完成四项演练：受控发布、配置错配与缓存残留对照、五要素完整回滚以及 PRJ-3 端到端崩溃恢复。沙箱演练汇总见表 **Tab-39-03**，由演练审计日志自动生成的运行时间线见图 **Fig-39-03**。
 
-**Tab-39-03　`Exp-39-01` 四项预发布与回滚演练实测结果（数据源：`examples/ch39/results/ch39_drill_results.json`）。**
+**Tab-39-03　`Exp-39-01` 四项预发布与回滚沙箱演练结果（数据源：`examples/ch39/results/ch39_drill_results.json`）。**
 
-| 演练编号 | 演练场景与对照 | 实测关键证据与状态 | 验收结论 |
+| 演练编号 | 演练场景与对照 | 沙箱演练关键证据与状态 | 验收结论 |
 | --- | --- | --- | :---: |
 | `DRILL-01` | 受控发布 `release-v1.0.0` | Ch38 回归门禁 12/12 通过；合规探针建单 1 条，高风险探针被拒 `needs_approval`，五条轨迹断言全绿 | **PASS** |
 | `DRILL-02` | 配置错配、缓存残留与密钥防泄对照 | 完整门禁提前阻断坏候选并定位至模型与配置层；反例复现了跳过门禁且只回滚代码时缓存残留致 420 元探针越权建单；注入的 `Bearer sk-test-secret` 脱敏为 `[REDACTED_SECRET]`，零泄露 | **PASS** |
@@ -113,7 +113,7 @@ updated: 2026-11-27
 
 ![故障注入、不完全回滚反例与五要素回滚恢复验收时间线](../../images/ch39/fig-39-03-fault-to-recovery-timeline.svg)
 
-**Fig-39-03　故障注入、不完全回滚反例与五要素回滚恢复验收时间线（由 `examples/ch39/results/ch39_drill_results.json` 实测审计日志自动生成）。** 清晰展示从 `t=10 ms` 启动门禁到 `t=120 ms` 完成 PRJ-3 综合验收的全部 12 个审计节点，包含 `t=60 ms` 不完全回滚反例与 `t=70–110 ms` 五要素回滚闭环。图为本书原创数据驱动 SVG。
+**Fig-39-03　故障注入、不完全回滚反例与五要素回滚恢复验收时间线（由 `examples/ch39/results/ch39_drill_results.json` 沙箱演练审计日志生成）。** 清晰展示从 `t=10 ms` 启动门禁到 `t=120 ms` 完成 PRJ-3 综合验收的全部 12 个审计节点，包含 `t=60 ms` 不完全回滚反例与 `t=70–110 ms` 五要素回滚闭环。图为本书原创数据驱动 SVG。
 
 ---
 
@@ -202,4 +202,4 @@ python examples/ch39/drill_runner.py && python -m pytest tests/ch38_39/test_part
 [^r39-owasp-secrets]: OWASP. *Secrets Management Cheat Sheet*: [https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)（核验：2026-11-27）。凭证管理、最小暴露与日志防泄准则。
 [^r39-otel]: OpenTelemetry. *Semantic Conventions for Generative AI Systems*: [https://opentelemetry.io/docs/specs/semconv/gen-ai/](https://opentelemetry.io/docs/specs/semconv/gen-ai/)（核验：2026-11-27）。预发布观测与轨迹对账标准依据。
 
-本版：`zh-draft-0.3`，2026-11-27。已完成三张原创可编辑 SVG（含实测审计时间线图）、三档部署配置、七阶段持续交付流水线、四项预发布回滚演练、100 分综合实践评分标准与全书文风统一润色。
+本版：`zh-draft-0.4`，2026-11-28。已完成三张原创可编辑 SVG（含沙箱演练审计时间线图）、三档部署配置、七阶段持续交付流水线、四项预发布回滚演练、100 分综合实践评分标准与全书文风统一润色。
