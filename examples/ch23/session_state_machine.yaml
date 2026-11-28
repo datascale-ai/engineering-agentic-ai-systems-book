@@ -1,0 +1,71 @@
+# Ch23 会话状态机契约 (session_state_machine.yaml)
+schema_version: "session-fsm-1.0"
+description: "显式会话生命周期状态机，严格区分合法迁移、禁止迁移、终态不变式与副作用隔离边界。"
+
+states:
+  - name: "created"
+    terminal: false
+    description: "会话已创建并绑定 session_id 与 schema_version，尚未开始执行轮次。"
+  - name: "running"
+    terminal: false
+    description: "当前存在活跃轮次（turn_id），允许调度模型推理与已授权工具调用。"
+  - name: "paused"
+    terminal: false
+    description: "等待人工审批、外部长任务回调或用户补充输入；保持检查点与快照。"
+  - name: "completed"
+    terminal: true
+    description: "业务目标通过独立后置验收条件，会话正常收口。"
+  - name: "cancelled"
+    terminal: true
+    description: "用户或控制面主动取消；释放计算资源，已提交外部副作用另行核对登记。"
+  - name: "failed"
+    terminal: true
+    description: "不可恢复错误、预算耗尽或契约违背导致终止；保留完整事件链供诊断。"
+
+transitions:
+  - from: "created"
+    to: ["running", "cancelled", "failed"]
+    allowed_events: ["turn_started", "session_cancelled", "session_failed"]
+  - from: "running"
+    to: ["running", "paused", "completed", "cancelled", "failed"]
+    allowed_events:
+      - "tool_intent_recorded"
+      - "tool_effect_committed"
+      - "turn_completed"
+      - "approval_requested"
+      - "session_paused"
+      - "session_completed"
+      - "session_cancelled"
+      - "session_failed"
+  - from: "paused"
+    to: ["running", "cancelled", "failed"]
+    allowed_events: ["session_resumed", "approval_granted", "session_cancelled", "session_failed"]
+  - from: "completed"
+    to: []
+    allowed_events: []
+  - from: "cancelled"
+    to: []
+    allowed_events: []
+  - from: "failed"
+    to: []
+    allowed_events: []
+
+forbidden_transitions:
+  - from: "completed"
+    to: "running"
+    reason: "终态不可重启为运行态；如需后续操作必须创建新会话或显式引用父会话。"
+  - from: "cancelled"
+    to: "completed"
+    reason: "已取消会话禁止被迟到工具结果翻转为成功。"
+  - from: "failed"
+    to: "completed"
+    reason: "已失败终态禁止静默覆盖为成功。"
+  - from: "created"
+    to: "completed"
+    reason: "未经任何执行轮次与独立验收不可直接宣布完成。"
+
+invariants:
+  - "sequence 在单个 session_id 内严格单调递增（1, 2, 3, ...），无空洞才允许推进权威物化视图。"
+  - "命令（Command）表示意图，可被拒绝或去重；事件（Event）表示已持久化事实，追加后不可就地改写。"
+  - "确定性 reducer(snapshot, events[seq > snapshot.sequence]) 必须产生与全量重放字节等价的终态。"
+  - "合法重放绝不重新触发已记录 tool_effect_committed 的外部副作用。"

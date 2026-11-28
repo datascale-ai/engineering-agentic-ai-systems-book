@@ -1,0 +1,122 @@
+{
+  "serial": {
+    "mode": "serial",
+    "total_tasks": 50,
+    "completed": 46,
+    "cancelled": 4,
+    "rejected_overload": 0,
+    "failed": 0,
+    "total_reclaims": 4,
+    "committed_side_effects_in_cancelled": 2,
+    "total_makespan_ms": 10032.82,
+    "throughput_tasks_per_sec": 4.58,
+    "p50_latency_ms": 7319.66,
+    "p95_latency_ms": 9872.26,
+    "p99_latency_ms": 9921.3,
+    "peak_in_flight": 1,
+    "peak_queued": 49,
+    "peak_adapter_handles": 1,
+    "p95_cancel_response_ms": 1647.55,
+    "tenant_jain_fairness": 0.9952,
+    "per_tenant": {
+      "tenant-alpha": {
+        "total": 25,
+        "completed": 21,
+        "cancelled": 4,
+        "rejected_overload": 0,
+        "p50_latency_ms": 7207.12,
+        "p95_latency_ms": 8615.67,
+        "mean_wait_ms": 6441.42
+      },
+      "tenant-beta": {
+        "total": 25,
+        "completed": 25,
+        "cancelled": 0,
+        "rejected_overload": 0,
+        "p50_latency_ms": 7441.4,
+        "p95_latency_ms": 9903.76,
+        "mean_wait_ms": 7601.86
+      }
+    }
+  },
+  "unbounded_concurrency": {
+    "mode": "unbounded_concurrency",
+    "total_tasks": 50,
+    "completed": 46,
+    "cancelled": 4,
+    "rejected_overload": 0,
+    "failed": 0,
+    "total_reclaims": 4,
+    "committed_side_effects_in_cancelled": 2,
+    "total_makespan_ms": 325.2,
+    "throughput_tasks_per_sec": 141.45,
+    "p50_latency_ms": 124.56,
+    "p95_latency_ms": 186.99,
+    "p99_latency_ms": 191.71,
+    "peak_in_flight": 60,
+    "peak_queued": 1,
+    "peak_adapter_handles": 60,
+    "p95_cancel_response_ms": 0.34,
+    "tenant_jain_fairness": 0.9999,
+    "per_tenant": {
+      "tenant-alpha": {
+        "total": 25,
+        "completed": 21,
+        "cancelled": 4,
+        "rejected_overload": 0,
+        "p50_latency_ms": 123.36,
+        "p95_latency_ms": 186.93,
+        "mean_wait_ms": 0.0
+      },
+      "tenant-beta": {
+        "total": 25,
+        "completed": 25,
+        "cancelled": 0,
+        "rejected_overload": 0,
+        "p50_latency_ms": 124.83,
+        "p95_latency_ms": 183.04,
+        "mean_wait_ms": 0.0
+      }
+    }
+  },
+  "bounded_concurrency": {
+    "mode": "bounded_concurrency",
+    "total_tasks": 50,
+    "completed": 32,
+    "cancelled": 3,
+    "rejected_overload": 15,
+    "failed": 0,
+    "total_reclaims": 3,
+    "committed_side_effects_in_cancelled": 1,
+    "total_makespan_ms": 1042.24,
+    "throughput_tasks_per_sec": 30.7,
+    "p50_latency_ms": 815.66,
+    "p95_latency_ms": 933.0,
+    "p99_latency_ms": 950.52,
+    "peak_in_flight": 6,
+    "peak_queued": 36,
+    "peak_adapter_handles": 6,
+    "p95_cancel_response_ms": 183.47,
+    "tenant_jain_fairness": 0.9981,
+    "per_tenant": {
+      "tenant-alpha": {
+        "total": 25,
+        "completed": 19,
+        "cancelled": 3,
+        "rejected_overload": 3,
+        "p50_latency_ms": 801.15,
+        "p95_latency_ms": 943.15,
+        "mean_wait_ms": 593.42
+      },
+      "tenant-beta": {
+        "total": 25,
+        "completed": 13,
+        "cancelled": 0,
+        "rejected_overload": 12,
+        "p50_latency_ms": 834.17,
+        "p95_latency_ms": 864.05,
+        "mean_wait_ms": 821.13
+      }
+    }
+  }
+}

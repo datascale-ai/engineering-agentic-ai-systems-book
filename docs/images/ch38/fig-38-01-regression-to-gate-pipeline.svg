@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+<title id="title">Fig-38-01 评估回归、故障注入与可观测断言到发布门禁的流水线</title>
+<desc id="desc">展示变更提交经过黄金切片、轨迹与存储断言、9 类故障注入到门禁判决的自动化流程。</desc>
+<defs>
+  <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>
+  </filter>
+  <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0F172A" flood-opacity="0.08"/>
+  </filter>
+  <marker id="arr-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#1E40AF"/></marker>
+  <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#0F766E"/></marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#B45309"/></marker>
+  <marker id="arr-crimson" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#BE123C"/></marker>
+  <marker id="arr-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#475569"/></marker>
+</defs>
+<g font-family="'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+<rect width="1200" height="480" fill="#FFFFFF"/>
+<rect x="36" y="30" width="202.4" height="20" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="137.2" y="43.8" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700" fill="#1E40AF">PART IX · CH38 QUALITY GATE</text>
+<text x="36" y="76" font-size="21.5" font-weight="700" fill="#0F172A">Fig-38-01 评估回归、故障注入与可观测断言到发布门禁的流水线</text>
+<text x="36" y="96" font-size="12.5" fill="#64748B">所有代码、提示词与配置变更均须经由黄金切片、轨迹与独立库断言、9 类受控故障注入后方可进入 Ch39 发布流水线</text>
+<line x1="36" y1="106" x2="1164" y2="106" stroke="#E2E8F0" stroke-width="1.2"/>
+<g data-card-group="g1">
+<clipPath id="clip-g1"><rect x="36.0" y="126.0" width="204.0" height="152.0" rx="9"/></clipPath>
+<rect data-card="g1" x="36.0" y="126.0" width="204.0" height="152.0" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-g1)">
+<rect x="36.0" y="126.0" width="204.0" height="36.0" fill="#EFF6FF"/>
+<rect x="36.0" y="126.0" width="204.0" height="3.5" fill="#1E40AF"/>
+<line x1="36.0" y1="162.0" x2="240.0" y2="162.0" stroke="#BFDBFE" stroke-width="1"/></g>
+<g transform="translate(49.0,137.0)"><circle cx="4.5" cy="4" r="1.8" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="4.5" cy="12" r="1.8" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="11.5" cy="6" r="1.8" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M4.5 5.8 V10.2 M11.5 7.8 C11.5 10.2 8 10.2 6.3 10.2" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="g1" x="71.0" y="149.2" font-size="13.2" font-weight="700" fill="#0F172A">变更输入</text>
+<rect x="203.6" y="135.8" width="26.4" height="18" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="g1" x="216.8" y="148.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#1E40AF">01</text>
+<circle cx="52.0" cy="196.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g1" x="61.0" y="200.1" font-size="11.6" fill="#334155">模型 / 提示 / 配置</text>
+<circle cx="52.0" cy="218.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g1" x="61.0" y="222.1" font-size="11.6" fill="#334155">策略清单与模式变更</text>
+<circle cx="52.0" cy="240.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g1" x="61.0" y="244.1" font-size="11.6" fill="#334155">或代码 PR 提交</text>
+</g>
+<line x1="240" y1="202.0" x2="265" y2="202.0" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g data-card-group="g2">
+<clipPath id="clip-g2"><rect x="267.0" y="126.0" width="204.0" height="152.0" rx="9"/></clipPath>
+<rect data-card="g2" x="267.0" y="126.0" width="204.0" height="152.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-g2)">
+<rect x="267.0" y="126.0" width="204.0" height="36.0" fill="#F0FDFA"/>
+<rect x="267.0" y="126.0" width="204.0" height="3.5" fill="#0F766E"/>
+<line x1="267.0" y1="162.0" x2="471.0" y2="162.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(280.0,137.0)"><circle cx="8" cy="8" r="5.8" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.4 8.2 L7.2 10 L10.8 6.2" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="g2" x="302.0" y="149.2" font-size="13.2" font-weight="700" fill="#0F172A">黄金切片回归</text>
+<rect x="434.6" y="135.8" width="26.4" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="g2" x="447.8" y="148.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">02</text>
+<circle cx="283.0" cy="196.1" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="g2" x="292.0" y="200.1" font-size="11.6" fill="#334155">12 项黄金任务切片</text>
+<circle cx="283.0" cy="218.1" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="g2" x="292.0" y="222.1" font-size="11.6" fill="#334155">普通与高风险分档</text>
+<circle cx="283.0" cy="240.1" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="g2" x="292.0" y="244.1" font-size="11.6" fill="#334155">各自绑定独立阈值</text>
+</g>
+<line x1="471" y1="202.0" x2="496" y2="202.0" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g data-card-group="g3">
+<clipPath id="clip-g3"><rect x="498.0" y="126.0" width="204.0" height="152.0" rx="9"/></clipPath>
+<rect data-card="g3" x="498.0" y="126.0" width="204.0" height="152.0" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-g3)">
+<rect x="498.0" y="126.0" width="204.0" height="36.0" fill="#EFF6FF"/>
+<rect x="498.0" y="126.0" width="204.0" height="3.5" fill="#1E40AF"/>
+<line x1="498.0" y1="162.0" x2="702.0" y2="162.0" stroke="#BFDBFE" stroke-width="1"/></g>
+<g transform="translate(511.0,137.0)"><path d="M2.5 4.2 H9.5 M5 8 H13.5 M7.5 11.8 H12.5" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="2.5" cy="4.2" r="0.9" fill="#1E40AF"/><circle cx="5" cy="8" r="0.9" fill="#1E40AF"/><circle cx="7.5" cy="11.8" r="0.9" fill="#1E40AF"/></g>
+<text data-in="g3" x="533.0" y="149.2" font-size="13.2" font-weight="700" fill="#0F172A">轨迹与库断言</text>
+<rect x="665.6" y="135.8" width="26.4" height="18" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="g3" x="678.8" y="148.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#1E40AF">03</text>
+<circle cx="514.0" cy="196.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g3" x="523.0" y="200.1" font-size="11.6" fill="#334155">OTel TA-01—TA-05</text>
+<circle cx="514.0" cy="218.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g3" x="523.0" y="222.1" font-size="11.6" fill="#334155">直读 service.sqlite</text>
+<circle cx="514.0" cy="240.1" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="g3" x="523.0" y="244.1" font-size="11.6" fill="#334155">核验外部真实写入</text>
+</g>
+<line x1="702" y1="202.0" x2="727" y2="202.0" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g data-card-group="g4">
+<clipPath id="clip-g4"><rect x="729.0" y="126.0" width="204.0" height="152.0" rx="9"/></clipPath>
+<rect data-card="g4" x="729.0" y="126.0" width="204.0" height="152.0" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-g4)">
+<rect x="729.0" y="126.0" width="204.0" height="36.0" fill="#FFFBEB"/>
+<rect x="729.0" y="126.0" width="204.0" height="3.5" fill="#B45309"/>
+<line x1="729.0" y1="162.0" x2="933.0" y2="162.0" stroke="#FDE68A" stroke-width="1"/></g>
+<g transform="translate(742.0,137.0)"><path d="M8 2.2 L14 13 H2 Z" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 6.4 V9.5 M8 11.4 V11.6" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="g4" x="764.0" y="149.2" font-size="13.2" font-weight="700" fill="#0F172A">沙箱故障注入</text>
+<rect x="896.6" y="135.8" width="26.4" height="18" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1"/><text data-in="g4" x="909.8" y="148.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#B45309">04</text>
+<circle cx="745.0" cy="196.1" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="g4" x="754.0" y="200.1" font-size="11.6" fill="#334155">9 类受控故障演练</text>
+<circle cx="745.0" cy="218.1" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="g4" x="754.0" y="222.1" font-size="11.6" fill="#334155">超时 / 崩溃 / 缓存</text>
+<circle cx="745.0" cy="240.1" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="g4" x="754.0" y="244.1" font-size="11.6" fill="#334155">验证业务恢复不变量</text>
+</g>
+<line x1="933" y1="202.0" x2="958" y2="202.0" stroke="#1E40AF" stroke-width="2" marker-end="url(#arr-navy)"/>
+<g data-card-group="g5">
+<clipPath id="clip-g5"><rect x="960.0" y="126.0" width="204.0" height="152.0" rx="9"/></clipPath>
+<rect data-card="g5" x="960.0" y="126.0" width="204.0" height="152.0" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-g5)">
+<rect x="960.0" y="126.0" width="204.0" height="36.0" fill="#FFF1F2"/>
+<rect x="960.0" y="126.0" width="204.0" height="3.5" fill="#BE123C"/>
+<line x1="960.0" y1="162.0" x2="1164.0" y2="162.0" stroke="#FECDD3" stroke-width="1"/></g>
+<g transform="translate(973.0,137.0)"><path d="M8 1.5 L13.5 3.8 V8.2 C13.5 11.4 11.1 13.7 8 14.8 C4.9 13.7 2.5 11.4 2.5 8.2 V3.8 Z" stroke="#BE123C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.7 8.1 L7.3 9.7 L10.6 6.4" stroke="#BE123C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="g5" x="995.0" y="149.2" font-size="13.2" font-weight="700" fill="#0F172A">质量门禁判决</text>
+<rect x="1127.6" y="135.8" width="26.4" height="18" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1"/><text data-in="g5" x="1140.8" y="148.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#BE123C">05</text>
+<circle cx="976.0" cy="196.1" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="g5" x="985.0" y="200.1" font-size="11.6" fill="#334155">PASS → 放行 Ch39</text>
+<circle cx="976.0" cy="218.1" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="g5" x="985.0" y="222.1" font-size="11.6" fill="#334155">BLOCK → 阻断合并</text>
+<circle cx="976.0" cy="240.1" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="g5" x="985.0" y="244.1" font-size="11.6" fill="#334155">自动定位缺陷层级</text>
+</g>
+<line x1="369.0" y1="326" x2="369.0" y2="280" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arr-slate)"/>
+<line x1="600.0" y1="326" x2="600.0" y2="280" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arr-slate)"/>
+<line x1="831.0" y1="326" x2="831.0" y2="280" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arr-slate)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="509.9" y="291.0" width="180.3" height="22.0" rx="11" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.25"/><text x="600.0" y="306.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#475569">统一确定性证据输入与审计输出</text></g>
+<g data-card-group="dock"><clipPath id="clip-dock-38"><rect x="36" y="326" width="1128" height="124" rx="10"/></clipPath><rect data-card="dock" x="36" y="326" width="1128" height="124" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.35" filter="url(#card-shadow)"/><g clip-path="url(#clip-dock-38)"><rect x="36" y="326" width="1128" height="36" fill="#F1F5F9"/><rect x="36" y="326" width="1128" height="3.5" fill="#475569"/><line x1="36" y1="362" x2="1164" y2="362" stroke="#CBD5E1" stroke-width="1"/></g><g transform="translate(51.0,337.0)"><ellipse cx="8" cy="4" rx="5.5" ry="2" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2.5 4 V12 C2.5 13.1 5 14 8 14 C11 14 13.5 13.1 13.5 12 V4" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2.5 8 C2.5 9.1 5 10 8 10 C11 10 13.5 9.1 13.5 8" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><text data-in="dock" x="74" y="349.8" font-size="13.5" font-weight="700" fill="#0F172A">共享证据底座（复用 Ch36 参考核心与黄金切片配置）</text></g>
+<rect x="56.0" y="372" width="348" height="40" rx="7" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/><text data-in="dock" x="68.0" y="389" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.8" font-weight="700" fill="#1E3A8A">examples/ch36/src/book_reference/</text><text data-in="dock" x="68.0" y="405" font-size="11.0" fill="#334155">共享受控参考实现</text>
+<rect x="426.0" y="372" width="348" height="40" rx="7" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/><text data-in="dock" x="438.0" y="389" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.8" font-weight="700" fill="#115E59">examples/ch38/golden_slices.yaml</text><text data-in="dock" x="438.0" y="405" font-size="11.0" fill="#334155">分级黄金任务与阈值</text>
+<rect x="796.0" y="372" width="348" height="40" rx="7" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/><text data-in="dock" x="808.0" y="389" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.8" font-weight="700" fill="#92400E">examples/ch38/reports/regression_report.md</text><text data-in="dock" x="808.0" y="405" font-size="11.0" fill="#334155">门禁判决与差异报告</text>
+<text data-in="dock" x="600.0" y="435" text-anchor="middle" font-size="11.8" font-weight="600" fill="#92400E">核心边界：mock 回归仅验证控制逻辑、权限与恢复不变量，不宣称真实模型能力；高风险切片零豁免。</text>
+</g></svg>

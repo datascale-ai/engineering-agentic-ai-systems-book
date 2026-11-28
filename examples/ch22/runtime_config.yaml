@@ -1,0 +1,57 @@
+# Ch22 运行时配置契约 (runtime_config.yaml)
+schema_version: "runtime-config-1.0"
+runtime_id: "ch22-policy-ticket-runtime"
+description: "有界异步智能体运行时配置，覆盖调度器、队列容量、租户配额、租约与取消传播。"
+
+scheduler:
+  mode: "bounded_concurrency" # 可选: serial | unbounded_concurrency | bounded_concurrency
+  global_max_workers: 6
+  global_queue_capacity: 40
+  queue_overflow_policy: "reject_with_retry_after" # reject_with_retry_after | block_with_timeout
+  enqueue_timeout_ms: 50
+  control_plane_priority_lane: true # 取消与健康检查走独立控制通道，不受数据队列阻塞
+
+tenants:
+  tenant-alpha:
+    max_in_flight: 3
+    max_queue_depth: 20
+    weight: 1
+    token_budget: 200000
+    tool_call_budget: 150
+  tenant-beta:
+    max_in_flight: 3
+    max_queue_depth: 16
+    weight: 1
+    token_budget: 200000
+    tool_call_budget: 150
+
+worker:
+  lease_ttl_ms: 80
+  heartbeat_interval_ms: 25
+  max_reclaims: 2
+  graceful_shutdown_ms: 40
+
+timeouts:
+  model_step_ms: 60
+  tool_read_ms: 50
+  tool_write_ms: 90
+  task_deadline_ms: 450
+
+cancellation:
+  propagate_to_subtasks: true
+  release_resources_immediately: true
+  committed_side_effect_policy: "reconcile_and_record_only" # 取消不宣称撤销已提交的外部副作用
+
+plugins:
+  # 参考 DeepSeek Harness (dsh / Cordis) 插件化分层：各组件通过显式能力契约注入并支持洁净卸载
+  enabled:
+    - name: "scheduler.dag"
+      provides: ["scheduler"]
+    - name: "queue.bounded_fair"
+      provides: ["queue"]
+    - name: "adapter.model.deterministic"
+      provides: ["model_adapter"]
+    - name: "adapter.tool.policy_ticket"
+      provides: ["tool_executor"]
+    - name: "store.memory_wal"
+      provides: ["state_store"]

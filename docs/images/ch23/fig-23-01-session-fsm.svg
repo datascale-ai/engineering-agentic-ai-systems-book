@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Fig-23-01 显式会话状态机与禁止转换规则</title>
+<desc id="desc">展示 created、running、paused 及三个终态之间的合法事件迁移与红色虚线标出的禁止转换。</desc>
+<defs>
+  <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.065"/>
+  </filter>
+  <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0F172A" flood-opacity="0.08"/>
+  </filter>
+  <marker id="arr-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#1E40AF"/></marker>
+  <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#0F766E"/></marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#B45309"/></marker>
+  <marker id="arr-crimson" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#BE123C"/></marker>
+  <marker id="arr-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 1.2 L 9 5 L 0 8.8 L 2.2 5 Z" fill="#475569"/></marker>
+</defs>
+<g font-family="'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif">
+<rect width="1200" height="680" fill="#FFFFFF"/>
+<rect x="36" y="30" width="208.9" height="20" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+<text x="140.4" y="43.8" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700" fill="#1E40AF">PART VI · CH23 STATE MACHINE</text>
+<text x="36" y="76" font-size="21.5" font-weight="700" fill="#0F172A">Fig-23-01 显式会话状态机与禁止转换规则</text>
+<text x="36" y="96" font-size="12.5" fill="#64748B">显式区分初始态、活跃执行态与不可逆终态域；所有非法跃迁在状态机入口直接拒绝并记入审计事件</text>
+<line x1="36" y1="106" x2="1164" y2="106" stroke="#E2E8F0" stroke-width="1.2"/>
+<rect x="716" y="212" width="264" height="376" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.4" stroke-dasharray="6 4"/><rect x="730" y="222" width="128" height="20" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/><text x="794" y="235.8" text-anchor="middle" font-size="10.8" font-weight="700" fill="#475569">终态不可逆封闭域</text>
+<g data-card-group="cre">
+<clipPath id="clip-cre"><rect x="48.0" y="304.0" width="190.0" height="96.0" rx="9"/></clipPath>
+<rect data-card="cre" x="48.0" y="304.0" width="190.0" height="96.0" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-cre)">
+<rect x="48.0" y="304.0" width="190.0" height="36.0" fill="#EFF6FF"/>
+<rect x="48.0" y="304.0" width="190.0" height="3.5" fill="#1E40AF"/>
+<line x1="48.0" y1="340.0" x2="238.0" y2="340.0" stroke="#BFDBFE" stroke-width="1"/></g>
+<g transform="translate(61.0,315.0)"><path d="M4 2 H9.8 L13 5.2 V14 H4 Z" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M9.8 2 V5.2 H13 M6 8.2 H11 M6 11 H9.5" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="cre" x="83.0" y="327.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">created</text>
+<rect x="182.2" y="313.8" width="45.8" height="18" rx="9" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1"/><text data-in="cre" x="205.1" y="326.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#1E40AF">初始态</text>
+<circle cx="64.0" cy="358.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="cre" x="73.0" y="362.7" font-size="12.2" fill="#334155">会话建档，seq = 1</text>
+<circle cx="64.0" cy="379.7" r="2.2" fill="#1E40AF" fill-opacity="0.75"/><text data-in="cre" x="73.0" y="383.7" font-size="12.2" fill="#334155">尚未触发工具调用</text>
+</g>
+<g data-card-group="run">
+<clipPath id="clip-run"><rect x="346.0" y="304.0" width="212.0" height="96.0" rx="9"/></clipPath>
+<rect data-card="run" x="346.0" y="304.0" width="212.0" height="96.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-run)">
+<rect x="346.0" y="304.0" width="212.0" height="36.0" fill="#F0FDFA"/>
+<rect x="346.0" y="304.0" width="212.0" height="3.5" fill="#0F766E"/>
+<line x1="346.0" y1="340.0" x2="558.0" y2="340.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(359.0,315.0)"><polygon points="4.5,2.8 13,8 4.5,13.2" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="run" x="381.0" y="327.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">running</text>
+<rect x="502.2" y="313.8" width="45.8" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="run" x="525.1" y="326.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">活跃态</text>
+<circle cx="362.0" cy="358.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="run" x="371.0" y="362.7" font-size="12.2" fill="#334155">活跃轮次推进执行</text>
+<circle cx="362.0" cy="379.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="run" x="371.0" y="383.7" font-size="12.2" fill="#334155">先落盘意图后提交</text>
+</g>
+<g data-card-group="pau">
+<clipPath id="clip-pau"><rect x="346.0" y="476.0" width="212.0" height="96.0" rx="9"/></clipPath>
+<rect data-card="pau" x="346.0" y="476.0" width="212.0" height="96.0" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-pau)">
+<rect x="346.0" y="476.0" width="212.0" height="36.0" fill="#FFFBEB"/>
+<rect x="346.0" y="476.0" width="212.0" height="3.5" fill="#B45309"/>
+<line x1="346.0" y1="512.0" x2="558.0" y2="512.0" stroke="#FDE68A" stroke-width="1"/></g>
+<g transform="translate(359.0,487.0)"><rect x="4" y="3" width="2.8" height="10" rx="0.8" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="9.2" y="3" width="2.8" height="10" rx="0.8" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="pau" x="381.0" y="499.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">paused</text>
+<rect x="502.2" y="485.8" width="45.8" height="18" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1"/><text data-in="pau" x="525.1" y="498.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#B45309">检查点</text>
+<circle cx="362.0" cy="530.7" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="pau" x="371.0" y="534.7" font-size="12.2" fill="#334155">挂起等待人工审批</text>
+<circle cx="362.0" cy="551.7" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="pau" x="371.0" y="555.7" font-size="12.2" fill="#334155">持久化恢复检查点</text>
+</g>
+<g data-card-group="com">
+<clipPath id="clip-com"><rect x="740.0" y="248.0" width="216.0" height="88.0" rx="9"/></clipPath>
+<rect data-card="com" x="740.0" y="248.0" width="216.0" height="88.0" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-com)">
+<rect x="740.0" y="248.0" width="216.0" height="34.0" fill="#F0FDFA"/>
+<rect x="740.0" y="248.0" width="216.0" height="3.5" fill="#0F766E"/>
+<line x1="740.0" y1="282.0" x2="956.0" y2="282.0" stroke="#99F6E4" stroke-width="1"/></g>
+<g transform="translate(753.0,258.0)"><circle cx="8" cy="8" r="5.8" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.4 8.2 L7.2 10 L10.8 6.2" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="com" x="775.0" y="270.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">completed</text>
+<rect x="910.8" y="256.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1"/><text data-in="com" x="928.4" y="269.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#0F766E">终态</text>
+<circle cx="756.0" cy="299.2" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="com" x="765.0" y="303.2" font-size="12.2" fill="#334155">独立验收核对通过</text>
+<circle cx="756.0" cy="318.7" r="2.2" fill="#0F766E" fill-opacity="0.75"/><text data-in="com" x="765.0" y="322.7" font-size="12.2" fill="#334155">禁止回退重新运行</text>
+</g>
+<g data-card-group="can">
+<clipPath id="clip-can"><rect x="740.0" y="358.0" width="216.0" height="88.0" rx="9"/></clipPath>
+<rect data-card="can" x="740.0" y="358.0" width="216.0" height="88.0" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-can)">
+<rect x="740.0" y="358.0" width="216.0" height="34.0" fill="#FFFBEB"/>
+<rect x="740.0" y="358.0" width="216.0" height="3.5" fill="#B45309"/>
+<line x1="740.0" y1="392.0" x2="956.0" y2="392.0" stroke="#FDE68A" stroke-width="1"/></g>
+<g transform="translate(753.0,368.0)"><circle cx="8" cy="8" r="5.8" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.8 5.8 L10.2 10.2 M10.2 5.8 L5.8 10.2" stroke="#B45309" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="can" x="775.0" y="380.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">cancelled</text>
+<rect x="910.8" y="366.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1"/><text data-in="can" x="928.4" y="379.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#B45309">终态</text>
+<circle cx="756.0" cy="409.2" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="can" x="765.0" y="413.2" font-size="12.2" fill="#334155">主动取消并释放句柄</text>
+<circle cx="756.0" cy="428.7" r="2.2" fill="#B45309" fill-opacity="0.75"/><text data-in="can" x="765.0" y="432.7" font-size="12.2" fill="#334155">已提交副作用另登记</text>
+</g>
+<g data-card-group="fai">
+<clipPath id="clip-fai"><rect x="740.0" y="468.0" width="216.0" height="88.0" rx="9"/></clipPath>
+<rect data-card="fai" x="740.0" y="468.0" width="216.0" height="88.0" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25" filter="url(#card-shadow)"/>
+<g clip-path="url(#clip-fai)">
+<rect x="740.0" y="468.0" width="216.0" height="34.0" fill="#FFF1F2"/>
+<rect x="740.0" y="468.0" width="216.0" height="3.5" fill="#BE123C"/>
+<line x1="740.0" y1="502.0" x2="956.0" y2="502.0" stroke="#FECDD3" stroke-width="1"/></g>
+<g transform="translate(753.0,478.0)"><path d="M8 2.2 L14 13 H2 Z" stroke="#BE123C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M8 6.4 V9.5 M8 11.4 V11.6" stroke="#BE123C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+<text data-in="fai" x="775.0" y="490.2" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="13.8" font-weight="700" fill="#0F172A">failed</text>
+<rect x="910.8" y="476.8" width="35.2" height="18" rx="9" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1"/><text data-in="fai" x="928.4" y="489.4" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.0" font-weight="700" fill="#BE123C">终态</text>
+<circle cx="756.0" cy="519.2" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="fai" x="765.0" y="523.2" font-size="12.2" fill="#334155">超预算或契约违背</text>
+<circle cx="756.0" cy="538.7" r="2.2" fill="#BE123C" fill-opacity="0.75"/><text data-in="fai" x="765.0" y="542.7" font-size="12.2" fill="#334155">保留完整事件链审计</text>
+</g>
+<line x1="238" y1="352.0" x2="344" y2="352.0" stroke="#1E40AF" stroke-width="2.1" marker-end="url(#arr-navy)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="242.9" y="321.0" width="98.1" height="22.0" rx="11" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.25"/><text x="292.0" y="336.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="600" fill="#1E40AF">turn_started</text></g>
+<line x1="414" y1="400" x2="414" y2="474" stroke="#B45309" stroke-width="2" marker-end="url(#arr-amber)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="279.1" y="427.0" width="133.8" height="22.0" rx="11" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25"/><text x="346.0" y="442.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.2" font-weight="600" fill="#B45309">approval_requested</text></g>
+<line x1="490" y1="476" x2="490" y2="402" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="493.4" y="427.0" width="121.2" height="22.0" rx="11" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25"/><text x="554.0" y="442.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.2" font-weight="600" fill="#0F766E">approval_granted</text></g>
+<path d="M 558.0 332.0 L 582.0 332.0 Q 590.0 332.0 590.0 324.0 L 590.0 300.0 Q 590.0 292.0 598.0 292.0 L 738.0 292.0" fill="none" stroke="#0F766E" stroke-width="2" marker-end="url(#arr-teal)"/>
+<path d="M 558.0 358.0 L 594.0 358.0 Q 602.0 358.0 602.0 366.0 L 602.0 394.0 Q 602.0 402.0 610.0 402.0 L 738.0 402.0" fill="none" stroke="#B45309" stroke-width="2" marker-end="url(#arr-amber)"/>
+<path d="M 558.0 382.0 L 606.0 382.0 Q 614.0 382.0 614.0 390.0 L 614.0 488.0 Q 614.0 496.0 622.0 496.0 L 738.0 496.0" fill="none" stroke="#BE123C" stroke-width="2" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="604.2" y="261.0" width="127.5" height="22.0" rx="11" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.25"/><text x="668.0" y="276.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.2" font-weight="600" fill="#0F766E">session_completed</text></g>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="612.2" y="371.0" width="127.5" height="22.0" rx="11" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.25"/><text x="676.0" y="386.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.2" font-weight="600" fill="#B45309">session_cancelled</text></g>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="621.7" y="465.0" width="108.5" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="676.0" y="480.0" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="10.2" font-weight="600" fill="#BE123C">session_failed</text></g>
+<path d="M 558.0 538.0 L 738.0 538.0" fill="none" stroke="#BE123C" stroke-width="1.9" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="586.1" y="527.0" width="125.8" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="649.0" y="542.0" text-anchor="middle" font-size="10.5" font-weight="600" fill="#BE123C">超时 / 拒批 / 取消</text></g>
+<path d="M 143.0 304.0 L 143.0 142.0 Q 143.0 132.0 153.0 132.0 L 914.0 132.0 Q 924.0 132.0 924.0 142.0 L 924.0 246.0" fill="none" stroke="#BE123C" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="275.9" y="121.0" width="208.1" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="380.0" y="136.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#BE123C">✕ 禁止：未经执行直接 completed</text></g>
+<path d="M 876.0 248.0 L 876.0 182.0 Q 876.0 172.0 866.0 172.0 L 462.0 172.0 Q 452.0 172.0 452.0 182.0 L 452.0 302.0" fill="none" stroke="#BE123C" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#arr-crimson)"/>
+<g data-pill="true" filter="url(#pill-shadow)"><rect x="568.4" y="161.0" width="183.3" height="22.0" rx="11" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="660.0" y="176.0" text-anchor="middle" font-size="10.8" font-weight="600" fill="#BE123C">✕ 禁止：终态重启为 running</text></g>
+<path d="M 956.0 402.0 L 1068.0 402.0 Q 1078.0 402.0 1078.0 392.0 L 1078.0 302.0 Q 1078.0 292.0 1068.0 292.0 L 958.0 292.0" fill="none" stroke="#BE123C" stroke-width="1.9" stroke-dasharray="6 4" marker-end="url(#arr-crimson)"/>
+<g filter="url(#pill-shadow)"><rect x="1008" y="324" width="142" height="44" rx="8" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.25"/><text x="1079" y="342" text-anchor="middle" font-size="10.8" font-weight="700" fill="#BE123C">✕ 禁止终态翻转</text><text x="1079" y="359" text-anchor="middle" font-family="'Consolas', 'DejaVu Sans Mono', monospace" font-size="9.6" fill="#64748B">cancelled ↛ completed</text></g>
+<g data-footer="true"><clipPath id="clip-ft-608"><rect x="36" y="608.0" width="1128" height="42.0" rx="8"/></clipPath><rect x="36" y="608.0" width="1128" height="42.0" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.2"/><g clip-path="url(#clip-ft-608)"><rect x="36" y="608.0" width="4.5" height="42.0" fill="#1E40AF"/></g><text x="54" y="633.5" font-size="12.2" font-weight="700" fill="#1E3A8A">核心不变式：</text><text x="139.6" y="633.5" font-size="12.2" fill="#334155">单会话内 sequence 严格单调递增；崩溃恢复与重放仅确定性重建状态，绝不重复触发已提交外部副作用。</text></g>
+</g></svg>

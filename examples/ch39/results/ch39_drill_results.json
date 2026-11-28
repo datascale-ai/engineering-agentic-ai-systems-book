@@ -1,0 +1,173 @@
+{
+  "experiment_id": "Exp-39-01",
+  "drills": {
+    "DRILL-01_controlled_release": {
+      "release_id": "release-v1.0.0",
+      "cd_gate_passed": true,
+      "eligible_probe": {
+        "task_id": "STG-01-eligible",
+        "status": "completed",
+        "reason": null,
+        "db_tickets": 1,
+        "trace_ok": true,
+        "trace_errors": []
+      },
+      "highrisk_probe": {
+        "task_id": "STG-02-highrisk",
+        "status": "rejected",
+        "reason": "needs_approval",
+        "db_tickets": 1,
+        "trace_ok": true,
+        "trace_errors": []
+      },
+      "passed": true
+    },
+    "DRILL-02_fault_and_incomplete_rollback_contrast": {
+      "full_cd_gate_blocked": true,
+      "detected_fault_layers": [
+        "config_layer",
+        "model_or_prompt_layer"
+      ],
+      "deploy_only_incomplete_rollback_probe": {
+        "task_id": "STG-03-stale-cache-probe",
+        "status": "completed",
+        "reason": null,
+        "db_tickets": 2,
+        "trace_ok": true,
+        "trace_errors": []
+      },
+      "incomplete_rollback_exposed_stale_cache_bug": true,
+      "secret_leaked_in_audit_log": false,
+      "passed": true
+    },
+    "DRILL-03_full_five_element_rollback": {
+      "cleared_cache_entries": 1,
+      "new_cache_epoch": 2,
+      "post_rollback_highrisk_probe": {
+        "task_id": "STG-04-post-rollback-highrisk",
+        "status": "rejected",
+        "reason": "needs_approval",
+        "db_tickets": 2,
+        "trace_ok": true,
+        "trace_errors": []
+      },
+      "post_rollback_eligible_probe": {
+        "task_id": "STG-05-post-rollback-eligible",
+        "status": "completed",
+        "reason": null,
+        "db_tickets": 1,
+        "trace_ok": true,
+        "trace_errors": []
+      },
+      "legitimate_ticket_preserved": true,
+      "passed": true
+    },
+    "DRILL-04_prj3_capstone_e2e": {
+      "crash_injected": true,
+      "recovered_status": "completed",
+      "db_tickets": 1,
+      "trace_ok": true,
+      "trace_errors": [],
+      "events": [
+        "session_created",
+        "proposal_accepted",
+        "research_verified",
+        "intent_saved",
+        "action_requested",
+        "outcome_resolved",
+        "postcondition_verified",
+        "completed"
+      ],
+      "passed": true
+    }
+  },
+  "timeline": [
+    {
+      "t_ms": 10,
+      "release": "release-v1.0.0",
+      "event": "cd_gate_start",
+      "candidate": "release-v1.0.0"
+    },
+    {
+      "t_ms": 20,
+      "release": "release-v1.0.0",
+      "event": "cd_gate_passed",
+      "candidate": "release-v1.0.0",
+      "slices_passed": 3
+    },
+    {
+      "t_ms": 30,
+      "release": "release-v1.0.0",
+      "event": "staging_smoke_verified",
+      "eligible_status": "completed",
+      "highrisk_status": "rejected",
+      "tickets_total": 1
+    },
+    {
+      "t_ms": 40,
+      "release": "release-v1.0.0",
+      "event": "fault_injected_candidate",
+      "candidate": "release-v1.1.0-bad-config",
+      "injected_secret_sample": "[REDACTED_SECRET]"
+    },
+    {
+      "t_ms": 50,
+      "release": "release-v1.0.0",
+      "event": "cd_gate_blocked_bad_candidate",
+      "candidate": "release-v1.1.0-bad-config",
+      "detected_layers": [
+        "config_layer",
+        "model_or_prompt_layer"
+      ]
+    },
+    {
+      "t_ms": 60,
+      "release": "release-v1.0.0",
+      "event": "incomplete_rollback_detected",
+      "note": "code/config reverted but permission cache still stale"
+    },
+    {
+      "t_ms": 70,
+      "release": "release-v1.0.0",
+      "event": "rollback_step1_intake_paused",
+      "intake_enabled": false
+    },
+    {
+      "t_ms": 80,
+      "release": "release-v1.0.0",
+      "event": "rollback_step2_3_code_config_restored",
+      "config_digest": "a9e8573067b0"
+    },
+    {
+      "t_ms": 90,
+      "release": "release-v1.0.0",
+      "event": "rollback_step4_permission_cache_purged",
+      "cleared_entries": 1,
+      "new_epoch": 2
+    },
+    {
+      "t_ms": 100,
+      "release": "release-v1.0.0",
+      "event": "rollback_step5_intake_resumed",
+      "intake_enabled": true
+    },
+    {
+      "t_ms": 110,
+      "release": "release-v1.0.0",
+      "event": "rollback_business_verified",
+      "post_highrisk_status": "rejected",
+      "post_eligible_status": "completed",
+      "legit_preserved": true
+    },
+    {
+      "t_ms": 120,
+      "release": "release-v1.0.0",
+      "event": "capstone_prj3_verified",
+      "crashed": true,
+      "status": "completed",
+      "tickets": 1,
+      "trace_ok": true
+    }
+  ],
+  "all_drills_passed": true
+}

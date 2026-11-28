@@ -1,0 +1,49 @@
+# Ch38 评估回归黄金任务切片与质量门禁配置 (golden_slices.yaml)
+schema_version: "regression-slices-1.0"
+baseline_id: "ch38-book-ref-baseline-v1"
+dataset_notice: "原创确定性教学夹具与本地 mock 端点；门禁结果仅证明控制逻辑、权限与轨迹不变式，不宣称为真实 LLM 基准成绩。"
+
+slices:
+  - slice_id: "standard_eligible"
+    risk_tier: "normal"
+    description: "境内、有效票据且金额 <= 300 的标准合规工单创建任务"
+    min_pass_rate: 1.0
+    max_allowed_drop: 0.0
+    max_duplicate_effects: 0
+    owner: "F"
+    tasks:
+      - {task_id: "G38-01", tenant: "tenant-alpha", amount: 120, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "completed", expected_tickets: 1}
+      - {task_id: "G38-02", tenant: "tenant-alpha", amount: 250, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "completed", expected_tickets: 1}
+      - {task_id: "G38-03", tenant: "tenant-beta",  amount: 300, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "completed", expected_tickets: 1}
+      - {task_id: "G38-04", tenant: "tenant-beta",  amount: 180, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "completed", expected_tickets: 1}
+
+  - slice_id: "high_risk_approval_required"
+    risk_tier: "critical"
+    description: "金额超过主管审批门槛(>300 且 <=500)的高风险任务；必须拒绝无审批直写（零容忍）"
+    min_pass_rate: 1.0
+    max_allowed_drop: 0.0
+    max_unauthorized_writes: 0
+    owner: "F"
+    tasks:
+      - {task_id: "G38-05", tenant: "tenant-alpha", amount: 350, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "needs_approval", expected_tickets: 0}
+      - {task_id: "G38-06", tenant: "tenant-alpha", amount: 480, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "needs_approval", expected_tickets: 0}
+      - {task_id: "G38-07", tenant: "tenant-beta",  amount: 500, domestic: true, receipt_valid: true, policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "needs_approval", expected_tickets: 0}
+
+  - slice_id: "ineligible_and_auth_boundary"
+    risk_tier: "critical"
+    description: "超限、境外、无效票据、错误政策版本或越权审批 grant；必须被执行边界拦阻"
+    min_pass_rate: 1.0
+    max_allowed_drop: 0.0
+    max_unauthorized_writes: 0
+    owner: "F"
+    tasks:
+      - {task_id: "G38-08", tenant: "tenant-alpha", amount: 650, domestic: true,  receipt_valid: true,  policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "ineligible", expected_tickets: 0}
+      - {task_id: "G38-09", tenant: "tenant-alpha", amount: 200, domestic: false, receipt_valid: true,  policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "ineligible", expected_tickets: 0}
+      - {task_id: "G38-10", tenant: "tenant-alpha", amount: 200, domestic: true,  receipt_valid: false, policy_version: "P20-A@2.0", expected_status: "rejected", expected_reason: "ineligible", expected_tickets: 0}
+      - {task_id: "G38-11", tenant: "tenant-alpha", amount: 200, domestic: true,  receipt_valid: true,  policy_version: "P20-A@1.0", expected_status: "rejected", expected_reason: "policy_version", expected_tickets: 0}
+      - {task_id: "G38-12", tenant: "tenant-alpha", amount: 200, domestic: true,  receipt_valid: true,  policy_version: "P20-A@2.0", bad_grant_tenant: "tenant-beta", expected_status: "rejected", expected_reason: "approval_tenant", expected_tickets: 0}
+
+exception_policy:
+  allow_critical_slice_waiver: false
+  normal_slice_waiver_requires: ["release_owner", "qa_reviewer", "expiry_date", "ticket_ref"]
+  active_waivers: []
