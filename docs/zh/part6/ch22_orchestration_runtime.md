@@ -198,7 +198,7 @@ $$J(x_1, x_2, \dots, x_n) = \frac{\left(\sum_{i=1}^{n} x_i\right)^2}{n \sum_{i=1
 
 第二，**有界并发用显式过载拒绝守住了系统边界与租户隔离**。有界模式将并发与句柄峰值牢牢锁在 **6** 以内，总耗时比串行缩短近十倍，P95 延迟从 9,872.26 ms 降至 933.00 ms。更关键的是分租户去向：在 15 项触发过载削峰的任务中，**12 项来自制造 5 路扇出爆发的 `tenant-beta`**，而平稳提交的 `tenant-alpha` 仅受 3 项波及并顺利完成 19 项，噪音邻居的冲击被有效围堵在其自身配额内。
 
-第三，**带外取消与副作用诚实登记同时成立**。关闭控制面优先通道的串行模式中，取消响应 P95 被队头阻塞拖高到 **1,647.55 ms**；有界模式下取消及时响应，且全部模式运行结束时活跃句柄数均严格归零。与此同时，提交后取消的用例在三种模式下均保留了非零的 `committed_side_effects_in_cancelled`，印证了取消释放算力但不抹除已提交副作用的设计底线。
+第三，**带外取消与副作用诚实登记同时成立**。关闭控制面优先通道的串行模式中，取消响应 P95 被队头阻塞拖高到 **1,647.55 ms**；有界模式下因已入槽步骤仍需抵达协作式切片检查点，取消响应 P95 为 **183.47 ms**（仍较串行模式缩短约 9 倍，区别于无队列积压的无界模式 `0.34 ms`），且全部模式运行结束时活跃句柄数均严格归零。与此同时，提交后取消的用例在三种模式下均保留了非零的 `committed_side_effects_in_cancelled`，印证了取消释放算力但不抹除已提交副作用的设计底线。
 
 第四，**崩溃接管实现零丢失、零重复**。全部已准入的模拟崩溃步骤都在租约到期后由新工作者接管完成，外部幂等账本中未产生任何重复工单。
 
@@ -218,7 +218,7 @@ $$J(x_1, x_2, \dots, x_n) = \frac{\left(\sum_{i=1}^{n} x_i\right)^2}{n \sum_{i=1
 
 | 主张 ID | 正文位置 | 输入与环境 | 接口与权限边界 | 实现入口 | 独立验收条件 | 成功与失败证据 | 证据状态与适用范围 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `CLM-22-01` | 22.2.2 | Python 3.13 离线标准库 | `PluginContext` 注册与逆序卸载 | `examples/ch22/async_runtime.py` | 替换适配器不改调度器；卸载后服务清除 | 三组运行结束后均洁净卸载无残留 | 确定性 mock 验证，单进程 |
+| `CLM-22-01` | 22.2.2 | Python 3.13 离线标准库 | `PluginContext` 注册、依赖解析与逆序卸载 | `examples/ch22/async_runtime.py` 与 `tests/ch22_25/test_part6_runtime.py` | 注册服务可按名解析；卸载后回调触发且服务键彻底清除 | 单元测试 `test_ch22_plugin_context_reversible_cleanup` 通过，卸载后无残留 | 确定性单进程单元测试 |
 | `CLM-22-02` | 22.3 / 22.5 | 50 任务双租户负载 | 全局 6 槽、队列上限 40、双层租户配额 | `examples/ch22/async_runtime.py` | 峰值并发不超 6；峰值排队不超 40；超限显式拒绝 | 模拟并发峰值 6（无界 60）、排队峰值 36、噪音租户承担 12/15 削峰 | 确定性 mock 测量，非生产容量 |
 | `CLM-22-03` | 22.4.2 / 22.5 | 4 项中途取消任务 | 带外取消令牌与副作用账本 | `examples/ch22/async_runtime.py` | 结束时活跃句柄归零；已提交工单如实留存 | 句柄归零断言通过，提交后取消的副作用计数非零且保留记录 | 确定性 mock 验证 |
 | `CLM-22-04` | 22.4.3 / 22.5 | 4 项工作者崩溃任务 | 租约超时与幂等键账本 | `examples/ch22/async_runtime.py` | 崩溃步骤自动接管且零重复写入 | 准入崩溃任务全部接管完成，外部账本无重复键 | 确定性 mock 验证，未测跨主机分区 |
@@ -257,7 +257,7 @@ $$J(x_1, x_2, \dots, x_n) = \frac{\left(\sum_{i=1}^{n} x_i\right)^2}{n \sum_{i=1
 [^r22-openai-harness]: OpenAI. *Harness engineering: Leveraging Codex in an agent-first world*. OpenAI Engineering Blog, Feb 2026: [https://openai.com/index/harness-engineering/](https://openai.com/index/harness-engineering/)（核验：2026-11-27）。用于论证控制面编排与隔离执行环境解耦的工程价值。
 [^r22-trio]: Smith N J. *Notes on structured concurrency, or: Go statement considered harmful*. 2018: [https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/)（核验：2026-11-27）。结构化并发作用域与消除孤儿协程的原始论述。
 [^r22-asyncio]: Python Software Foundation. *asyncio — Asynchronous I/O (`TaskGroup` and Cancellation)*, Python 3.12+ Documentation: [https://docs.python.org/3/library/asyncio-task.html](https://docs.python.org/3/library/asyncio-task.html)（核验：2026-11-27）。
-[^r22-temporal]: Temporal Technologies. *How Temporal Works: Durable Execution, Workers, and Task Queues*. Documentation: [https://docs.temporal.io/how-temporal-works](https://docs.temporal.io/how-temporal-works)（核验：2026-11-27）。用于参考 worker 队列派发、心跳租约与崩溃接管模型。
+[^r22-temporal]: Temporal Technologies. *Understanding Temporal: Durable Execution, Workers, and Task Queues*. Documentation: [https://docs.temporal.io/evaluate/understanding-temporal](https://docs.temporal.io/evaluate/understanding-temporal)（核验：2026-11-28）。用于参考 worker 队列派发、心跳租约与崩溃接管模型。
 [^r22-jain]: Jain R, Chiu D-M, Hawe W R. *A Quantitative Measure of Fairness and Discrimination for Resource Allocation in Shared Computer System*. DEC Research Report TR-301, 1984. Jain 公平性指数的原始定义及适用条件。
 
 本版：`zh-draft-0.3`，2026-11-27。已完成两张原创可编辑 SVG、可运行异步运行时、50 任务双租户对照实验与全书风格统一润色。

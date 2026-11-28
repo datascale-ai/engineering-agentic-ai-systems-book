@@ -165,7 +165,7 @@ $$\text{ChunkIdentity} = (\texttt{session\_id},\; \texttt{turn\_id},\; \texttt{g
 离散事件模拟适合无抖动地覆盖 7 类复杂竞态，但它无法直接检验操作系统线程与协程调度、真实 TCP 套接字断开以及公网 TLS 流式传输下的表现。为此，本章补充了两组使用 `time.perf_counter()` 采集真实操作系统墙钟时间的端到端实验，结果汇总于表 **Tab-24-04**：
 
 1. **本地回环 HTTP/1.1 SSE 墙钟实测（`Exp-24-02`，`examples/ch24/realtime_sse_benchmark.py`）**：在本机 `127.0.0.1` 启动真实异步 SSE 服务端，按 DeepSeek 多通道格式推送思维链、正文与未闭合 `tool_calls` 碎片，经由真实 `asyncio.Queue`（容量 16、高水位 12、低水位 4）送往 24 ms/片的慢消费者。该实验零密钥、离线可复现，已纳入仓库自动化测试套。
-2. **在线大模型 HTTPS/TLS SSE 墙钟实测（`Exp-24-03`，`examples/ch24/live_api_sse_benchmark.py`）**：经由环境变量连接 OpenAI 兼容 HTTPS/TLS 流式端点上的 `gpt-6.2-astra` 模型（实测首字延迟 TTFT P50 = 2,380.09 ms，P95 = 3,318.49 ms），在每轮收到 20 个真实文本增量后向 25 ms/片的消费端触发中途打断，比较三组策略在真实公网流下的停流耗时、无效后续分片浪费与可见停止延迟。脚本与脱敏结果不存储任何 API 密钥或私有主机地址。
+2. **在线大模型 HTTPS/TLS SSE 墙钟实测（`Exp-24-03`，`examples/ch24/live_api_sse_benchmark.py`）**：经由环境变量连接 OpenAI 兼容 HTTPS/TLS 流式端点上的 `gpt-6.2-astra` 模型（实测首字延迟 TTFT P50 = 2,380.09 ms，P95 = 3,318.49 ms），在每轮收到 20 个真实文本增量后向 25 ms/片的消费端触发中途打断，比较三组策略在真实公网流下的停流耗时、无效后续分片浪费与可见停止延迟。其中上游流式生成、TTFT、TLS 套接字断流与后续无效分片为真实在线模型实测；下游 25 ms 播放节拍与 60 ms 迟到回调由本地客户端协程注入以构造可重复对照，脚本与脱敏结果不存储任何 API 密钥或私有主机地址。
 
 **Tab-24-04　真实异步流式墙钟实测汇总（`Exp-24-02` 本地回环 SSE 36 次 & `Exp-24-03` 在线 `gpt-6.2-astra` HTTPS SSE 15 次；数据源：`examples/ch24/results/realtime_sse_wallclock.json` 与 `live_llm_sse_wallclock.json`）。**
 
@@ -198,9 +198,9 @@ $$\text{ChunkIdentity} = (\texttt{session\_id},\; \texttt{turn\_id},\; \texttt{g
 | 主张 ID | 正文位置 | 输入与环境 | 接口与权限边界 | 实现入口 | 独立验收条件 | 成功与失败证据 | 证据状态与适用范围 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `CLM-24-01` | 24.2 / 24.3 | 40 确定性取消时序用例 | 轮次代次围栏与高低水位线 | `examples/ch24/stream_interrupt_demo.py` | 40 例均满足可见停止不超 60 ms、零泄露、资源全释放 | 完整方案 40/40 通过，P95 为 21.0 ms；两对照组仅 0/40 与 2/40 | 确定性离散事件模拟，非真实声卡实测 |
-| `CLM-24-02` | 24.4.1 | 14 例含迟到工具回调用例 | 回调入口代次围栏 | `examples/ch24/interrupt_timeline.jsonl` | 旧代次工具回调 0 次混入新轮次 | 完整方案泄露 0 次；两对照组均泄露 14 次 | 确定性模拟验证 |
+| `CLM-24-02` | 24.4.1 | 14 例含迟到工具回调用例（7 例单纯迟到回调 + 5 例提交后取消 + 2 例新轮次抢占） | 回调入口代次围栏 | `examples/ch24/interrupt_timeline.jsonl` | 旧代次工具回调 0 次混入新轮次 | 完整方案泄露 0 次；两对照组均泄露 14 次 | 确定性模拟验证 |
 | `CLM-24-03` | 24.4.3 | 5 例提交后取消用例 | 取消不篡改已提交外部工单 | `examples/ch24/interrupt_timeline.jsonl` | 已提交标记如实留存 | 5/5 完整保留已提交记录并转审计 | 确定性模拟验证 |
-| `CLM-24-04` | 24.5.3 | 本地回环 HTTP SSE（36 次）与在线 `gpt-6.2-astra` HTTPS SSE（15 次） | 真实 `asyncio.Queue` 背压 + TLS 套接字断流 + 代次围栏 | `examples/ch24/realtime_sse_benchmark.py` 与 `live_api_sse_benchmark.py` | 完整方案可见停止显著优于两对照组且零回调泄露 | 本地回环 P95 为 8.51 ms（对照 618.69 / 187.47 ms）；在线 `gpt-6.2-astra` P95 为 28.55 ms（对照 2,414.25 / 439.00 ms） | 真实本地与公网墙钟实测；不含真实硬件声卡 DMA |
+| `CLM-24-04` | 24.5.3 | 本地回环 HTTP SSE（36 次）与在线 `gpt-6.2-astra` HTTPS SSE（15 次） | 真实 `asyncio.Queue` 背压 + TLS 套接字断流 + 代次围栏 | `examples/ch24/realtime_sse_benchmark.py` 与 `live_api_sse_benchmark.py` | 完整方案可见停止显著优于两对照组且零回调泄露 | 本地回环 P95 为 8.51 ms（对照 618.69 / 187.47 ms）；在线 `gpt-6.2-astra` P95 为 28.55 ms（对照 2,414.25 / 439.00 ms） | 上游在线流与本地队列为真实墙钟实测；消费节拍与迟到回调由本地协程注入，不含真实声卡 DMA |
 
 ### 24.6.3 关键术语
 

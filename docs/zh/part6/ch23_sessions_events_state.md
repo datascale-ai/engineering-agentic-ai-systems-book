@@ -211,7 +211,7 @@ def replay_from_snapshot(session_id, events, snapshot=None):
 [^r23-langgraph]: LangChain / LangGraph. *Persistence, Checkpointers, and Threads (`thread_id`)*. Documentation: [https://langchain-ai.github.io/langgraph/concepts/persistence/](https://langchain-ai.github.io/langgraph/concepts/persistence/)（核验：2026-11-27）。用于对照超步检查点快照与基于事件的回放模型差异。
 [^r23-anthropic-harness]: Anthropic. *Effective harnesses for long-running agents*. Anthropic Engineering Blog, Nov 2025: [https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)（核验：2026-11-27）。阐述跨会话结构化 JSON 状态工件相对于非结构化文本历史在防状态漂移上的优势。
 [^r23-dsh]: DeepSeek-AI. *DeepSeek Harness (`dsh`)*. GitHub Repository: [https://github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)（核验：2026-11-27）。参考其会话事件日志与推理核心解耦的插件化组织方式。
-[^r23-cloudevents]: Cloud Native Computing Foundation (CNCF). *CloudEvents Specification v1.0.2*. [https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md)（核验：2026-11-27）。参考 `(source, id)` 唯一标识命名空间与重投递去重约定。
+[^r23-cloudevents]: Cloud Native Computing Foundation (CNCF). *CloudEvents Specification v1.0.2*. [https://cloudevents.io/](https://cloudevents.io/)（核验：2026-11-28）。参考 `(source, id)` 唯一标识命名空间与重投递去重约定。
 [^r23-jsonschema]: JSON Schema Specification Draft 2020-12: [https://json-schema.org/draft/2020-12/schema](https://json-schema.org/draft/2020-12/schema)（核验：2026-11-27）。用于规范 `event_schema.json` 结构校验。
 [^r23-young]: Young G. *Versioning in an Event Sourced System*. Leanpub, 2017. 事件溯源系统中不可变日志与读时 Upcaster 模式演进的经典实践。
 
